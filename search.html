@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>About - CastorisCausa</title>
+    <title>Search - CastorisCausa
+</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,16 +10,15 @@
 
 
 
-<link rel="canonical" href="/pages/about-me">
 
         <meta name="author" content="Ray Cassani" />
-        <meta name="description" content="Just about me" />
 
-    <meta property="og:site_name" content="CastorisCausa" />
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="About"/>
-    <meta property="og:url" content="/pages/about-me"/>
-    <meta property="og:description" content="Just about me" />
+    <!-- Open Graph tags -->
+        <meta property="og:site_name" content="CastorisCausa" />
+        <meta property="og:type" content="website"/>
+        <meta property="og:title" content="CastorisCausa"/>
+        <meta property="og:url" content=""/>
+        <meta property="og:description" content="CastorisCausa"/>
 
 
     <!-- Bootstrap -->
@@ -56,7 +56,7 @@ CastorisCausa            </a>
                          <li><a href="/pages/swarro">
                              sofware
                           </a></li>
-                         <li class="active"><a href="/pages/about-me">
+                         <li><a href="/pages/about-me">
                              About
                           </a></li>
             </ul>
@@ -76,14 +76,7 @@ CastorisCausa            </a>
 <div class="container">
     <div class="row">
         <div class="col-sm-9">
-    <section id="content" class="body">
-        <h1 class="entry-title">About</h1>
-        
-        <div class="entry-content">
-            <h1>About me</h1>
-<p>What a moment to be alive!</p>
-        </div>
-    </section>
+<div id="tipue_search_content"></div>
         </div>
         <div class="col-sm-3" id="sidebar">
             <aside>
@@ -189,5 +182,17 @@ CastorisCausa            </a>
     </script>
     <!-- End Google Analytics Code -->
 
+    <script type="text/javascript" src="/theme/tipuesearch/tipuesearch_set.js"></script>
+    <script type="text/javascript" src="/theme/tipuesearch/tipuesearch.min.js"></script>
+    <script>
+    $(document).ready(function() {
+      $('#tipue_search_input').tipuesearch({
+        'mode' : 'json',
+        'show': 10,
+        'newWindow': false,
+        'contentLocation': 'tipuesearch_content.json'
+      });
+    });
+    </script>
 </body>
 </html>

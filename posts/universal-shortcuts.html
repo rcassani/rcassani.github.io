@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>poshbash in Windows bash - CastorisCausa</title>
+    <title>Universal Shortcut - CastorisCausa</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -9,17 +9,17 @@
 
 
 
-<link rel="canonical" href="../posts/poshbash-windows-bash">
+<link rel="canonical" href="../posts/universal-shortcuts">
 
         <meta name="author" content="Raymundo Cassani" />
-        <meta name="description" content="The posh-git-bash prompt, for Git, is a useful tool that shows information about the current status of a local Git repository respect to local and remote (e.g. GitHub) repositories; in this way, it’s easy to see if the repository is ahead or behind, has uncommitted changes, is up-to-date ..." />
+        <meta name="description" content="This project started from the “need” of having a compatible way to point to files indifferently if on Windows or Linux. While both operative systems can handle symbolic links, when the target file is an executable, certain scripts and programs present problems when executed through a symbolic link, as the ..." />
 
         <meta property="og:site_name" content="CastorisCausa" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="poshbash in Windows bash"/>
-        <meta property="og:url" content="../posts/poshbash-windows-bash"/>
-        <meta property="og:description" content="The posh-git-bash prompt, for Git, is a useful tool that shows information about the current status of a local Git repository respect to local and remote (e.g. GitHub) repositories; in this way, it’s easy to see if the repository is ahead or behind, has uncommitted changes, is up-to-date ..."/>
-        <meta property="article:published_time" content="2016-10-26" />
+        <meta property="og:title" content="Universal Shortcut"/>
+        <meta property="og:url" content="../posts/universal-shortcuts"/>
+        <meta property="og:description" content="This project started from the “need” of having a compatible way to point to files indifferently if on Windows or Linux. While both operative systems can handle symbolic links, when the target file is an executable, certain scripts and programs present problems when executed through a symbolic link, as the ..."/>
+        <meta property="article:published_time" content="2017-07-25" />
             <meta property="article:section" content="Blog" />
             <meta property="article:author" content="Raymundo Cassani" />
 
@@ -77,16 +77,16 @@ CastorisCausa            </a>
         <div class="col-sm-9">
             <ol class="breadcrumb">
                 <li><a href=".." title="CastorisCausa"><i class="fa fa-home fa-lg"></i></a></li>
-                <li class="active">poshbash in Windows&nbsp;bash</li>
+                <li class="active">Universal&nbsp;Shortcut</li>
             </ol>
     <section id="content">
         <article>
             <header class="page-header">
                 <h1>
-                    <a href="../posts/poshbash-windows-bash"
+                    <a href="../posts/universal-shortcuts"
                        rel="bookmark"
-                       title="Permalink to poshbash in Windows bash">
-                        poshbash in Windows&nbsp;bash
+                       title="Permalink to Universal Shortcut">
+                        Universal&nbsp;Shortcut
                     </a>
                 </h1>
             </header>
@@ -96,7 +96,7 @@ CastorisCausa            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2016-10-26T22:00:00-04:00"> Wed 26 October 2016</time>
+        <i class="fa fa-calendar"></i><time datetime="2017-07-25T19:00:00-04:00"> Tue 25 July 2017</time>
     </span>
 
 
@@ -106,51 +106,54 @@ CastorisCausa            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>The <a href="https://github.com/dahlbyk/posh-git"><strong>posh-git-bash</strong></a> prompt, for <a href="https://git-scm.com/">Git</a>, is a useful tool that shows information about the current status of a local Git repository respect to local and remote (e.g. <a href="https://github.com/">GitHub</a>) repositories; in this way, it&#8217;s easy to see if the repository is ahead or behind, has uncommitted changes, is up-to-date,&nbsp;etc.</p>
-<p><center>
-<img alt="Alt" src="../images/posh_bash_win.png" /><br />
-Git-Posh example
-</center>  </p>
-<p>The <strong>posh-git-bash</strong> prompt is included in the <a href="https://msdn.microsoft.com/en-us/powershell/mt173057.aspx">PowerShell</a> installed with <a href="https://desktop.github.com/">GitHub Desktop</a> software for Windows. This post describes how add the <strong>posh-git-bash</strong> prompt functionality into the <a href="https://msdn.microsoft.com/en-us/commandline/wsl/about#">Bash on Windows10</a>.</p>
-<p>If <strong>Bash on Windows</strong> is not already installed, this is the <a href="https://msdn.microsoft.com/commandline/wsl/install_guide">installation guide</a>.</p>
-<hr />
-<h5><strong>Note</strong>: Enable Copy/Paste in&nbsp;Bash</h5>
-<ol>
-<li>Right click in the Window Title bar &gt;&nbsp;Properties</li>
-<li>Enable Quick Edit&nbsp;Mode</li>
-<li>Copy is <strong>Ctrl-C</strong> and Paste is <strong>Right-click</strong></li>
-</ol>
-<hr />
-<h3><strong>Adding posh-git-bash</strong> prompt to Bash on&nbsp;Windows</h3>
+                <p>This project started from the &#8220;need&#8221; of having a compatible way to point to files indifferently if on Windows or Linux. While both operative systems can handle symbolic links, when the target file is an executable, certain scripts and programs present <a href="https://askubuntu.com/questions/541317/link-to-exe-doesnt-launch-wine">problems when executed through a symbolic link</a>, as the working directory is expected to be the directory containing the executable  and not the directory with the symbolic&nbsp;link.</p>
+<p>For that reason, a different approach was taken. To create an hybrid script with <strong>Bash</strong> and <strong>Batch</strong> code to point to the desired files or program. This kind of script is possible by using the commenting format of <a href="https://stackoverflow.com/questions/17510688/single-script-to-run-in-both-windows-batch-and-linux-bash">Batch files to ignore the Bash commands</a>. In this sense such files can are <strong>universal shortcuts</strong>. As the paths utilized in this universal shortcut file, are relative, it works perfectly with portable media, if and only if, the filesystem supports file permissions. Note: <span class="caps">FAT32</span> does not support&nbsp;them.</p>
+<p>The universal shortcuts consist of an executable script file with Bash and Batch code. When executed in Windows the Bash part is ignored and when executed in Linux the Batch part is ignored. Thus, the same script can be executed in both systems and performs the same&nbsp;action.</p>
+<p>The scripts in bash and batch are equivalent and they&nbsp;do:  </p>
 <ol>
 <li>
-<p>Run Bash and go to <span class="caps">HOME</span> directory in&nbsp;bash</p>
-<div class="highlight"><pre><span></span><span class="p">$</span> <span class="n">cd</span> <span class="p">~</span>
-</pre></div>
-
-
+<p>Change the current directory to the directory where the target file&nbsp;is</p>
 </li>
 <li>
-<p>Download the file <code>git-prompt.sh</code> from <a href="https://github.com/lyze/posh-git-sh.git">this repository</a>, and rename it as <code>.git-prompt.sh</code>  </p>
-<div class="highlight"><pre><span></span><span class="p">~$</span> <span class="n">wget</span> <span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">lyze</span><span class="p">/</span><span class="n">posh-git-sh</span><span class="p">/</span><span class="n">master</span><span class="p">/</span><span class="n">git-prompt</span><span class="p">.</span><span class="n">sh</span> <span class="n">-O</span> <span class="p">.</span><span class="n">git-prompt</span><span class="p">.</span><span class="n">sh</span>
-</pre></div>
-
-
+<p>Open the target file in a similar way as when the user double clicks it, this operation <a href="https://github.com/alexeevdv/dename/blob/master/dename.sh">depends on the Desktop Environment&nbsp;utilized</a></p>
 </li>
 <li>
-<p>Now you need to edit your the file <code>~/.bashrc</code>
-Add the following 2 lines at the beginning of <code>~/.bashrc file</code>, you can use the text editors <a href="https://www.nano-editor.org/">nano</a> or <a href="http://www.vim.org/">vim</a> for&nbsp;this.</p>
-<div class="highlight"><pre><span></span><span class="n">source</span> <span class="p">~/.</span><span class="n">git-prompt</span><span class="p">.</span><span class="n">sh</span>
-<span class="n">PROMPT_COMMAND</span><span class="p">=</span><span class="s1">&#39;__posh_git_ps1 &quot;\u@\h:\w&quot; &quot;\\\$ &quot;;&#39;</span><span class="nv">$PROMPT_COMMAND</span>
-</pre></div>
-
-
-</li>
-<li>
-<p>Restart&nbsp;Bash</p>
+<p>Exit</p>
 </li>
 </ol>
-<!-- Reference links https://msdn.microsoft.com/en-us/commandline/wsl/about https://msdn.microsoft.com/en-us/commandline/wsl/reference https://msdn.microsoft.com/en-us/commandline/wsl/user_support https://msdn.microsoft.com/en-us/commandline/wsl/faq https://msdn.microsoft.com/commandline/wsl/install_guide http://www.digitalcitizen.life/how-get-linux-bash-windows-10-3-steps https://twitter.com/richturn_ms https://twitter.com/hashtag/bashonubuntuonwindows?src=hash https://blogs.windows.com/buildingapps/2016/07/22/fun-with-the-windows-subsystem-for-linux/ https://en.support.wordpress.com/markdown-quick-reference/ -->
+<p>The universal shortcut is created by a Python 3 script that can be found in this&nbsp;repository:</p>
+<p><a href="https://github.com/rcassani/universal-shortcuts">https://github.com/rcassani/universal-shortcuts</a></p>
+<h3>Usage</h3>
+<div class="highlight"><pre><span></span><span class="p">$</span> <span class="n">python3</span> <span class="n">mk_unishortcut</span><span class="p">.</span><span class="n">py</span> <span class="p">&lt;</span><span class="n">targetpath</span><span class="p">&gt;</span>
+</pre></div>
+
+
+<p>the <code>&lt;targetpath&gt;</code> can be absolute or relative, and can be a file or&nbsp;directory</p>
+<p>When the Python script is executed in Linux it will automatically change the file permissions of the shortcut file to be executable. If the Python script is run in Windows, it is needed to change the file permissions to executable in&nbsp;Linux.  </p>
+<p>Despite the fact these universal shortcuts may not be extremely useful, this project was an interesting experience in writing hybrid Bash-Batch&nbsp;scripts.</p>
+<h2>References:</h2>
+<ol>
+<li>
+<p>Symbolic links fail to run executable files when they need to run in their folder<br />
+<a href="https://askubuntu.com/questions/541317/link-to-exe-doesnt-launch-wine">https://askubuntu.com/questions/541317/link-to-exe-doesnt-launch-wine</a></p>
+</li>
+<li>
+<p>Hybrid Windows-bash and Linux-bash scripting<br />
+<a href="https://stackoverflow.com/questions/17510688/single-script-to-run-in-both-windows-batch-and-linux-bash">https://stackoverflow.com/questions/17510688/single-script-to-run-in-both-windows-batch-and-linux-bash</a></p>
+</li>
+<li>
+<p>Identify Linux Desktop Environment<br />
+<a href="https://github.com/alexeevdv/dename/blob/master/dename.sh">https://github.com/alexeevdv/dename/blob/master/dename.sh</a>   </p>
+</li>
+<li>
+<p><code>start</code> command in Windows<br />
+<a href="https://renewablepcs.wordpress.com/about-linux/kde-gnome-or-xfce/">https://technet.microsoft.com/en-us/library/cc770297(v=ws.11).aspx</a></p>
+</li>
+<li>
+<p>Link with different Desktop Environments<br />
+<a href="https://renewablepcs.wordpress.com/about-linux/kde-gnome-or-xfce/">https://renewablepcs.wordpress.com/about-linux/kde-gnome-or-xfce/</a></p>
+</li>
+</ol>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -162,7 +165,7 @@ Add the following 2 lines at the beginning of <code>~/.bashrc file</code>, you c
             /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
             var disqus_shortname = 'castoriscausa'; // required: replace example with your forum shortname
 
-                var disqus_url = 'http://castoriscausa.com/posts/poshbash-windows-bash';
+                var disqus_url = 'http://castoriscausa.com/posts/universal-shortcuts';
 
             var disqus_config = function () {
                 this.language = "en";

@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
+<head>
+    <title>Linux freezes when changing GPU with prime-select [Solved] - CastorisCausa</title>
+    <!-- Using the latest rendering mode for IE -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+
+<link rel="canonical" href="../posts/freezes-linux-gpu-acpi">
+
+        <meta name="author" content="Raymundo Cassani" />
+        <meta name="description" content="A frequent problem in dual-GPU systems is that the PC freezes (kernel panic) when you try to logout, restart or shutdown after changing back from the Intel (integrated) to the NVIDIA (discrete) GPU in Linux. All of this when you’re using the NVIDIA drivers (proprietary drivers). When using ..." />
+
+        <meta property="og:site_name" content="CastorisCausa" />
+        <meta property="og:type" content="article"/>
+        <meta property="og:title" content="Linux freezes when changing GPU with prime-select [Solved]"/>
+        <meta property="og:url" content="../posts/freezes-linux-gpu-acpi"/>
+        <meta property="og:description" content="A frequent problem in dual-GPU systems is that the PC freezes (kernel panic) when you try to logout, restart or shutdown after changing back from the Intel (integrated) to the NVIDIA (discrete) GPU in Linux. All of this when you’re using the NVIDIA drivers (proprietary drivers). When using ..."/>
+        <meta property="article:published_time" content="2017-08-29" />
+            <meta property="article:section" content="Blog" />
+            <meta property="article:author" content="Raymundo Cassani" />
+
+
+    <!-- Bootstrap -->
+        <link rel="stylesheet" href="../theme/css/bootstrap.sandstone.min.css" type="text/css"/>
+    <link href="../theme/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="../theme/css/pygments/native.css" rel="stylesheet">
+    <link href="../theme/tipuesearch/tipuesearch.css" rel="stylesheet">
+        <link href="../theme/css/typogrify.css" rel="stylesheet">
+    <link rel="stylesheet" href="../theme/css/style.css" type="text/css"/>
+        <link href="../custom_css/castoris.css" rel="stylesheet">
+
+
+
+
+
+</head>
+<body>
+
+<div class="navbar navbar-default navbar-fixed-top" role="navigation">
+	<div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a href="../" class="navbar-brand">
+CastorisCausa            </a>
+        </div>
+        <div class="collapse navbar-collapse navbar-ex1-collapse">
+            <ul class="nav navbar-nav">
+                         <li><a href="../pages/about-me">
+                             About
+                          </a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+              <li><span>
+                <form class="navbar-search" action="/search.html">
+                  <input type="text" class="search-query" placeholder="Search" name="q" id="tipue_search_input" required>
+                </form></span>
+              </li>
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+</div> <!-- /.navbar -->
+<!-- Banner -->
+<!-- End Banner -->
+<div class="container">
+    <div class="row">
+        <div class="col-sm-9">
+            <ol class="breadcrumb">
+                <li><a href=".." title="CastorisCausa"><i class="fa fa-home fa-lg"></i></a></li>
+                <li class="active">Linux freezes when changing <span class="caps">GPU</span> with prime-select&nbsp;[Solved]</li>
+            </ol>
+    <section id="content">
+        <article>
+            <header class="page-header">
+                <h1>
+                    <a href="../posts/freezes-linux-gpu-acpi"
+                       rel="bookmark"
+                       title="Permalink to Linux freezes when changing GPU with prime-select [Solved]">
+                        Linux freezes when changing <span class="caps">GPU</span> with prime-select&nbsp;[Solved]
+                    </a>
+                </h1>
+            </header>
+            <div class="entry-content">
+                <div class="panel">
+                    <div class="panel-body">
+<footer class="post-info">
+    <span class="label label-default">Date</span>
+    <span class="published">
+        <i class="fa fa-calendar"></i><time datetime="2017-08-29T12:00:00-04:00"> Tue 29 August 2017</time>
+    </span>
+
+
+
+
+
+    
+</footer><!-- /.post-info -->                    </div>
+                </div>
+                <p>A frequent problem in dual-<span class="caps">GPU</span> systems is that the <span class="caps">PC</span> freezes (<a href="">kernel panic</a>) when you try to logout, restart or shutdown after changing back from the <strong>Intel</strong> (integrated) to the <strong><span class="caps">NVIDIA</span></strong> (discrete) <span class="caps">GPU</span> in Linux. All of this when you&#8217;re using the <strong><span class="caps">NVIDIA</span> drivers</strong> (proprietary&nbsp;drivers).</p>
+<p>When using the <a href="http://www.castoriscausa.com/posts/ge62vr-mint-gtx1060"><span class="caps">NVIDIA</span> drivers</a> for Linux, it&#8217;s possible to change the <span class="caps">GPU</span> in use with the <code>prime-select</code> command followed by&nbsp;logout.</p>
+<p>Switching from <strong><span class="caps">NVIDIA</span></strong> to <strong>Intel</strong> <span class="caps">GPU</span> works&nbsp;perfectly:</p>
+<div class="highlight"><pre><span></span><span class="p">$</span> <span class="n">sudo</span> <span class="n">prime-select</span> <span class="n">intel</span>
+</pre></div>
+
+
+<p>Then logout and login to see the changes. By changing to the discrete <span class="caps">GPU</span> power consumption drops almost by half, providing a decent battery life in&nbsp;laptops.</p>
+<p>However, the <strong>kernel panic</strong> occurs when switching back from the <strong>Intel</strong> to <strong><span class="caps">NVIDIA</span></strong> <span class="caps">GPU</span>.</p>
+<div class="highlight"><pre><span></span><span class="p">$</span> <span class="n">sudo</span> <span class="n">prime-select</span> <span class="n">nvidia</span>
+</pre></div>
+
+
+<p>After changing the <span class="caps">GPU</span> with <code>prime-select</code>, either logout, restart or shutdown will result in kernel&nbsp;panic.</p>
+<h2>Solution</h2>
+<p>The problem is likely to be cause by <a href="https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface"><span class="caps">ACPI</span></a> configuration in the kernel boot sequence. It can be <strong>solved</strong> by adding the following to the kernel boot&nbsp;sequence:</p>
+<p><code>acpi_osi=! acpi_osi="Windows 2009"</code></p>
+<p>This can be done by <a href="https://www.howtoforge.com/tutorial/kernel-boot-parameter-edit/">editing the kernel boot parameters</a>, or more convenient and easier with the help of  <a href="https://launchpad.net/grub-customizer">GrubCustomizer</a>.</p>
+<p></br>
+After than change you should be able to logout correctly after changing from the <strong>Intel</strong> to the <strong><span class="caps">NVIDIA</span></strong> <span class="caps">GPU</span>.</p>
+<h3>References</h3>
+<p><a href="https://bugs.launchpad.net/lpbugreporter/+bug/752542/comments/793">https://bugs.launchpad.net/lpbugreporter/+bug/752542/comments/793</a></p>
+<p><a href="https://github.com/Bumblebee-Project/Bumblebee/issues/764#issuecomment-234494238">https://github.com/Bumblebee-Project/Bumblebee/issues/764#issuecomment-234494238</a></p>
+            </div>
+            <!-- /.entry-content -->
+    <hr/>
+    <section class="comments" id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'castoriscausa'; // required: replace example with your forum shortname
+
+                var disqus_url = 'http://castoriscausa.com/posts/freezes-linux-gpu-acpi';
+
+            var disqus_config = function () {
+                this.language = "en";
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+    </section>
+        </article>
+    </section>
+
+        </div>
+        <div class="col-sm-3" id="sidebar">
+            <aside>
+
+<section class="well well-sm">
+    <ul class="list-group list-group-flush">
+            <li class="list-group-item"><h4><i class="fa fa-home fa-lg"></i><span class="icon-label">Social</span></h4>
+              <ul class="list-group" id="social">
+                <li class="list-group-item"><a href="https://github.com/rcassani"><i class="fa fa-github-square fa-lg"></i> GitHub</a></li>
+                <li class="list-group-item"><a href="#"><i class="fa fa-#-square fa-lg"></i> #</a></li>
+              </ul>
+            </li>
+
+
+
+
+
+    <li class="list-group-item"><h4><i class="fa fa-external-link-square fa-lg"></i><span class="icon-label">Links</span></h4>
+      <ul class="list-group" id="links">
+        <li class="list-group-item">
+            <a href="http://www.castoriscausa.com" target="_blank">
+                Home
+            </a>
+        </li>
+        <li class="list-group-item">
+            <a href="#" target="_blank">
+                #
+            </a>
+        </li>
+      </ul>
+    </li>
+    <li class="list-group-item">
+        <ul class="list-group" id="links">
+            <img width="100%" class="img-thumbnail" src="../images/side_image_500.jpg"/>
+        </ul>
+    </li>
+    </ul>
+</section>
+            </aside>
+        </div>
+    </div>
+</div>
+<footer>
+   <div class="container">
+      <hr>
+      <div class="row">
+         <div class="col-xs-10">&copy; 2017 Ray Cassani
+            &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
+            <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+            <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+         </div>
+         <div class="col-xs-2"><p class="pull-right"><i class="fa fa-arrow-up"></i> <a href="#">Back to top</a></p></div>
+      </div>
+   </div>
+</footer>
+<script src="../theme/js/jquery.min.js"></script>
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="../theme/js/bootstrap.min.js"></script>
+
+<!-- Enable responsive features in IE8 with Respond.js (https://github.com/scottjehl/Respond) -->
+<script src="../theme/js/respond.min.js"></script>
+
+    <!-- Disqus -->
+    <script type="text/javascript">
+        /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+        var disqus_shortname = 'castoriscausa'; // required: replace example with your forum shortname
+
+        /* * * DON'T EDIT BELOW THIS LINE * * */
+        (function () {
+            var s = document.createElement('script');
+            s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+    <!-- End Disqus Code -->
+    <!-- Google Analytics -->
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-86432394-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+    <!-- End Google Analytics Code -->
+
+</body>
+</html>

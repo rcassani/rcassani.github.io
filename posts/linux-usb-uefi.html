@@ -127,40 +127,48 @@ CastorisCausa            </a>
 <h3>Procedure:</h3>
 <h4>1. Creating <span class="caps">UEFI</span>-booting Virtual Machine, without (virtual) <span class="caps">HHD</span></h4>
 <ol>
-<li>Open <strong>VMware</strong> and <strong>Create a New Virtual Machine</strong>
+<li>
+<p>Open <strong>VMware</strong> and <strong>Create a New Virtual&nbsp;Machine</strong></p>
+<p><center>
+<a href="../images/uefi_usb_1_1.png"><img src="../images/uefi_usb_1_1.png" style="width: 500px;"/></a>
+</br><br />
+</center></p>
+</li>
+<li>
+<p>Select the <strong>I will install the operative system later</strong> option. Click on <strong>Next</strong>
     <center>
-    <img src="../images/uefi_usb_1_1.png" style="width: 500px;"/>
+    <a href="../images/uefi_usb_1_2.png"><img src="../images/uefi_usb_1_2.png" style="width: 500px;"/></a>
     </br><br />
-    </center></li>
-<li>Select the <strong>I will install the operative system later</strong> option. Click on <strong>Next</strong>
+    </center></p>
+</li>
+<li>
+<p>Set <strong>Guest Operating System</strong> to Linux, select your version or the closest one, in my case the closest to <strong>Mint 64-bit</strong> is <strong>Ubuntu 64-bit</strong>. Click on <strong>Next</strong>
     <center>
-    <img src="../images/uefi_usb_1_2.png" style="width: 500px;"/>
+    <a href="../images/uefi_usb_1_3.png"><img src="../images/uefi_usb_1_3.png" style="width: 500px;"/></a>
     </br><br />
-    </center></li>
-<li>Set <strong>Guest Operating System</strong> to Linux, select your version or the closest one, in my case the closest to <strong>Mint 64-bit</strong> is <strong>Ubuntu 64-bit</strong>. Click on <strong>Next</strong>
+    </center></p>
+</li>
+<li>
+<p>Assign a <strong>Virtual machine name</strong> and <strong>Location</strong> to the Virtual Machine. Remember these fields, and they&#8217;ll used later. Click on <strong>Next</strong><br />
     <center>
-    <img src="../images/uefi_usb_1_3.png" style="width: 500px;"/>
+    <a href="../images/uefi_usb_1_4.png"><img src="../images/uefi_usb_1_4.png" style="width: 500px;"/></a>
     </br><br />
-    </center></li>
-<li>Assign a <strong>Virtual machine name</strong> and <strong>Location</strong> to the Virtual Machine. Remember these fields, and they&#8217;ll used later. Click on <strong>Next</strong><br />
-    <center>
-    <img src="../images/uefi_usb_1_4.png" style="width: 500px;"/>
-    </br><br />
-    </center></li>
+    </center></p>
+</li>
 <li><strong>Disk Capacity</strong>, default parameters (this <span class="caps">HDD</span> will not be used). Click <strong>Next</strong>
     <center>
-    <img src="../images/uefi_usb_1_5.png" style="width: 500px;"/>
+    <a href="../images/uefi_usb_1_5.png"><img src="../images/uefi_usb_1_5.png" style="width: 500px;"/></a>
     </br><br />
     </center></li>
 <li>Click on <strong>Customize Hardware</strong><ol>
 <li>For the <strong>New <span class="caps">CD</span>/<span class="caps">DVD</span> (<span class="caps">SATA</span>)</strong>, Select <strong>Use <span class="caps">ISO</span> image file</strong> and browe for your Linux <span class="caps">ISO</span> image
   <center>
-  <img src="../images/uefi_usb_1_6a.png" style="width: 500px;"/>
+  <a href="../images/uefi_usb_1_6a.png"><img src="../images/uefi_usb_1_6a.png" style="width: 500px;"/></a>
   </br><br />
   </center></li>
 <li>For the <strong><span class="caps">USB</span> Controller</strong>, Select <strong><span class="caps">USB</span> 3.0</strong> (if supported), <strong>[X]Automatically &#8230;, [ ]Show all&#8230; and [ ]Share Bluetooth&#8230;</strong>
   <center>
-  <img src="../images/uefi_usb_1_6b.png" style="width: 500px;"/>
+  <a href="../images/uefi_usb_1_6b.png"><img src="../images/uefi_usb_1_6b.png" style="width: 500px;"/></a>
   </br><br />
   </center></li>
 </ol>
@@ -169,7 +177,7 @@ CastorisCausa            </a>
 <li>Go to the Virtual Machine <strong>Location</strong>, and with help of a text editor (e.g. Notepad), open the file <strong><code>VMname.vmx</code></strong> (where the <code>VMname</code> is the <strong>Virtual machine name</strong> assigned in step 4). And add the line <strong><code>firmware = "efi"</code></strong> at the end of the&nbsp;file</li>
 <li>In <strong>VMware</strong>, open the <strong>settings</strong> of your brand new Virtual Machine and <strong>remove the <span class="caps">HDD</span></strong>
     <center>
-    <img src="../images/uefi_usb_1_9.png" style="width: 500px;"/>
+    <a href="../images/uefi_usb_1_9.png"><img src="../images/uefi_usb_1_9.png" style="width: 500px;"/></a>
     </br><br />
     </center>  </li>
 </ol>
@@ -178,12 +186,12 @@ CastorisCausa            </a>
 <ol>
 <li>In <strong>VMware</strong>, Power <span class="caps">ON</span> the Virtual Machine. When booting on <span class="caps">UEFI</span>, it should look as below (at least for <strong>Mint 64-bit</strong>). Select <strong>Start Linux Mint 18 Cinnamon 64-bit</strong> (or <strong>Try Ubuntu without installing</strong>)
     <center>
-    <img src="../images/uefi_usb_2_1.png" style="width: 700px;"/>
+    <a href="../images/uefi_usb_2_1.png"><img src="../images/uefi_usb_2_1.png" style="width: 700px;"/></a>
     </br><br />
     </center></li>
 <li>Once the Linux session is started, connect (physically) your <span class="caps">USB</span>-disk, and be sure it&#8217;s connected to the Virtual Machine<br />
     <center>
-    <img src="../images/uefi_usb_2_3.png" style="width: 700px;"/>
+    <a href="../images/uefi_usb_2_3.png"><img src="../images/uefi_usb_2_3.png" style="width: 700px;"/></a>
     </br><br />
     </center></li>
 <li>
@@ -321,7 +329,7 @@ CastorisCausa            </a>
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2017 Ray Cassani
+         <div class="col-xs-10">&copy; 2017 Raymundo Cassani
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>

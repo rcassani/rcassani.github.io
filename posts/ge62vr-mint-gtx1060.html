@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns# fb: https://www.facebook.com/2008/fbml">
 <head>
-    <title>LinuxMint-18 + GE62VR + GTX1060 + CUDA - CastorisCausa</title>
+    <title>LinuxMint-19 + GTX1060 + CUDA 10.0 - CastorisCausa</title>
     <!-- Using the latest rendering mode for IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta charset="utf-8">
@@ -12,14 +12,14 @@
 <link rel="canonical" href="../posts/ge62vr-mint-gtx1060">
 
         <meta name="author" content="Raymundo Cassani" />
-        <meta name="description" content="There are several posts with instructions for properly installing NVIDIA drivers in Linux. Unfortunately, sometimes they’re outdated, moreover it’s not possible to cover the immensity of system configurations. After searching and reading some of that information, I came down to this guide for my system (Mint18 in MSI ..." />
+        <meta name="description" content="Updated This article was updated to Mint 19 (based in Ubuntu 18.04), NVIDIA-driver 410 and CUDA driver 10.0 There are several posts with instructions for properly installing NVIDIA drivers in Linux. Unfortunately, sometimes they’re outdated, moreover it’s not possible to cover the immensity of system ..." />
 
         <meta property="og:site_name" content="CastorisCausa" />
         <meta property="og:type" content="article"/>
-        <meta property="og:title" content="LinuxMint-18 + GE62VR + GTX1060 + CUDA"/>
+        <meta property="og:title" content="LinuxMint-19 + GTX1060 + CUDA 10.0"/>
         <meta property="og:url" content="../posts/ge62vr-mint-gtx1060"/>
-        <meta property="og:description" content="There are several posts with instructions for properly installing NVIDIA drivers in Linux. Unfortunately, sometimes they’re outdated, moreover it’s not possible to cover the immensity of system configurations. After searching and reading some of that information, I came down to this guide for my system (Mint18 in MSI ..."/>
-        <meta property="article:published_time" content="2017-02-21" />
+        <meta property="og:description" content="Updated This article was updated to Mint 19 (based in Ubuntu 18.04), NVIDIA-driver 410 and CUDA driver 10.0 There are several posts with instructions for properly installing NVIDIA drivers in Linux. Unfortunately, sometimes they’re outdated, moreover it’s not possible to cover the immensity of system ..."/>
+        <meta property="article:published_time" content="2019-01-31" />
             <meta property="article:section" content="Blog" />
             <meta property="article:author" content="Raymundo Cassani" />
 
@@ -77,7 +77,7 @@ CastorisCausa            </a>
         <div class="col-sm-9">
             <ol class="breadcrumb">
                 <li><a href=".." title="CastorisCausa"><i class="fa fa-home fa-lg"></i></a></li>
-                <li class="active">LinuxMint-18 + <span class="caps">GE62VR</span> + <span class="caps">GTX1060</span> + <span class="caps">CUDA</span></li>
+                <li class="active">LinuxMint-19 + <span class="caps">GTX1060</span> + <span class="caps">CUDA</span>&nbsp;10.0</li>
             </ol>
     <section id="content">
         <article>
@@ -85,8 +85,8 @@ CastorisCausa            </a>
                 <h1>
                     <a href="../posts/ge62vr-mint-gtx1060"
                        rel="bookmark"
-                       title="Permalink to LinuxMint-18 + GE62VR + GTX1060 + CUDA">
-                        LinuxMint-18 + <span class="caps">GE62VR</span> + <span class="caps">GTX1060</span> + <span class="caps">CUDA</span>
+                       title="Permalink to LinuxMint-19 + GTX1060 + CUDA 10.0">
+                        LinuxMint-19 + <span class="caps">GTX1060</span> + <span class="caps">CUDA</span>&nbsp;10.0
                     </a>
                 </h1>
             </header>
@@ -96,7 +96,7 @@ CastorisCausa            </a>
 <footer class="post-info">
     <span class="label label-default">Date</span>
     <span class="published">
-        <i class="fa fa-calendar"></i><time datetime="2017-02-21T19:00:00-05:00"> Tue 21 February 2017</time>
+        <i class="fa fa-calendar"></i><time datetime="2019-01-31T19:00:00-05:00"> Thu 31 January 2019</time>
     </span>
 
 
@@ -106,7 +106,8 @@ CastorisCausa            </a>
     
 </footer><!-- /.post-info -->                    </div>
                 </div>
-                <p>There are several posts with instructions for properly installing <strong><span class="caps">NVIDIA</span> drivers in Linux</strong>. Unfortunately, sometimes they&#8217;re outdated, moreover it&#8217;s not possible to cover the immensity of system configurations. After searching and reading some of that information, I came down to this guide for my system (<strong>Mint18</strong> in <strong><span class="caps">MSI</span>-<span class="caps">GE62VR</span></strong>)<code>*</code>. The guide consists of two&nbsp;parts:</p>
+                <p><strong>Updated</strong> This article was updated to Mint 19 (based in Ubuntu 18.04), <span class="caps">NVIDIA</span>-driver 410 and <span class="caps">CUDA</span> driver&nbsp;10.0</p>
+<p>There are several posts with instructions for properly installing <strong><span class="caps">NVIDIA</span> drivers in Linux</strong>. Unfortunately, sometimes they&#8217;re outdated, moreover it&#8217;s not possible to cover the immensity of system configurations. After searching and reading some of that information, I came down to this guide for my system (<strong>Mint19</strong> in <strong><span class="caps">MSI</span>-<span class="caps">GE62VR</span></strong>)<code>*</code>. The guide consists of two&nbsp;parts:</p>
 <ol>
 <li>Install <span class="caps">NVIDIA</span>&nbsp;drivers</li>
 <li>Install and test <span class="caps">CUDA</span>&nbsp;drivers.</li>
@@ -115,7 +116,7 @@ CastorisCausa            </a>
 <h2>System: <a href="https://www.msi.com/Laptop/GE62VR-6RF-Apache-Pro.html"><span class="caps">MSI</span> <span class="caps">GE62VR</span></a></h2>
 <h4>Operative&nbsp;System</h4>
 <ul>
-<li><a href="https://www.linuxmint.com/">Linux Mint 18</a> 64-bit&nbsp;(Cinnamon)</li>
+<li><a href="https://www.linuxmint.com/">Linux Mint 19</a> 64-bit&nbsp;(Cinnamon)</li>
 </ul>
 <h4>Hardware</h4>
 <ul>
@@ -133,8 +134,6 @@ CastorisCausa            </a>
 <li>
 <p>Once in <strong>Nouveau</strong> driver, purge the <strong><span class="caps">NVIDIA</span></strong>&nbsp;drivers</p>
 <div class="highlight"><pre><span></span>$ sudo apt-get purge nvidia*
-$ sudo apt-get update
-$ sudo apt-get upgrade
 </pre></div>
 
 
@@ -143,7 +142,16 @@ $ sudo apt-get upgrade
 <p>Unplug the <strong>DigitalDisplay</strong>&nbsp;adapter</p>
 </li>
 <li>
-<p>Open the <strong>Driver Manager</strong> select the recommended <strong><span class="caps">NVIDIA</span> binary driver</strong>  (nvidia-367 at&nbsp;08/feb/2017)</p>
+<p>Add the following repository to find the most recent&nbsp;drivers</p>
+<div class="highlight"><pre><span></span>$ sudo add-apt-repository ppa:graphics-drivers/ppa
+$ sudo apt-get update
+$ sudo apt-get upgrade
+</pre></div>
+
+
+</li>
+<li>
+<p>Open the <strong>Driver Manager</strong> select the recommended <strong><span class="caps">NVIDIA</span> binary driver</strong>  (nvidia-410 at&nbsp;January-2019)</p>
 </li>
 <li>
 <p>Restart your&nbsp;system</p>
@@ -161,10 +169,44 @@ $ sudo apt-get upgrade
 <p>Open <strong><span class="caps">NVDIA</span> X Server Settings</strong> to configure the external&nbsp;monitor</p>
 </li>
 </ul>
-<!---
-A problem I've found is that, booting the system with external monitor connectedn , makes it primary and it's not possible that configuration from 'Screens'
--->
+<h2>1A Problems at turning off <span class="caps">NVIDA</span> <span class="caps">GPU</span> with <code>prime-select</code> command</h2>
+<p>If while using the <span class="caps">NVIDIA</span> drivers, the screen works fine but the <code>prime-select</code> command cannot turn off the <span class="caps">NVIDIA</span> <span class="caps">GPU</span>, thus changing to the intel <span class="caps">GPU</span> does not save power. Try the&nbsp;following.</p>
+<ul>
+<li>
+<p>After installing, disable the <code>nvidia-fallback</code> service:</p>
+<div class="highlight"><pre><span></span>$ sudo systemctl disable nvidia-fallback.service
+</pre></div>
 
+
+</li>
+<li>
+<p>Blacklist nouveau driver using <span class="caps">GRUB</span> config. In /etc/default/grub look for a line <code>GRUB_CMDLINE_LINUX</code> . Add <code>nouveau.blacklist=1</code> into that parameter. If the line is not present add this line <code>GRUB_CMDLINE_LINUX="nouveau.blacklist=1"</code></p>
+</li>
+<li>
+<p>If you are interested for power savings (for laptops with dual <span class="caps">GPU</span> and your system supports it): install <code>bbswitch-dkms</code></p>
+<div class="highlight"><pre><span></span>$ sudo apt install bbswitch-dkms
+</pre></div>
+
+
+</li>
+<li>
+<p>Configure the system to load it by appending <code>bbswitch</code> in <code>/etc/modules</code></p>
+</li>
+<li>
+<p>Now, to switch to Intel graphics&nbsp;run</p>
+<div class="highlight"><pre><span></span>$ sudo prime-select intel
+</pre></div>
+
+
+</li>
+<li>
+<p>To use <span class="caps">NVIDIA</span> (for external display&nbsp;etc)</p>
+<div class="highlight"><pre><span></span>$ sudo prime-select nvidia
+</pre></div>
+
+
+</li>
+</ul>
 <h2>2 Install and Test <span class="caps">CUDA</span>&nbsp;driver</h2>
 <p>Once the <strong><span class="caps">NVIDIA</span> driver</strong> are properly installed, it&#8217;s time to install the <strong><span class="caps">CUDA</span> driver</strong>. If you&#8217;re not sure what&#8217;s the <span class="caps">CUDA</span> driver check this <a href="http://www.nvidia.com/object/cuda_home_new.html">link</a></p>
 <ul>
@@ -177,8 +219,8 @@ A problem I've found is that, booting the system with external monitor connected
 <ul>
 <li>
 <p>Change the downloaded file to executable and execute&nbsp;it</p>
-<div class="highlight"><pre><span></span>$ chmod +x cuda_8.0.61_375.26_linux.run
-$ sudo sh cuda_8.0.61_375.26_linux.run --override
+<div class="highlight"><pre><span></span>$ chmod +x cuda_10.1.105_418.39_linux.run
+$ sudo sh cuda_10.1.105_418.39_linux.run --override
 </pre></div>
 
 
@@ -360,10 +402,11 @@ CUDA Capability Major/Minor version number:    6.1
 <p><a href="https://devtalk.nvidia.com/default/topic/936429/-solved-tensorflow-with-gpu-in-anaconda-env-ubuntu-16-04-cuda-7-5-cudnn-/">https://devtalk.nvidia.com/default/topic/936429/-solved-tensorflow-with-gpu-in-anaconda-env-ubuntu-16-04-cuda-7-5-cudnn-/</a></p>
 <p><a href="http://developer.download.nvidia.com/compute/cuda/6_5/rel/docs/CUDA_Getting_Started_Linux.pdf">http://developer.download.nvidia.com/compute/cuda/6_5/rel/docs/CUDA_Getting_Started_Linux.pdf</a></p>
 <p><a href="https://forums.linuxmint.com/viewtopic.php?t=226145">https://forums.linuxmint.com/viewtopic.php?t=226145</a></p>
+<p><a href="https://medium.com/@agathver/nvidia-gpu-optimus-prime-and-ubuntu-18-04-woes-f52e7f850f3d">https://medium.com/@agathver/nvidia-gpu-optimus-prime-and-ubuntu-18-04-woes-f52e7f850f3d</a>
 <!--
 Code for button
 <a class="btn btn-primary" href="#">Booton</a>
--->
+--></p>
             </div>
             <!-- /.entry-content -->
     <hr/>
@@ -445,7 +488,7 @@ Code for button
    <div class="container">
       <hr>
       <div class="row">
-         <div class="col-xs-10">&copy; 2017 Raymundo Cassani
+         <div class="col-xs-10">&copy; 2019 Raymundo Cassani
             &middot; Powered by <a href="https://github.com/getpelican/pelican-themes/tree/master/pelican-bootstrap3" target="_blank">pelican-bootstrap3</a>,
             <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
             <a href="http://getbootstrap.com" target="_blank">Bootstrap</a>              <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>

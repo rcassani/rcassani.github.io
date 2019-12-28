@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <title>CastorisCausa</title>
+    <meta charset="utf-8" />
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-86432394-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+<!-- End Google Analytics -->
+
+    <!-- mobile specific metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS -->
+      <link rel="stylesheet" href="../theme/tipuesearch/tipuesearch.css">
+
+    <link rel="stylesheet" href="../theme/css/default.css">
+    <link rel="stylesheet" href="../theme/css/layout.css">
+    <link rel="stylesheet" href="../theme/css/media-queries.css">
+
+    <link rel="stylesheet" href="../theme/css/pygments/native.css">
+
+      <link rel="stylesheet" href="../castoris.css">
+
+    <!-- Script -->
+    <script src="../theme/js/modernizr.js"></script>
+    <script src="../theme/js/jquery-3.4.1.min.js"></script>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="../theme/images/favicon.png">
+
+  </head>
+
+  <body>
+    <header id="top">
+<!-- Header
+================================================== -->
+  <div class="row">
+    <div class="header-content twelve columns">
+      <h1 id="logo-text"><a href="index.html" title="">CastorisCausa</a></h1>
+      <p id="intro">Catchy phrase</p>
+    </div>
+  </div>
+
+  <nav id="nav-wrap">
+    <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
+    <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>
+    <div class="row">
+      <ul id="nav" class="nav">
+      <!-- Links that are not pages
+      ================================================== -->
+        <li><a href="/">HOME</a></li>
+
+      <!-- Links for Pages, can be ordered by PAGES_SORT_ATTRIBUTE (def. title)
+      ================================================== -->
+          <li><a href="../pages/main">Main</a></li>
+          <li class="current"><a href="../pages/swarro">sofware</a></li>
+          <li><a href="../pages/about-me">About</a></li>
+
+      <!-- Links for Categories, create Dropdown
+      ================================================== -->
+        <li class="has-children"><a href="#">Categories</a>
+          <ul>
+              <li><a href="../category/blog/">Blog</a></li>
+              <li><a href="../category/random/">Random</a></li>
+          </ul>
+        </li>
+      </ul> <!-- end #nav -->
+    </div>
+  </nav> <!-- end #nav-wrap -->    </header>
+
+    <div id="content-wrap">
+<!-- Content - Page
+================================================== -->
+ 	<div class="row">
+ 	  <div id="main" class="eight columns">
+      <section class="page">
+
+        <h2 class="entry-title">
+				  sofware
+				</h2>
+
+        <h1>About SW</h1>
+<p>What a moment to be alive!</p>
+
+		  </section> <!-- End page -->
+   	</div> <!-- End main -->
+<!-- Sidebar -->
+<div id="sidebar" class="four columns">
+  <div class="widget widget_search">
+    <h3>Categories.</h3>
+
+    <form action="../search.html" onsubmit="return validateForm(this.elements['q'].value);">
+      <input type="text" name="q" id="tipue_search_input" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
+      <input type="submit" value="" class="submit-search">
+    </form>
+  </div>
+
+  <div class="widget widget_categories group">
+    <h3>Categories.</h3>
+    <ul>
+        <li><a href="../category/blog/">Blog</a></li>
+        <li><a href="../category/random/">Random</a></li>
+    </ul>
+  </div>
+
+  <div class="widget widget_text group">
+    <h3>Hello.</h3>
+    <p>A brief text that will appear in de siderbar, this can be anything
+  </div>
+
+  <div class="widget widget_tags">
+    <h3>Post Tags.</h3>
+      <div class="tagcloud group">
+          <a href="../tags/book/">book</a>
+          <a href="../tags/cc/">cc</a>
+          <a href="../tags/space/">space</a>
+      </div>
+  </div>
+</div> <!-- end sidebar -->  </div> <!-- end row -->
+    </div>
+
+    <footer>
+<!-- Footer
+================================================== -->
+  <div class="row">
+    <div class="twelve columns">
+      <ul class="social-links">
+        <li><a href="https://github.com/rcassani"><i class="fa fa-github fa-lg"></i></a></li>
+        <li><a href="https://twitter.com/r_cassani"><i class="fa fa-twitter fa-lg"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/rcassani/"><i class="fa fa-linkedin fa-lg"></i></a></li>
+    </ul>
+  </div>
+
+
+  <div class="twelve columns">&copy; 2019 Raymundo Cassani
+    &middot; Powered by <a href="https://github.com/rcassani/pelican-kis" target="_blank">pelican-kis</a> and <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+
+                  <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+
+           </div>
+
+
+  </div> <!-- End row -->
+  <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-chevron-up"></i></a></div>    </footer>
+
+    <!-- Java Script -->
+    <script src="../theme/js/jquery-3.4.1.min.js"></script>
+    <script src="../theme/js/main.js"></script>
+
+  </body>
+</html>

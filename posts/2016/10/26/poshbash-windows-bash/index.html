@@ -70,7 +70,8 @@
         <li class="has-children"><a href="#">Categories</a>
           <ul>
               <li><a href="http://www.castoriscausa.com/category/blog/">Blog</a></li>
-              <li><a href="http://www.castoriscausa.com/category/random/">Random</a></li>
+              <li><a href="http://www.castoriscausa.com/category/code/">Code</a></li>
+              <li><a href="http://www.castoriscausa.com/category/projects/">Projects</a></li>
           </ul>
         </li>
       </ul> <!-- end #nav -->
@@ -100,7 +101,9 @@
             <i class="fa fa-folder-open"></i>
             <span>Category: </span>
             <a href="http://www.castoriscausa.com/category/blog/">Blog</a><br>
-        </p>
+            <i class="fa fa-tags"></i>
+            <span>Tagged in: </span>
+            <a href="http://www.castoriscausa.com/tags/git/">git</a>,             <a href="http://www.castoriscausa.com/tags/windows/">windows</a>        </p>
     </ul>
   </div>
 </header>
@@ -112,7 +115,7 @@
         <div class="entry-content">
           <p>The <a href="https://github.com/dahlbyk/posh-git"><strong>posh-git-bash</strong></a> prompt, for <a href="https://git-scm.com/">Git</a>, is a useful tool that shows information about the current status of a local Git repository respect to local and remote (e.g. <a href="https://github.com/">GitHub</a>) repositories; in this way, it's easy to see if the repository is ahead or behind, has uncommitted changes, is up-to-date, etc.</p>
 <p><center>
-<img alt="Alt" src="../images/posh_bash_win.png"><br>
+<img alt="Alt" src="/images/posh_bash_win.png"><br>
 Git-Posh example
 </center>  </p>
 <p>The <strong>posh-git-bash</strong> prompt is included in the <a href="https://msdn.microsoft.com/en-us/powershell/mt173057.aspx">PowerShell</a> installed with <a href="https://desktop.github.com/">GitHub Desktop</a> software for Windows. This post describes how add the <strong>posh-git-bash</strong> prompt functionality into the <a href="https://msdn.microsoft.com/en-us/commandline/wsl/about#">Bash on Windows10</a>.</p>
@@ -129,14 +132,14 @@ Git-Posh example
 <ol>
 <li>
 <p>Run Bash and go to HOME directory in bash</p>
-<div class="highlight"><pre><span></span><span class="p">$</span> <span class="nb">cd </span><span class="p">~</span>
+<div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~
 </pre></div>
 
 
 </li>
 <li>
 <p>Download the file <code>git-prompt.sh</code> from <a href="https://github.com/lyze/posh-git-sh.git">this repository</a>, and rename it as <code>.git-prompt.sh</code>  </p>
-<div class="highlight"><pre><span></span><span class="p">~$</span> <span class="nb">wget </span><span class="n">https</span><span class="err">:</span><span class="p">//</span><span class="n">raw</span><span class="p">.</span><span class="n">githubusercontent</span><span class="p">.</span><span class="n">com</span><span class="p">/</span><span class="n">lyze</span><span class="p">/</span><span class="n">posh-git-sh</span><span class="p">/</span><span class="n">master</span><span class="p">/</span><span class="n">git-prompt</span><span class="p">.</span><span class="n">sh</span> <span class="n">-O</span> <span class="p">.</span><span class="n">git-prompt</span><span class="p">.</span><span class="n">sh</span>
+<div class="highlight"><pre><span></span>~$ wget https://raw.githubusercontent.com/lyze/posh-git-sh/master/git-prompt.sh -O .git-prompt.sh
 </pre></div>
 
 
@@ -144,8 +147,8 @@ Git-Posh example
 <li>
 <p>Now you need to edit your the file <code>~/.bashrc</code>
 Add the following 2 lines at the beginning of <code>~/.bashrc file</code>, you can use the text editors <a href="https://www.nano-editor.org/">nano</a> or <a href="http://www.vim.org/">vim</a> for this.</p>
-<div class="highlight"><pre><span></span><span class="n">source</span> <span class="p">~/.</span><span class="n">git-prompt</span><span class="p">.</span><span class="n">sh</span>
-<span class="n">PROMPT_COMMAND</span><span class="p">=</span><span class="s1">&#39;__posh_git_ps1 &quot;\u@\h:\w&quot; &quot;\\\$ &quot;;&#39;</span><span class="nv">$PROMPT_COMMAND</span>
+<div class="highlight"><pre><span></span><span class="nb">source</span> ~/.git-prompt.sh
+<span class="nv">PROMPT_COMMAND</span><span class="o">=</span><span class="s1">&#39;__posh_git_ps1 &quot;\u@\h:\w&quot; &quot;\\\$ &quot;;&#39;</span><span class="nv">$PROMPT_COMMAND</span>
 </pre></div>
 
 
@@ -204,7 +207,8 @@ Add the following 2 lines at the beginning of <code>~/.bashrc file</code>, you c
     <h3>Categories.</h3>
     <ul>
         <li><a href="http://www.castoriscausa.com/category/blog/">Blog</a></li>
-        <li><a href="http://www.castoriscausa.com/category/random/">Random</a></li>
+        <li><a href="http://www.castoriscausa.com/category/code/">Code</a></li>
+        <li><a href="http://www.castoriscausa.com/category/projects/">Projects</a></li>
     </ul>
   </div>
 
@@ -217,8 +221,18 @@ Add the following 2 lines at the beginning of <code>~/.bashrc file</code>, you c
     <h3>Post Tags.</h3>
       <div class="tagcloud group">
           <a href="http://www.castoriscausa.com/tags/book/">book</a>
-          <a href="http://www.castoriscausa.com/tags/cc/">cc</a>
+          <a href="http://www.castoriscausa.com/tags/cuda/">cuda</a>
+          <a href="http://www.castoriscausa.com/tags/eeg/">EEG</a>
+          <a href="http://www.castoriscausa.com/tags/energy/">energy</a>
+          <a href="http://www.castoriscausa.com/tags/git/">git</a>
+          <a href="http://www.castoriscausa.com/tags/gpu/">gpu</a>
+          <a href="http://www.castoriscausa.com/tags/hack/">hack</a>
+          <a href="http://www.castoriscausa.com/tags/linux/">linux</a>
+          <a href="http://www.castoriscausa.com/tags/nvidia/">nvidia</a>
+          <a href="http://www.castoriscausa.com/tags/power/">power</a>
           <a href="http://www.castoriscausa.com/tags/space/">space</a>
+          <a href="http://www.castoriscausa.com/tags/touchpad/">touchpad</a>
+          <a href="http://www.castoriscausa.com/tags/windows/">windows</a>
       </div>
   </div>
 </div> <!-- end sidebar -->  </div> <!-- end row -->

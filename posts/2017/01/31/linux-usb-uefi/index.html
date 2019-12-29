@@ -70,7 +70,8 @@
         <li class="has-children"><a href="#">Categories</a>
           <ul>
               <li><a href="http://www.castoriscausa.com/category/blog/">Blog</a></li>
-              <li><a href="http://www.castoriscausa.com/category/random/">Random</a></li>
+              <li><a href="http://www.castoriscausa.com/category/code/">Code</a></li>
+              <li><a href="http://www.castoriscausa.com/category/projects/">Projects</a></li>
           </ul>
         </li>
       </ul> <!-- end #nav -->
@@ -100,7 +101,9 @@
             <i class="fa fa-folder-open"></i>
             <span>Category: </span>
             <a href="http://www.castoriscausa.com/category/blog/">Blog</a><br>
-        </p>
+            <i class="fa fa-tags"></i>
+            <span>Tagged in: </span>
+            <a href="http://www.castoriscausa.com/tags/linux/">linux</a>        </p>
     </ul>
   </div>
 </header>
@@ -134,46 +137,46 @@
 <li>
 <p>Open <strong>VMware</strong> and <strong>Create a New Virtual Machine</strong></p>
 <p><center>
-<a href="../images/uefi_usb_1_1.png"><img src="../images/uefi_usb_1_1.png" style="width: 500px;"/></a>
-</br><br>
+<a href="/images/uefi_usb_1_1.png"><img src="/images/uefi_usb_1_1.png" style="width: 500px;"/></a>
+<br><br>
 </center></p>
 </li>
 <li>
 <p>Select the <strong>I will install the operative system later</strong> option. Click on <strong>Next</strong>
     <center>
-    <a href="../images/uefi_usb_1_2.png"><img src="../images/uefi_usb_1_2.png" style="width: 500px;"/></a>
-    </br><br>
+    <a href="/images/uefi_usb_1_2.png"><img src="/images/uefi_usb_1_2.png" style="width: 500px;"/></a>
+    <br><br>
     </center></p>
 </li>
 <li>
 <p>Set <strong>Guest Operating System</strong> to Linux, select your version or the closest one, in my case the closest to <strong>Mint 64-bit</strong> is <strong>Ubuntu 64-bit</strong>. Click on <strong>Next</strong>
     <center>
-    <a href="../images/uefi_usb_1_3.png"><img src="../images/uefi_usb_1_3.png" style="width: 500px;"/></a>
-    </br><br>
+    <a href="/images/uefi_usb_1_3.png"><img src="/images/uefi_usb_1_3.png" style="width: 500px;"/></a>
+    <br><br>
     </center></p>
 </li>
 <li>
 <p>Assign a <strong>Virtual machine name</strong> and <strong>Location</strong> to the Virtual Machine. Remember these fields, and they'll used later. Click on <strong>Next</strong><br>
     <center>
-    <a href="../images/uefi_usb_1_4.png"><img src="../images/uefi_usb_1_4.png" style="width: 500px;"/></a>
-    </br><br>
+    <a href="/images/uefi_usb_1_4.png"><img src="/images/uefi_usb_1_4.png" style="width: 500px;"/></a>
+    <br><br>
     </center></p>
 </li>
 <li><strong>Disk Capacity</strong>, default parameters (this HDD will not be used). Click <strong>Next</strong>
     <center>
-    <a href="../images/uefi_usb_1_5.png"><img src="../images/uefi_usb_1_5.png" style="width: 500px;"/></a>
-    </br><br>
+    <a href="/images/uefi_usb_1_5.png"><img src="/images/uefi_usb_1_5.png" style="width: 500px;"/></a>
+    <br><br>
     </center></li>
 <li>Click on <strong>Customize Hardware</strong><ol>
-<li>For the <strong>New CD/DVD (SATA)</strong>, Select <strong>Use ISO image file</strong> and browe for your Linux ISO image
+<li>For the <strong>New CD/DVD (SATA)</strong>, Select <strong>Use ISO image file</strong> and browse for your Linux ISO image
   <center>
-  <a href="../images/uefi_usb_1_6a.png"><img src="../images/uefi_usb_1_6a.png" style="width: 500px;"/></a>
-  </br><br>
+  <a href="/images/uefi_usb_1_6a.png"><img src="/images/uefi_usb_1_6a.png" style="width: 500px;"/></a>
+  <br><br>
   </center></li>
 <li>For the <strong>USB Controller</strong>, Select <strong>USB 3.0</strong> (if supported), <strong>[X]Automatically ..., [ ]Show all... and [ ]Share Bluetooth...</strong>
   <center>
-  <a href="../images/uefi_usb_1_6b.png"><img src="../images/uefi_usb_1_6b.png" style="width: 500px;"/></a>
-  </br><br>
+  <a href="/images/uefi_usb_1_6b.png"><img src="/images/uefi_usb_1_6b.png" style="width: 500px;"/></a>
+  <br><br>
   </center></li>
 </ol>
 </li>
@@ -181,8 +184,8 @@
 <li>Go to the Virtual Machine <strong>Location</strong>, and with help of a text editor (e.g. Notepad), open the file <strong><code>VMname.vmx</code></strong> (where the <code>VMname</code> is the <strong>Virtual machine name</strong> assigned in step 4). And add the line <strong><code>firmware = "efi"</code></strong> at the end of the file</li>
 <li>In <strong>VMware</strong>, open the <strong>settings</strong> of your brand new Virtual Machine and <strong>remove the HDD</strong>
     <center>
-    <a href="../images/uefi_usb_1_9.png"><img src="../images/uefi_usb_1_9.png" style="width: 500px;"/></a>
-    </br><br>
+    <a href="/images/uefi_usb_1_9.png"><img src="/images/uefi_usb_1_9.png" style="width: 500px;"/></a>
+    <br><br>
     </center>  </li>
 </ol>
 <h4>2. Installing Linux in USB-disk</h4>
@@ -190,13 +193,13 @@
 <ol>
 <li>In <strong>VMware</strong>, Power ON the Virtual Machine. When booting on UEFI, it should look as below (at least for <strong>Mint 64-bit</strong>). Select <strong>Start Linux Mint 18 Cinnamon 64-bit</strong> (or <strong>Try Ubuntu without installing</strong>)
     <center>
-    <a href="../images/uefi_usb_2_1.png"><img src="../images/uefi_usb_2_1.png" style="width: 700px;"/></a>
-    </br><br>
+    <a href="/images/uefi_usb_2_1.png"><img src="/images/uefi_usb_2_1.png" style="width: 700px;"/></a>
+    <br><br>
     </center></li>
 <li>Once the Linux session is started, connect (physically) your USB-disk, and be sure it's connected to the Virtual Machine<br>
     <center>
-    <a href="../images/uefi_usb_2_3.png"><img src="../images/uefi_usb_2_3.png" style="width: 700px;"/></a>
-    </br><br>
+    <a href="/images/uefi_usb_2_3.png"><img src="/images/uefi_usb_2_3.png" style="width: 700px;"/></a>
+    <br><br>
     </center></li>
 <li>
 <p>To start the procedure with a blank USB-disk. In the Virtual Machine, Open <strong>GParted</strong> (hopefully is installed). Then select your device at the upper right corner (remember its <strong>sdx</strong>), then go to <strong>Device &gt; Create Partition Table</strong>, select the type <strong>gtp</strong>. Close GParted.  </p>
@@ -211,7 +214,7 @@
 </li>
 <li>One the installation is done, select <strong>Continue Testing</strong></li>
 </ol>
-<p></br></p>
+<p><br></p>
 <h4>3. Modifying the EFI partition in the USB-disk</h4>
 <p>Still in the Linux session (Virtual Machine without HDD booted with Live-CD) from the previous section, the remaining part is to prepare the EFI partition on the USB-disk to make it UEFI-bootable  </p>
 <ol>
@@ -246,11 +249,11 @@
 <p>Shut down the Virtual Machine properly.</p>
 </li>
 </ol>
-<p></br>
+<p><br>
 <center></p>
 <h3><strong>Congratulations, now your USB-disk should be UEFI-bootable</strong></h3>
 <p></center>
-</br></p>
+<br></p>
 <p>Finally, reboot your computer, and select the USB-disk (Partition 1) for UEFI boot.</p>
 <p>I've try this method using an <a href="https://www.amazon.ca/Kingston-Upgrade-2-5-Inch-SH103S3B-120G/dp/B007R9M6PO/ref=sr_1_5?s=electronics&amp;ie=UTF8&amp;qid=1486057544&amp;sr=1-5&amp;keywords=kingston+hyperx+120">external SSD via USB</a> and a <a href="https://www.amazon.ca/Lexar-JumpDrive-128GB-Flash-Drive/dp/B012PKV7RC/ref=sr_1_11?s=pc&amp;ie=UTF8&amp;qid=1486057469&amp;sr=1-11">Lexar USB flash drive</a> without issues.</p>
         </div>
@@ -302,7 +305,8 @@
     <h3>Categories.</h3>
     <ul>
         <li><a href="http://www.castoriscausa.com/category/blog/">Blog</a></li>
-        <li><a href="http://www.castoriscausa.com/category/random/">Random</a></li>
+        <li><a href="http://www.castoriscausa.com/category/code/">Code</a></li>
+        <li><a href="http://www.castoriscausa.com/category/projects/">Projects</a></li>
     </ul>
   </div>
 
@@ -315,8 +319,18 @@
     <h3>Post Tags.</h3>
       <div class="tagcloud group">
           <a href="http://www.castoriscausa.com/tags/book/">book</a>
-          <a href="http://www.castoriscausa.com/tags/cc/">cc</a>
+          <a href="http://www.castoriscausa.com/tags/cuda/">cuda</a>
+          <a href="http://www.castoriscausa.com/tags/eeg/">EEG</a>
+          <a href="http://www.castoriscausa.com/tags/energy/">energy</a>
+          <a href="http://www.castoriscausa.com/tags/git/">git</a>
+          <a href="http://www.castoriscausa.com/tags/gpu/">gpu</a>
+          <a href="http://www.castoriscausa.com/tags/hack/">hack</a>
+          <a href="http://www.castoriscausa.com/tags/linux/">linux</a>
+          <a href="http://www.castoriscausa.com/tags/nvidia/">nvidia</a>
+          <a href="http://www.castoriscausa.com/tags/power/">power</a>
           <a href="http://www.castoriscausa.com/tags/space/">space</a>
+          <a href="http://www.castoriscausa.com/tags/touchpad/">touchpad</a>
+          <a href="http://www.castoriscausa.com/tags/windows/">windows</a>
       </div>
   </div>
 </div> <!-- end sidebar -->  </div> <!-- end row -->

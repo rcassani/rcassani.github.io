@@ -46,7 +46,7 @@
   <div class="row">
     <div class="header-content twelve columns">
       <h1 id="logo-text"><a href="index.html" title="">CastorisCausa</a></h1>
-      <p id="intro">Catchy phrase</p>
+      <p id="intro"></p>
     </div>
   </div>
 
@@ -55,25 +55,23 @@
     <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>
     <div class="row">
       <ul id="nav" class="nav">
-      <!-- Links that are not pages
-      ================================================== -->
-        <li><a href="/">HOME</a></li>
 
-      <!-- Links for Pages, can be ordered by PAGES_SORT_ATTRIBUTE (def. title)
-      ================================================== -->
-          <li><a href="http://www.castoriscausa.com/pages/main">Main</a></li>
-          <li><a href="http://www.castoriscausa.com/pages/swarro">sofware</a></li>
-          <li><a href="http://www.castoriscausa.com/pages/about-me">About</a></li>
+        <!-- Links that are not pages -->
+            <li><a href="/">Home</a></li>
 
-      <!-- Links for Categories, create Dropdown
-      ================================================== -->
-        <li class="has-children"><a href="#">Categories</a>
-          <ul>
-              <li><a href="http://www.castoriscausa.com/category/blog/">Blog</a></li>
-              <li><a href="http://www.castoriscausa.com/category/code/">Code</a></li>
-              <li><a href="http://www.castoriscausa.com/category/projects/">Projects</a></li>
-          </ul>
-        </li>
+        <!-- Links for Pages, ordered by PAGES_SORT_ATTRIBUTE (def. title) -->
+            <li><a href="http://www.castoriscausa.com/pages/swarro">sofware</a></li>
+            <li><a href="http://www.castoriscausa.com/pages/about-me">About</a></li>
+
+        <!-- Links for Categories, create Dropdown -->
+          <li class="has-children"><a href="#">Categories</a>
+            <ul>
+                <li><a href="http://www.castoriscausa.com/category/blog/">Blog</a></li>
+                <li><a href="http://www.castoriscausa.com/category/code/">Code</a></li>
+                <li><a href="http://www.castoriscausa.com/category/projects/">Projects</a></li>
+            </ul>
+          </li>
+
       </ul> <!-- end #nav -->
     </div>
   </nav> <!-- end #nav-wrap -->    </header>
@@ -172,47 +170,58 @@ After than change you should be able to logout correctly after changing from the
     </div> <!-- main End -->
 <!-- Sidebar -->
 <div id="sidebar" class="four columns">
-  <div class="widget widget_search">
-    <h3>Categories.</h3>
+<div class="widget widget_search">
+  <form action="http://www.castoriscausa.com/search.html" onsubmit="return validateForm(this.elements['q'].value);">
+    <input type="text" name="q" id="tipue_search_input" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
+    <input type="submit" value="" class="submit-search">
+  </form>
+</div>
 
-    <form action="http://www.castoriscausa.com/search.html" onsubmit="return validateForm(this.elements['q'].value);">
-      <input type="text" name="q" id="tipue_search_input" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
-      <input type="submit" value="" class="submit-search">
-    </form>
-  </div>
+<div class="widget widget_categories group">
+  <h3>Links</h3>
+  <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="http://musaelab.ca/">MuSAE Lab</a></li>
+  </ul>
+</div>
 
-  <div class="widget widget_categories group">
-    <h3>Categories.</h3>
-    <ul>
-        <li><a href="http://www.castoriscausa.com/category/blog/">Blog</a></li>
-        <li><a href="http://www.castoriscausa.com/category/code/">Code</a></li>
-        <li><a href="http://www.castoriscausa.com/category/projects/">Projects</a></li>
-    </ul>
-  </div>
+<div class="widget widget_categories group">
+  <h3>Categories</h3>
+  <ul>
+      <li><a href="http://www.castoriscausa.com/category/blog/">Blog</a></li>
+      <li><a href="http://www.castoriscausa.com/category/code/">Code</a></li>
+      <li><a href="http://www.castoriscausa.com/category/projects/">Projects</a></li>
+  </ul>
+</div>
 
-  <div class="widget widget_text group">
-    <h3>Hello.</h3>
-    <p>A brief text that will appear in de siderbar, this can be anything
-  </div>
+<div class="widget widget_tags">
+  <h3>Post Tags</h3>
+    <div class="tagcloud group">
+        <a href="http://www.castoriscausa.com/tags/book/">book</a>
+        <a href="http://www.castoriscausa.com/tags/cuda/">cuda</a>
+        <a href="http://www.castoriscausa.com/tags/eeg/">EEG</a>
+        <a href="http://www.castoriscausa.com/tags/energy/">energy</a>
+        <a href="http://www.castoriscausa.com/tags/git/">git</a>
+        <a href="http://www.castoriscausa.com/tags/gpu/">gpu</a>
+        <a href="http://www.castoriscausa.com/tags/hack/">hack</a>
+        <a href="http://www.castoriscausa.com/tags/linux/">linux</a>
+        <a href="http://www.castoriscausa.com/tags/nvidia/">nvidia</a>
+        <a href="http://www.castoriscausa.com/tags/power/">power</a>
+        <a href="http://www.castoriscausa.com/tags/space/">space</a>
+        <a href="http://www.castoriscausa.com/tags/touchpad/">touchpad</a>
+        <a href="http://www.castoriscausa.com/tags/windows/">windows</a>
+    </div>
+</div>
 
-  <div class="widget widget_tags">
-    <h3>Post Tags.</h3>
-      <div class="tagcloud group">
-          <a href="http://www.castoriscausa.com/tags/book/">book</a>
-          <a href="http://www.castoriscausa.com/tags/cuda/">cuda</a>
-          <a href="http://www.castoriscausa.com/tags/eeg/">EEG</a>
-          <a href="http://www.castoriscausa.com/tags/energy/">energy</a>
-          <a href="http://www.castoriscausa.com/tags/git/">git</a>
-          <a href="http://www.castoriscausa.com/tags/gpu/">gpu</a>
-          <a href="http://www.castoriscausa.com/tags/hack/">hack</a>
-          <a href="http://www.castoriscausa.com/tags/linux/">linux</a>
-          <a href="http://www.castoriscausa.com/tags/nvidia/">nvidia</a>
-          <a href="http://www.castoriscausa.com/tags/power/">power</a>
-          <a href="http://www.castoriscausa.com/tags/space/">space</a>
-          <a href="http://www.castoriscausa.com/tags/touchpad/">touchpad</a>
-          <a href="http://www.castoriscausa.com/tags/windows/">windows</a>
-      </div>
-  </div>
+
+
+
+
+
+
+
+
+
 </div> <!-- end sidebar -->  </div> <!-- end row -->
     </div>
 
@@ -222,9 +231,11 @@ After than change you should be able to logout correctly after changing from the
   <div class="row">
     <div class="twelve columns">
       <ul class="social-links">
-        <li><a href="https://github.com/rcassani"><i class="fa fa-github fa-lg"></i></a></li>
-        <li><a href="https://twitter.com/r_cassani"><i class="fa fa-twitter fa-lg"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/rcassani/"><i class="fa fa-linkedin fa-lg"></i></a></li>
+        <li><a href="https://github.com/rcassani"><i class="fab fa-github fa-lg"></i></a></li>
+        <li><a href="https://twitter.com/r_cassani"><i class="fab fa-twitter fa-lg"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/rcassani/"><i class="fab fa-linkedin fa-lg"></i></a></li>
+        <li><a href="https://scholar.google.com/citations?hl=en&user=3A9_Ww8AAAAJ"><i class="fas fa-user-graduate fa-lg"></i></a></li>
+        <li><a href="mailto:raymundo.cassani@gmail.com"><i class="fas fa-envelope fa-lg"></i></a></li>
     </ul>
   </div>
 

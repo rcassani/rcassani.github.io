@@ -46,7 +46,7 @@
   <div class="row">
     <div class="header-content twelve columns">
       <h1 id="logo-text"><a href="index.html" title="">CastorisCausa</a></h1>
-      <p id="intro">Catchy phrase</p>
+      <p id="intro"></p>
     </div>
   </div>
 
@@ -55,25 +55,23 @@
     <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>
     <div class="row">
       <ul id="nav" class="nav">
-      <!-- Links that are not pages
-      ================================================== -->
-        <li><a href="/">HOME</a></li>
 
-      <!-- Links for Pages, can be ordered by PAGES_SORT_ATTRIBUTE (def. title)
-      ================================================== -->
-          <li><a href="http://www.castoriscausa.com/pages/main">Main</a></li>
-          <li><a href="http://www.castoriscausa.com/pages/swarro">sofware</a></li>
-          <li class="current"><a href="http://www.castoriscausa.com/pages/about-me">About</a></li>
+        <!-- Links that are not pages -->
+            <li><a href="/">Home</a></li>
 
-      <!-- Links for Categories, create Dropdown
-      ================================================== -->
-        <li class="has-children"><a href="#">Categories</a>
-          <ul>
-              <li><a href="http://www.castoriscausa.com/category/blog/">Blog</a></li>
-              <li><a href="http://www.castoriscausa.com/category/code/">Code</a></li>
-              <li><a href="http://www.castoriscausa.com/category/projects/">Projects</a></li>
-          </ul>
-        </li>
+        <!-- Links for Pages, ordered by PAGES_SORT_ATTRIBUTE (def. title) -->
+            <li><a href="http://www.castoriscausa.com/pages/swarro">sofware</a></li>
+            <li class="current"><a href="http://www.castoriscausa.com/pages/about-me">About</a></li>
+
+        <!-- Links for Categories, create Dropdown -->
+          <li class="has-children"><a href="#">Categories</a>
+            <ul>
+                <li><a href="http://www.castoriscausa.com/category/blog/">Blog</a></li>
+                <li><a href="http://www.castoriscausa.com/category/code/">Code</a></li>
+                <li><a href="http://www.castoriscausa.com/category/projects/">Projects</a></li>
+            </ul>
+          </li>
+
       </ul> <!-- end #nav -->
     </div>
   </nav> <!-- end #nav-wrap -->    </header>
@@ -89,81 +87,76 @@
 				  About
 				</h2>
 
-        <p><center></p>
-<h2>Hello,</h2>
-<p></center></p>
-<p></br></p>
-<p>My name is <strong>Raymundo Cassani</strong>, currently, I'm a Postdoctoral Researcher (Electrical Engineer - PhD) with an interdisciplinary formation, that includes biomedical signal processing with applications in health diagnostics, human-machine interaction  and neurotechnologies. With a background in electrical engineering, specifically telecommunications and electronics, I'm a person who finds enjoyment in improving, repairing, modifying, (often mess :( ) stuff. I find great joy at learning a bit of everything, my bet is that a bit of everything is better that everything of a bit. Some of my beside-research interests are data visualization, maps, beavers, videogames, science fiction, languages and (gear) mechanisms etc.</p>
-<p>The principal goal of this blog, is:</p>
+        <p>My name is <strong>Raymundo Cassani</strong>, currently, I'm a Postdoctoral Researcher (Electrical Engineer - PhD) with an interdisciplinary formation, that includes biomedical signal processing with applications in health diagnostics, human-machine interaction and neurotechnologies. With a background in electrical engineering, specifically telecommunications and electronics, I'm a person who finds enjoyment in improving, repairing and modifying, also, rarely messing :(, stuff. I find great joy at learning a bit of everything, my bet is that a bit of everything is better that everything of a bit. Some of my beside-research interests are data visualization, maps, beavers, videogames, science fiction, languages and (gear) mechanisms etc. The principal goal of this blog, is:</p>
 <ul>
-<li>Share some of my work, experiences, walkthroughs, dilemmas or solutions to problems (with software, hardware, methods, etc.) I've encountered and expended a significant amount of time on them; hopefully this may serve as timesaver and inspiration to others (including a future-me).</li>
+<li>Share some of my work, projects, experiences, walkthroughs, dilemmas and / or solutions to problems (with software, hardware, methods, etc.) I've encountered and expended a significant amount of time on them; hopefully this may serve as timesaver and inspiration to others (including a future-me).</li>
 </ul>
-<p></br>
-</br>
-</br></p>
 <p><center></p>
-<h2><strong>Why CastorisCausa.com?</strong></h2>
-<p></br>
-From Latin <strong>Castoris</strong> (or related to the beaver) and <strong>Causa</strong> (cause), then roughly:<br>
+<h3>Why CastorisCausa?</h3>
+<p>From Latin <strong>Castoris</strong> (or related to the beaver) and <strong>Causa</strong> (cause), then roughly:<br>
 <strong>"For the sake of the beaver"</strong>.<br>
  <!-- <img alt="BeaverMaps" src="url_image.png" title="email_image"> -->
 </center>  </p>
-<p></br></p>
 <p>The beaver (genus Castor), its nature and behaviour have always evoked my admiration and sympathy; being a semi-aquatic animal, it gets the best of two worlds. The beaver is the vivid description of hard work, dexterity and ingenuity. Not surprisingly, it has been taken as mascot by several engineering schools around the world.</p>
-<!--
-How they are capable of modifying the landscape. Represent an mix of things, which is my goal and objective, as a electrical engineer and apply my knowledge to other fields.
--->
-
-<p>Feedback, suggestions, complains, leave a comment in the respective post or drop me a line:
-<center>
-<img alt="**email image**" src="../images/email_image.png"><br>
-</center></p>
+<p>For feedback, suggestions or complains, leave a comment in the respective post.
+Alternatively, my contact info is at the bottom of the page.</p>
 
 		  </section> <!-- End page -->
    	</div> <!-- End main -->
 <!-- Sidebar -->
 <div id="sidebar" class="four columns">
-  <div class="widget widget_search">
-    <h3>Categories.</h3>
+<div class="widget widget_search">
+  <form action="http://www.castoriscausa.com/search.html" onsubmit="return validateForm(this.elements['q'].value);">
+    <input type="text" name="q" id="tipue_search_input" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
+    <input type="submit" value="" class="submit-search">
+  </form>
+</div>
 
-    <form action="http://www.castoriscausa.com/search.html" onsubmit="return validateForm(this.elements['q'].value);">
-      <input type="text" name="q" id="tipue_search_input" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
-      <input type="submit" value="" class="submit-search">
-    </form>
-  </div>
+<div class="widget widget_categories group">
+  <h3>Links</h3>
+  <ul>
+      <li><a href="/">Home</a></li>
+      <li><a href="http://musaelab.ca/">MuSAE Lab</a></li>
+  </ul>
+</div>
 
-  <div class="widget widget_categories group">
-    <h3>Categories.</h3>
-    <ul>
-        <li><a href="http://www.castoriscausa.com/category/blog/">Blog</a></li>
-        <li><a href="http://www.castoriscausa.com/category/code/">Code</a></li>
-        <li><a href="http://www.castoriscausa.com/category/projects/">Projects</a></li>
-    </ul>
-  </div>
+<div class="widget widget_categories group">
+  <h3>Categories</h3>
+  <ul>
+      <li><a href="http://www.castoriscausa.com/category/blog/">Blog</a></li>
+      <li><a href="http://www.castoriscausa.com/category/code/">Code</a></li>
+      <li><a href="http://www.castoriscausa.com/category/projects/">Projects</a></li>
+  </ul>
+</div>
 
-  <div class="widget widget_text group">
-    <h3>Hello.</h3>
-    <p>A brief text that will appear in de siderbar, this can be anything
-  </div>
+<div class="widget widget_tags">
+  <h3>Post Tags</h3>
+    <div class="tagcloud group">
+        <a href="http://www.castoriscausa.com/tags/book/">book</a>
+        <a href="http://www.castoriscausa.com/tags/cuda/">cuda</a>
+        <a href="http://www.castoriscausa.com/tags/eeg/">EEG</a>
+        <a href="http://www.castoriscausa.com/tags/energy/">energy</a>
+        <a href="http://www.castoriscausa.com/tags/git/">git</a>
+        <a href="http://www.castoriscausa.com/tags/gpu/">gpu</a>
+        <a href="http://www.castoriscausa.com/tags/hack/">hack</a>
+        <a href="http://www.castoriscausa.com/tags/linux/">linux</a>
+        <a href="http://www.castoriscausa.com/tags/nvidia/">nvidia</a>
+        <a href="http://www.castoriscausa.com/tags/power/">power</a>
+        <a href="http://www.castoriscausa.com/tags/space/">space</a>
+        <a href="http://www.castoriscausa.com/tags/touchpad/">touchpad</a>
+        <a href="http://www.castoriscausa.com/tags/windows/">windows</a>
+    </div>
+</div>
 
-  <div class="widget widget_tags">
-    <h3>Post Tags.</h3>
-      <div class="tagcloud group">
-          <a href="http://www.castoriscausa.com/tags/book/">book</a>
-          <a href="http://www.castoriscausa.com/tags/cuda/">cuda</a>
-          <a href="http://www.castoriscausa.com/tags/eeg/">EEG</a>
-          <a href="http://www.castoriscausa.com/tags/energy/">energy</a>
-          <a href="http://www.castoriscausa.com/tags/git/">git</a>
-          <a href="http://www.castoriscausa.com/tags/gpu/">gpu</a>
-          <a href="http://www.castoriscausa.com/tags/hack/">hack</a>
-          <a href="http://www.castoriscausa.com/tags/linux/">linux</a>
-          <a href="http://www.castoriscausa.com/tags/nvidia/">nvidia</a>
-          <a href="http://www.castoriscausa.com/tags/power/">power</a>
-          <a href="http://www.castoriscausa.com/tags/space/">space</a>
-          <a href="http://www.castoriscausa.com/tags/touchpad/">touchpad</a>
-          <a href="http://www.castoriscausa.com/tags/windows/">windows</a>
-      </div>
-  </div>
+
+
+
+
+
+
+
+
+
 </div> <!-- end sidebar -->  </div> <!-- end row -->
     </div>
 
@@ -173,9 +166,11 @@ How they are capable of modifying the landscape. Represent an mix of things, whi
   <div class="row">
     <div class="twelve columns">
       <ul class="social-links">
-        <li><a href="https://github.com/rcassani"><i class="fa fa-github fa-lg"></i></a></li>
-        <li><a href="https://twitter.com/r_cassani"><i class="fa fa-twitter fa-lg"></i></a></li>
-        <li><a href="https://www.linkedin.com/in/rcassani/"><i class="fa fa-linkedin fa-lg"></i></a></li>
+        <li><a href="https://github.com/rcassani"><i class="fab fa-github fa-lg"></i></a></li>
+        <li><a href="https://twitter.com/r_cassani"><i class="fab fa-twitter fa-lg"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/rcassani/"><i class="fab fa-linkedin fa-lg"></i></a></li>
+        <li><a href="https://scholar.google.com/citations?hl=en&user=3A9_Ww8AAAAJ"><i class="fas fa-user-graduate fa-lg"></i></a></li>
+        <li><a href="mailto:raymundo.cassani@gmail.com"><i class="fas fa-envelope fa-lg"></i></a></li>
     </ul>
   </div>
 

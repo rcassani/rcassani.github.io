@@ -77,10 +77,17 @@
   </nav> <!-- end #nav-wrap -->    </header>
 
     <div id="content-wrap">
-<!-- Content - Article -->
+<!-- Content - Index
+================================================== -->
   <div class="row">
     <div id="main" class="eight columns">
-      <article class="entry">
+
+  <h1 class="entry-title">
+    Posts tagged with: Batch
+  </h1>
+  <br>
+
+        <article class="entry">
 <header class="entry-header">
 
   <h2 class="entry-title">
@@ -105,94 +112,14 @@
     </ul>
   </div>
 </header>
-        <div class="entry-content-media">
-          <div class="post-thumb">
+          <div class="entry-content">
+            This project started from the "need" of having a compatible way to point to files indifferently if on Windows or Linux. While both operative systems can handle symbolic links, when the target file is an executable, certain scripts and programs present problems when executed through a symbolic link, as the …
           </div>
-        </div>
 
-        <div class="entry-content">
-          <p>This project started from the "need" of having a compatible way to point to files indifferently if on Windows or Linux. While both operative systems can handle symbolic links, when the target file is an executable, certain scripts and programs present <a href="https://askubuntu.com/questions/541317/link-to-exe-doesnt-launch-wine">problems when executed through a symbolic link</a>, as the working directory is expected to be the directory containing the executable  and not the directory with the symbolic link.</p>
-<p>For that reason, a different approach was taken. To create an hybrid script with <strong>Bash</strong> and <strong>Batch</strong> code to point to the desired files or program. This kind of script is possible by using the commenting format of <a href="https://stackoverflow.com/questions/17510688/single-script-to-run-in-both-windows-batch-and-linux-bash">Batch files to ignore the Bash commands</a>. In this sense such files can are <strong>universal shortcuts</strong>. As the paths utilized in this universal shortcut file, are relative, it works perfectly with portable media, if and only if, the filesystem supports file permissions. Note: FAT32 does not support them.</p>
-<p>The universal shortcuts consist of an executable script file with Bash and Batch code. When executed in Windows the Bash part is ignored and when executed in Linux the Batch part is ignored. Thus, the same script can be executed in both systems and performs the same action.</p>
-<p>The scripts in bash and batch are equivalent and they do:  </p>
-<ol>
-<li>
-<p>Change the current directory to the directory where the target file is</p>
-</li>
-<li>
-<p>Open the target file in a similar way as when the user double clicks it, this operation <a href="https://github.com/alexeevdv/dename/blob/master/dename.sh">depends on the Desktop Environment utilized</a></p>
-</li>
-<li>
-<p>Exit</p>
-</li>
-</ol>
-<p>The universal shortcut is created by a Python 3 script that can be found in this repository:</p>
-<p><a href="https://github.com/rcassani/universal-shortcuts">https://github.com/rcassani/universal-shortcuts</a></p>
-<h3>Usage</h3>
-<div class="highlight"><pre><span></span>$ python3 mk_unishortcut.py &lt;targetpath&gt;
-</pre></div>
+          <p class=tags><a href="http://www.castoriscausa.com/posts/2017/07/25/universal-shortcuts/#disqus_thread">Comments</a></p>
 
-
-<p>the <code>&lt;targetpath&gt;</code> can be absolute or relative, and can be a file or directory</p>
-<p>When the Python script is executed in Linux it will automatically change the file permissions of the shortcut file to be executable. If the Python script is run in Windows, it is needed to change the file permissions to executable in Linux.  </p>
-<p>Despite the fact these universal shortcuts may not be extremely useful, this project was an interesting experience in writing hybrid Bash-Batch scripts.</p>
-<h2>References:</h2>
-<ol>
-<li>
-<p>Symbolic links fail to run executable files when they need to run in their folder<br>
-<a href="https://askubuntu.com/questions/541317/link-to-exe-doesnt-launch-wine">https://askubuntu.com/questions/541317/link-to-exe-doesnt-launch-wine</a></p>
-</li>
-<li>
-<p>Hybrid Windows-bash and Linux-bash scripting<br>
-<a href="https://stackoverflow.com/questions/17510688/single-script-to-run-in-both-windows-batch-and-linux-bash">https://stackoverflow.com/questions/17510688/single-script-to-run-in-both-windows-batch-and-linux-bash</a></p>
-</li>
-<li>
-<p>Identify Linux Desktop Environment<br>
-<a href="https://github.com/alexeevdv/dename/blob/master/dename.sh">https://github.com/alexeevdv/dename/blob/master/dename.sh</a>   </p>
-</li>
-<li>
-<p><code>start</code> command in Windows<br>
-<a href="https://renewablepcs.wordpress.com/about-linux/kde-gnome-or-xfce/">https://technet.microsoft.com/en-us/library/cc770297(v=ws.11).aspx</a></p>
-</li>
-<li>
-<p>Link with different Desktop Environments<br>
-<a href="https://renewablepcs.wordpress.com/about-linux/kde-gnome-or-xfce/">https://renewablepcs.wordpress.com/about-linux/kde-gnome-or-xfce/</a></p>
-</li>
-</ol>
-        </div>
-      </article>
-
-<!-- Comments -->
-<!-- Disqus -->
-    <div id="comments">
-        <h2>Comments</h2>
-
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'castoriscausa'; // required: replace example with your forum shortname
-
-            var disqus_config = function () {
-                this.language = "en";
-
-                        this.page.url = 'http://www.castoriscausa.com/posts/2017/07/25/universal-shortcuts/';
-            };
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function () {
-                var dsq = document.createElement('script');
-                dsq.type = 'text/javascript';
-                dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
-            Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-      </div>
-<!-- End Disqus Code -->
-    </div> <!-- main End -->
+        </article> <!-- end entry -->
+    </div> <!-- end main -->
 <!-- Sidebar -->
 <div id="sidebar" class="four columns">
 <div class="widget widget_search">
@@ -270,7 +197,7 @@
   </div>
 
 
-  <div class="twelve columns">&copy; 2019 Raymundo Cassani
+  <div class="twelve columns">&copy; 2017 Raymundo Cassani
     &middot; Powered by <a href="https://github.com/rcassani/pelican-kis" target="_blank">pelican-kis</a> and <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
 
                   <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>

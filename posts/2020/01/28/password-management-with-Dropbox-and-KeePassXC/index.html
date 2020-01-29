@@ -77,62 +77,106 @@
   </nav> <!-- end #nav-wrap -->    </header>
 
     <div id="content-wrap">
-<!-- Content - Archives
-================================================== -->
+<!-- Content - Article -->
   <div class="row">
     <div id="main" class="eight columns">
-      <section class="page">
-        <h2>Archives</h2>
-        <div class="row archive-list">
-          <div class="twelve columns">
-              <p>
-                <span><time datetime="2020-01-28T20:20:00-05:00">2020/01/28</time></span>
-                <a href="/posts/2020/01/28/password-management-with-Dropbox-and-KeePassXC/">Password management with Dropbox and KeePassXC</a>
-              </p>
-              <p>
-                <span><time datetime="2019-04-21T19:00:00-04:00">2019/04/21</time></span>
-                <a href="/posts/2019/04/21/comm-tssohttlars/">About the book: The Seven Secrets of How to Think Like a Rocket Scientist</a>
-              </p>
-              <p>
-                <span><time datetime="2019-03-06T15:00:00-05:00">2019/03/06</time></span>
-                <a href="/posts/2019/03/06/energy-vampire-devices/">Vampire (electronic) devices</a>
-              </p>
-              <p>
-                <span><time datetime="2019-01-31T19:00:00-05:00">2019/01/31</time></span>
-                <a href="/posts/2019/01/31/ge62vr-mint-gtx1060/">LinuxMint-19 + GTX1060 + CUDA 10.0</a>
-              </p>
-              <p>
-                <span><time datetime="2017-09-16T19:00:00-04:00">2017/09/16</time></span>
-                <a href="/posts/2017/09/16/emotive-epoc-hack/">Revamping Emotiv Epoc</a>
-              </p>
-              <p>
-                <span><time datetime="2017-08-29T12:00:00-04:00">2017/08/29</time></span>
-                <a href="/posts/2017/08/29/freezes-linux-gpu-acpi/">Linux freezes when changing GPU with prime-select [Solved]</a>
-              </p>
-              <p>
-                <span><time datetime="2017-07-25T19:00:00-04:00">2017/07/25</time></span>
-                <a href="/posts/2017/07/25/universal-shortcuts/">Universal Shortcut</a>
-              </p>
-              <p>
-                <span><time datetime="2017-01-31T00:00:00-05:00">2017/01/31</time></span>
-                <a href="/posts/2017/01/31/linux-usb-uefi/">Full Linux installation in USB, supporting UEFI-boot</a>
-              </p>
-              <p>
-                <span><time datetime="2016-12-06T19:00:00-05:00">2016/12/06</time></span>
-                <a href="/posts/2016/12/06/touchpad-disable/">Keeping Synaptics Touchpad disabled</a>
-              </p>
-              <p>
-                <span><time datetime="2016-10-26T22:00:00-04:00">2016/10/26</time></span>
-                <a href="/posts/2016/10/26/poshbash-windows-bash/">poshbash in Windows bash</a>
-              </p>
-              <p>
-                <span><time datetime="2016-10-22T22:00:00-04:00">2016/10/22</time></span>
-                <a href="/posts/2016/10/22/first-post/">First post</a>
-              </p>
+      <article class="entry">
+<header class="entry-header">
+
+  <h2 class="entry-title">
+    <a href="http://www.castoriscausa.com/posts/2020/01/28/password-management-with-Dropbox-and-KeePassXC/">Password management with Dropbox and KeePassXC</a>
+  </h2>
+
+  <div class="entry-meta">
+    <ul>
+      <!-- date -->
+      <li>
+        <i class="fa fa-clock-o"></i>
+        2020/01/28
+      </li>
+      <!-- category and tags -->
+        <p class="tags">
+            <i class="fa fa-folder-open"></i>
+            <span>Category: </span>
+            <a href="http://www.castoriscausa.com/category/blog/">Blog</a><br>
+            <i class="fa fa-tags"></i>
+            <span>Tagged in: </span>
+            <a href="http://www.castoriscausa.com/tags/diy/">DIY</a>        </p>
+    </ul>
+  </div>
+</header>
+        <div class="entry-content-media">
+          <div class="post-thumb">
           </div>
         </div>
-      </section> <!-- End page -->
-   	</div> <!-- End main -->
+
+        <div class="entry-content">
+          <p><center>
+<a href="/images/keys.jpg"><img src="/images/keys.jpg" style="width: 600px;"></a><br>
+<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@contradirony?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Samantha Lam"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Samantha Lam</span></a>
+</center></p>
+<p>Nowadays we have to handle an enormous quantity of passwords. As it is not desirable to reuse passwords, nor to write down, it is necessary to have a way manage them. My must- and nice-to-have list was:</p>
+<ol>
+<li>Encrypted passwords</li>
+<li>Passwords need to be always available, not depend on cloud storage</li>
+<li>Being able to access them from different OS</li>
+<li>Open-source software for encryption</li>
+<li>Synchronization among unlimited devices</li>
+</ol>
+<p>After research and thinking in advantages and drawbacks among the different methods, I came to the solution of using an offline password manager (<a href="https://keepassxc.org/">KeePassXC</a>) and service to synchronize files (<a href="https://www.dropbox.com/">Dropbox</a>).</p>
+<p><a href="https://keepassxc.org/">KeePassXC</a> is an open-source cross-platform password manager that has has support for Windows, Linux, macOS. Although the there is not official, KeePassXC uses a database format that can be read and written with other <a href="https://keepassxc.org/docs/#faq-platform-mobile">Android and iOS apps</a>.  </p>
+<p>To set up this password management strategy just:</p>
+<ol>
+<li>
+<p>Created a database with KeePassXC, and select a strong password for it. This password must be memorable as it should not be stored in any place but in your head.</p>
+</li>
+<li>
+<p>Place the KeePassXC database file in a Dropbox folder. This will keep it synchronized in all your Dropbox devices.</p>
+</li>
+</ol>
+<p>This approach has worked very nice in my case, although it presents disadvantages such as:</p>
+<ul>
+<li>
+<p>If the master password for the database is lost, all the passwords are locked.</p>
+</li>
+<li>
+<p>In March 2019, <a href="https://help.dropbox.com/accounts-billing/settings-sign-in/computer-limit">Dropbox put a limit of 3 devices</a> for Basic (free) users, and two different OS in the same computer count as two devices.</p>
+</li>
+</ul>
+        </div>
+      </article>
+
+<!-- Comments -->
+<!-- Disqus -->
+    <div id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'castoriscausa'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.url = 'http://www.castoriscausa.com/posts/2020/01/28/password-management-with-Dropbox-and-KeePassXC/';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+<!-- End Disqus Code -->
+    </div> <!-- main End -->
 <!-- Sidebar -->
 <div id="sidebar" class="four columns">
 <div class="widget widget_search">

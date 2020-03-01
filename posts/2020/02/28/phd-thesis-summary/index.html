@@ -85,7 +85,7 @@
 <header class="entry-header">
 
   <h2 class="entry-title">
-    <a href="http://www.castoriscausa.com/posts/2020/01/28/password-management-with-Dropbox-and-KeePassXC/">Password management with Dropbox and KeePassXC</a>
+    <a href="http://www.castoriscausa.com/posts/2020/02/28/phd-thesis-summary/">PhD Thesis Summary</a>
   </h2>
 
   <div class="entry-meta">
@@ -93,16 +93,14 @@
       <!-- date -->
       <li>
         <i class="fa fa-clock-o"></i>
-        2020/01/28
+        2020/02/28
       </li>
       <!-- category and tags -->
         <p class="tags">
             <i class="fa fa-folder-open"></i>
             <span>Category: </span>
-            <a href="http://www.castoriscausa.com/category/blog/">Blog</a><br>
-            <i class="fa fa-tags"></i>
-            <span>Tagged in: </span>
-            <a href="http://www.castoriscausa.com/tags/diy/">DIY</a>        </p>
+            <a href="http://www.castoriscausa.com/category/posts/">posts</a><br>
+        </p>
     </ul>
   </div>
 </header>
@@ -112,38 +110,51 @@
         </div>
 
         <div class="entry-content">
-          <p><center>
-<a href="/images/keys.jpg"><img src="/images/keys.jpg" style="width: 600px;"></a><br>
-<a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px" href="https://unsplash.com/@contradirony?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Samantha Lam"><span style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-2px;fill:white" viewBox="0 0 32 32"><title>unsplash-logo</title><path d="M10 9V0h12v9H10zm12 5h10v18H0V14h10v9h12v-9z"></path></svg></span><span style="display:inline-block;padding:2px 3px">Samantha Lam</span></a>
+          <p>In November 2018, I performed my PhD defense, this is a summary of it.
+The title is "Towards an Automated Portable EEG-based System for Alzheimer’s Disease Diagnosis", and it can be found in its integrity <a href="http://espace.inrs.ca/8005/1/Cassani%20Gonzalez%2C%20Raymundo.pdf">here</a>. The defense slides are available <a href="https://www.dropbox.com/s/0cwt4mskm63u6bs/thesis_slides.pdf?dl=0">here</a></p>
+<hr>
+
+<h3>Challenges for EEG-based Alzheimer’s disease diagnosis</h3>
+<p>The term dementia is used to encompass a number of neurodegenerative disorders that have their origin in damage and death of neurons.  In 2015, 46.8 million people were living with dementia and this number is projected to grow to 74.7 million by 2030, and to 131.5 million by 2050, this trend is driven by population growth and demographic ageing. Among the disorders classified as dementia, Alzheimer’s disease (AD) is the most common which accounts for nearly 70% of the cases. Frequently AD is diagnosed with exhaustive neuropsychological examinations, and the diagnosis is supported by biomarkes from cerebospinal fluid and neuroimaging techniques. Unfortunately, these supporting biomarkers are invasive, expensive and geographically confined. In the last two decades, <a href="https://en.wikipedia.org/wiki/Electroencephalography"><abbr title="electroencephalography">EEG</abbr></a>-based biomarkers have emerged as a promising tool in the study of AD, as EEG is non-invasive, less expensive and potentially portable. EEG signals are consists of recording changes in the electrical potential measured at the scalp with electrodes. And their origin is the electrical activity evoked by synchronous activation of thousands of neurons with similar spatial orientation (dipoles). Thus, EEG biomarkers can be used to infer neuronal degeneration and decay in the number of synapses caused by AD progression <a href="http://downloads.hindawi.com/journals/dm/2018/5174815.pdf">[1]</a>.</p>
+<p><center>
+    <a href="/images/eeg.png"><img src="/images/eeg.png" style="width: 800px;"/></a><br>
 </center></p>
-<p>Nowadays we have to handle an enormous quantity of passwords. As it is not desirable to reuse passwords, nor to write down, it is necessary to have a way manage them. My must- and nice-to-have list was:</p>
-<ol>
-<li>Encrypted passwords</li>
-<li>Passwords need to be always available, not depend on cloud storage</li>
-<li>Being able to access them from different OS</li>
-<li>Open-source software for encryption</li>
-<li>Synchronization among unlimited devices</li>
-</ol>
-<p>After research and thinking in advantages and drawbacks among the different methods, I came to the solution of using an offline password manager (<a href="https://keepassxc.org/">KeePassXC</a>) and service to synchronize files (<a href="https://www.dropbox.com/">Dropbox</a>).</p>
-<p><a href="https://keepassxc.org/">KeePassXC</a> is an open-source cross-platform password manager that has has support for Windows, Linux, macOS. Although the there is not official, KeePassXC uses a database format that can be read and written with other <a href="https://keepassxc.org/docs/#faq-platform-mobile">Android and iOS apps</a>.  </p>
-<p>To set up this password management strategy just:</p>
-<ol>
-<li>
-<p>Created a database with KeePassXC, and select a strong password for it. This password must be memorable as it should not be stored in any place but in your head.</p>
-</li>
-<li>
-<p>Place the KeePassXC database file in a Dropbox folder. This will keep it synchronized in all your Dropbox devices.</p>
-</li>
-</ol>
-<p>This approach has worked very nice in my case, although it presents disadvantages such as:</p>
-<ul>
-<li>
-<p>If the master password for the database is lost, all the passwords are locked.</p>
-</li>
-<li>
-<p>In March 2019, <a href="https://help.dropbox.com/accounts-billing/settings-sign-in/computer-limit">Dropbox put a limit of 3 devices</a> for Basic (free) users, and two different OS in the same computer count as two devices.</p>
-</li>
-</ul>
+<p>However the use of EEG for AD diagnosis presents two major challenges: (i) EEG signals are subject to interference from other signals (artifacts), and (ii) the need for large number of electrodes, often 16+, thus making them hard to transport and expensive to fund, specially for low- and middle-income countries.</p>
+<h3>Thesis contributions.</h3>
+<p>In my doctoral thesis, the steps towards the development of an automated portable and low-cost EEG-based system for AD diagnosis were presented:</p>
+<p><strong>1. Towards automation</strong><br>
+        Explore the effects of automated artifact handling algorithms in the pre-processing or EEG signals<br>
+<strong>2. Towards portability</strong><br>
+        Explore the potential of portable devices in EEG signal acquisition<br>
+<strong>3. New modulation-domain features</strong>:<br>
+        Propose new EEG features based on the modulation representation, not-defined with traditional EEG-band limits</p>
+<p><center>
+    <a href="/images/eeg_ad_diagnose.png"><img src="/images/eeg_ad_diagnose.png" style="width: 800px;"/></a><br>
+    General structures of an EEG-based AD diagnosis system
+</center></p>
+<h3>1. Towards automation</h3>
+<p>To remove the need for expert human intervention, we explored the effects of several fully automated artifact handling algorithms on EEG signals and gauge their advantages and disadvantages for automated AD diagnosis. Overall the classification performance obtained using automated artifact handling was in line with the performance obtained with systems based on “artifact-free” EEG data manually selected by human experts. Such findings suggest that manual inspection of the EEG signals can be avoided by using automated artifact removal, thus making faster the process and improving reproducibility <a href="https://www.frontiersin.org/articles/10.3389/fnagi.2014.00055">[2]</a>.</p>
+<h3>2. Exploring Portable</h3>
+<p>To explore the potential of portable low-density devices, we explored the differences in performance for AD diagnosis obtained with a 20-channel and 7-channel EEG system.</p>
+<p>The reduction in the number of electrodes, led to a decrease in AD diagnosis performance. This could be attributed to the fact that a higher density layout presents a broader spatial distribution on the scalp; thus it can register cortical activity from other regions
+such as temporal and occipital lobes. In addition, a higher density coverage may be able to pick up spatially broad activities caused by deep brain structures, which are the first-affected by AD progression. However, further exploration is needed regarding the low-density electrode layout, as a limitation in our experiments, was that the layout pre-defined by experimental protocol from a different EEG dataset, thus this may not be optimal for AD diagnosis using resting-state EEG <a href="https://www.sciencedirect.com/science/article/abs/pii/S174680941630221X">[3]</a>.</p>
+<h3>3. Exploring novel features</h3>
+<p>Lastly, EEG-based AD diagnosis has relied on conventional EEG features. Here, a new class of features derived from the modulation spectrogram from the EEG signal, which aims to characterize the second order periodicity of the signals.</p>
+<p><center>
+    <a href="/images/mod_steps.png"><img src="/images/mod_steps.png" style="width: 800px;"/></a><br>
+</center></p>
+<p>In the modulation domain, differences between normal aging subjects and subjects with AD are visible and defined in different regions of the modulation spectrogram. The features from this representation shown to (i) provide improved robustness against artifacts, (ii) potentially bypass the need for a separate artifact removal step, and (iii) provide better discriminatory information not only for AD diagnostic purposes, but also for disease progression monitoring. Results showed that the proposed features can be more reliable for EEG-based AD diagnosis. Also, we explored these new features with a 7-channel EEG layout showing that the obtained performance is in line with the one obtained with 20 channels <a href="https://ieeexplore.ieee.org/abstract/document/8901227">[4]</a>.</p>
+<p><center>
+    <a href="/images/auc_figs.png"><img src="/images/auc_figs.png" style="width: 800px;"/></a><br>
+</center></p>
+<h3>Conclusion</h3>
+<p>Unfortunately, the use of EEG in the clinical practice is not currently part of the routine in the diagnosis and monitoring of AD. In this thesis work we identified, discussed and propose solution to the major challenges of the utilization of EEG for the study of AD.
+It is hoped that the innovations presented in the thesis work will boost the research and clinical use of EEG as a non-invasive, less expensive and potentially portable technique for the diagnosis and monitoring of AD.</p>
+<h3>References</h3>
+<p><strong>[1]</strong> <a href="http://downloads.hindawi.com/journals/dm/2018/5174815.pdf">R. Cassani, M. Estarellas, R. San-Martin, F. J. Fraga, and T. H. Falk, “Systematic Reviewon Resting-State EEG for Alzheimer’s Disease Diagnosis and Progression Assessment,”Disease Markers, vol. 2018, 2018.</a><br>
+<strong>[2]</strong> <a href="https://www.frontiersin.org/articles/10.3389/fnagi.2014.00055">R. Cassani, T. H. Falk, F. J. Fraga, P. A. M. Kanda, and R. Anghinah, “The effects ofautomated artifact removal algorithms on electroencephalography-based Alzheimer’s diseasediagnosis,”Frontiers in Aging Neuroscience, vol. 6, p. 55, 2014.</a><br>
+<strong>[3]</strong> <a href="https://www.sciencedirect.com/science/article/abs/pii/S174680941630221X">R. Cassani, T. H. Falk, F. J. Fraga, M. Cecchi, D. K. Moore, and R. Anghinah, “Towardsautomated electroencephalography-based Alzheimer’s disease diagnosis using portable low-density devices,”Biomedical Signal Processing and Control, vol. 33, pp. 261–271, Mar.2017.</a><br>
+<strong>[4]</strong> <a href="https://ieeexplore.ieee.org/abstract/document/8901227">R. Cassaniand T. H. Falk, “Alzheimer’s Disease Diagnosis and Severity Level DetectionBased on Electroencephalography Modulation Spectral ‘Patch’ Features,” inIEEE J. Biomed.Health Inform., pp. 1–1,2019.</a>  </p>
         </div>
       </article>
 
@@ -160,7 +171,7 @@
             var disqus_config = function () {
                 this.language = "en";
 
-                        this.page.url = 'http://www.castoriscausa.com/posts/2020/01/28/password-management-with-Dropbox-and-KeePassXC/';
+                        this.page.url = 'http://www.castoriscausa.com/posts/2020/02/28/phd-thesis-summary/';
             };
 
             /* * * DON'T EDIT BELOW THIS LINE * * */

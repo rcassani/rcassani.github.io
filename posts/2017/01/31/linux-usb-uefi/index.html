@@ -230,24 +230,25 @@
 </li>
 <li>
 <p>Mount the EFI partition in the recently created folder. Change <strong>sdx</strong> for the corresponding to your USB-disk (step 4 in previous section)</p>
-<div class="highlight"><pre><span></span><span class="p">$</span> <span class="n">sudo</span> <span class="nb">mount </span><span class="p">/</span><span class="n">dev</span><span class="p">/</span><span class="n">sdx1</span> <span class="p">/</span><span class="n">mnt</span><span class="p">/</span><span class="n">efi</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">$</span> <span class="n">sudo</span> <span class="nb">mount </span><span class="p">/</span><span class="n">dev</span><span class="p">/</span><span class="n">sdx1</span> <span class="p">/</span><span class="n">mnt</span><span class="p">/</span><span class="n">efi</span>
 <span class="p">$</span> <span class="nb">cd </span><span class="p">/</span><span class="n">mnt</span><span class="p">/</span><span class="n">efi</span><span class="p">/</span><span class="n">EFI</span>
 </pre></div>
-
+</td></tr></table>
 
 </li>
 <li>
 <p>Copy the <strong>ubuntu</strong> folder to the same location with the name <strong>BOOT</strong></p>
-<div class="highlight"><pre><span></span><span class="p">$</span> <span class="n">sudo</span> <span class="nb">cp </span><span class="n">-r</span> <span class="p">./</span><span class="n">ubuntu</span><span class="p">/</span> <span class="p">./</span><span class="n">BOOT</span><span class="p">/</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">$</span> <span class="n">sudo</span> <span class="nb">cp </span><span class="n">-r</span> <span class="p">./</span><span class="n">ubuntu</span><span class="p">/</span> <span class="p">./</span><span class="n">BOOT</span><span class="p">/</span>
 </pre></div>
-
+</td></tr></table>
 
 </li>
 <li>
 <p>Finally, copy the file <strong><code>BOOTx64.EFI</code></strong> from to the <strong>Linux ISO image</strong>  to the <strong>BOOT</strong> folder in <strong>EFI</strong> partition of the USB-disk</p>
-<div class="highlight"><pre><span></span><span class="p">$</span> <span class="n">sudo</span> <span class="nb">cp </span><span class="p">/</span><span class="n">media</span><span class="p">/</span><span class="n">cdrom</span><span class="p">/</span><span class="n">EFI</span><span class="p">/</span><span class="n">BOOT</span><span class="p">/</span><span class="n">BOOTx64</span><span class="p">.</span><span class="n">EFI</span> <span class="p">./</span><span class="n">BOOT</span><span class="p">/</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">$</span> <span class="n">sudo</span> <span class="nb">cp </span><span class="p">/</span><span class="n">media</span><span class="p">/</span><span class="n">cdrom</span><span class="p">/</span><span class="n">EFI</span><span class="p">/</span><span class="n">BOOT</span><span class="p">/</span><span class="n">BOOTx64</span><span class="p">.</span><span class="n">EFI</span> <span class="p">./</span><span class="n">BOOT</span><span class="p">/</span>
 </pre></div>
-
+</td></tr></table>
 
 </li>
 <li>

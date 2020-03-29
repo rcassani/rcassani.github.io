@@ -91,7 +91,7 @@
     <ul>
       <!-- date -->
       <li>
-        <i class="fa fa-clock-o"></i>
+        <i class="fa fa-calendar-alt"></i>
         2020/03/09
       </li>
       <!-- category and tags -->
@@ -101,7 +101,12 @@
             <a href="http://www.castoriscausa.com/category/programming/">Programming</a><br>
             <i class="fa fa-tags"></i>
             <span>Tagged in: </span>
-            <a href="http://www.castoriscausa.com/tags/linux/">Linux</a>,             <a href="http://www.castoriscausa.com/tags/systemd/">systemd</a>        </p>
+            <a href="http://www.castoriscausa.com/tags/linux/">Linux</a>,             <a href="http://www.castoriscausa.com/tags/systemd/">systemd</a>            <br>
+            <span>
+              <i class="fa fa-comments"></i>
+              <a href="http://www.castoriscausa.com/posts/2020/03/09/hook-systemd-disable-wakeup-from-usb-device/#disqus_thread">Comments</a>
+            </span>
+        </p>
     </ul>
   </div>
 </header>
@@ -111,6 +116,8 @@
         </div>
 
         <div class="entry-content">
+
+<!-- Series text at the beginning of article -->
           <p><strong>Situation:</strong> When my laptop is in suspension with the lid open, any update (movement or clicks) with the wireless mouse wakes-up the laptop. This post is about creating a <code>systemd</code> unit, and hook it to the start of the sleep unit, and disable the mouse as wake-up device. This approach should work for any Linux distribution using <code>systemd</code>.</p>
 <p>First, the list of devices that can wake-up the computer can be find with:</p>
 <div class="highlight"><pre><span></span>$ grep enabled cat /proc/acpi/wakeup
@@ -182,6 +189,8 @@
 <p>Lastly, the status and last calls of the service are obtained with <code>$ systemctl status suspend-mouse-fix.service</code>. And this information can be also found with <code>$ journalctl</code></p>
 </li>
 </ol>
+<!-- Series text at the end of article -->
+
         </div>
       </article>
 

@@ -91,7 +91,7 @@
     <ul>
       <!-- date -->
       <li>
-        <i class="fa fa-clock-o"></i>
+        <i class="fa fa-calendar-alt"></i>
         2016/10/26
       </li>
       <!-- category and tags -->
@@ -101,7 +101,12 @@
             <a href="http://www.castoriscausa.com/category/blog/">Blog</a><br>
             <i class="fa fa-tags"></i>
             <span>Tagged in: </span>
-            <a href="http://www.castoriscausa.com/tags/git/">Git</a>,             <a href="http://www.castoriscausa.com/tags/windows/">Windows</a>        </p>
+            <a href="http://www.castoriscausa.com/tags/git/">Git</a>,             <a href="http://www.castoriscausa.com/tags/windows/">Windows</a>            <br>
+            <span>
+              <i class="fa fa-comments"></i>
+              <a href="http://www.castoriscausa.com/posts/2016/10/26/poshbash-windows-bash/#disqus_thread">Comments</a>
+            </span>
+        </p>
     </ul>
   </div>
 </header>
@@ -111,6 +116,8 @@
         </div>
 
         <div class="entry-content">
+
+<!-- Series text at the beginning of article -->
           <p>The <a href="https://github.com/dahlbyk/posh-git"><strong>posh-git-bash</strong></a> prompt, for <a href="https://git-scm.com/">Git</a>, is a useful tool that shows information about the current status of a local Git repository respect to local and remote (e.g. <a href="https://github.com/">GitHub</a>) repositories; in this way, it's easy to see if the repository is ahead or behind, has uncommitted changes, is up-to-date, etc.</p>
 <p><center>
 <img alt="Alt" src="/images/posh_bash_win.png"><br>
@@ -119,14 +126,14 @@ Git-Posh example
 <p>The <strong>posh-git-bash</strong> prompt is included in the <a href="https://msdn.microsoft.com/en-us/powershell/mt173057.aspx">PowerShell</a> installed with <a href="https://desktop.github.com/">GitHub Desktop</a> software for Windows. This post describes how add the <strong>posh-git-bash</strong> prompt functionality into the <a href="https://msdn.microsoft.com/en-us/commandline/wsl/about#">Bash on Windows10</a>.</p>
 <p>If <strong>Bash on Windows</strong> is not already installed, this is the <a href="https://msdn.microsoft.com/commandline/wsl/install_guide">installation guide</a>.</p>
 <hr>
-<h5><strong>Note</strong>: Enable Copy/Paste in Bash</h5>
+<h5 id="note-enable-copypaste-in-bash"><strong>Note</strong>: Enable Copy/Paste in Bash</h5>
 <ol>
 <li>Right click in the Window Title bar &gt; Properties</li>
 <li>Enable Quick Edit Mode</li>
 <li>Copy is <strong>Ctrl-C</strong> and Paste is <strong>Right-click</strong></li>
 </ol>
 <hr>
-<h3><strong>Adding posh-git-bash</strong> prompt to Bash on Windows</h3>
+<h3 id="adding-posh-git-bash-prompt-to-bash-on-windows"><strong>Adding posh-git-bash</strong> prompt to Bash on Windows</h3>
 <ol>
 <li>
 <p>Run Bash and go to HOME directory in bash</p>
@@ -156,6 +163,8 @@ Add the following 2 lines at the beginning of <code>~/.bashrc file</code>, you c
 </li>
 </ol>
 <!-- Reference links https://msdn.microsoft.com/en-us/commandline/wsl/about https://msdn.microsoft.com/en-us/commandline/wsl/reference https://msdn.microsoft.com/en-us/commandline/wsl/user_support https://msdn.microsoft.com/en-us/commandline/wsl/faq https://msdn.microsoft.com/commandline/wsl/install_guide http://www.digitalcitizen.life/how-get-linux-bash-windows-10-3-steps https://twitter.com/richturn_ms https://twitter.com/hashtag/bashonubuntuonwindows?src=hash https://blogs.windows.com/buildingapps/2016/07/22/fun-with-the-windows-subsystem-for-linux/ https://en.support.wordpress.com/markdown-quick-reference/ -->
+<!-- Series text at the end of article -->
+
         </div>
       </article>
 

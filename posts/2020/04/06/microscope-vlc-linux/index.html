@@ -84,7 +84,7 @@
 <header class="entry-header">
 
   <h2 class="entry-title">
-    <a href="http://www.castoriscausa.com/posts/2019/03/06/energy-vampire-devices/">Vampire (electronic) devices</a>
+    <a href="http://www.castoriscausa.com/posts/2020/04/06/microscope-vlc-linux/">USB microscope and VLC</a>
   </h2>
 
   <div class="entry-meta">
@@ -92,19 +92,19 @@
       <!-- date -->
       <li>
         <i class="fa fa-calendar-alt"></i>
-        2019/03/06
+        2020/04/06
       </li>
       <!-- category and tags -->
         <p class="tags">
             <i class="fa fa-folder-open"></i>
             <span>Category: </span>
-            <a href="http://www.castoriscausa.com/category/blog/">Blog</a><br>
+            <a href="http://www.castoriscausa.com/category/projects/">Projects</a><br>
             <i class="fa fa-tags"></i>
             <span>Tagged in: </span>
-            <a href="http://www.castoriscausa.com/tags/energy/">energy</a>,             <a href="http://www.castoriscausa.com/tags/power/">power</a>            <br>
+            <a href="http://www.castoriscausa.com/tags/linux/">Linux</a>,             <a href="http://www.castoriscausa.com/tags/photos/">photos</a>            <br>
             <span>
               <i class="fa fa-comments"></i>
-              <a href="http://www.castoriscausa.com/posts/2019/03/06/energy-vampire-devices/#disqus_thread">Comments</a>
+              <a href="http://www.castoriscausa.com/posts/2020/04/06/microscope-vlc-linux/#disqus_thread">Comments</a>
             </span>
         </p>
     </ul>
@@ -118,15 +118,111 @@
         <div class="entry-content">
 
 <!-- Series text at the beginning of article -->
-          <p>An energy vampire device is the one that consumes electric energy anytime is plugged, even when it is not in use, one of the most common examples nowadays are chargers. Let's first define electric energy consumption.</p>
-<h2 id="electric-energy-consumption">Electric energy consumption</h2>
-<p>Electric energy consumption is measured as a number in kilowatt hour (kWh), and it's obtained by adding the product of device power, given in Watts (W), by utilization time in hours (h). For example, using one 100 W light bulb during 1 hour results in a consumption of 0.1 kWh, if the same bulb is used during 10 hours, the consumption is 1 kWh. On the other hand, in the case of a 'powerful' appliance as a standard microwave, with a typical power of 1500 kW, the energy consumption may not be as high as it used only in short periods.</p>
-<p>The unit kWh describes the quantity of work performed, thus it has an equivalent in work (or energy) units, which are Joules [J]. The equivalence is the following: 1 kWh is 1000 W times 3600 seconds. Thus, 1 <a href="https://en.wikipedia.org/wiki/Kilowatt_hour">kWh</a> = 3.6 megajoules. Indeed, kWh is the unit that appears in the electricity receipt.</p>
-<p>Watts are always defined as Joules per second (J/s), no matter how they are calculated; in the case of electric power, it is calculated as the product of voltage times electric current, this is to say:  <em>P = E·I</em>. Voltage (<em>E</em>) is given in Volts (V), which are defined as work per unit charge, this is: [Volt] =  [Joules / Coulomb]. On the other hand, electric current (<em>I</em>), is measured in Amperes, and indicates the quantity of charge per second, thus [amp] = [Coulomb / second]. Therefore power (<em>P</em>) is [Watts] = E[Volts] x I[Amps] = E[Joule/Coulomb] x I[Coulomb/second] = P[Joules/second]. After this brief <a href="https://en.wikipedia.org/wiki/Dimensional_analysis">dimensional analysis</a>, let's go back to the vampire devices.</p>
-<h2 id="how-much-energy-do-they-consume">How much energy do they consume?</h2>
-<p>Let's make the calculation for one smartphone charger, assuming it has a 'vampire' power is 0.26W (this is often reported by the maker), in a month (considering it's in vampire-mode 20 hours per day) the energy vampire consumption is 0.26[W] x 30[day] x 20[hour/day] = 156 Wh or 0.156 kWh, how much consumption is this? Sticking with the microwave example, the consumption is equivalent to use the microwave for over 6 minutes.</p>
-<h2 id="how-much-do-vampire-devices-contribute-to-the-electricity-bill">How much do vampire devices contribute to the electricity bill?</h2>
-<p>Assuming a price of 12.73cents of USD (USA average price) per kWh, the charge for 0.156 kWh results is 0.02 USD (2 cents) per month. While this seems small, remember that there are many vampire devices at on, and some consume more than others, for example an unused laptop charger in the same conditions (20hrs vampire mode), will lead to a cost of 33 cents per month.</p>
+          <p>This post is to show the type of images that can be obtained with an affordable USB microscope, similar to <a href="https://www.amazon.ca/axGear-50-500X-Microscope-Endoscope-Magnifier/dp/B01996WOEU">this one</a>. The output image is 640 x 480 pixels, and the optical zoom is supposed to go from 50x to 500x. As the microscope has not adjustment for focus, for most of the samples I was able to focus them in unknown magnification settings, let's call them low- and high-zoom.</p>
+<p>In the technical side, as the microscope is detected as a standard webcam, it is possible to use <a href="https://www.videolan.org/vlc/index.html">VLC</a> to capture the images and video, see further instructions <a href="https://www.laptopmag.com/articles/record-webcam-video-vlc">here</a>. In Linux, VLC relies on <a href="https://en.wikipedia.org/wiki/Video4Linux">Video4Linux</a> which is part of the kernel since 2.5.x. Note, the V4L2 module in VLC requires <a href="http://zapping.sourceforge.net/ZVBI/">ZVBI</a>, thus you may need also to install this library.</p>
+<p>Without further delay, these are the pictures from different objects at home:   </p>
+<h3 id="surface-mount-device-smd-led">Surface-mount device (SMD) LED</h3>
+<p>The real size is 3 mm by 1.5 mm</p>
+<table>
+<thead>
+<tr>
+<th align="center"><a href="/images/smd_1.png"><img src="/images/smd_1.png" style="width: 450px;"/></a></th>
+<th align="center"><img src="/images/square_500_clear.png" style="width: 32px;"/></th>
+<th align="center"><a href="/images/smd_2.png"><img src="/images/smd_2.png" style="width: 450px;"/></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Low zoom</td>
+<td align="center"></td>
+<td align="center">High zoom</td>
+</tr>
+<tr>
+<td align="center"><br></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="the-1-mm-mark-in-a-caliper">The 1-mm mark in a caliper</h3>
+<p>For the low-zoom pic, there are 154 pixels between the center of the marks, a rough resolution of 6.5 &mu;m per pixel. And for the high-zoom pic, there are 570 pixels, thus around 1.8 &mu;m per pixel.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><a href="/images/1mm_1.png"><img src="/images/1mm_1.png" style="width: 450px;"/></a></th>
+<th align="center"><img src="/images/square_500_clear.png" style="width: 32px;"/></th>
+<th align="center"><a href="/images/1mm_2.png"><img src="/images/1mm_2.png" style="width: 450px;"/></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Low zoom</td>
+<td align="center"></td>
+<td align="center">High zoom</td>
+</tr>
+<tr>
+<td align="center"><br></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="fish-fossil">Fish fossil</h3>
+<p>It's common have a fossil of a fish at home, right?. The pictures correspond to the area near to the tail.  </p>
+<p><center>
+<a href="/images/fish_0.jpg"><img src="/images/fish_0.jpg" style="width: 500px;"/></a>
+</center></p>
+<table>
+<thead>
+<tr>
+<th align="center"><a href="/images/fish_1.png"><img src="/images/fish_1.png" style="width: 450px;"/></a></th>
+<th align="center"><img src="/images/square_500_clear.png" style="width: 32px;"/></th>
+<th align="center"><a href="/images/fish_2.png"><img src="/images/fish_2.png" style="width: 450px;"/></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Low zoom</td>
+<td align="center"></td>
+<td align="center">High zoom</td>
+</tr>
+<tr>
+<td align="center"><br></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="display-amoled-from-pixel-2">Display AMOLED (from Pixel 2)</h3>
+<p>The "1" was around 2-mm tall on the display.</p>
+<table>
+<thead>
+<tr>
+<th align="center"><a href="/images/led_1.png"><img src="/images/led_1.png" style="width: 450px;"/></a></th>
+<th align="center"><img src="/images/square_500_clear.png" style="width: 32px;"/></th>
+<th align="center"><a href="/images/led_2.png"><img src="/images/led_2.png" style="width: 450px;"/></a></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td align="center">Low zoom</td>
+<td align="center"></td>
+<td align="center">High zoom</td>
+</tr>
+<tr>
+<td align="center"></br></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+</tbody>
+</table>
+<h3 id="escape-mechanism">Escape mechanism</h3>
+<p>Lastly, a close-up video of the escape mechanism in a watch.
+<center>
+<video controls="" autoplay="" loop>
+ <source src="/images/out.webm" type="video/webm">
+</video>
+</center></p>
 <!-- Series text at the end of article -->
 
         </div>
@@ -145,7 +241,7 @@
             var disqus_config = function () {
                 this.language = "en";
 
-                        this.page.url = 'http://www.castoriscausa.com/posts/2019/03/06/energy-vampire-devices/';
+                        this.page.url = 'http://www.castoriscausa.com/posts/2020/04/06/microscope-vlc-linux/';
             };
 
             /* * * DON'T EDIT BELOW THIS LINE * * */

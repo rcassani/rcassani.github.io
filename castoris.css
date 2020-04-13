@@ -46,7 +46,7 @@ div.entry-content abbr {
 /* Allow lowercase in Sidebar Tags */
 #sidebar .tagcloud a {text-transform: none;}
 
-/* Allow lowercase in Sidebar Tags */
+/* Improve display for code tag `xxx`  */
 code {
   font-size: 1.05em;
   background-color: #DBECD0;
@@ -60,7 +60,7 @@ header, header .header-content{height: 256px;}
 header h1#logo-text a {letter-spacing: 0px;}
 
 /* Padding for content-wrap*/
-#content-wrap {padding: 20px 0 0 0;}
+#content-wrap {padding: 30px 0 0 0;}
 
 /* Padding for footer */
 footer {padding-top: 15px; margin-bottom: 20px}
@@ -101,6 +101,7 @@ div.entry-content h6 a, div.entry-content h6 a:visited
    -o-transition: color .3s ease-in-out;
    transition: color .3s ease-in-out;
 }
+
 div.entry-content h1 a:hover, div.entry-content h1 a:focus,
 div.entry-content h2 a:hover, div.entry-content h2 a:focus,
 div.entry-content h3 a:hover, div.entry-content h3 a:focus,
@@ -109,8 +110,10 @@ div.entry-content h5 a:hover, div.entry-content h5 a:focus,
 div.entry-content h6 a:hover, div.entry-content h6 a:focus
 { color: #34393A; }
 
-/* p a, p a:visited { line-height: inherit; } */
-
+/* makes "strong" the links in posts */
+div.entry-content a{
+  font: 15px/30px 'merriweather-bold', sans-serif;
+}
 
 /* Makes that strong inherits size in Page and Article content*/
 section.page strong, div.entry-content strong {font-size: inherit; font-weight: bold}
@@ -150,6 +153,11 @@ pre {padding-left: 5px}
 
 /* Justify psot body and summary in index */
 p, .entry-content {text-align: justify;}
+
+/* Top margin for summary in index */
+div.entry-content{
+  margin-top: 10px;
+}
 
 /* Font and size for links in Link and Categorie sidebar*/
 .widget_categories a {font-family: 'opensans-semibold', sans-serif; font-size: 20px;}
@@ -201,4 +209,38 @@ td.linenos {
 /* adjust the default color for code blocks */
 .highlight pre{
   color: #ffffff;
+}
+
+.entry .row{
+  display: flex;
+  align-items: center;
+  flex-flow: row wrap;
+}
+
+.entry-thumb.four.columns{
+  flex-grow: 1;
+  width: 33%
+}
+
+.entry-header.eight.columns{
+  flex-grow: 1;
+  width: 66%
+}
+
+.entry-thumb img{
+  max-width:90%;
+  max-height:150px;
+  height: auto;
+  width:auto;
+  display: block;
+  border: 1px solid black;
+}
+
+body {
+  line-height: 25px;
+}
+
+table.highlighttable{
+  margin-top: -15px;
+  margin-bottom: 10px;
 }

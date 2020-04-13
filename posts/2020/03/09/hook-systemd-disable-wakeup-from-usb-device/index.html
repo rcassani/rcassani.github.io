@@ -81,7 +81,7 @@
   <div class="row">
     <div id="main" class="eight columns">
       <article class="entry">
-<header class="entry-header">
+  <header class="entry-header">
 
   <h2 class="entry-title">
     <a href="http://www.castoriscausa.com/posts/2020/03/09/hook-systemd-disable-wakeup-from-usb-device/">Hook with systemd to disable wake-up from USB device</a>
@@ -94,22 +94,30 @@
         <i class="fa fa-calendar-alt"></i>
         2020/03/09
       </li>
+
+
+
       <!-- category and tags -->
         <p class="tags">
+
             <i class="fa fa-folder-open"></i>
             <span>Category: </span>
             <a href="http://www.castoriscausa.com/category/programming/">Programming</a><br>
+
             <i class="fa fa-tags"></i>
             <span>Tagged in: </span>
-            <a href="http://www.castoriscausa.com/tags/linux/">Linux</a>,             <a href="http://www.castoriscausa.com/tags/systemd/">systemd</a>            <br>
+              <a href="http://www.castoriscausa.com/tags/arch/">Arch</a>,               <a href="http://www.castoriscausa.com/tags/linux/">Linux</a>,               <a href="http://www.castoriscausa.com/tags/systemd/">systemd</a>            <br>
+
             <span>
               <i class="fa fa-comments"></i>
               <a href="http://www.castoriscausa.com/posts/2020/03/09/hook-systemd-disable-wakeup-from-usb-device/#disqus_thread">Comments</a>
             </span>
+
         </p>
     </ul>
   </div>
 </header>
+
         <div class="entry-content-media">
           <div class="post-thumb">
           </div>
@@ -118,7 +126,10 @@
         <div class="entry-content">
 
 <!-- Series text at the beginning of article -->
-          <p><strong>Situation:</strong> When my laptop is in suspension with the lid open, any update (movement or clicks) with the wireless mouse wakes-up the laptop. This post is about creating a <code>systemd</code> unit, and hook it to the start of the sleep unit, and disable the mouse as wake-up device. This approach should work for any Linux distribution using <code>systemd</code>.</p>
+          <p><strong>Situation:</strong> When my laptop is in suspension with the lid open, any update (movement or clicks) with the wireless mouse wakes-up the laptop. This post is about creating a <code>systemd</code> unit, and hook it to the start of the sleep unit, and disable the mouse as wake-up device. This approach should work for any Linux distribution using <code>systemd</code>, this post was written in a <a href="https://www.archlinux.org/">Arch Linux</a> system.</p>
+<p><center>
+<img alt="Alt" src="/images/systemd_cat.jpg"><br>
+</center>  </p>
 <p>First, the list of devices that can wake-up the computer can be find with:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ grep enabled cat /proc/acpi/wakeup
 </pre></div>
@@ -185,14 +196,18 @@
 </ul>
 </li>
 <li>
-<p>Change the permissions of the service file
-        :::bash
-        # chmod 664 /etc/systemd/system/suspend-mouse-fix.service</p>
+<p>Change the permissions of the service file</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># chmod 664 /etc/systemd/system/suspend-mouse-fix.service</span>
+</pre></div>
+</td></tr></table>
+
 </li>
 <li>
-<p>Enable the service:
-        bash
-        systemctl enable suspend-mouse-fix.service</p>
+<p>Enable the service:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>systemctl <span class="nb">enable</span> suspend-mouse-fix.service
+</pre></div>
+</td></tr></table>
+
 </li>
 <li>
 <p>If there any update in the service file, run <code>$ systemctl daemon-reload</code> after modifying it</p>
@@ -267,6 +282,7 @@
   <h3>All Tags</h3>
     <div class="tagcloud group">
         <a href="http://www.castoriscausa.com/tags/ad/">AD</a>
+        <a href="http://www.castoriscausa.com/tags/arch/">Arch</a>
         <a href="http://www.castoriscausa.com/tags/bash/">Bash</a>
         <a href="http://www.castoriscausa.com/tags/batch/">Batch</a>
         <a href="http://www.castoriscausa.com/tags/book/">book</a>

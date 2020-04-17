@@ -77,22 +77,14 @@
   </nav> <!-- end #nav-wrap -->    </header>
 
     <div id="content-wrap">
-<!-- Content - Index
-================================================== -->
+<!-- Content - Article -->
   <div class="row">
     <div id="main" class="eight columns">
-
-  <h1 class="entry-title">
-    Posts tagged with: Arch
-  </h1>
-  <br>
-
-        <article class="entry">
-  <div class="row"> <!-- div row -->
-  <header class="entry-header eight columns">
+      <article class="entry">
+  <header class="entry-header">
 
   <h2 class="entry-title">
-    <a href="http://www.castoriscausa.com/posts/2020/03/09/hook-systemd-disable-wakeup-from-usb-device/">Hook with systemd to disable wake-up from USB device</a>
+    <a href="http://www.castoriscausa.com/posts/2020/04/15/interactive-jupyter-notebook/">Interactive Jupyter Notebook in static websites [Test]</a>
   </h2>
 
   <div class="entry-meta">
@@ -100,7 +92,7 @@
       <!-- date -->
       <li>
         <i class="fa fa-calendar-alt"></i>
-        2020/03/09
+        2020/04/15
       </li>
 
 
@@ -110,15 +102,15 @@
 
             <i class="fa fa-folder-open"></i>
             <span>Category: </span>
-            <a href="http://www.castoriscausa.com/category/programming/">Programming</a><br>
+            <a href="http://www.castoriscausa.com/category/blog/">Blog</a><br>
 
             <i class="fa fa-tags"></i>
             <span>Tagged in: </span>
-              <a href="http://www.castoriscausa.com/tags/arch/">Arch</a>,               <a href="http://www.castoriscausa.com/tags/linux/">Linux</a>,               <a href="http://www.castoriscausa.com/tags/systemd/">systemd</a>            <br>
+              <a href="http://www.castoriscausa.com/tags/projects/">Projects</a>            <br>
 
             <span>
               <i class="fa fa-comments"></i>
-              <a href="http://www.castoriscausa.com/posts/2020/03/09/hook-systemd-disable-wakeup-from-usb-device/#disqus_thread">Comments</a>
+              <a href="http://www.castoriscausa.com/posts/2020/04/15/interactive-jupyter-notebook/#disqus_thread">Comments</a>
             </span>
 
         </p>
@@ -126,20 +118,92 @@
   </div>
 </header>
 
-  <div class="entry-thumb four columns">
-    <center>
-      <a href="http://www.castoriscausa.com/posts/2020/03/09/hook-systemd-disable-wakeup-from-usb-device/">
-          <img src= "http://www.castoriscausa.com/images/systemd_cat.jpg">
-      </a>
-    </center>
-  </div>
-</div> <!-- div row -->
-          <div class="entry-content">
-            Situation: When my laptop is in suspension with the lid open, any update (movement or clicks) with the wireless mouse wakes-up the laptop. This post is about creating a systemd unit, and hook it to the start of the sleep unit, and disable the mouse as wake-up device. This approach …
+        <div class="entry-content-media">
+          <div class="post-thumb">
           </div>
+        </div>
 
-        </article> <!-- end entry -->
-    </div> <!-- end main -->
+        <div class="entry-content">
+
+<!-- Series text at the beginning of article -->
+          <p>Without any question, <code>Jupyter Notebooks</code> are an amazing medium to present and share code, equations, graphics, among others. There are multiple ways to share them: as only view <a href="https://help.github.com/en/github/managing-files-in-a-repository/working-with-jupyter-notebook-files-on-github">in GitHub</a> or with <a href="https://nbviewer.jupyter.org/">nbviewer</a>; to fully interactive in <a href="https://mybinder.org/">Binder</a>, where an the Notebook runs in an live environment.</p>
+<p>In this post, I tested the embedding of an interactive <code>Jupyter Notebook</code> in to this website. The interaction is achieved by using <a href="https://github.com/jupyter-widgets/ipywidgets">ipywidgets</a> (Interactive HTML Widgets) in the Notebook. The steps to do this are described in this post:
+<a href="https://elc.github.io/posts/embed-interactive-notebooks/">https://elc.github.io/posts/embed-interactive-notebooks/</a>.</p>
+<p>Finally, notes at the end of this post add more details for certain steps in the process.</p>
+<h2 id="result">Result</h2>
+<p>This is the embedded <code>Jupyter Notebook</code>. To use the widgets, click first on <code>Show Widgets</code>.</p>
+<p>The original one can be found as a <a href="https://gist.github.com/rcassani/a472b922fc4accb3e9551f3f16dedb76">Gist</a>, and in <a href="https://mybinder.org/v2/gist/rcassani/a472b922fc4accb3e9551f3f16dedb76/master"><img alt="Binder" src="https://mybinder.org/badge_logo.svg"></a>  </p>
+<iframe src="/htmls/interactive_test.html" style="height:1150px;" frameborder="0" id="iframe"></iframe>
+
+<h2 id="notes">Notes</h2>
+<ol>
+<li>
+<p>The list of requirements for the <code>Jupyter Notebook</code> can be obtained by converting the notebook to a Python script with <a href="https://nbconvert.readthedocs.io/en/latest/usage.html#executable-script">nbconvert</a>, and the using <a href="https://github.com/bndr/pipreqs">pipreqs</a>.  </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ jupyter nbconvert --to script notebook_name.ipynb
+$ pipreqs .
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>An <code>iframe</code> element is used to inserting the HTML file created with <a href="https://www.nbinteract.com/">nbinteract</a> to the static webpage. By default the <code>height</code> of the <code>iframe</code> element needs to be defiend before hand, however, it can be automatically adjusted to the size of its content by adding a javascript function to the <code>onlad</code> attribute of the <code>iframe</code>. As such, the HTML code to place in the static site is:  </p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">iframe</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/htmls/notebook_name.html&quot;</span> <span class="na">frameborder</span><span class="o">=</span><span class="s">&quot;0&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;iframe&quot;</span> <span class="na">onload</span><span class="o">=</span><span class="s">&#39;javascript:resizeIframe(this);&#39;</span><span class="p">&gt;&lt;/</span><span class="nt">iframe</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">language</span><span class="o">=</span><span class="s">&quot;javascript&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span><span class="p">&gt;</span>
+    <span class="kd">function</span> <span class="nx">resizeIframe</span><span class="p">(</span><span class="nx">obj</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">obj</span><span class="p">.</span><span class="nx">style</span><span class="p">.</span><span class="nx">height</span> <span class="o">=</span> <span class="nx">obj</span><span class="p">.</span><span class="nx">contentWindow</span><span class="p">.</span><span class="nb">document</span><span class="p">.</span><span class="nx">body</span><span class="p">.</span><span class="nx">scrollHeight</span> <span class="o">+</span> <span class="s1">&#39;px&#39;</span><span class="p">;</span>
+    <span class="p">}</span>
+<span class="p">&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</pre></div>
+</td></tr></table>
+
+<p>The <code>height</code> of the loaded <code>HTML</code> is usually smaller than the <code>height</code> of the HTML once the widgets are loaded. Thus, the <code>height</code> may need to be further adjusted depending on the type and quantity of widgets.</p>
+</li>
+<li>
+<p>To have a better presentation of the Notebook, I changed the the class <code>container</code> in the HTML file created with <a href="https://www.nbinteract.com/">nbinteract</a> to have a <code>width</code> of <code>100%</code>.</p>
+</li>
+</ol>
+<!-- Series text at the end of article -->
+
+        </div>
+      </article>
+
+<!-- Comments -->
+<!-- Disqus -->
+    <div id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'castoriscausa'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.url = 'http://www.castoriscausa.com/posts/2020/04/15/interactive-jupyter-notebook/';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+<!-- End Disqus Code -->
+    </div> <!-- main End -->
 <!-- Sidebar -->
 <div id="sidebar" class="four columns">
 <div class="widget widget_search">

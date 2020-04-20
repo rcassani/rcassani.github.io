@@ -4,350 +4,350 @@ xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitem
 xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
-<loc>http://www.castoriscausa.com/</loc>
-<lastmod>2020-04-20T00:30:50-00:00</lastmod>
+<loc>https://www.castoriscausa.com/</loc>
+<lastmod>2020-04-20T13:46:42-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/archives.html</loc>
-<lastmod>2020-04-20T00:30:50-00:00</lastmod>
+<loc>https://www.castoriscausa.com/archives.html</loc>
+<lastmod>2020-04-20T13:46:42-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/categories.html</loc>
-<lastmod>2020-04-20T00:30:50-00:00</lastmod>
+<loc>https://www.castoriscausa.com/categories.html</loc>
+<lastmod>2020-04-20T13:46:42-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/pages/about-me</loc>
+<loc>https://www.castoriscausa.com/pages/about-me</loc>
 <lastmod>2016-10-22T00:00:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/pages/publications</loc>
+<loc>https://www.castoriscausa.com/pages/publications</loc>
 <lastmod>2016-10-22T00:00:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/pages/software</loc>
+<loc>https://www.castoriscausa.com/pages/software</loc>
 <lastmod>2016-10-22T00:00:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/posts/2020/04/15/interactive-jupyter-notebook/</loc>
+<loc>https://www.castoriscausa.com/posts/2020/04/15/interactive-jupyter-notebook/</loc>
 <lastmod>2020-04-15T18:00:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/posts/2020/04/06/microscope-vlc-linux/</loc>
+<loc>https://www.castoriscausa.com/posts/2020/04/06/microscope-vlc-linux/</loc>
 <lastmod>2020-04-06T20:37:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/posts/2020/03/09/hook-systemd-disable-wakeup-from-usb-device/</loc>
+<loc>https://www.castoriscausa.com/posts/2020/03/09/hook-systemd-disable-wakeup-from-usb-device/</loc>
 <lastmod>2020-03-09T17:32:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/posts/2020/02/28/phd-thesis-summary/</loc>
+<loc>https://www.castoriscausa.com/posts/2020/02/28/phd-thesis-summary/</loc>
 <lastmod>2020-02-28T12:00:00-05:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/posts/2020/01/28/password-management-with-Dropbox-and-KeePassXC/</loc>
+<loc>https://www.castoriscausa.com/posts/2020/01/28/password-management-with-Dropbox-and-KeePassXC/</loc>
 <lastmod>2020-01-28T20:20:00-05:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/posts/2019/04/21/comm-tssohttlars/</loc>
+<loc>https://www.castoriscausa.com/posts/2019/04/21/comm-tssohttlars/</loc>
 <lastmod>2019-04-21T19:00:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/posts/2019/03/06/energy-vampire-devices/</loc>
+<loc>https://www.castoriscausa.com/posts/2019/03/06/energy-vampire-devices/</loc>
 <lastmod>2019-03-06T15:00:00-05:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/posts/2019/01/31/ge62vr-mint-gtx1060/</loc>
+<loc>https://www.castoriscausa.com/posts/2019/01/31/ge62vr-mint-gtx1060/</loc>
 <lastmod>2019-01-31T19:00:00-05:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/posts/2017/09/16/emotive-epoc-hack/</loc>
+<loc>https://www.castoriscausa.com/posts/2017/09/16/emotive-epoc-hack/</loc>
 <lastmod>2017-09-16T19:00:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/posts/2017/08/29/freezes-linux-gpu-acpi/</loc>
+<loc>https://www.castoriscausa.com/posts/2017/08/29/freezes-linux-gpu-acpi/</loc>
 <lastmod>2017-08-29T12:00:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/posts/2017/07/25/universal-shortcuts/</loc>
+<loc>https://www.castoriscausa.com/posts/2017/07/25/universal-shortcuts/</loc>
 <lastmod>2017-07-25T19:00:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/posts/2017/01/31/linux-usb-uefi/</loc>
+<loc>https://www.castoriscausa.com/posts/2017/01/31/linux-usb-uefi/</loc>
 <lastmod>2017-01-31T00:00:00-05:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/posts/2016/12/06/touchpad-disable/</loc>
+<loc>https://www.castoriscausa.com/posts/2016/12/06/touchpad-disable/</loc>
 <lastmod>2016-12-06T19:00:00-05:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/posts/2016/10/26/poshbash-windows-bash/</loc>
+<loc>https://www.castoriscausa.com/posts/2016/10/26/poshbash-windows-bash/</loc>
 <lastmod>2016-10-26T22:00:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/posts/2016/10/22/first-post/</loc>
+<loc>https://www.castoriscausa.com/posts/2016/10/22/first-post/</loc>
 <lastmod>2016-10-22T22:00:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/category/blog/</loc>
+<loc>https://www.castoriscausa.com/category/blog/</loc>
 <lastmod>2020-04-15T18:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/category/programming/</loc>
+<loc>https://www.castoriscausa.com/category/programming/</loc>
 <lastmod>2020-03-09T17:32:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/category/projects/</loc>
+<loc>https://www.castoriscausa.com/category/projects/</loc>
 <lastmod>2020-04-06T20:37:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/projects/</loc>
+<loc>https://www.castoriscausa.com/tags/projects/</loc>
 <lastmod>2020-04-15T18:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/linux/</loc>
+<loc>https://www.castoriscausa.com/tags/linux/</loc>
 <lastmod>2020-04-06T20:37:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/photos/</loc>
+<loc>https://www.castoriscausa.com/tags/photos/</loc>
 <lastmod>2020-04-06T20:37:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/arch/</loc>
+<loc>https://www.castoriscausa.com/tags/arch/</loc>
 <lastmod>2020-03-09T17:32:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/systemd/</loc>
+<loc>https://www.castoriscausa.com/tags/systemd/</loc>
 <lastmod>2020-03-09T17:32:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/eeg/</loc>
+<loc>https://www.castoriscausa.com/tags/eeg/</loc>
 <lastmod>2020-02-28T12:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/ad/</loc>
+<loc>https://www.castoriscausa.com/tags/ad/</loc>
 <lastmod>2020-02-28T12:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/phd/</loc>
+<loc>https://www.castoriscausa.com/tags/phd/</loc>
 <lastmod>2020-02-28T12:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/diy/</loc>
+<loc>https://www.castoriscausa.com/tags/diy/</loc>
 <lastmod>2020-01-28T20:20:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/book/</loc>
+<loc>https://www.castoriscausa.com/tags/book/</loc>
 <lastmod>2019-04-21T19:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/space/</loc>
+<loc>https://www.castoriscausa.com/tags/space/</loc>
 <lastmod>2019-04-21T19:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/power/</loc>
+<loc>https://www.castoriscausa.com/tags/power/</loc>
 <lastmod>2019-03-06T15:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/energy/</loc>
+<loc>https://www.castoriscausa.com/tags/energy/</loc>
 <lastmod>2019-03-06T15:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/gpu/</loc>
+<loc>https://www.castoriscausa.com/tags/gpu/</loc>
 <lastmod>2019-01-31T19:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/nvidia/</loc>
+<loc>https://www.castoriscausa.com/tags/nvidia/</loc>
 <lastmod>2019-01-31T19:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/cuda/</loc>
+<loc>https://www.castoriscausa.com/tags/cuda/</loc>
 <lastmod>2019-01-31T19:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/deeplearning/</loc>
+<loc>https://www.castoriscausa.com/tags/deeplearning/</loc>
 <lastmod>2019-01-31T19:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/hack/</loc>
+<loc>https://www.castoriscausa.com/tags/hack/</loc>
 <lastmod>2017-09-16T19:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/windows/</loc>
+<loc>https://www.castoriscausa.com/tags/windows/</loc>
 <lastmod>2017-07-25T19:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/bash/</loc>
+<loc>https://www.castoriscausa.com/tags/bash/</loc>
 <lastmod>2017-07-25T19:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/batch/</loc>
+<loc>https://www.castoriscausa.com/tags/batch/</loc>
 <lastmod>2017-07-25T19:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/touchpad/</loc>
+<loc>https://www.castoriscausa.com/tags/touchpad/</loc>
 <lastmod>2016-12-06T19:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/git/</loc>
+<loc>https://www.castoriscausa.com/tags/git/</loc>
 <lastmod>2016-10-26T22:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/tags/espanol/</loc>
+<loc>https://www.castoriscausa.com/tags/espanol/</loc>
 <lastmod>2016-10-22T22:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/author/raymundo-cassani.html</loc>
+<loc>https://www.castoriscausa.com/author/raymundo-cassani.html</loc>
 <lastmod>2020-04-15T18:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>http://www.castoriscausa.com/posts/2016/10/22/first-post/spa/</loc>
+<loc>https://www.castoriscausa.com/posts/2016/10/22/first-post/spa/</loc>
 <lastmod>2016-10-22T22:00:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>

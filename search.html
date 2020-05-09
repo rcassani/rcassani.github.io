@@ -189,6 +189,19 @@
     <!-- Java Script -->
     <script src="https://www.castoriscausa.com/theme/js/jquery-3.4.1.min.js"></script>
     <script src="https://www.castoriscausa.com/theme/js/main.js"></script>
+  <script src="https://www.castoriscausa.com/tipuesearch_content.js"></script>
+  <script type="text/javascript" src="https://www.castoriscausa.com/theme/tipuesearch/tipuesearch_set.js"></script>
+  <script type="text/javascript" src="https://www.castoriscausa.com/theme/tipuesearch/tipuesearch.min.js"></script>
+
+  <script>
+  $(document).ready(function() {
+    $('#tipue_search_input').tipuesearch({
+      'show': 10,
+      'newWindow': false
+    });
+    $('#query').html($('#query').html() + $('#tipue_search_input').val());
+  });
+  </script>
         <script src="https://www.castoriscausa.com/castoris.js"></script>
 
     <script type="text/javascript">

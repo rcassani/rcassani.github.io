@@ -86,7 +86,7 @@
   <header class="entry-header">
 
   <h2 class="entry-title">
-    <a href="https://www.castoriscausa.com/posts/2019/01/31/ge62vr-mint-gtx1060/">LinuxMint-19 + GTX1060 + CUDA 10.0</a>
+    <a href="https://www.castoriscausa.com/posts/2019/01/31/ge62vr-mint-gtx1060/">LinuxMint-19 + GTX1060 + CUDA 10.2</a>
   </h2>
 
   <div class="entry-meta">
@@ -97,6 +97,12 @@
         2019/01/31
       </li>
 
+      <!-- modified date -->
+        <span class="meta-sep">&nbsp;</span>
+        <li>
+          <i class="fa fa-pencil"></i>
+          2020/05/15
+        </li>
 
 
       <!-- category and tags -->
@@ -234,7 +240,7 @@ $ sudo apt-get upgrade
 <h2 id="2-install-and-test-cuda-driver">2 Install and Test CUDA driver</h2>
 <p>Once the <strong>NVIDIA driver</strong> are properly installed, it's time to install the <strong>CUDA driver</strong>. If you're not sure what's the CUDA driver check this <a href="http://www.nvidia.com/object/cuda_home_new.html">link</a></p>
 <ul>
-<li>Download the <a href="https://developer.nvidia.com/cuda-downloads"><strong>CUDA driver</strong></a></li>
+<li>Download the <a href="https://developer.nvidia.com/cuda-toolkit"><strong>CUDA driver</strong></a></li>
 </ul>
 <p><center>
 <a href="/images/cuda_driver_mint_download.png"><img src="/images/cuda_driver_mint_download.png" style="width: 800px;"/></a>
@@ -242,13 +248,7 @@ $ sudo apt-get upgrade
 </center></p>
 <ul>
 <li>
-<p>Change the downloaded file to executable and execute it</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ chmod +x cuda_10.1.105_418.39_linux.run
-$ sudo sh cuda_10.1.105_418.39_linux.run --override
-</pre></div>
-</td></tr></table>
-
+<p>Follow the instructions to download and install the CUDA driver</p>
 </li>
 <li>
 <p>Installation parameters. Select <strong>NO</strong> when the CUDA installer ask to install <strong>NVIDIA Accelerated Graphics Driver for Linux</strong> as the NVIDIA driver is already installed.</p>
@@ -269,54 +269,24 @@ $ sudo sh cuda_10.1.105_418.39_linux.run --override
 15
 16
 17
-18
-19
-20
-21
-22
-23
-24
-25
-26
-27
-28
-29
-30
-31
-32
-33</pre></div></td><td class="code"><div class="highlight"><pre><span></span>Do you accept the previously <span class="nb">read</span> EULA?
-accept/decline/quit: accept
+18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">===========</span>
+<span class="o">=</span> <span class="nv">Summary</span> <span class="o">=</span>
+<span class="o">===========</span>
 
-You are attempting to install on an unsupported configuration. Do you wish to <span class="k">continue</span>?
-<span class="o">(</span>y<span class="o">)</span>es/<span class="o">(</span>n<span class="o">)</span>o <span class="o">[</span> default is no <span class="o">]</span>: y
+Driver:   Not Selected
+Toolkit:  Installed in /usr/local/cuda-10.2/
+Samples:  Installed in /home/cassani/
 
-Install NVIDIA Accelerated Graphics Driver <span class="k">for</span> Linux-x86_64 <span class="m">375</span>.26?
-<span class="o">(</span>y<span class="o">)</span>es/<span class="o">(</span>n<span class="o">)</span>o/<span class="o">(</span>q<span class="o">)</span>uit: n
+Please make sure that
+ -   PATH includes /usr/local/cuda-10.2/bin
+ -   LD_LIBRARY_PATH includes /usr/local/cuda-10.2/lib64, or, add /usr/local/cuda-10.2/lib64 to /etc/ld.so.conf and run ldconfig as root
 
-Install the CUDA <span class="m">8</span>.0 Toolkit?
-<span class="o">(</span>y<span class="o">)</span>es/<span class="o">(</span>n<span class="o">)</span>o/<span class="o">(</span>q<span class="o">)</span>uit: y
+To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-10.2/bin
 
-Enter Toolkit Location
-<span class="o">[</span> default is /usr/local/cuda-8.0 <span class="o">]</span>:
-
-Do you want to install a symbolic link at /usr/local/cuda?
-<span class="o">(</span>y<span class="o">)</span>es/<span class="o">(</span>n<span class="o">)</span>o/<span class="o">(</span>q<span class="o">)</span>uit: y
-
-Install the CUDA <span class="m">8</span>.0 Samples?
-<span class="o">(</span>y<span class="o">)</span>es/<span class="o">(</span>n<span class="o">)</span>o/<span class="o">(</span>q<span class="o">)</span>uit: y
-
-Enter CUDA Samples Location
-<span class="o">[</span> default is /home/cassani <span class="o">]</span>: /usr/local/cuda-8.0
-
-Installing the CUDA Toolkit in /usr/local/cuda-8.0 ...
-Missing recommended library: libGLU.so
-Missing recommended library: libX11.so
-Missing recommended library: libXi.so
-Missing recommended library: libXmu.so
-
-Installing the CUDA Samples in /usr/local/cuda-8.0 ...
-Copying samples to /usr/local/cuda-8.0/NVIDIA_CUDA-8.0_Samples now...
-Finished copying samples.
+Please see CUDA_Installation_Guide_Linux.pdf in /usr/local/cuda-10.2/doc/pdf <span class="k">for</span> detailed information on setting up CUDA.
+***WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least <span class="m">440</span>.00 is required <span class="k">for</span> CUDA <span class="m">10</span>.2 functionality to work.
+To install the driver using this installer, run the following command, replacing &lt;CudaInstaller&gt; with the name of this run file:
+    sudo &lt;CudaInstaller&gt;.run --silent --driver***
 </pre></div>
 </td></tr></table>
 
@@ -360,9 +330,9 @@ $ sudo ldconfig
 6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ nvcc --version
 
 nvcc: NVIDIA <span class="o">(</span>R<span class="o">)</span> Cuda compiler driver
-Copyright <span class="o">(</span>c<span class="o">)</span> <span class="m">2005</span>-2016 NVIDIA Corporation
-Built on Tue_Jan_10_13:22:03_CST_2017
-Cuda compilation tools, release <span class="m">8</span>.0, V8.0.61
+Copyright <span class="o">(</span>c<span class="o">)</span> <span class="m">2005</span>-2019 NVIDIA Corporation
+Built on Wed_Oct_23_19:24:38_PDT_2019
+Cuda compilation tools, release <span class="m">10</span>.2, V10.2.89
 </pre></div>
 </td></tr></table>
 

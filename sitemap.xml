@@ -5,21 +5,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/</loc>
-<lastmod>2020-05-11T19:03:16-00:00</lastmod>
+<lastmod>2020-05-15T17:04:52-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/archives.html</loc>
-<lastmod>2020-05-11T19:03:16-00:00</lastmod>
+<lastmod>2020-05-15T17:04:52-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/categories.html</loc>
-<lastmod>2020-05-11T19:03:16-00:00</lastmod>
+<lastmod>2020-05-15T17:04:52-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -103,7 +103,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/posts/2019/01/31/ge62vr-mint-gtx1060/</loc>
-<lastmod>2019-01-31T19:00:00-05:00</lastmod>
+<lastmod>2020-05-15T00:00:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -159,7 +159,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/category/blog/</loc>
-<lastmod>2020-04-15T18:00:00-05:18</lastmod>
+<lastmod>2020-05-15T00:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -194,7 +194,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/tags/linux/</loc>
-<lastmod>2020-04-06T20:37:00-05:18</lastmod>
+<lastmod>2020-05-15T00:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -278,28 +278,28 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/tags/gpu/</loc>
-<lastmod>2019-01-31T19:00:00-05:18</lastmod>
+<lastmod>2020-05-15T00:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/tags/nvidia/</loc>
-<lastmod>2019-01-31T19:00:00-05:18</lastmod>
+<lastmod>2020-05-15T00:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/tags/cuda/</loc>
-<lastmod>2019-01-31T19:00:00-05:18</lastmod>
+<lastmod>2020-05-15T00:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/tags/deeplearning/</loc>
-<lastmod>2019-01-31T19:00:00-05:18</lastmod>
+<lastmod>2020-05-15T00:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -355,7 +355,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/author/raymundo-cassani.html</loc>
-<lastmod>2020-05-10T16:57:00-05:18</lastmod>
+<lastmod>2020-05-15T00:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

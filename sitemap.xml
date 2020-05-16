@@ -5,21 +5,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/</loc>
-<lastmod>2020-05-15T17:47:15-00:00</lastmod>
+<lastmod>2020-05-16T17:36:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/archives.html</loc>
-<lastmod>2020-05-15T17:47:15-00:00</lastmod>
+<lastmod>2020-05-16T17:36:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/categories.html</loc>
-<lastmod>2020-05-15T17:47:15-00:00</lastmod>
+<lastmod>2020-05-16T17:36:11-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -41,6 +41,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://www.castoriscausa.com/pages/software</loc>
 <lastmod>2016-10-22T00:00:00-04:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.castoriscausa.com/posts/2020/05/12/cinnamon-desklet-development/</loc>
+<lastmod>2020-05-12T09:22:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -173,7 +180,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/category/programming/</loc>
-<lastmod>2020-03-09T17:32:00-05:18</lastmod>
+<lastmod>2020-05-12T09:22:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -181,6 +188,20 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://www.castoriscausa.com/category/projects/</loc>
 <lastmod>2020-04-06T20:37:00-05:18</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.castoriscausa.com/tags/tutorial/</loc>
+<lastmod>2020-05-12T09:22:00-05:18</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.castoriscausa.com/tags/diy/</loc>
+<lastmod>2020-05-10T16:57:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -237,13 +258,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://www.castoriscausa.com/tags/phd/</loc>
 <lastmod>2020-02-28T12:00:00-05:18</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://www.castoriscausa.com/tags/diy/</loc>
-<lastmod>2020-01-28T20:20:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

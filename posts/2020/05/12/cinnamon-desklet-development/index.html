@@ -144,7 +144,7 @@ First desklet, it prints "Hello Desktop" and can have multiple instances
 </li>
 <li>
 <p>A desklet requires at least two files:</p>
-</li>
+<ul>
 <li>
 <p><code>metadata.json</code>: As it names indicates, this has the metadata for the desklet and <a href="https://github.com/linuxmint/Cinnamon/wiki/Applet,-Desklet-and-Extension-Settings-Reference#additional-options-in-metadatajson">additional options</a> such as <code>max-instances</code> to allow multiple instances of the desklet.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
@@ -233,8 +233,10 @@ First desklet, it prints "Hello Desktop" and can have multiple instances
 <!-- __ -->
 
 </li>
+</ul>
+</li>
 </ol>
-<p>Constants are declared with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const"><code>const</code></a>, and cannot be re-declared nor changed. First, the <code>Desklet</code> class is imported from <a href="https://github.com/linuxmint/cinnamon/blob/master/js/ui/desklet.js"><code>.ui.desklet</code></a>. The Shell Toolkit is imported at <code>imports.gi.St;</code>, and it is used to add elements to the desklet, St documentation can be found <a href="https://gjs-docs.gnome.org/st10~1.0_api/">here</a>. The <code>function MyDesklet</code> is the constructor for our desklet, it takes <code>metadata</code> (dictionary) with the metadata of the desklet, and <code>desklet_id</code> (int) which is the instance id of the desklet. Using <code>MyDesklet.prototype</code> allows us to add new methods to the object constructors. The method <code>setupUI()</code> contains the behaviour of the desklet, see comments in the code above. Note that it is called inside <code>_init</code>. Finally, the function <code>main</code> returns an instance of <code>MyDesklet</code></p>
+<p>Constants are declared with <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const"><code>const</code></a>, and cannot be re-declared nor changed. First, the <code>Desklet</code> class is imported from <a href="https://github.com/linuxmint/cinnamon/blob/master/js/ui/desklet.js"><code>.ui.desklet</code></a>. The Shell Toolkit is imported at <code>imports.gi.St;</code>, it is a <a href="https://en.wikipedia.org/wiki/Clutter_(software)">clutter</a>-based toolkit that allows to add GUI elements to the desklet, St documentation can be found <a href="https://gjs-docs.gnome.org/st10~1.0_api/">here</a>. The <code>function MyDesklet</code> is the constructor for our desklet, it takes <code>metadata</code> (dictionary) with the metadata of the desklet, and <code>desklet_id</code> (int) which is the instance id of the desklet. Using <code>MyDesklet.prototype</code> allows us to add new methods to the object constructors. The method <code>setupUI()</code> contains the behaviour of the desklet, see comments in the code above. Note that it is called inside <code>_init</code>. Finally, the function <code>main</code> returns an instance of <code>MyDesklet</code></p>
 <h3 id="next-steps">Next steps</h3>
 <p>By this point there is a working desklet. The behaviour of the desklet still needs to be coded to have all the desired features, will be documented in a future post.</p>
 <!-- Series text at the end of article -->

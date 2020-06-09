@@ -1,0 +1,416 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <title>CastorisCausa</title>
+    <meta charset="utf-8" />
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-86432394-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+<!-- End Google Analytics -->
+
+    <!-- mobile specific metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS -->
+      <link rel="stylesheet" href="https://www.castoriscausa.com/theme/tipuesearch/tipuesearch.css">
+
+    <link rel="stylesheet" href="https://www.castoriscausa.com/theme/css/default.css">
+    <link rel="stylesheet" href="https://www.castoriscausa.com/theme/css/layout.css">
+    <link rel="stylesheet" href="https://www.castoriscausa.com/theme/css/media-queries.css">
+
+    <link rel="stylesheet" href="https://www.castoriscausa.com/theme/css/pygments/native.css">
+
+      <link rel="stylesheet" href="https://www.castoriscausa.com/castoris.css">
+
+    <!-- Script -->
+    <script src="https://www.castoriscausa.com/theme/js/modernizr.js"></script>
+    <script src="https://www.castoriscausa.com/theme/js/jquery-3.4.1.min.js"></script>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="https://www.castoriscausa.com/theme/images/favicon.png">
+
+  </head>
+
+  <body>
+    <header id="top">
+<!-- Header
+================================================== -->
+  <div class="row">
+    <div class="header-content twelve columns">
+      <h1 id="logo-text"><a href="https://www.castoriscausa.com" title="">CastorisCausa</a></h1>
+      <p id="intro">Personal blog and hacks by <a href="../pages/about-me">Raymundo Cassani</a></p>
+    </div>
+  </div>
+
+  <nav id="nav-wrap">
+    <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
+    <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>
+    <div class="row">
+      <ul id="nav" class="nav">
+
+        <!-- Links that are not pages -->
+            <li><a href="https://www.castoriscausa.com">Home</a></li>
+
+        <!-- Links for Categories, create Dropdown -->
+          <li class="has-children"><a href="#">Categories</a>
+            <ul>
+                <li><a href="https://www.castoriscausa.com/category/blog/">Blog</a></li>
+                <li><a href="https://www.castoriscausa.com/category/posts/">posts</a></li>
+                <li><a href="https://www.castoriscausa.com/category/programming/">Programming</a></li>
+                <li><a href="https://www.castoriscausa.com/category/projects/">Projects</a></li>
+            </ul>
+          </li>
+
+        <!-- Links for Pages, ordered by PAGES_SORT_ATTRIBUTE (def. title) -->
+            <li><a href="https://www.castoriscausa.com/pages/software">Software</a></li>
+            <li><a href="https://www.castoriscausa.com/pages/publications">Publications</a></li>
+            <li><a href="https://www.castoriscausa.com/pages/about-me">About</a></li>
+
+      </ul> <!-- end #nav -->
+    </div>
+  </nav> <!-- end #nav-wrap -->    </header>
+
+    <div id="content-wrap">
+<!-- Content - Article -->
+  <div class="row">
+    <div id="main" class="eight columns">
+      <article class="entry">
+  <header class="entry-header">
+
+  <h2 class="entry-title">
+    <a href="https://www.castoriscausa.com/posts/2020/06/09/system-monitor-graph-desklet/">Developing a Desklet for Cinnamon</a>
+  </h2>
+
+  <div class="entry-meta">
+    <ul>
+      <!-- date -->
+      <li>
+        <i class="fa fa-calendar-alt"></i>
+        2020/06/09
+      </li>
+
+
+
+      <!-- category and tags -->
+        <p class="tags">
+
+            <i class="fa fa-folder-open"></i>
+            <span>Category: </span>
+            <a href="https://www.castoriscausa.com/category/programming/">Programming</a><br>
+
+
+            <span>
+              <i class="fa fa-comments"></i>
+              <a href="https://www.castoriscausa.com/posts/2020/06/09/system-monitor-graph-desklet/#disqus_thread">Comments</a>
+            </span>
+
+        </p>
+    </ul>
+  </div>
+</header>
+
+        <div class="entry-content-media">
+          <div class="post-thumb">
+          </div>
+        </div>
+
+        <div class="entry-content">
+
+<!-- Series text at the beginning of article -->
+          <p>In a <a href="/posts/2020/05/12/cinnamon-desklet-development/">previous post</a>, the minimum code for a functional Cinnamon Desklet was provided. Based on that, I started to develop the <a href="https://cinnamon-spices.linuxmint.com/desklets/view/56">System monitor graph</a> which shows graphs for the level of activity in various system variables including: CPU, memory, and disks. This post describes some of the elements that I found important during the development of such a Desklet.</p>
+<p><center>
+<img alt="Alt" src="/images/sys_monitor_graph.gif"><br>
+System monitor graph Desklet.
+</center>  </p>
+<h3 id="setting-tools">Setting tools</h3>
+<ul>
+<li>As with many coding projects, the use of <a href="">git</a> or any other version control software is desirable to track and revert changes.</li>
+<li>The <a href="https://cinnamon-spices.linuxmint.com/desklets/view/17">Developer's Tools</a> Desklet was very helpful as it allows to restart Cinnamon with one click, display the Cinnamon console, among other actions.</li>
+<li>Printing in the Cinnamon console is often very useful  <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">global</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Some text or variable goes here&#39;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+</ul>
+<h3 id="adding-settings">Adding Settings</h3>
+<p>The ability to configure a Deskelet is very important. This is reached by creating the <code>settings-schema.json</code> file besides the <code>desklet.js</code> file. The <code>settings-schema.json</code> contains the elements in the GUI that the user can modify, these include: text labels, switches, text boxes, color choosers. More info can be found <a href="https://projects.linuxmint.com/reference/git/cinnamon-tutorials/xlet-settings.html">here</a> and <a href="https://projects.linuxmint.com/reference/git/cinnamon-tutorials/xlet-settings-ref.html">here</a>. To connect the Settings with your Desklet:</p>
+<ol>
+<li>
+<p>Add <code>Settings</code> to the <code>imports</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">Settings</span> <span class="o">=</span> <span class="nx">imports</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">settings</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Get the Setting values in the <code>_init</code> function of the Desklet,</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">settings</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Settings</span><span class="p">.</span><span class="nx">DeskletSettings</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">metadata</span><span class="p">[</span><span class="s2">&quot;uuid&quot;</span><span class="p">],</span> <span class="nx">desklet_id</span><span class="p">);</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">settings</span><span class="p">.</span><span class="nx">bindProperty</span><span class="p">(</span><span class="nx">Settings</span><span class="p">.</span><span class="nx">BindingDirection</span><span class="p">.</span><span class="nx">IN</span><span class="p">,</span> <span class="s2">&quot;background-color&quot;</span><span class="p">,</span> <span class="s2">&quot;background_color&quot;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">on_setting_changed</span><span class="p">);</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+</ol>
+<p>The arguments for <code>bindProperty</code> are: <code>BindingDirection.IN</code> changes in the settings go into the Desklet, <code>background-color</code> the element name in the <code>settings-schema.json</code>, and <code>background_color</code> name of the property to be created in the Desklet, it can be accesed as <code>this.background_color</code>.</p>
+<h3 id="adding-refreshing">Adding refreshing</h3>
+<p>Most Desklets need to be updated on a fix schedule, this action can be performed by adding a timer.</p>
+<ol>
+<li>
+<p>Add <code>Mainloop</code> to the <code>imports</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">Mainloop</span> <span class="o">=</span> <span class="nx">imports</span><span class="p">.</span><span class="nx">mainloop</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>A way to use this timer is to split the <code>update</code> function of the Desklet in two:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">update</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+        <span class="c1">// updates the visuals in Desklet</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">update_draw</span><span class="p">();</span>
+        <span class="c1">// calls this.update() in refresh_interval seconds</span>
+        <span class="k">this</span><span class="p">.</span><span class="nx">timeout</span> <span class="o">=</span> <span class="nx">Mainloop</span><span class="p">.</span><span class="nx">timeout_add_seconds</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">refresh_interval</span><span class="p">,</span> <span class="nx">Lang</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">update</span><span class="p">));</span>
+<span class="p">},</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Additionally, if a update is required before the next interval, it can be forced. For example below removes the <code>mainloop</code> and intermediately calls <code>this.update()</code> when the <code>Settings</code> have been updated. Note that the timer is set again inside <code>this.update()</code>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">on_setting_changed</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<span class="nx">Mainloop</span><span class="p">.</span><span class="nx">source_remove</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">timeout</span><span class="p">);</span>
+<span class="k">this</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
+<span class="p">},</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+</ol>
+<h3 id="interacting-with-files-and-commands">Interacting with files and commands</h3>
+<p>Often a Desklet needs to read a file or execute a command. For the first, the function <code>get_file_contents_utf8_sync</code> does the trick. <code>Cinnamon</code> has to be added to the <code>imports</code>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">mem_out</span> <span class="o">=</span> <span class="nx">Cinnamon</span><span class="p">.</span><span class="nx">get_file_contents_utf8_sync</span><span class="p">(</span><span class="s2">&quot;/proc/meminfo&quot;</span><span class="p">);</span>
+</pre></div>
+</td></tr></table>
+
+<p>To execute a program <code>Subprocess</code> can be used.</p>
+<ol>
+<li>
+<p>Add <code>Gio</code> to the <code>imports</code>:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">Gio</span> <span class="o">=</span> <span class="nx">imports</span><span class="p">.</span><span class="nx">gi</span><span class="p">.</span><span class="nx">Gio</span><span class="p">;</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Indicate the command and its arguments, and retrieve the stdout to a variable:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">subprocess</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Gio</span><span class="p">.</span><span class="nx">Subprocess</span><span class="p">({</span>
+    <span class="nx">argv</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;/bin/df&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">],</span>
+    <span class="nx">flags</span><span class="o">:</span> <span class="nx">Gio</span><span class="p">.</span><span class="nx">SubprocessFlags</span><span class="p">.</span><span class="nx">STDOUT_PIPE</span><span class="p">,</span>
+<span class="p">});</span>
+<span class="nx">subprocess</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="kd">let</span> <span class="p">[,</span> <span class="nx">out</span><span class="p">]</span> <span class="o">=</span> <span class="nx">subprocess</span><span class="p">.</span><span class="nx">communicate_utf8</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>If pipes are needed, it is possible call a bash shell and pass as the argument the commands with pipes, for example:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2
+3
+4
+5
+6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">subprocess</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Gio</span><span class="p">.</span><span class="nx">Subprocess</span><span class="p">({</span>
+    <span class="nx">argv</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;/bin/sh&#39;</span><span class="p">,</span> <span class="s1">&#39;-c&#39;</span><span class="p">,</span> <span class="s1">&#39;/bin/df &#39;</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="s1">&#39; | grep Filesystem -w -A1&#39;</span><span class="p">],</span>
+    <span class="nx">flags</span><span class="o">:</span> <span class="nx">Gio</span><span class="p">.</span><span class="nx">SubprocessFlags</span><span class="p">.</span><span class="nx">STDOUT_PIPE</span><span class="p">,</span>
+<span class="p">});</span>
+<span class="nx">subprocess</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
+<span class="kd">let</span> <span class="p">[,</span> <span class="nx">out</span><span class="p">]</span> <span class="o">=</span> <span class="nx">subprocess</span><span class="p">.</span><span class="nx">communicate_utf8</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+</ol>
+<h3 id="drawing">Drawing</h3>
+<p><a href="">Cairo</a> was used to draw all the visuals in my Desklet. The general idea is to create a canvas with Clutter, and use this canvas to add all the visual elements for the Desklet. For a working example, see the section <strong>// draws graph</strong> of the <code>update_draw()</code> function in the <a href="https://github.com/linuxmint/cinnamon-spices-desklets/blob/master/system-monitor-graph%40rcassani/files/system-monitor-graph%40rcassani/desklet.js"><code>desklet.js</code></a> for my Desklet.</p>
+<h3 id="wrap-up">Wrap-up</h3>
+<p>This was an entertaining project, and my first time using JavaScript. Some final tips that I learned from this were:
+* Once more, source control
+* Test any small change
+* Check the Errors printed in the Cinnamon console
+* Learn from other people's code, the source code for all the <a href="https://cinnamon-spices.linuxmint.com/desklets">Deskets in Cinnamon</a> spices is <a href="https://github.com/linuxmint/cinnamon-spices-desklets">here</a>.</p>
+<!-- Series text at the end of article -->
+
+        </div>
+      </article>
+
+<!-- Comments -->
+<!-- Disqus -->
+    <div id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'castoriscausa'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.url = 'https://www.castoriscausa.com/posts/2020/06/09/system-monitor-graph-desklet/';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+<!-- End Disqus Code -->
+    </div> <!-- main End -->
+<!-- Sidebar -->
+<div id="sidebar" class="four columns">
+<div class="widget widget_search">
+  <form action="https://www.castoriscausa.com/search.html" onsubmit="return validateForm(this.elements['q'].value);">
+    <input type="text" name="q" id="tipue_search_input" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
+    <input type="submit" value="" class="submit-search">
+  </form>
+</div>
+
+<div class="widget widget_categories group">
+  <h3>Links</h3>
+  <ul>
+      <li><a href="https://www.castoriscausa.com">Home</a></li>
+      <li><a href="http://musaelab.ca/">MuSAE Lab</a></li>
+  </ul>
+</div>
+
+<div class="widget widget_categories group">
+  <h3>Categories</h3>
+  <ul>
+      <li><a href="https://www.castoriscausa.com/category/blog/">Blog</a></li>
+      <li><a href="https://www.castoriscausa.com/category/posts/">posts</a></li>
+      <li><a href="https://www.castoriscausa.com/category/programming/">Programming</a></li>
+      <li><a href="https://www.castoriscausa.com/category/projects/">Projects</a></li>
+  </ul>
+</div>
+
+<div class="widget widget_tags">
+  <h3>All Tags</h3>
+    <div class="tagcloud group">
+        <a href="https://www.castoriscausa.com/tags/ad/">AD</a>
+        <a href="https://www.castoriscausa.com/tags/arch/">Arch</a>
+        <a href="https://www.castoriscausa.com/tags/bash/">Bash</a>
+        <a href="https://www.castoriscausa.com/tags/batch/">Batch</a>
+        <a href="https://www.castoriscausa.com/tags/book/">book</a>
+        <a href="https://www.castoriscausa.com/tags/cuda/">CUDA</a>
+        <a href="https://www.castoriscausa.com/tags/deeplearning/">DeepLearning</a>
+        <a href="https://www.castoriscausa.com/tags/diy/">DIY</a>
+        <a href="https://www.castoriscausa.com/tags/eeg/">EEG</a>
+        <a href="https://www.castoriscausa.com/tags/energy/">energy</a>
+        <a href="https://www.castoriscausa.com/tags/espanol/">Español</a>
+        <a href="https://www.castoriscausa.com/tags/git/">Git</a>
+        <a href="https://www.castoriscausa.com/tags/gpu/">GPU</a>
+        <a href="https://www.castoriscausa.com/tags/hack/">hack</a>
+        <a href="https://www.castoriscausa.com/tags/linux/">Linux</a>
+        <a href="https://www.castoriscausa.com/tags/nvidia/">NVIDIA</a>
+        <a href="https://www.castoriscausa.com/tags/phd/">PhD</a>
+        <a href="https://www.castoriscausa.com/tags/photos/">photos</a>
+        <a href="https://www.castoriscausa.com/tags/power/">power</a>
+        <a href="https://www.castoriscausa.com/tags/projects/">Projects</a>
+        <a href="https://www.castoriscausa.com/tags/space/">space</a>
+        <a href="https://www.castoriscausa.com/tags/systemd/">systemd</a>
+        <a href="https://www.castoriscausa.com/tags/touchpad/">touchpad</a>
+        <a href="https://www.castoriscausa.com/tags/tutorial/">tutorial</a>
+        <a href="https://www.castoriscausa.com/tags/windows/">Windows</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div> <!-- end sidebar -->  </div> <!-- end row -->
+    </div>
+
+    <footer>
+<!-- Footer
+================================================== -->
+  <div class="row">
+    <div class="twelve columns">
+      <ul class="social-links">
+        <li><a href="https://github.com/rcassani"><i class="fab fa-github fa-lg"></i></a></li>
+        <li><a href="https://twitter.com/r_cassani"><i class="fab fa-twitter fa-lg"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/rcassani/"><i class="fab fa-linkedin fa-lg"></i></a></li>
+        <li><a href="https://scholar.google.com/citations?hl=en&user=3A9_Ww8AAAAJ"><i class="fas fa-user-graduate fa-lg"></i></a></li>
+        <li><a href="/files/cv_rcg.pdf"><i class="fas fa-address-card fa-lg"></i></a></li>
+        <li><a href="#"><i class="fas fa-envelope fa-lg"></i></a></li>
+    </ul>
+  </div>
+
+
+  <div class="twelve columns">&copy; 2020 Raymundo Cassani
+    &middot; Powered by <a href="https://github.com/rcassani/pelican-kis" target="_blank">pelican-kis</a> and <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+
+                  <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+
+           </div>
+
+
+  </div> <!-- End row -->
+  <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-chevron-up"></i></a></div>    </footer>
+
+    <!-- Java Script -->
+    <script src="https://www.castoriscausa.com/theme/js/jquery-3.4.1.min.js"></script>
+    <script src="https://www.castoriscausa.com/theme/js/main.js"></script>
+        <script src="https://www.castoriscausa.com/castoris.js"></script>
+
+    <script type="text/javascript">
+        var disqus_shortname = 'castoriscausa';
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] ||
+             document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+
+  </body>
+</html>

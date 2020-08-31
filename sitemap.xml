@@ -5,21 +5,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/</loc>
-<lastmod>2020-06-19T16:17:15-00:00</lastmod>
+<lastmod>2020-08-31T11:13:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/archives.html</loc>
-<lastmod>2020-06-19T16:17:15-00:00</lastmod>
+<lastmod>2020-08-31T11:13:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/categories.html</loc>
-<lastmod>2020-06-19T16:17:15-00:00</lastmod>
+<lastmod>2020-08-31T11:13:54-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -179,29 +179,8 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://www.castoriscausa.com/category/blog/</loc>
-<lastmod>2020-06-19T12:00:00-05:18</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>https://www.castoriscausa.com/category/posts/</loc>
-<lastmod>2020-05-10T16:57:00-05:18</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://www.castoriscausa.com/category/programming/</loc>
-<lastmod>2020-06-09T13:00:00-05:18</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://www.castoriscausa.com/category/projects/</loc>
-<lastmod>2020-04-06T20:37:00-05:18</lastmod>
+<lastmod>2020-06-19T12:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -221,6 +200,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
+<loc>https://www.castoriscausa.com/tags/linux/</loc>
+<lastmod>2020-06-09T13:00:00-05:18</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
 <loc>https://www.castoriscausa.com/tags/tutorial/</loc>
 <lastmod>2020-05-12T09:22:00-05:18</lastmod>
 <changefreq>daily</changefreq>
@@ -235,21 +221,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://www.castoriscausa.com/tags/projects/</loc>
+<loc>https://www.castoriscausa.com/tags/jupyter/</loc>
 <lastmod>2020-04-15T18:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.castoriscausa.com/tags/linux/</loc>
-<lastmod>2020-05-15T00:00:00-05:18</lastmod>
+<loc>https://www.castoriscausa.com/tags/webdevelopment/</loc>
+<lastmod>2020-04-15T18:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
-<loc>https://www.castoriscausa.com/tags/photos/</loc>
+<loc>https://www.castoriscausa.com/tags/photo/</loc>
 <lastmod>2020-04-06T20:37:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -286,6 +272,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://www.castoriscausa.com/tags/phd/</loc>
 <lastmod>2020-02-28T12:00:00-05:18</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.castoriscausa.com/tags/lifehack/</loc>
+<lastmod>2020-01-28T20:20:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

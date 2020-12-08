@@ -5,21 +5,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/</loc>
-<lastmod>2020-11-11T12:41:27-00:00</lastmod>
+<lastmod>2020-12-08T17:51:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/archives.html</loc>
-<lastmod>2020-11-11T12:41:27-00:00</lastmod>
+<lastmod>2020-12-08T17:51:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/categories.html</loc>
-<lastmod>2020-11-11T12:41:27-00:00</lastmod>
+<lastmod>2020-12-08T17:51:00-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -41,6 +41,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://www.castoriscausa.com/pages/software</loc>
 <lastmod>2016-10-22T00:00:00-04:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.castoriscausa.com/posts/2020/12/08/thunderbird-google-calendar-no-addon/</loc>
+<lastmod>2020-12-08T14:45:00-05:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -187,7 +194,14 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/category/posts/</loc>
-<lastmod>2020-09-20T21:34:00-05:18</lastmod>
+<lastmod>2020-12-08T14:45:00-05:18</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.castoriscausa.com/tags/lifehack/</loc>
+<lastmod>2020-12-08T14:45:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -298,13 +312,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://www.castoriscausa.com/tags/lifehack/</loc>
-<lastmod>2020-01-28T20:20:00-05:18</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
 <loc>https://www.castoriscausa.com/tags/book/</loc>
 <lastmod>2019-04-21T19:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
@@ -404,7 +411,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/author/raymundo-cassani.html</loc>
-<lastmod>2020-09-20T21:34:00-05:18</lastmod>
+<lastmod>2020-12-08T14:45:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

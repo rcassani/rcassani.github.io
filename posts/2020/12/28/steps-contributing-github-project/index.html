@@ -77,7 +77,7 @@
   <header class="entry-header">
 
   <h2 class="entry-title">
-    <a href="https://www.castoriscausa.com/posts/2017/07/25/universal-shortcuts/">Universal Shortcut</a>
+    <a href="https://www.castoriscausa.com/posts/2020/12/28/steps-contributing-github-project/">7 steps for contributing a GitHub project</a>
   </h2>
 
   <div class="entry-meta">
@@ -85,7 +85,7 @@
       <!-- date -->
       <li>
         <i class="fa fa-calendar-alt"></i>
-        2017/07/25
+        2020/12/28
       </li>
 
 
@@ -96,11 +96,11 @@
 
             <i class="fa fa-tags"></i>
             <span>Tagged in: </span>
-              <a href="https://www.castoriscausa.com/tags/bash/">Bash</a>,               <a href="https://www.castoriscausa.com/tags/batch/">Batch</a>,               <a href="https://www.castoriscausa.com/tags/linux/">Linux</a>,               <a href="https://www.castoriscausa.com/tags/windows/">Windows</a>            <br>
+              <a href="https://www.castoriscausa.com/tags/git/">Git</a>,               <a href="https://www.castoriscausa.com/tags/github/">GitHub</a>,               <a href="https://www.castoriscausa.com/tags/methods/">methods</a>            <br>
 
             <span>
               <i class="fa fa-comments"></i>
-              <a href="https://www.castoriscausa.com/posts/2017/07/25/universal-shortcuts/#disqus_thread">Comments</a>
+              <a href="https://www.castoriscausa.com/posts/2020/12/28/steps-contributing-github-project/#disqus_thread">Comments</a>
             </span>
 
         </p>
@@ -116,54 +116,60 @@
         <div class="entry-content">
 
 <!-- Series text at the beginning of article -->
-          <p>This project started from the "need" of having a compatible way to point to files indifferently if on Windows or Linux. While both operative systems can handle symbolic links, when the target file is an executable, certain scripts and programs present <a href="https://askubuntu.com/questions/541317/link-to-exe-doesnt-launch-wine">problems when executed through a symbolic link</a>, as the working directory is expected to be the directory containing the executable  and not the directory with the symbolic link.</p>
-<p>For that reason, a different approach was taken. To create an hybrid script with <strong>Bash</strong> and <strong>Batch</strong> code to point to the desired files or program. This kind of script is possible by using the commenting format of <a href="https://stackoverflow.com/questions/17510688/single-script-to-run-in-both-windows-batch-and-linux-bash">Batch files to ignore the Bash commands</a>. In this sense such files can are <strong>universal shortcuts</strong>. As the paths utilized in this universal shortcut file, are relative, it works perfectly with portable media, if and only if, the filesystem supports file permissions. Note: FAT32 does not support them.</p>
-<p>The universal shortcuts consist of an executable script file with Bash and Batch code. When executed in Windows the Bash part is ignored and when executed in Linux the Batch part is ignored. Thus, the same script can be executed in both systems and performs the same action.</p>
-<p>The scripts in bash and batch are equivalent and they do:  </p>
+          <h3 id="congratulations">Congratulations!</h3>
+<p>It's amazing that you're thinking into contributing to an open-source project.</p>
+<p>Although the task seems intimidating, it can be broken into some simple steps. <strong>First of all</strong>, check if the project you want to contribute to has a <code>CONTRIBUTING</code> file. If it exists, this file presents the <a href="https://docs.github.com/en/free-pro-team@latest/github/building-a-strong-community/setting-guidelines-for-repository-contributors">guidelines for repository contributors</a> for the project.</p>
+<p>Let's assume the you (<code>YOUR-USERNAME</code>) want to contribute to a the project <code>COOL-PROJECT</code> which repository is in the <code>COOL-USERNAME</code> GitHub account. In general the process to contribute to an open-source project can be divided into 7 simple steps. These steps are expanded with great detail in this wonderful post: <a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/">https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/</a>.</p>
 <ol>
 <li>
-<p>Change the current directory to the directory where the target file is</p>
-</li>
-<li>
-<p>Open the target file in a similar way as when the user double clicks it, this operation <a href="https://github.com/alexeevdv/dename/blob/master/dename.sh">depends on the Desktop Environment utilized</a></p>
-</li>
-<li>
-<p>Exit</p>
-</li>
-</ol>
-<p>The universal shortcut is created by a Python 3 script that can be found in this repository:</p>
-<p><a href="https://github.com/rcassani/universal-shortcuts">https://github.com/rcassani/universal-shortcuts</a></p>
-<h3 id="usage">Usage</h3>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ python3 mk_unishortcut.py &lt;targetpath&gt;
+<p><a href="https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo">Fork the repository</a> from <code>https://github.com/COOL-USERNAME/COOL-PROJECT</code> to your GitHub account and clone it to your computer.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ git clone https://github.com/YOUR-USERNAME/COOL-PROJECT.git
 </pre></div>
 </td></tr></table>
 
-<p>the <code>&lt;targetpath&gt;</code> can be absolute or relative, and can be a file or directory</p>
-<p>When the Python script is executed in Linux it will automatically change the file permissions of the shortcut file to be executable. If the Python script is run in Windows, it is needed to change the file permissions to executable in Linux.  </p>
-<p>Despite the fact these universal shortcuts may not be extremely useful, this project was an interesting experience in writing hybrid Bash-Batch scripts.</p>
-<h2 id="references">References:</h2>
-<ol>
-<li>
-<p>Symbolic links fail to run executable files when they need to run in their folder<br>
-<a href="https://askubuntu.com/questions/541317/link-to-exe-doesnt-launch-wine">https://askubuntu.com/questions/541317/link-to-exe-doesnt-launch-wine</a></p>
 </li>
 <li>
-<p>Hybrid Windows-bash and Linux-bash scripting<br>
-<a href="https://stackoverflow.com/questions/17510688/single-script-to-run-in-both-windows-batch-and-linux-bash">https://stackoverflow.com/questions/17510688/single-script-to-run-in-both-windows-batch-and-linux-bash</a></p>
+<p>Create a <code>upstream</code> remote (to this repository) and sync your local copy.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ git remote add upstream https://github.com/COOL-USERNAME/COOL-PROJECT
+$ git remote -v
+</pre></div>
+</td></tr></table>
+
+<p>At this point the <code>origin</code> remote refers to your forked repository in your account (<code>https://github.com/YOUR-USERNAME/COOL-PROJECT</code>) and <code>upstream</code> to the original repository (<code>https://github.com/COOL-USERNAME/COOL-PROJECT.git</code>). To sync your <code>local</code> and <code>origin</code> repositories to the <code>upstream</code> repository, pull from <code>upstream</code>, and push to <code>origin</code>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ git checkout master    
+$ git pull upstream master <span class="o">&amp;&amp;</span> git push origin master
+</pre></div>
+</td></tr></table>
+
 </li>
 <li>
-<p>Identify Linux Desktop Environment<br>
-<a href="https://github.com/alexeevdv/dename/blob/master/dename.sh">https://github.com/alexeevdv/dename/blob/master/dename.sh</a>   </p>
+<p>Create a branch in your <code>local</code> repository. This branch will contain your contribution.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>git checkout -b fixing-something
+</pre></div>
+</td></tr></table>
+
 </li>
 <li>
-<p><code>start</code> command in Windows<br>
-<a href="https://renewablepcs.wordpress.com/about-linux/kde-gnome-or-xfce/">https://technet.microsoft.com/en-us/library/cc770297(v=ws.11).aspx</a></p>
+<p>Perform your contribution, write[good commit messages, and commit. If your contributions solves an open issue, <a href="https://github.blog/2013-01-22-closing-issues-via-commit-messages/">close it with the proper commit message</a>. <strong>NOTE:</strong> Make ONLY ONE contribution per branch.</p>
 </li>
 <li>
-<p>Link with different Desktop Environments<br>
-<a href="https://renewablepcs.wordpress.com/about-linux/kde-gnome-or-xfce/">https://renewablepcs.wordpress.com/about-linux/kde-gnome-or-xfce/</a></p>
+<p>Push your <code>local</code> branch to your fork in GitHub (<code>https://github.com/YOUR-USERNAME/COOL-PROJECT</code>).</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>git push -u origin fixing-something
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>On GitHub, <a href="https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork">create a new Pull Request</a> from your fork.</p>
+</li>
+<li>
+<p>Provide feedback about the Pull Request, and if things are correct, your Pull Request will be merged  <code>upstream</code> repository.</p>
 </li>
 </ol>
+<h3 id="example">Example</h3>
+<p>An example of a <code>CONTRIBUTING</code> file listing these steps in an open-source project cab be found here: <a href="https://github.com/MuSAELab/amplitude-modulation-analysis-module">https://github.com/MuSAELab/amplitude-modulation-analysis-module</a></p>
 <!-- Series text at the end of article -->
 
         </div>
@@ -182,7 +188,7 @@
             var disqus_config = function () {
                 this.language = "en";
 
-                        this.page.url = 'https://www.castoriscausa.com/posts/2017/07/25/universal-shortcuts/';
+                        this.page.url = 'https://www.castoriscausa.com/posts/2020/12/28/steps-contributing-github-project/';
             };
 
             /* * * DON'T EDIT BELOW THIS LINE * * */

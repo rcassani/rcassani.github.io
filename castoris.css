@@ -239,6 +239,10 @@ pre { border-color: var(--color-gray-4); }
 /*/////////////////////////////*/
 /*/////////////////////////////*/
 /*/////////////////////////////*/
+/* makes "strong" the links in posts */
+div.entry-content a{
+  font: 15px/30px 'merriweather-bold', sans-serif;
+}
 
 /* Underline links */
 ul#nav li a:hover, ul#nav li a:focus, a:hover, a:focus,
@@ -311,10 +315,7 @@ p.tags{margin-bottom: 15px}
 /* Place disc indicators for ul tag in Page and Article content*/
 section.page ul, div.entry-content ul {margin-left: 17px; list-style: disc}
 
-/* makes "strong" the links in posts */
-div.entry-content a{
-  font: 15px/30px 'merriweather-bold', sans-serif;
-}
+
 
 /* Makes that strong inherits size in Page and Article content*/
 section.page strong, div.entry-content strong {font-size: inherit; font-weight: bold}

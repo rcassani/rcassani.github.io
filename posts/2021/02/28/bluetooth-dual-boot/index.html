@@ -77,7 +77,7 @@
   <header class="entry-header">
 
   <h2 class="entry-title">
-    <a href="https://www.castoriscausa.com/posts/2016/10/22/first-post/spa/">Primer post</a>
+    <a href="https://www.castoriscausa.com/posts/2021/02/28/bluetooth-dual-boot/">Shared Bluetooth devices in dual-boot PC</a>
   </h2>
 
   <div class="entry-meta">
@@ -85,7 +85,7 @@
       <!-- date -->
       <li>
         <i class="fa fa-calendar-alt"></i>
-        2016/10/22
+        2021/02/28
       </li>
 
 
@@ -94,10 +94,13 @@
         <p class="tags">
 
 
+            <i class="fa fa-tags"></i>
+            <span>Tagged in: </span>
+              <a href="https://www.castoriscausa.com/tags/bluetooth/">Bluetooth</a>,               <a href="https://www.castoriscausa.com/tags/linux/">Linux</a>,               <a href="https://www.castoriscausa.com/tags/tutorial/">tutorial</a>,               <a href="https://www.castoriscausa.com/tags/windows/">Windows</a>            <br>
 
             <span>
               <i class="fa fa-comments"></i>
-              <a href="https://www.castoriscausa.com/posts/2016/10/22/first-post/spa/#disqus_thread">Comments</a>
+              <a href="https://www.castoriscausa.com/posts/2021/02/28/bluetooth-dual-boot/#disqus_thread">Comments</a>
             </span>
 
         </p>
@@ -113,28 +116,85 @@
         <div class="entry-content">
 
 <!-- Series text at the beginning of article -->
-          <p>Este post es un ejemplo de como escribir posts en diferentes idiomas.</p>
-<p><strong>Metadata de este post escrito en Markdown:</strong></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7
-8</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">Title</span><span class="o">:</span> <span class="n">Primer</span> <span class="n">post</span>
-<span class="n">Date</span><span class="o">:</span> <span class="mi">2016</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">22</span> <span class="mi">22</span><span class="o">:</span><span class="mi">00</span>
-<span class="n">Category</span><span class="o">:</span> <span class="n">Blog</span>
-<span class="n">Slug</span><span class="o">:</span> <span class="n">first</span><span class="o">-</span><span class="n">post</span>
-<span class="n">Translation</span><span class="o">:</span> <span class="kc">true</span>
-<span class="n">Lang</span><span class="o">:</span> <span class="n">spa</span>
-<span class="n">Author</span><span class="o">:</span> <span class="n">Raymundo</span> <span class="n">Cassani</span>
-<span class="n">Image</span><span class="o">:</span> <span class="k">default</span>
+          <h3 id="scenario">Scenario</h3>
+<p>You have a Bluetooth (BT) Device (headphones, keyboard, mouse, etc.) with <a href="https://en.wikipedia.org/wiki/MAC_address">MAC address</a> <code>XX:XX:XX:XX:XX:XX</code>, and you want to use this BT device in a dual OS PC (in this case Linux and Windows), which as a BT Adapter with MAC address <code>YY:YY:YY:YY:YY:YY</code>.</p>
+<p><strong>Pairing the device in both OS does not work!</strong></p>
+<p>Because of the way the <a href="https://www.ellisys.com/technology/een_bt07.pdf">Bluetooth pairing process</a> happens: every time the Device and the Adapter are paired a <strong>shared secret Link Key</strong> is generated. This <strong>Link Key</strong> is used to authenticate the Device-Adapter connection. As such pairing in one OS will overwrite the <strong>Link Key</strong>.</p>
+<h3 id="the-solution">The solution</h3>
+<p>The solution is to use the same <strong>Link Key</strong> in both operative systems.</p>
+<ol>
+<li>First, pair the Device and Adapter in OS A  </li>
+<li>Pair the Device and Adapter in OS B  </li>
+<li>Get the Link Key generated in OS B  </li>
+<li>Modify the Link Key in OS A to be the one you got from OS B.</li>
+</ol>
+<p>The specific instruction vary depending of which OS does first the pairing. Below the instructions for both cases:  </p>
+<ul>
+<li>If Linux is the OS A: <a href="#linux-first">instructions</a>  </li>
+<li>If Windows is the OS A <a href="#windows-first">instructions</a>  </li>
+</ul>
+<h3 id="linux-first">Linux first</h3>
+<ol>
+<li>Pair the Device in Linux</li>
+<li>Pair the Device on Windows</li>
+<li>
+<p>Get the Link Key in Windows</p>
+<p>Get PSTools: https://docs.microsoft.com/en-us/sysinternals/downloads/psexec</p>
+<p>Run as Administrator:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ ./psexec -s -i regedit.exe
 </pre></div>
 </td></tr></table>
 
-<p>Este post es la versión en español de:<br>
-<a href="http://www.castoriscausa.com/posts/2016/10/22/first-post/">http://www.castoriscausa.com/posts/2016/10/22/first-post/</a></p>
+<p>Go to:<br>
+<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters\Keys\YYYYYYYYYYYY\</code></p>
+<p>Copy the Value (this is the Link Key) corresponding to Key: MAC address of the Device (<code>XXXXXXXXXXXX</code>)</p>
+<p>The Link Key in Windows has spaces and lower cases. To be used in Linux, it should not have spaces and be in Capitals.</p>
+</li>
+<li>
+<p>Set the Link Key from Windows into Linux<br>
+    Open the directory: <code>/var/lib/bluetooth/[YY:YY:YY:YY:YY:YY]/[XX:XX:XX:XX:XX:XX]/</code><br>
+    Edit the <code>Key</code> field in <code>[LinkKey]</code> section of the <code>info</code> file with the Value obtained from Windows</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">[</span>LinkKey<span class="o">]</span>
+<span class="nv">Key</span><span class="o">=</span>B99999999FFFFFFFFF999999999FFFFF
+</pre></div>
+</td></tr></table>
+
+<p>Reboot</p>
+</li>
+</ol>
+<h3 id="windows-first">Windows first</h3>
+<ol>
+<li>Pair the Device in Windows</li>
+<li>Pair the Device on Linux</li>
+<li>
+<p>Get the Link Key in Linux</p>
+<p>Open the directory: <code>/var/lib/bluetooth/[YY:YY:YY:YY:YY:YY]/[XX:XX:XX:XX:XX:XX]/info</code><br>
+Copy the <code>Key</code> field in <code>[LinkKey]</code> section of the <code>info</code> file, this is the Link Key</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
+2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">[</span>LinkKey<span class="o">]</span>
+<span class="nv">Key</span><span class="o">=</span>B99999999FFFFFFFFF999999999FFFFF <span class="o">[</span>the LinkKeys <span class="k">for</span> the device<span class="o">]</span>
+</pre></div>
+</td></tr></table>
+
+</li>
+<li>
+<p>Set the Link Key from Linux into Windows
+    Get PSTools: https://docs.microsoft.com/en-us/sysinternals/downloads/psexec</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ ./psexec -s -i regedit.exe
+</pre></div>
+</td></tr></table>
+
+<p>Go to:
+<code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters\Keys\YYYYYYYYYYYY</code></p>
+<p>Edit the Value (this is the Link Key) corresponding to Key: MAC address of the Device (<code>XXXXXXXXXXXX</code>)</p>
+<p>The Link Key in Windows has spaces is in lower case. Format the Link Key from Linux accordingly.  </p>
+</li>
+<li>
+<p>Reboot</p>
+<p>If the Device cannot be forgotten in Windows (to do a fresh pairing), use <a href="https://bluetoothinstaller.com/bluetooth-command-line-tools">BluetoothCLTools</a> to remove it from the Command Line.</p>
+</li>
+</ol>
 <!-- Series text at the end of article -->
 
         </div>
@@ -153,7 +213,7 @@
             var disqus_config = function () {
                 this.language = "en";
 
-                        this.page.url = 'https://www.castoriscausa.com/posts/2016/10/22/first-post/spa/';
+                        this.page.url = 'https://www.castoriscausa.com/posts/2021/02/28/bluetooth-dual-boot/';
             };
 
             /* * * DON'T EDIT BELOW THIS LINE * * */

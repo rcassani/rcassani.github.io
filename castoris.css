@@ -232,10 +232,9 @@ pre { border-color: var(--color-gray-4); }
 .highlight pre{ color: var(--color-white); }
 
 /* Links in code inherint font and color */
-div.entry-content.highlighttable a, div.entry-content code a {
+div.entry-content .highlighttable a, div.entry-content code a {
   color: inherit;
-  font-size: inherit;
-  font-family: monospace, serif;
+  font: inherit;
 }
 
 /*/////////////////////////////*/

@@ -149,6 +149,12 @@ hr {border-color: var(--color-gray-3);}
   color: var(--color-white);
 }
 
+/* Links in code inherint font and color */
+.highlighttable a, code a {
+  color: inherit;
+  font: inherit;
+}
+
 /* Links Default and Hover&Focus */
 a, a:visited {color: var(--color-solid);}
 a:hover, a:focus  {color: var(--color-gray-1)}

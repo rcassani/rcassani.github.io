@@ -70,14 +70,22 @@
   </nav> <!-- end #nav-wrap -->    </header>
 
     <div id="content-wrap">
-<!-- Content - Article -->
+<!-- Content - Index
+================================================== -->
   <div class="row">
     <div id="main" class="eight columns">
-      <article class="entry">
-  <header class="entry-header">
+
+  <h1 class="entry-title">
+    Posts tagged with: Matlab
+  </h1>
+  <br>
+
+        <article class="entry">
+  <div class="row"> <!-- div row -->
+  <header class="entry-header eight columns">
 
   <h2 class="entry-title">
-    <a href="https://www.castoriscausa.com/posts/2020/12/28/steps-contributing-github-project/">7 steps for contributing a GitHub project</a>
+    <a href="https://www.castoriscausa.com/posts/2021/06/06/matlab-linux-file-association/">Matlab file association in Linux</a>
   </h2>
 
   <div class="entry-meta">
@@ -85,7 +93,7 @@
       <!-- date -->
       <li>
         <i class="fa fa-calendar-alt"></i>
-        2020/12/28
+        2021/06/06
       </li>
 
 
@@ -96,11 +104,11 @@
 
             <i class="fa fa-tags"></i>
             <span>Tagged in: </span>
-              <a href="https://www.castoriscausa.com/tags/git/">Git</a>,               <a href="https://www.castoriscausa.com/tags/github/">GitHub</a>,               <a href="https://www.castoriscausa.com/tags/methods/">methods</a>            <br>
+              <a href="https://www.castoriscausa.com/tags/linux/">Linux</a>,               <a href="https://www.castoriscausa.com/tags/matlab/">Matlab</a>            <br>
 
             <span>
               <i class="fa fa-comments"></i>
-              <a href="https://www.castoriscausa.com/posts/2020/12/28/steps-contributing-github-project/#disqus_thread">Comments</a>
+              <a href="https://www.castoriscausa.com/posts/2021/06/06/matlab-linux-file-association/#disqus_thread">Comments</a>
             </span>
 
         </p>
@@ -108,104 +116,20 @@
   </div>
 </header>
 
-        <div class="entry-content-media">
-          <div class="post-thumb">
+  <div class="entry-thumb four columns">
+    <center>
+      <a href="https://www.castoriscausa.com/posts/2021/06/06/matlab-linux-file-association/">
+          <img src= "https://www.castoriscausa.com/images/matlab_linux_files.png">
+      </a>
+    </center>
+  </div>
+</div> <!-- div row -->
+          <div class="entry-content">
+            In contrast to Matlab for Windows and macOS, Matlab for Linux does not automatically make the associations with its related files .m, .mat, and .fig. This post describes the how to do the association, it includes: 1. defining MIME types, 2. setting icons, and 3. creating desktop entries (.desktop files …
           </div>
-        </div>
 
-        <div class="entry-content">
-
-<!-- Series text at the beginning of article -->
-          <h3 id="congratulations">Congratulations!</h3>
-<p>It's amazing that you're thinking into contributing to an open-source project.</p>
-<p>Although the task seems intimidating, it can be broken into some simple steps. <strong>First of all</strong>, check if the project you want to contribute to has a <code>CONTRIBUTING</code> file. If it exists, this file presents the <a href="https://docs.github.com/en/free-pro-team@latest/github/building-a-strong-community/setting-guidelines-for-repository-contributors">guidelines for repository contributors</a> for the project.</p>
-<p>Let's assume the you (<code>YOUR-USERNAME</code>) want to contribute to a the project <code>COOL-PROJECT</code> which repository is in the <code>COOL-USERNAME</code> GitHub account. In general the process to contribute to an open-source project can be divided into 7 simple steps. These steps are expanded with great detail in this wonderful post: <a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/">https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/</a>.</p>
-<ol>
-<li>
-<p><a href="https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo">Fork the repository</a> from <code>https://github.com/COOL-USERNAME/COOL-PROJECT</code> to your GitHub account and clone it to your computer.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ git clone https://github.com/YOUR-USERNAME/COOL-PROJECT.git
-</pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Create a <code>upstream</code> remote (to this repository) and sync your local copy.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ git remote add upstream https://github.com/COOL-USERNAME/COOL-PROJECT
-$ git remote -v
-</pre></div>
-</td></tr></table>
-
-<p>At this point the <code>origin</code> remote refers to your forked repository in your account (<code>https://github.com/YOUR-USERNAME/COOL-PROJECT</code>) and <code>upstream</code> to the original repository (<code>https://github.com/COOL-USERNAME/COOL-PROJECT.git</code>). To sync your <code>local</code> and <code>origin</code> repositories to the <code>upstream</code> repository, pull from <code>upstream</code>, and push to <code>origin</code>.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ git checkout master    
-$ git pull upstream master <span class="o">&amp;&amp;</span> git push origin master
-</pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Create a branch in your <code>local</code> repository. This branch will contain your contribution.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>git checkout -b fixing-something
-</pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>Perform your contribution, write[good commit messages, and commit. If your contributions solves an open issue, <a href="https://github.blog/2013-01-22-closing-issues-via-commit-messages/">close it with the proper commit message</a>. <strong>NOTE:</strong> Make ONLY ONE contribution per branch.</p>
-</li>
-<li>
-<p>Push your <code>local</code> branch to your fork in GitHub (<code>https://github.com/YOUR-USERNAME/COOL-PROJECT</code>).</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>git push -u origin fixing-something
-</pre></div>
-</td></tr></table>
-
-</li>
-<li>
-<p>On GitHub, <a href="https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork">create a new Pull Request</a> from your fork.</p>
-</li>
-<li>
-<p>Provide feedback about the Pull Request, and if things are correct, your Pull Request will be merged  <code>upstream</code> repository.</p>
-</li>
-</ol>
-<h3 id="example">Example</h3>
-<p>An example of a <code>CONTRIBUTING</code> file listing these steps in an open-source project cab be found here: <a href="https://github.com/MuSAELab/amplitude-modulation-analysis-module">https://github.com/MuSAELab/amplitude-modulation-analysis-module</a></p>
-<!-- Series text at the end of article -->
-
-        </div>
-      </article>
-
-<!-- Comments -->
-<!-- Disqus -->
-    <div id="comments">
-        <h2>Comments</h2>
-
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'castoriscausa'; // required: replace example with your forum shortname
-
-            var disqus_config = function () {
-                this.language = "en";
-
-                        this.page.url = 'https://www.castoriscausa.com/posts/2020/12/28/steps-contributing-github-project/';
-            };
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function () {
-                var dsq = document.createElement('script');
-                dsq.type = 'text/javascript';
-                dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
-            Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-      </div>
-<!-- End Disqus Code -->
-    </div> <!-- main End -->
+        </article> <!-- end entry -->
+    </div> <!-- end main -->
 <!-- Sidebar -->
 <div id="sidebar" class="four columns">
 <div class="widget widget_search">

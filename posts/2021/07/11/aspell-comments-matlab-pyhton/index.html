@@ -70,22 +70,14 @@
   </nav> <!-- end #nav-wrap -->    </header>
 
     <div id="content-wrap">
-<!-- Content - Index
-================================================== -->
+<!-- Content - Article -->
   <div class="row">
     <div id="main" class="eight columns">
-
-  <h1 class="entry-title">
-    Posts tagged with: Bash
-  </h1>
-  <br>
-
-        <article class="entry">
-  <div class="row"> <!-- div row -->
-  <header class="entry-header eight columns">
+      <article class="entry">
+  <header class="entry-header">
 
   <h2 class="entry-title">
-    <a href="https://www.castoriscausa.com/posts/2017/07/25/universal-shortcuts/">Universal Shortcut</a>
+    <a href="https://www.castoriscausa.com/posts/2021/07/11/aspell-comments-matlab-pyhton/">Spellcheck Matlab and Python scripts</a>
   </h2>
 
   <div class="entry-meta">
@@ -93,7 +85,7 @@
       <!-- date -->
       <li>
         <i class="fa fa-calendar-alt"></i>
-        2017/07/25
+        2021/07/11
       </li>
 
 
@@ -104,11 +96,11 @@
 
             <i class="fa fa-tags"></i>
             <span>Tagged in: </span>
-              <a href="https://www.castoriscausa.com/tags/bash/">Bash</a>,               <a href="https://www.castoriscausa.com/tags/batch/">Batch</a>,               <a href="https://www.castoriscausa.com/tags/linux/">Linux</a>,               <a href="https://www.castoriscausa.com/tags/windows/">Windows</a>            <br>
+              <a href="https://www.castoriscausa.com/tags/linux/">Linux</a>,               <a href="https://www.castoriscausa.com/tags/matlab/">MATLAB</a>,               <a href="https://www.castoriscausa.com/tags/python/">Python</a>            <br>
 
             <span>
               <i class="fa fa-comments"></i>
-              <a href="https://www.castoriscausa.com/posts/2017/07/25/universal-shortcuts/#disqus_thread">Comments</a>
+              <a href="https://www.castoriscausa.com/posts/2021/07/11/aspell-comments-matlab-pyhton/#disqus_thread">Comments</a>
             </span>
 
         </p>
@@ -116,20 +108,105 @@
   </div>
 </header>
 
-  <div class="entry-thumb four columns">
-    <center>
-      <a href="https://www.castoriscausa.com/posts/2017/07/25/universal-shortcuts/">
-          <img src= "https://www.castoriscausa.com/images/shortcut.png">
-      </a>
-    </center>
-  </div>
-</div> <!-- div row -->
-          <div class="entry-content">
-            This project started from the "need" of having a compatible way to point to files indifferently if on Windows or Linux. While both operative systems can handle symbolic links, when the target file is an executable, certain scripts and programs present problems when executed through a symbolic link, as the …
+        <div class="entry-content-media">
+          <div class="post-thumb">
           </div>
+        </div>
 
-        </article> <!-- end entry -->
-    </div> <!-- end main -->
+        <div class="entry-content">
+
+<!-- Series text at the beginning of article -->
+          <p><center>
+<img src="/images/spellcheck.png" style="height: 250px;"/>
+<div>Based on icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
+</center>  </p>
+<p>Good code commenting, including good syntax and spelling an important feature to assure the high quality of code documentation, which is vital in <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745">development of scientific open-source software</a>. Poor spelling is not only <a href="https://softwareengineering.stackexchange.com/questions/137930/how-to-find-out-if-spelling-mistakes-in-source-code-are-a-serious-issue-or-not">unprofessional</a>, it can <a href="https://www.bbc.com/worklife/article/20170807-the-true-importance-of-good-spelling">create confusion, reduce clarity and meaning</a>, and produce embarrassing typos in the GUI, e.g. "<strong>EGG</strong> signal" instead of "EEG signal".</p>
+<p>Although it's an often demanded functionality, as per July 2021, there is <strong>not spellcheck support in Matlab Editor</strong>. Some approaches to spellcheck the code consist in: opening the scripts in a different (text) editor, or extracting the comments from the scripts to spellcheck them with a different software, and propagate the changes back to the original files. <a href="https://www.mathworks.com/matlabcentral/answers/59119-spellcheck-functionality-in-matlab-editor">Link</a>.</p>
+<p>In this post, a "simpler" way is described, this to use configure <a href="http://aspell.net/">Aspell</a> and use it to perform spellchecking only in: <strong>comments</strong> and <strong>strings</strong>.</p>
+<p>The following command installs Aspell and English dictionaries with <a href="https://wiki.archlinux.org/title/pacman">pacman</a>. Similar commands should work for other package managers.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># pacman -S aspell aspell-en</span>
+</pre></div>
+</td></tr></table>
+
+<p>We need to indicate Aspell to only spellcheck text between delimiters. This is to say text between <code>%</code> and the <code>EOL</code> for <strong>comments</strong>; and text between <code>'</code> and <code>'</code> for <strong>strings</strong>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ aspell --add-filter context --clear-context-delimiters --add-context-delimiters <span class="s2">&quot;% \0&quot;</span> --add-context-delimiters <span class="s2">&quot;&#39; &#39;&quot;</span> -c matlab_script.m
+</pre></div>
+</td></tr></table>
+
+<p>Although the <a href="http://aspell.net/0.61/man-html/Notes-on-Various-Filters-and-Filter-Modes.html">documentation of Aspell</a> indicates that "If more than one delimiter pair is specified by one call of add|rem-context-delimiters they have to be combined to a comma separated list." the option <code>"% \0,' '"</code> does not work as expected, that's why the previous command has twice the <code>--add-context-delimiters</code>.</p>
+<p>For sake of simplicity it's possible to such configuration as an <strong>Aspell filter mode</strong>, defined in a <em>Aspell Mode File</em> (<code>.amf</code>) (<a href="http://aspell.net/dev-html/Filter-Modes.html">Filter Modes</a>), and make it the default mode (behaviour) for <code>.m</code> files. As such, a file <code>matlab.amf</code> file (<a href="https://gist.github.com/rcassani/4e22c64819aff8caf506d33fffad9dad">link</a>) is created in the Aspell path, <code>/usr/lib/aspell</code> in my case, and it contains:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
+ 2
+ 3
+ 4
+ 5
+ 6
+ 7
+ 8
+ 9
+10
+11
+12</pre></div></td><td class="code"><div class="highlight"><pre><span></span>MODE matlab
+
+ASPELL &gt;=0.60.1
+
+MAGIC /&lt;noregex&gt;/m
+
+DESCRIPTION mode for checking Matlab comments
+
+FILTER context
+OPTION clear-context-delimiters
+OPTION add-context-delimiters % \0
+OPTION add-context-delimiters &#39; &#39;
+</pre></div>
+</td></tr></table>
+
+<p>Thus, to spell check a Matlab script, just run:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ aspell -c matlab_script.m
+</pre></div>
+</td></tr></table>
+
+<h3 id="bonus-content-spellcheck-in-python-scripts">Bonus content: Spellcheck in Python scripts</h3>
+<p>Several Python IDEs, such as <a href="https://www.spyder-ide.org/">Spyder</a> already have spellcheck. To use Aspell in spellcheck of <strong>comments</strong> (which start with <code>#</code>) and <strong>strings</strong> (that can be between single and double quotes), in <strong>theory</strong> an similar approach "should" work, however, there is a  <a href="https://github.com/GNUAspell/aspell/issues/505">bug with configuring <code>#</code></a> in a <code>.amf</code> file. Fortunately, it can be worked out with this messy call to Aspell:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ aspell --add-filter context --clear-context-delimiters --add-context-delimiters <span class="s2">&quot;# \0&quot;</span> --add-context-delimiters <span class="s2">&quot;&#39; &#39;&quot;</span> --add-context-delimiters <span class="s2">&quot;\&quot; \&quot;&quot;</span> -c python_script.py
+</pre></div>
+</td></tr></table>
+<!-- Series text at the end of article -->
+
+        </div>
+      </article>
+
+<!-- Comments -->
+<!-- Disqus -->
+    <div id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'castoriscausa'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.url = 'https://www.castoriscausa.com/posts/2021/07/11/aspell-comments-matlab-pyhton/';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+<!-- End Disqus Code -->
+    </div> <!-- main End -->
 <!-- Sidebar -->
 <div id="sidebar" class="four columns">
 <div class="widget widget_search">
@@ -215,7 +292,7 @@
   </div>
 
 
-  <div class="twelve columns">&copy; 2017 Raymundo Cassani
+  <div class="twelve columns">&copy; 2021 Raymundo Cassani
     &middot; Powered by <a href="https://github.com/rcassani/pelican-kis" target="_blank">pelican-kis</a> and <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
 
                   <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>

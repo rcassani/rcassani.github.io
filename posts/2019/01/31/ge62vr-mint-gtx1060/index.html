@@ -129,17 +129,17 @@
 <li>Install and test CUDA drivers.</li>
 </ol>
 <p><code>* Similar steps should apply for other dual monitor setups in Ubuntu and Ubuntu-based distributions.</code></p>
-<h2 id="system-msi-ge62vr">System: <a href="https://www.msi.com/Laptop/GE62VR-6RF-Apache-Pro.html">MSI GE62VR</a></h2>
-<h4 id="operative-system">Operative System</h4>
+<h2 id="system-msi-ge62vr">System: <a href="https://www.msi.com/Laptop/GE62VR-6RF-Apache-Pro.html">MSI GE62VR</a><a class="headerlink" href="#system-msi-ge62vr" title="Permanent link"> </a></h2>
+<h4 id="operative-system">Operative System<a class="headerlink" href="#operative-system" title="Permanent link"> </a></h4>
 <ul>
 <li><a href="https://www.linuxmint.com/">Linux Mint 19</a> 64-bit (Cinnamon)</li>
 </ul>
-<h4 id="hardware">Hardware</h4>
+<h4 id="hardware">Hardware<a class="headerlink" href="#hardware" title="Permanent link"> </a></h4>
 <ul>
 <li><a href="https://www.nvidia.com/en-us/geforce/products/10series/laptops/#specs">NVIDIA GTX 1060</a></li>
 <li><a href="https://en.wikipedia.org/wiki/Intel_HD_and_Iris_Graphics#Skylake">Intel HD Graphics 530 (integrated GPU)</a></li>
 </ul>
-<h2 id="1-install-nvidia-driver">1 Install NVIDIA driver</h2>
+<h2 id="1-install-nvidia-driver">1 Install NVIDIA driver<a class="headerlink" href="#1-install-nvidia-driver" title="Permanent link"> </a></h2>
 <p>If the laptop's screen and external screen are working properly go to the CUDA section.</p>
 <p>It seems that common problems at installing NVIDIA drivers in Mint (and Ubuntu) are: the laptop's monitor is disabled when a external monitor is connected; or Cinnamon crashes in "fallback mode" when the system boots without external the monitor.</p>
 <p>So far the solution that worked for me, is to change to <strong>Nouveau</strong> drivers, purge any <strong>NVIDIA</strong> remaining and perform a clean <strong>NVIDIA</strong> installation</p>
@@ -187,7 +187,7 @@ $ sudo apt-get upgrade
 <p>Open <strong>NVDIA X Server Settings</strong> to configure the external monitor</p>
 </li>
 </ul>
-<h2 id="1a-problems-at-turning-off-nvida-gpu-with-prime-select-command">1A Problems at turning off NVIDA GPU with <code>prime-select</code> command</h2>
+<h2 id="1a-problems-at-turning-off-nvida-gpu-with-prime-select-command">1A Problems at turning off NVIDA GPU with <code>prime-select</code> command<a class="headerlink" href="#1a-problems-at-turning-off-nvida-gpu-with-prime-select-command" title="Permanent link"> </a></h2>
 <p>If while using the NVIDIA drivers, the screen works fine but the <code>prime-select</code> command cannot turn off the NVIDIA GPU, thus changing to the intel GPU does not save power. Try the following.</p>
 <ul>
 <li>
@@ -225,7 +225,7 @@ $ sudo apt-get upgrade
 
 </li>
 </ul>
-<h2 id="2-install-and-test-cuda-driver">2 Install and Test CUDA driver</h2>
+<h2 id="2-install-and-test-cuda-driver">2 Install and Test CUDA driver<a class="headerlink" href="#2-install-and-test-cuda-driver" title="Permanent link"> </a></h2>
 <p>Once the <strong>NVIDIA driver</strong> are properly installed, it's time to install the <strong>CUDA driver</strong>. If you're not sure what's the CUDA driver check this <a href="http://www.nvidia.com/object/cuda_home_new.html">link</a></p>
 <ul>
 <li>Download the <a href="https://developer.nvidia.com/cuda-toolkit"><strong>CUDA driver</strong></a></li>
@@ -428,7 +428,7 @@ CUDA Capability Major/Minor version number:    <span class="m">6</span>.1
 </center></p>
 </li>
 </ul>
-<h3 id="references">References</h3>
+<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link"> </a></h3>
 <p><a href="http://blog.csdn.net/kernlen/article/details/53882490">http://blog.csdn.net/kernlen/article/details/53882490</a></p>
 <p><a href="http://blog.csdn.net/wopawn/article/details/52302164">http://blog.csdn.net/wopawn/article/details/52302164</a></p>
 <p><a href="http://blog.csdn.net/lee_j_r/article/details/52693724">http://blog.csdn.net/lee_j_r/article/details/52693724</a></p>

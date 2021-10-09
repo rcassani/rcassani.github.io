@@ -117,10 +117,10 @@
 
 <!-- Series text at the beginning of article -->
           <p>Since its version 78, <a href="https://www.thunderbird.net">Thunderbird</a> has <a href="https://addons.thunderbird.net/en-US/thunderbird/addon/lightning/">Lightning</a> calendar <a href="https://blog.thunderbird.net/2020/07/whats-new-in-thunderbird-78/">built-in</a>. The most popular way to sync Thunderbird calendar with Google Calendars is to use the add-on <a href="https://addons.thunderbird.net/en-US/thunderbird/addon/provider-for-google-calendar/">Provider for Google Caledar</a>. However, it seems there are some issues when trying to add email event invitations to the calendar directly, as it's shown that <em>"No writable calendars are configured for invitations. Please check calendar configuration"</em>. The alternative is to connect to Google Calendar using the <a href="https://developers.google.com/calendar/caldav/v2/guide#connecting_to_googles_caldav_server">CalDAV method</a>, as indicated in this answer <a href="https://support.mozilla.org/en-US/questions/1261974">link</a>. This post expands on that answer. The idea is to obtain a ULR to connect to your Google Calendar via CalDAV, this URL is comprised by a base URL and the Calendar ID.</p>
-<h3 id="1-base-url">1. Base URL:</h3>
+<h3 id="1-base-url">1. Base URL:<a class="headerlink" href="#1-base-url" title="Permanent link"> </a></h3>
 <p><code>https://apidata.googleusercontent.com/caldav/v2/calid/events</code>  </p>
 <p><code>calid</code> will be replaced for the Calendar ID that you want to sync.</p>
-<h3 id="2-getting-calendar-id">2. Getting Calendar ID</h3>
+<h3 id="2-getting-calendar-id">2. Getting Calendar ID<a class="headerlink" href="#2-getting-calendar-id" title="Permanent link"> </a></h3>
 <p>Go to <a href="https://calendar.google.com">Google Calendar</a> and open <strong>Settings</strong> (gear icon at top right). In <strong>Settings</strong>, in the left, click on the calendar that you want to sync, and after click on <strong>Integrate calendar</strong>. Here you'll find the <code>Calendar ID</code> string. Very often this string has special characters such as #, @, thus it cannot be used like that to make a valid URL. The URL-valid <code>Calendar ID</code> can extracted from <code>src</code> tag in the <strong>Public URL to this calendar</strong> URL, or <a href="https://www.url-encode-decode.com/">URL-encoded</a>.</p>
 <p><center>
   <a href="/images/calendar_id.png"><img src="/images/calendar_id.png" style="width: 800px;"></a><br>
@@ -131,7 +131,7 @@
 <p>thus the <code>Calendar ID</code> is <code>en.mexican%23holiday%40group.v.calendar.google.com</code>.</p>
 <p>Finally, the full URL for this calendar is created by then using the <code>Calendar ID</code> as <code>calid</code> in the base URL:</p>
 <p><code>https://apidata.googleusercontent.com/caldav/v2/en.mexican%23holiday%40group.v.calendar.google.com/events</code>  </p>
-<h3 id="3-create-the-calendar-in-thunderbird">3. Create the Calendar in Thunderbird</h3>
+<h3 id="3-create-the-calendar-in-thunderbird">3. Create the Calendar in Thunderbird<a class="headerlink" href="#3-create-the-calendar-in-thunderbird" title="Permanent link"> </a></h3>
 <p>Create New Calendar, select <strong>On the Network</strong>. Select <strong>CalDav</strong> as <strong>Format</strong>, leave empty the <strong>Username</strong>, and in <strong>Location</strong> use the URL created in the previous step. <a href="https://support.mozilla.org/en-US/kb/creating-new-calendars#w_caldav">More detailed steps</a>. Lastly, you will be prompted to put your Google credentials.</p>
 <!-- Series text at the end of article -->
 

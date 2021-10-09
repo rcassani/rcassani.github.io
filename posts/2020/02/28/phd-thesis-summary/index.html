@@ -130,13 +130,13 @@ The title is "Towards an Automated Portable EEG-based System for Alzheimer’s D
 </div>
 <hr>
 
-<h3 id="challenges-for-eeg-based-alzheimers-disease-diagnosis">Challenges for EEG-based Alzheimer’s disease diagnosis</h3>
+<h3 id="challenges-for-eeg-based-alzheimers-disease-diagnosis">Challenges for EEG-based Alzheimer’s disease diagnosis<a class="headerlink" href="#challenges-for-eeg-based-alzheimers-disease-diagnosis" title="Permanent link"> </a></h3>
 <p>The term dementia is used to encompass a number of neurodegenerative disorders that have their origin in damage and death of neurons.  In 2015, 46.8 million people were living with dementia and this number is projected to grow to 74.7 million by 2030, and to 131.5 million by 2050, this trend is driven by population growth and demographic ageing. Among the disorders classified as dementia, Alzheimer’s disease (AD) is the most common which accounts for nearly 70% of the cases. Frequently AD is diagnosed with exhaustive neuropsychological examinations, and the diagnosis is supported by biomarkes from cerebospinal fluid and neuroimaging techniques. Unfortunately, these supporting biomarkers are invasive, expensive and geographically confined. In the last two decades, <a href="https://en.wikipedia.org/wiki/Electroencephalography"><abbr title="electroencephalography">EEG</abbr></a>-based biomarkers have emerged as a promising tool in the study of AD, as EEG is non-invasive, less expensive and potentially portable. EEG signals are consists of recording changes in the electrical potential measured at the scalp with electrodes. And their origin is the electrical activity evoked by synchronous activation of thousands of neurons with similar spatial orientation (dipoles). Thus, EEG biomarkers can be used to infer neuronal degeneration and decay in the number of synapses caused by AD progression <a href="http://downloads.hindawi.com/journals/dm/2018/5174815.pdf">[1]</a>.</p>
 <p><center>
     <a href="/images/eeg.png"><img src="/images/eeg.png" style="width: 800px;"/></a><br>
 </center></p>
 <p>However the use of EEG for AD diagnosis presents two major challenges: (i) EEG signals are subject to interference from other signals (artifacts), and (ii) the need for large number of electrodes, often 16+, thus making them hard to transport and expensive to fund, specially for low- and middle-income countries.</p>
-<h3 id="thesis-contributions">Thesis contributions.</h3>
+<h3 id="thesis-contributions">Thesis contributions.<a class="headerlink" href="#thesis-contributions" title="Permanent link"> </a></h3>
 <p>In my doctoral thesis, the steps towards the development of an automated portable and low-cost EEG-based system for AD diagnosis were presented:</p>
 <p><strong>1. Towards automation</strong><br>
         Explore the effects of automated artifact handling algorithms in the pre-processing or EEG signals<br>
@@ -148,13 +148,13 @@ The title is "Towards an Automated Portable EEG-based System for Alzheimer’s D
     <a href="/images/eeg_ad_diagnose.png"><img src="/images/eeg_ad_diagnose.png" style="width: 800px;"/></a><br>
     General structures of an EEG-based AD diagnosis system
 </center></p>
-<h3 id="1-towards-automation">1. Towards automation</h3>
+<h3 id="1-towards-automation">1. Towards automation<a class="headerlink" href="#1-towards-automation" title="Permanent link"> </a></h3>
 <p>To remove the need for expert human intervention, we explored the effects of several fully automated artifact handling algorithms on EEG signals and gauge their advantages and disadvantages for automated AD diagnosis. Overall the classification performance obtained using automated artifact handling was in line with the performance obtained with systems based on “artifact-free” EEG data manually selected by human experts. Such findings suggest that manual inspection of the EEG signals can be avoided by using automated artifact removal, thus making faster the process and improving reproducibility <a href="https://www.frontiersin.org/articles/10.3389/fnagi.2014.00055">[2]</a>.</p>
-<h3 id="2-exploring-portable">2. Exploring Portable</h3>
+<h3 id="2-exploring-portable">2. Exploring Portable<a class="headerlink" href="#2-exploring-portable" title="Permanent link"> </a></h3>
 <p>To explore the potential of portable low-density devices, we explored the differences in performance for AD diagnosis obtained with a 20-channel and 7-channel EEG system.</p>
 <p>The reduction in the number of electrodes, led to a decrease in AD diagnosis performance. This could be attributed to the fact that a higher density layout presents a broader spatial distribution on the scalp; thus it can register cortical activity from other regions
 such as temporal and occipital lobes. In addition, a higher density coverage may be able to pick up spatially broad activities caused by deep brain structures, which are the first-affected by AD progression. However, further exploration is needed regarding the low-density electrode layout, as a limitation in our experiments, was that the layout pre-defined by experimental protocol from a different EEG dataset, thus this may not be optimal for AD diagnosis using resting-state EEG <a href="https://www.sciencedirect.com/science/article/abs/pii/S174680941630221X">[3]</a>.</p>
-<h3 id="3-exploring-novel-features">3. Exploring novel features</h3>
+<h3 id="3-exploring-novel-features">3. Exploring novel features<a class="headerlink" href="#3-exploring-novel-features" title="Permanent link"> </a></h3>
 <p>Lastly, EEG-based AD diagnosis has relied on conventional EEG features. Here, a new class of features derived from the modulation spectrogram from the EEG signal, which aims to characterize the second order periodicity of the signals.</p>
 <p><center>
     <a href="/images/mod_steps.png"><img src="/images/mod_steps.png" style="width: 800px;"/></a><br>
@@ -163,10 +163,10 @@ such as temporal and occipital lobes. In addition, a higher density coverage may
 <p><center>
     <a href="/images/auc_figs.png"><img src="/images/auc_figs.png" style="width: 800px;"/></a><br>
 </center></p>
-<h3 id="conclusion">Conclusion</h3>
+<h3 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link"> </a></h3>
 <p>Unfortunately, the use of EEG in the clinical practice is not currently part of the routine in the diagnosis and monitoring of AD. In this thesis work we identified, discussed and propose solution to the major challenges of the utilization of EEG for the study of AD.
 It is hoped that the innovations presented in the thesis work will boost the research and clinical use of EEG as a non-invasive, less expensive and potentially portable technique for the diagnosis and monitoring of AD.</p>
-<h3 id="references">References</h3>
+<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link"> </a></h3>
 <p><strong>[1]</strong> <a href="http://downloads.hindawi.com/journals/dm/2018/5174815.pdf">R. Cassani, M. Estarellas, R. San-Martin, F. J. Fraga, and T. H. Falk, “Systematic Reviewon Resting-State EEG for Alzheimer’s Disease Diagnosis and Progression Assessment,”Disease Markers, vol. 2018, 2018.</a><br>
 <strong>[2]</strong> <a href="https://www.frontiersin.org/articles/10.3389/fnagi.2014.00055">R. Cassani, T. H. Falk, F. J. Fraga, P. A. M. Kanda, and R. Anghinah, “The effects ofautomated artifact removal algorithms on electroencephalography-based Alzheimer’s diseasediagnosis,”Frontiers in Aging Neuroscience, vol. 6, p. 55, 2014.</a><br>
 <strong>[3]</strong> <a href="https://www.sciencedirect.com/science/article/abs/pii/S174680941630221X">R. Cassani, T. H. Falk, F. J. Fraga, M. Cecchi, D. K. Moore, and R. Anghinah, “Towardsautomated electroencephalography-based Alzheimer’s disease diagnosis using portable low-density devices,”Biomedical Signal Processing and Control, vol. 33, pp. 261–271, Mar.2017.</a><br>

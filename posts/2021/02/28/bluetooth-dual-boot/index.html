@@ -116,11 +116,11 @@
         <div class="entry-content">
 
 <!-- Series text at the beginning of article -->
-          <h3 id="scenario">Scenario</h3>
+          <h3 id="scenario">Scenario<a class="headerlink" href="#scenario" title="Permanent link"> </a></h3>
 <p>You have a Bluetooth (BT) Device (headphones, keyboard, mouse, etc.) with <a href="https://en.wikipedia.org/wiki/MAC_address">MAC address</a> <code>XX:XX:XX:XX:XX:XX</code>, and you want to use this BT device in a dual OS PC (in this case Linux and Windows), which as a BT Adapter with MAC address <code>YY:YY:YY:YY:YY:YY</code>.</p>
 <p><strong>Pairing the device in both OS does not work!</strong></p>
 <p>Because of the way the <a href="https://www.ellisys.com/technology/een_bt07.pdf">Bluetooth pairing process</a> happens: every time the Device and the Adapter are paired a <strong>shared secret Link Key</strong> is generated. This <strong>Link Key</strong> is used to authenticate the Device-Adapter connection. As such pairing in one OS will overwrite the <strong>Link Key</strong>.</p>
-<h3 id="the-solution">The solution</h3>
+<h3 id="the-solution">The solution<a class="headerlink" href="#the-solution" title="Permanent link"> </a></h3>
 <p>The solution is to use the same <strong>Link Key</strong> in both operative systems.</p>
 <ol>
 <li>First, pair the Device and Adapter in OS A  </li>
@@ -133,7 +133,7 @@
 <li>If Linux is the OS A: <a href="#linux-first">instructions</a>  </li>
 <li>If Windows is the OS A <a href="#windows-first">instructions</a>  </li>
 </ul>
-<h3 id="linux-first">Linux first</h3>
+<h3 id="linux-first">Linux first<a class="headerlink" href="#linux-first" title="Permanent link"> </a></h3>
 <ol>
 <li>Pair the Device in Linux</li>
 <li>Pair the Device on Windows</li>
@@ -163,7 +163,7 @@
 <p>Reboot</p>
 </li>
 </ol>
-<h3 id="windows-first">Windows first</h3>
+<h3 id="windows-first">Windows first<a class="headerlink" href="#windows-first" title="Permanent link"> </a></h3>
 <ol>
 <li>Pair the Device in Windows</li>
 <li>Pair the Device on Linux</li>

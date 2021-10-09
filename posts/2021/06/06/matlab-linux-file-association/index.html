@@ -120,7 +120,7 @@
 <img src="/images/matlab_linux_files.png" style="height: 250px;"/>
 </center>  </p>
 <p>In contrast to <a href="https://www.mathworks.com/products/matlab.html">Matlab</a> for Windows and macOS, Matlab for Linux does not automatically make the associations with its related files <code>.m</code>, <code>.mat</code>, and <code>.fig</code>. This post describes the how to do the association, it includes: 1. defining <a href="https://en.wikipedia.org/wiki/Media_type">MIME types</a>, 2. setting icons, and 3. creating <a href="https://wiki.archlinux.org/title/Desktop_entries">desktop entries</a> (<code>.desktop</code> files to define Matlab as the application for these MIME types). I'm using Cinnamon as desktop environment (thus it should work in Gnome without changes), and Arch Linux distribution.</p>
-<h2 id="matlab-shortcut-in-main-menu-and-desktop">Matlab shortcut in main Menu and Desktop</h2>
+<h2 id="matlab-shortcut-in-main-menu-and-desktop">Matlab shortcut in main Menu and Desktop<a class="headerlink" href="#matlab-shortcut-in-main-menu-and-desktop" title="Permanent link"> </a></h2>
 <p>This is not necessary for the association, but it may play useful.</p>
 <ol>
 <li>
@@ -161,8 +161,8 @@
 </li>
 </ol>
 <p>In this post describes the how to do the association, it includes: defining <a href="https://en.wikipedia.org/wiki/Media_type">MIME types</a>, setting icons, and creating <a href="https://wiki.archlinux.org/title/Desktop_entries">desktop entries</a> (<code>.desktop</code> files to define Matlab as the application for these MIME types). I'm using Cinnamon as desktop environment (thus it should work in Gnome without changes), and Arch Linux distribution.</p>
-<h2 id="associate-m-mat-and-fig-files-with-matlab">Associate <code>.m</code>, <code>.mat</code> and <code>.fig</code> files with Matlab</h2>
-<h3 id="1-mime-types">1. MIME types</h3>
+<h2 id="associate-m-mat-and-fig-files-with-matlab">Associate <code>.m</code>, <code>.mat</code> and <code>.fig</code> files with Matlab<a class="headerlink" href="#associate-m-mat-and-fig-files-with-matlab" title="Permanent link"> </a></h2>
+<h3 id="1-mime-types">1. MIME types<a class="headerlink" href="#1-mime-types" title="Permanent link"> </a></h3>
 <p>The MIME type for Matlab <code>.m</code> files is part of the <code>freedesktop.org.xml</code> file which is present in <code>/usr/share/mime/packages/</code>. Thus let's create the MIME types for <code>.mat</code> and <code>.fig</code>.</p>
 <ol>
 <li>
@@ -213,7 +213,7 @@
         # update-mime-database /usr/share/mime</p>
 </li>
 </ol>
-<h3 id="2-icons">2. Icons</h3>
+<h3 id="2-icons">2. Icons<a class="headerlink" href="#2-icons" title="Permanent link"> </a></h3>
 <p>The icons for <code>.mat</code> and <code>.fig</code> files is set to be the same as for <code>.m</code> files. In <code>/usr/share/icons/</code>, copy all the instances of <code>text-x-matlab.svg</code> as <code>image-x-matlab-fig.svg</code> and <code>application-x-matlab-data.svg</code>. And Run <code>gtk-update-icon-cache</code> for each of the icon directories.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -223,7 +223,7 @@
 </pre></div>
 </td></tr></table>
 
-<h3 id="3-desktop-entries">3. Desktop entries</h3>
+<h3 id="3-desktop-entries">3. Desktop entries<a class="headerlink" href="#3-desktop-entries" title="Permanent link"> </a></h3>
 <p>Different Matlab files are called in different way by MATLAB:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
 2
@@ -262,9 +262,9 @@ matlab -desktop -r <span class="s2">&quot;openfig %f;&quot;</span>
 </td></tr></table>
 
 <p>The <code>NoDisplay=true</code> prevents that these desktop entry files appear in the main Menu.</p>
-<h3 id="conclusion">Conclusion</h3>
+<h3 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link"> </a></h3>
 <p>Now the different Matlab files are associated with Matlab and opening them in the file explorer creates a new instance of Matlab and opens the selected file. Opening the file occurs in a <em>new</em> instance of Matlab (<a href="https://www.mathworks.com/matlabcentral/answers/393093-execute-script-from-command-line-to-existing-matlab-instance">link</a>), In the future I'll look for alternatives to open the file in the current Matlab instance.</p>
-<h3 id="references">References</h3>
+<h3 id="references">References<a class="headerlink" href="#references" title="Permanent link"> </a></h3>
 <p><a href="https://en.wikipedia.org/wiki/Media_type">MIME types</a><br>
 <a href="https://wiki.archlinux.org/title/Desktop_entries">Desktop entries</a><br>
 <a href="https://lists.freedesktop.org/archives/xdg/2010-October/011673.html">Matlab MIME types</a><br>

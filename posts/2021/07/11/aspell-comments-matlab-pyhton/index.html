@@ -166,7 +166,7 @@ OPTION add-context-delimiters &#39; &#39;
 </pre></div>
 </td></tr></table>
 
-<h3 id="bonus-content-spellcheck-in-python-scripts">Bonus content: Spellcheck in Python scripts</h3>
+<h3 id="bonus-content-spellcheck-in-python-scripts">Bonus content: Spellcheck in Python scripts<a class="headerlink" href="#bonus-content-spellcheck-in-python-scripts" title="Permanent link"> </a></h3>
 <p>Several Python IDEs, such as <a href="https://www.spyder-ide.org/">Spyder</a> already have spellcheck. To use Aspell in spellcheck of <strong>comments</strong> (which start with <code>#</code>) and <strong>strings</strong> (that can be between single and double quotes), in <strong>theory</strong> an similar approach "should" work, however, there is a  <a href="https://github.com/GNUAspell/aspell/issues/505">bug with configuring <code>#</code></a> in a <code>.amf</code> file. Fortunately, it can be worked out with this messy call to Aspell:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ aspell --add-filter context --clear-context-delimiters --add-context-delimiters <span class="s2">&quot;# \0&quot;</span> --add-context-delimiters <span class="s2">&quot;&#39; &#39;&quot;</span> --add-context-delimiters <span class="s2">&quot;\&quot; \&quot;&quot;</span> -c python_script.py
 </pre></div>

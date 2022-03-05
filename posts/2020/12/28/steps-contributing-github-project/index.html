@@ -123,43 +123,38 @@
 <ol>
 <li>
 <p><a href="https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo">Fork the repository</a> from <code>https://github.com/COOL-USERNAME/COOL-PROJECT</code> to your GitHub account and clone it to your computer.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ git clone https://github.com/YOUR-USERNAME/COOL-PROJECT.git
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git clone https://github.com/YOUR-USERNAME/COOL-PROJECT.git
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Create a <code>upstream</code> remote (to this repository) and sync your local copy.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ git remote add upstream https://github.com/COOL-USERNAME/COOL-PROJECT
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git remote add upstream https://github.com/COOL-USERNAME/COOL-PROJECT
 $ git remote -v
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 <p>At this point the <code>origin</code> remote refers to your forked repository in your account (<code>https://github.com/YOUR-USERNAME/COOL-PROJECT</code>) and <code>upstream</code> to the original repository (<code>https://github.com/COOL-USERNAME/COOL-PROJECT.git</code>). To sync your <code>local</code> and <code>origin</code> repositories to the <code>upstream</code> repository, pull from <code>upstream</code>, and push to <code>origin</code>.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ git checkout master    
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git checkout master    
 $ git pull upstream master <span class="o">&amp;&amp;</span> git push origin master
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Create a branch in your <code>local</code> repository. This branch will contain your contribution.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>git checkout -b fixing-something
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout -b fixing-something
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Perform your contribution, write[good commit messages, and commit. If your contributions solves an open issue, <a href="https://github.blog/2013-01-22-closing-issues-via-commit-messages/">close it with the proper commit message</a>. <strong>NOTE:</strong> Make ONLY ONE contribution per branch.</p>
 </li>
 <li>
 <p>Push your <code>local</code> branch to your fork in GitHub (<code>https://github.com/YOUR-USERNAME/COOL-PROJECT</code>).</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>git push -u origin fixing-something
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git push -u origin fixing-something
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>On GitHub, <a href="https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork">create a new Pull Request</a> from your fork.</p>

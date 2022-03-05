@@ -117,36 +117,34 @@
 
 <!-- Series text at the beginning of article -->
           <p><center>
-<img src="/images/spellcheck.png" style="height: 250px;"/>
+<img src="/images/spellcheck.png" style="height: 250px;"/></p>
 <div>Based on icon made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div>
-</center>  </p>
+<p></center>  </p>
 <p>Good code commenting, including good syntax and spelling, is an important feature to assure the high quality of code documentation, which in turn, is vital in <a href="https://journals.plos.org/plosbiology/article?id=10.1371/journal.pbio.1001745">development of scientific open-source software</a>. Poor spelling is not only <a href="https://softwareengineering.stackexchange.com/questions/137930/how-to-find-out-if-spelling-mistakes-in-source-code-are-a-serious-issue-or-not">unprofessional</a>, it can <a href="https://www.bbc.com/worklife/article/20170807-the-true-importance-of-good-spelling">create confusion, reduce clarity and meaning</a>, and produce embarrassing typos in the GUI, e.g. "<strong>EGG</strong> signal" instead of "EEG signal".</p>
 <p>Although it's an often demanded functionality, as per July 2021, there is <strong>not spellcheck support in Matlab Editor</strong>. Some approaches to spellcheck the code consist in: opening the scripts in a different (text) editor, or extracting the comments from the scripts to spellcheck them with a different software, and propagate the changes back to the original files. <a href="https://www.mathworks.com/matlabcentral/answers/59119-spellcheck-functionality-in-matlab-editor">Link</a>.</p>
 <p>In this post, a "simpler" way is described, i.e., configure <a href="http://aspell.net/">Aspell</a> and use it to perform spellchecking only in: <strong>comments</strong> and <strong>strings</strong>.</p>
 <p>The following command installs Aspell and English dictionaries with <a href="https://wiki.archlinux.org/title/pacman">pacman</a>. Similar commands should work for other package managers.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># pacman -S aspell aspell-en</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># pacman -S aspell aspell-en</span>
+</code></pre></div>
 </td></tr></table>
-
 <p>We need to indicate Aspell to only spellcheck text between delimiters. This is to say text between <code>%</code> and the <code>EOL</code> for <strong>comments</strong>; and text between <code>'</code> and <code>'</code> for <strong>strings</strong>.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ aspell --add-filter context --clear-context-delimiters --add-context-delimiters <span class="s2">&quot;% \0&quot;</span> --add-context-delimiters <span class="s2">&quot;&#39; &#39;&quot;</span> -c matlab_script.m
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ aspell --add-filter context --clear-context-delimiters --add-context-delimiters <span class="s2">&quot;% \0&quot;</span> --add-context-delimiters <span class="s2">&quot;&#39; &#39;&quot;</span> -c matlab_script.m
+</code></pre></div>
 </td></tr></table>
-
 <p>Although the <a href="http://aspell.net/0.61/man-html/Notes-on-Various-Filters-and-Filter-Modes.html">documentation of Aspell</a> indicates that <em>"If more than one delimiter pair is specified by one call of add|rem-context-delimiters they have to be combined to a comma separated list."</em> the option <code>"% \0,' '"</code> does not work as expected, that's why the previous command has twice the <code>--add-context-delimiters</code> option.</p>
 <p>For sake of simplicity it's possible to save such configuration as an <strong>Aspell filter mode</strong>, defined in a <em>Aspell Mode File</em> (<code>.amf</code>) (<a href="http://aspell.net/dev-html/Filter-Modes.html">Filter Modes</a>), and make it the default mode (behaviour) for <code>.m</code> files. As such, a file <code>matlab.amf</code> file (<a href="https://gist.github.com/rcassani/4e22c64819aff8caf506d33fffad9dad">link</a>) is created in the Aspell path, <code>/usr/lib/aspell</code> in my case, and it contains:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span>MODE matlab
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>MODE matlab
 
 ASPELL &gt;=0.60.1
 
@@ -158,18 +156,16 @@ FILTER context
 OPTION clear-context-delimiters
 OPTION add-context-delimiters % \0
 OPTION add-context-delimiters &#39; &#39;
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 <p>Thus, to spellcheck a Matlab script, just run:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ aspell -c matlab_script.m
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ aspell -c matlab_script.m
+</code></pre></div>
 </td></tr></table>
-
 <h3 id="bonus-content-spellcheck-in-python-scripts">Bonus content: Spellcheck in Python scripts<a class="headerlink" href="#bonus-content-spellcheck-in-python-scripts" title="Permanent link"> </a></h3>
 <p>Several Python IDEs, such as <a href="https://www.spyder-ide.org/">Spyder</a> already have spellcheck. To use Aspell in spellcheck of <strong>comments</strong> (which start with <code>#</code>) and <strong>strings</strong> (that can be between single and double quotes), in <strong>theory</strong> an similar approach "should" work, however, there is a  <a href="https://github.com/GNUAspell/aspell/issues/505">bug with configuring <code>#</code></a> in a <code>.amf</code> file. Fortunately, it can be worked out with this messy call to Aspell:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ aspell --add-filter context --clear-context-delimiters --add-context-delimiters <span class="s2">&quot;# \0&quot;</span> --add-context-delimiters <span class="s2">&quot;&#39; &#39;&quot;</span> --add-context-delimiters <span class="s2">&quot;\&quot; \&quot;&quot;</span> -c python_script.py
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ aspell --add-filter context --clear-context-delimiters --add-context-delimiters <span class="s2">&quot;# \0&quot;</span> --add-context-delimiters <span class="s2">&quot;&#39; &#39;&quot;</span> --add-context-delimiters <span class="s2">&quot;\&quot; \&quot;&quot;</span> -c python_script.py
+</code></pre></div>
 </td></tr></table>
 <!-- Series text at the end of article -->
 

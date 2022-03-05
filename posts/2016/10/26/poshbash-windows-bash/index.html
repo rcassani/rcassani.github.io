@@ -135,27 +135,24 @@ Git-Posh example
 <ol>
 <li>
 <p>Run Bash and go to HOME directory in bash</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> ~
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> ~
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Download the file <code>git-prompt.sh</code> from <a href="https://github.com/lyze/posh-git-sh.git">this repository</a>, and rename it as <code>.git-prompt.sh</code>  </p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>~$ wget https://raw.githubusercontent.com/lyze/posh-git-sh/master/git-prompt.sh -O .git-prompt.sh
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>~$ wget https://raw.githubusercontent.com/lyze/posh-git-sh/master/git-prompt.sh -O .git-prompt.sh
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Now you need to edit your the file <code>~/.bashrc</code>
 Add the following 2 lines at the beginning of <code>~/.bashrc file</code>, you can use the text editors <a href="https://www.nano-editor.org/">nano</a> or <a href="http://www.vim.org/">vim</a> for this.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">source</span> ~/.git-prompt.sh
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">source</span> ~/.git-prompt.sh
 <span class="nv">PROMPT_COMMAND</span><span class="o">=</span><span class="s1">&#39;__posh_git_ps1 &quot;\u@\h:\w&quot; &quot;\\\$ &quot;;&#39;</span><span class="nv">$PROMPT_COMMAND</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Restart Bash</p>

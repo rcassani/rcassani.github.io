@@ -121,15 +121,13 @@
 <img alt="Alt" src="/images/systemd_cat.jpg"><br>
 </center>  </p>
 <p>First, the list of devices that can wake-up the computer can be find with:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ grep enabled cat /proc/acpi/wakeup
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ grep enabled cat /proc/acpi/wakeup
+</code></pre></div>
 </td></tr></table>
-
 <p>From this list, it can be seen that the culprit device is <strong>XHC</strong>, which is a USB 3.0 (XHC) chip. The listed devices can be toggled to <code>disabled</code> with the folliwing command:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># echo XHC &gt; /proc/acpi/wakeup</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># echo XHC &gt; /proc/acpi/wakeup</span>
+</code></pre></div>
 </td></tr></table>
-
 <p>This has to be as root, if <code>sudo</code> does not work, use <code>sudo su</code> and run the command.</p>
 <p>Unfortunately, any change performed in <code>/proc/acpi/wakeup</code> is reset at booting, and it depends of the BIOS, thus cannot be change permanently. Thus, one approach to avoid wake-up by this device, is to disable it every time the systems goes to suspension, and this can be done with a hook. This hook can be done in two ways:</p>
 <ol>
@@ -147,19 +145,19 @@
 </li>
 <li>
 <p>Create a file <code>suspend-mouse-fix.service</code> in <code>/etc/systemd/system</code> with this content:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">[</span>Unit<span class="o">]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">[</span>Unit<span class="o">]</span>
 <span class="nv">Description</span><span class="o">=</span>Disables wake-up from device XHC
 <span class="c1"># the service runs before the computer goes to sleep</span>
 <span class="nv">Before</span><span class="o">=</span>sleep.target
@@ -172,9 +170,8 @@
 <span class="o">[</span>Install<span class="o">]</span>
 <span class="c1"># this does the hook to sleep.target</span>
 <span class="nv">WantedBy</span><span class="o">=</span>sleep.target
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 <p>Some important points:  </p>
 <ul>
 <li>
@@ -187,17 +184,15 @@
 </li>
 <li>
 <p>Change the permissions of the service file</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># chmod 664 /etc/systemd/system/suspend-mouse-fix.service</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># chmod 664 /etc/systemd/system/suspend-mouse-fix.service</span>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Enable the service:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>systemctl <span class="nb">enable</span> suspend-mouse-fix.service
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>systemctl <span class="nb">enable</span> suspend-mouse-fix.service
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>If there any update in the service file, run <code>$ systemctl daemon-reload</code> after modifying it</p>

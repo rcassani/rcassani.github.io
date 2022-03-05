@@ -119,16 +119,14 @@
           <p>A frequent problem in dual-GPU systems is that the PC freezes (<a href="">kernel panic</a>) when you try to logout, restart or shutdown after changing back from the <strong>Intel</strong> (integrated) to the <strong>NVIDIA</strong> (discrete) GPU in Linux. All of this when you're using the <strong>NVIDIA drivers</strong> (proprietary drivers).</p>
 <p>When using the <a href="http://www.castoriscausa.com/posts/ge62vr-mint-gtx1060">NVIDIA drivers</a> for Linux, it's possible to change the GPU in use with the <code>prime-select</code> command followed by logout.</p>
 <p>Switching from <strong>NVIDIA</strong> to <strong>Intel</strong> GPU works perfectly:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo prime-select intel
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ sudo prime-select intel
+</code></pre></div>
 </td></tr></table>
-
 <p>Then logout and login to see the changes. By changing to the discrete GPU power consumption drops almost by half, providing a decent battery life in laptops.</p>
 <p>However, the <strong>kernel panic</strong> occurs when switching back from the <strong>Intel</strong> to <strong>NVIDIA</strong> GPU.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo prime-select nvidia
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ sudo prime-select nvidia
+</code></pre></div>
 </td></tr></table>
-
 <p>After changing the GPU with <code>prime-select</code>, either logout, restart or shutdown will result in kernel panic.</p>
 <h2 id="solution">Solution<a class="headerlink" href="#solution" title="Permanent link"> </a></h2>
 <p>The problem is likely to be cause by <a href="https://en.wikipedia.org/wiki/Advanced_Configuration_and_Power_Interface">ACPI</a> configuration in the kernel boot sequence. It can be <strong>solved</strong> by adding the following to the kernel boot sequence:</p>

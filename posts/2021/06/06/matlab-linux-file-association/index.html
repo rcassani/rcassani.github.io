@@ -125,36 +125,33 @@
 <ol>
 <li>
 <p>Copy Matlab icon file from the Matlab installation directory to the shared icons</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># cp /usr/local/MATLAB/R2020b/bin/glnxa64/cef_resources/matlab_icon.png /usr/share/icons</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># cp /usr/local/MATLAB/R2020b/bin/glnxa64/cef_resources/matlab_icon.png /usr/share/icons</span>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Create a <code>matlab_2020b.desktop</code> file at <code>/usr/share/applications</code></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6
-7</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">[</span>Desktop Entry<span class="o">]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span>
+<span class="normal">7</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">[</span>Desktop Entry<span class="o">]</span>
 <span class="nv">Type</span><span class="o">=</span>Application
 <span class="nv">Name</span><span class="o">=</span>MATLAB 2020b
 <span class="nv">Icon</span><span class="o">=</span>/usr/share/icons/matlab_icon.png
 <span class="nv">Exec</span><span class="o">=</span>/usr/local/MATLAB/R2020b/bin/matlab -desktop
 <span class="nv">Categories</span><span class="o">=</span>Development
 <span class="nv">Terminal</span><span class="o">=</span><span class="nb">false</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Change the permissions to be executable:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># chmod +x matlab_r2020b.desktop</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># chmod +x matlab_r2020b.desktop</span>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>For the Desktop shortcut, just copy this <code>matlab_2020b.desktop</code> to <code>~/Desktop</code></p>
@@ -167,24 +164,24 @@
 <ol>
 <li>
 <p>Create the file <code>/usr/share/mime/packages/matlab-typemimes.xml</code></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nt">&lt;mime-info</span> <span class="na">xmlns=</span><span class="s">&#39;http://www.freedesktop.org/standards/shared-mime-info&#39;</span><span class="nt">&gt;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nt">&lt;mime-info</span> <span class="na">xmlns=</span><span class="s">&#39;http://www.freedesktop.org/standards/shared-mime-info&#39;</span><span class="nt">&gt;</span>
     <span class="nt">&lt;mime-type</span> <span class="na">type=</span><span class="s">&quot;image/x-matlab-fig&quot;</span><span class="nt">&gt;</span>
         <span class="nt">&lt;comment&gt;</span>MATLAB figure<span class="nt">&lt;/comment&gt;</span>
         <span class="nt">&lt;magic</span> <span class="na">priority=</span><span class="s">&quot;50&quot;</span><span class="nt">&gt;</span>
@@ -202,9 +199,8 @@
         <span class="nt">&lt;generic-icon</span> <span class="na">name=</span><span class="s">&quot;matlab-mat&quot;</span><span class="nt">/&gt;</span>
     <span class="nt">&lt;/mime-type&gt;</span>
 <span class="nt">&lt;/mime-info&gt;</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 <p>This MIME definition is based on <a href="https://lists.freedesktop.org/archives/xdg/2010-October/011673.html">https://lists.freedesktop.org/archives/xdg/2010-October/011673.html</a></p>
 </li>
 <li>
@@ -215,52 +211,47 @@
 </ol>
 <h3 id="2-icons">2. Icons<a class="headerlink" href="#2-icons" title="Permanent link"> </a></h3>
 <p>The icons for <code>.mat</code> and <code>.fig</code> files is set to be the same as for <code>.m</code> files. In <code>/usr/share/icons/</code>, copy all the instances of <code>text-x-matlab.svg</code> as <code>image-x-matlab-fig.svg</code> and <code>application-x-matlab-data.svg</code>. And Run <code>gtk-update-icon-cache</code> for each of the icon directories.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="c1"># find /usr/share/icons -name text-x-matlab.svg -execdir echo cp {} image-x-matlab-fig.svg &#39;;&#39;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># find /usr/share/icons -name text-x-matlab.svg -execdir echo cp {} image-x-matlab-fig.svg &#39;;&#39;</span>
 <span class="c1"># find /usr/share/icons -name text-x-matlab.svg -execdir echo cp {} application-x-matlab-data-svg &#39;;&#39;</span>
 <span class="c1"># find -maxdepth 1 -type d -execdir gtk-update-icon-cache {} &#39;;&#39;</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 <h3 id="3-desktop-entries">3. Desktop entries<a class="headerlink" href="#3-desktop-entries" title="Permanent link"> </a></h3>
 <p>Different Matlab files are called in different way by MATLAB:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>matlab -desktop -r <span class="s2">&quot;edit %f;&quot;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>matlab -desktop -r <span class="s2">&quot;edit %f;&quot;</span>
 matlab -desktop -r <span class="s2">&quot;uiimport %f;&quot;</span>
 matlab -desktop -r <span class="s2">&quot;openfig %f;&quot;</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 <p>As such, it is necessary to create a desktop entry file for each MIME type reflecting how Matlab is called to open such MIME files. These files will be created in <code>/usr/share/applications</code></p>
 <p>File <code>matlab_2020b_m.desktop</code></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nv">Exec</span><span class="o">=</span>/usr/local/MATLAB/R2020b/bin/matlab -desktop -r <span class="s2">&quot;edit %f;&quot;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">Exec</span><span class="o">=</span>/usr/local/MATLAB/R2020b/bin/matlab -desktop -r <span class="s2">&quot;edit %f;&quot;</span>
 <span class="nv">MimeType</span><span class="o">=</span>text/x-matlab
 <span class="nv">NoDisplay</span><span class="o">=</span><span class="nb">true</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 <p>File <code>matlab_2020b_mat.desktop</code></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nv">Exec</span><span class="o">=</span>/usr/local/MATLAB/R2020b/bin/matlab -desktop -r <span class="s2">&quot;uiimport %f;&quot;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">Exec</span><span class="o">=</span>/usr/local/MATLAB/R2020b/bin/matlab -desktop -r <span class="s2">&quot;uiimport %f;&quot;</span>
 <span class="nv">MimeType</span><span class="o">=</span>application/x-matlab-data
 <span class="nv">NoDisplay</span><span class="o">=</span><span class="nb">true</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 <p>File <code>matlab_2020b_fig.desktop</code></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nv">Exec</span><span class="o">=</span>/usr/local/MATLAB/R2020b/bin/matlab -desktop -r <span class="s2">&quot;openfig %f;&quot;</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nv">Exec</span><span class="o">=</span>/usr/local/MATLAB/R2020b/bin/matlab -desktop -r <span class="s2">&quot;openfig %f;&quot;</span>
 <span class="nv">MimeType</span><span class="o">=</span>image/x-matlab-fig
 <span class="nv">NoDisplay</span><span class="o">=</span><span class="nb">true</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 <p>The <code>NoDisplay=true</code> prevents that these desktop entry files appear in the main Menu.</p>
 <h3 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link"> </a></h3>
 <p>Now the different Matlab files are associated with Matlab and opening them in the file explorer creates a new instance of Matlab and opens the selected file. Opening the file occurs in a <em>new</em> instance of Matlab (<a href="https://www.mathworks.com/matlabcentral/answers/393093-execute-script-from-command-line-to-existing-matlab-instance">link</a>), In the future I'll look for alternatives to open the file in the current Matlab instance.</p>

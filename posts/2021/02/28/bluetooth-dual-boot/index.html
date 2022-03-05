@@ -141,10 +141,9 @@
 <p>Get the Link Key in Windows</p>
 <p>Get PSTools: https://docs.microsoft.com/en-us/sysinternals/downloads/psexec</p>
 <p>Run as Administrator:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ ./psexec -s -i regedit.exe
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ ./psexec -s -i regedit.exe
+</code></pre></div>
 </td></tr></table>
-
 <p>Go to:<br>
 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters\Keys\YYYYYYYYYYYY\</code></p>
 <p>Copy the Value (this is the Link Key) corresponding to Key: MAC address of the Device (<code>XXXXXXXXXXXX</code>)</p>
@@ -154,12 +153,11 @@
 <p>Set the Link Key from Windows into Linux<br>
     Open the directory: <code>/var/lib/bluetooth/[YY:YY:YY:YY:YY:YY]/[XX:XX:XX:XX:XX:XX]/</code><br>
     Edit the <code>Key</code> field in <code>[LinkKey]</code> section of the <code>info</code> file with the Value obtained from Windows</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">[</span>LinkKey<span class="o">]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">[</span>LinkKey<span class="o">]</span>
 <span class="nv">Key</span><span class="o">=</span>B99999999FFFFFFFFF999999999FFFFF
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 <p>Reboot</p>
 </li>
 </ol>
@@ -171,20 +169,18 @@
 <p>Get the Link Key in Linux</p>
 <p>Open the directory: <code>/var/lib/bluetooth/[YY:YY:YY:YY:YY:YY]/[XX:XX:XX:XX:XX:XX]/info</code><br>
 Copy the <code>Key</code> field in <code>[LinkKey]</code> section of the <code>info</code> file, this is the Link Key</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">[</span>LinkKey<span class="o">]</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">[</span>LinkKey<span class="o">]</span>
 <span class="nv">Key</span><span class="o">=</span>B99999999FFFFFFFFF999999999FFFFF <span class="o">[</span>the LinkKeys <span class="k">for</span> the device<span class="o">]</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Set the Link Key from Linux into Windows
     Get PSTools: https://docs.microsoft.com/en-us/sysinternals/downloads/psexec</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ ./psexec -s -i regedit.exe
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ ./psexec -s -i regedit.exe
+</code></pre></div>
 </td></tr></table>
-
 <p>Go to:
 <code>HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\BTHPORT\Parameters\Keys\YYYYYYYYYYYY</code></p>
 <p>Edit the Value (this is the Link Key) corresponding to Key: MAC address of the Device (<code>XXXXXXXXXXXX</code>)</p>

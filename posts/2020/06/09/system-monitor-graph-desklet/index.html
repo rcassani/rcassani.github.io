@@ -125,10 +125,9 @@ System monitor graph Desklet.
 <ul>
 <li>As with many coding projects, the use of <a href="">git</a> or any other version control software is desirable to track and revert changes.</li>
 <li>The <a href="https://cinnamon-spices.linuxmint.com/desklets/view/17">Developer's Tools</a> Desklet was very helpful as it allows to restart Cinnamon with one click, display the Cinnamon console, among other actions.</li>
-<li>Printing in the Cinnamon console is often very useful  <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">global</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Some text or variable goes here&#39;</span><span class="p">);</span>
-</pre></div>
+<li>Printing in the Cinnamon console is often very useful  <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">global</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;Some text or variable goes here&#39;</span><span class="p">);</span>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 </ul>
 <h3 id="adding-settings">Adding Settings<a class="headerlink" href="#adding-settings" title="Permanent link"> </a></h3>
@@ -136,19 +135,17 @@ System monitor graph Desklet.
 <ol>
 <li>
 <p>Add <code>Settings</code> to the <code>imports</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">Settings</span> <span class="o">=</span> <span class="nx">imports</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">settings</span><span class="p">;</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">Settings</span> <span class="o">=</span> <span class="nx">imports</span><span class="p">.</span><span class="nx">ui</span><span class="p">.</span><span class="nx">settings</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Get the Setting values in the <code>_init</code> function of the Desklet,</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="k">this</span><span class="p">.</span><span class="nx">settings</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Settings</span><span class="p">.</span><span class="nx">DeskletSettings</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">metadata</span><span class="p">[</span><span class="s2">&quot;uuid&quot;</span><span class="p">],</span> <span class="nx">desklet_id</span><span class="p">);</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">this</span><span class="p">.</span><span class="nx">settings</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Settings</span><span class="p">.</span><span class="nx">DeskletSettings</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">metadata</span><span class="p">[</span><span class="s2">&quot;uuid&quot;</span><span class="p">],</span> <span class="nx">desklet_id</span><span class="p">);</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">settings</span><span class="p">.</span><span class="nx">bindProperty</span><span class="p">(</span><span class="nx">Settings</span><span class="p">.</span><span class="nx">BindingDirection</span><span class="p">.</span><span class="nx">IN</span><span class="p">,</span> <span class="s2">&quot;background-color&quot;</span><span class="p">,</span> <span class="s2">&quot;background_color&quot;</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">on_setting_changed</span><span class="p">);</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 </ol>
 <p>The arguments for <code>bindProperty</code> are: <code>BindingDirection.IN</code> changes in the settings go into the Desklet, <code>background-color</code> the element name in the <code>settings-schema.json</code>, and <code>background_color</code> name of the property to be created in the Desklet, it can be accesed as <code>this.background_color</code>.</p>
@@ -157,90 +154,83 @@ System monitor graph Desklet.
 <ol>
 <li>
 <p>Add <code>Mainloop</code> to the <code>imports</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">Mainloop</span> <span class="o">=</span> <span class="nx">imports</span><span class="p">.</span><span class="nx">mainloop</span><span class="p">;</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">Mainloop</span> <span class="o">=</span> <span class="nx">imports</span><span class="p">.</span><span class="nx">mainloop</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>A way to use this timer is to split the <code>update</code> function of the Desklet in two:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">update</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nx">update</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
         <span class="c1">// updates the visuals in Desklet</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">update_draw</span><span class="p">();</span>
         <span class="c1">// calls this.update() in refresh_interval seconds</span>
         <span class="k">this</span><span class="p">.</span><span class="nx">timeout</span> <span class="o">=</span> <span class="nx">Mainloop</span><span class="p">.</span><span class="nx">timeout_add_seconds</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">refresh_interval</span><span class="p">,</span> <span class="nx">Lang</span><span class="p">.</span><span class="nx">bind</span><span class="p">(</span><span class="k">this</span><span class="p">,</span> <span class="k">this</span><span class="p">.</span><span class="nx">update</span><span class="p">));</span>
 <span class="p">},</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Additionally, if a update is required before the next interval, it can be forced. For example below removes the <code>mainloop</code> and intermediately calls <code>this.update()</code> when the <code>Settings</code> have been updated. Note that the timer is set again inside <code>this.update()</code>.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nx">on_setting_changed</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nx">on_setting_changed</span><span class="o">:</span> <span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 <span class="nx">Mainloop</span><span class="p">.</span><span class="nx">source_remove</span><span class="p">(</span><span class="k">this</span><span class="p">.</span><span class="nx">timeout</span><span class="p">);</span>
 <span class="k">this</span><span class="p">.</span><span class="nx">update</span><span class="p">();</span>
 <span class="p">},</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 </ol>
 <h3 id="interacting-with-files-and-commands">Interacting with files and commands<a class="headerlink" href="#interacting-with-files-and-commands" title="Permanent link"> </a></h3>
 <p>Often a Desklet needs to read a file or execute a command. For the first, the function <code>get_file_contents_utf8_sync</code> does the trick. <code>Cinnamon</code> has to be added to the <code>imports</code>.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">mem_out</span> <span class="o">=</span> <span class="nx">Cinnamon</span><span class="p">.</span><span class="nx">get_file_contents_utf8_sync</span><span class="p">(</span><span class="s2">&quot;/proc/meminfo&quot;</span><span class="p">);</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">mem_out</span> <span class="o">=</span> <span class="nx">Cinnamon</span><span class="p">.</span><span class="nx">get_file_contents_utf8_sync</span><span class="p">(</span><span class="s2">&quot;/proc/meminfo&quot;</span><span class="p">);</span>
+</code></pre></div>
 </td></tr></table>
-
 <p>To execute a program <code>Subprocess</code> can be used.</p>
 <ol>
 <li>
 <p>Add <code>Gio</code> to the <code>imports</code>:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kr">const</span> <span class="nx">Gio</span> <span class="o">=</span> <span class="nx">imports</span><span class="p">.</span><span class="nx">gi</span><span class="p">.</span><span class="nx">Gio</span><span class="p">;</span>
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">Gio</span> <span class="o">=</span> <span class="nx">imports</span><span class="p">.</span><span class="nx">gi</span><span class="p">.</span><span class="nx">Gio</span><span class="p">;</span>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Indicate the command and its arguments, and retrieve the stdout to a variable:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">subprocess</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Gio</span><span class="p">.</span><span class="nx">Subprocess</span><span class="p">({</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">subprocess</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Gio</span><span class="p">.</span><span class="nx">Subprocess</span><span class="p">({</span>
     <span class="nx">argv</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;/bin/df&#39;</span><span class="p">,</span> <span class="s1">&#39;/&#39;</span><span class="p">],</span>
     <span class="nx">flags</span><span class="o">:</span> <span class="nx">Gio</span><span class="p">.</span><span class="nx">SubprocessFlags</span><span class="p">.</span><span class="nx">STDOUT_PIPE</span><span class="p">,</span>
 <span class="p">});</span>
 <span class="nx">subprocess</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 <span class="kd">let</span> <span class="p">[,</span> <span class="nx">out</span><span class="p">]</span> <span class="o">=</span> <span class="nx">subprocess</span><span class="p">.</span><span class="nx">communicate_utf8</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>If pipes are needed, it is possible call a bash shell and pass as the argument the commands with pipes, for example:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="kd">let</span> <span class="nx">subprocess</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">Gio</span><span class="p">.</span><span class="nx">Subprocess</span><span class="p">({</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kd">let</span> <span class="nx">subprocess</span> <span class="o">=</span> <span class="ow">new</span> <span class="nx">Gio</span><span class="p">.</span><span class="nx">Subprocess</span><span class="p">({</span>
     <span class="nx">argv</span><span class="o">:</span> <span class="p">[</span><span class="s1">&#39;/bin/sh&#39;</span><span class="p">,</span> <span class="s1">&#39;-c&#39;</span><span class="p">,</span> <span class="s1">&#39;/bin/df &#39;</span> <span class="o">+</span> <span class="s1">&#39;/&#39;</span> <span class="o">+</span> <span class="s1">&#39; | grep Filesystem -w -A1&#39;</span><span class="p">],</span>
     <span class="nx">flags</span><span class="o">:</span> <span class="nx">Gio</span><span class="p">.</span><span class="nx">SubprocessFlags</span><span class="p">.</span><span class="nx">STDOUT_PIPE</span><span class="p">,</span>
 <span class="p">});</span>
 <span class="nx">subprocess</span><span class="p">.</span><span class="nx">init</span><span class="p">(</span><span class="kc">null</span><span class="p">);</span>
 <span class="kd">let</span> <span class="p">[,</span> <span class="nx">out</span><span class="p">]</span> <span class="o">=</span> <span class="nx">subprocess</span><span class="p">.</span><span class="nx">communicate_utf8</span><span class="p">(</span><span class="kc">null</span><span class="p">,</span> <span class="kc">null</span><span class="p">);</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 </ol>
 <h3 id="drawing">Drawing<a class="headerlink" href="#drawing" title="Permanent link"> </a></h3>

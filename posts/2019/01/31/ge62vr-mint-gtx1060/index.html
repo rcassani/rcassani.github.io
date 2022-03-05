@@ -149,24 +149,22 @@
 </li>
 <li>
 <p>Once in <strong>Nouveau</strong> driver, purge the <strong>NVIDIA</strong> drivers</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo apt-get purge nvidia*
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ sudo apt-get purge nvidia*
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Unplug the <strong>DigitalDisplay</strong> adapter</p>
 </li>
 <li>
 <p>Add the following repository to find the most recent drivers</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo add-apt-repository ppa:graphics-drivers/ppa
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ sudo add-apt-repository ppa:graphics-drivers/ppa
 $ sudo apt-get update
 $ sudo apt-get upgrade
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Open the <strong>Driver Manager</strong> select the recommended <strong>NVIDIA binary driver</strong>  (nvidia-410 at January-2019)</p>
@@ -192,37 +190,33 @@ $ sudo apt-get upgrade
 <ul>
 <li>
 <p>After installing, disable the <code>nvidia-fallback</code> service:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo systemctl disable nvidia-fallback.service
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ sudo systemctl disable nvidia-fallback.service
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Blacklist nouveau driver using GRUB config. In /etc/default/grub look for a line <code>GRUB_CMDLINE_LINUX</code> . Add <code>nouveau.blacklist=1</code> into that parameter. If the line is not present add this line <code>GRUB_CMDLINE_LINUX="nouveau.blacklist=1"</code></p>
 </li>
 <li>
 <p>If you are interested for power savings (for laptops with dual GPU and your system supports it): install <code>bbswitch-dkms</code></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo apt install bbswitch-dkms
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ sudo apt install bbswitch-dkms
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Configure the system to load it by appending <code>bbswitch</code> in <code>/etc/modules</code></p>
 </li>
 <li>
 <p>Now, to switch to Intel graphics run</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo prime-select intel
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ sudo prime-select intel
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>To use NVIDIA (for external display etc)</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo prime-select nvidia
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ sudo prime-select nvidia
+</code></pre></div>
 </td></tr></table>
-
 </li>
 </ul>
 <h2 id="2-install-and-test-cuda-driver">2 Install and Test CUDA driver<a class="headerlink" href="#2-install-and-test-cuda-driver" title="Permanent link"> </a></h2>
@@ -240,62 +234,59 @@ $ sudo apt-get upgrade
 </li>
 <li>
 <p>Installation parameters. Select <strong>NO</strong> when the CUDA installer ask to install <strong>NVIDIA Accelerated Graphics Driver for Linux</strong> as the NVIDIA driver is already installed.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12
-13
-14
-15
-16
-17
-18</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="o">===========</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="o">===========</span>
 <span class="o">=</span> <span class="nv">Summary</span> <span class="o">=</span>
 <span class="o">===========</span>
 
 Driver:   Not Selected
-Toolkit:  Installed in /usr/local/cuda-10.2/
-Samples:  Installed in /home/cassani/
+Toolkit:  Installed <span class="k">in</span> /usr/local/cuda-10.2/
+Samples:  Installed <span class="k">in</span> /home/cassani/
 
 Please make sure that
  -   PATH includes /usr/local/cuda-10.2/bin
  -   LD_LIBRARY_PATH includes /usr/local/cuda-10.2/lib64, or, add /usr/local/cuda-10.2/lib64 to /etc/ld.so.conf and run ldconfig as root
 
-To uninstall the CUDA Toolkit, run cuda-uninstaller in /usr/local/cuda-10.2/bin
+To uninstall the CUDA Toolkit, run cuda-uninstaller <span class="k">in</span> /usr/local/cuda-10.2/bin
 
-Please see CUDA_Installation_Guide_Linux.pdf in /usr/local/cuda-10.2/doc/pdf <span class="k">for</span> detailed information on setting up CUDA.
+Please see CUDA_Installation_Guide_Linux.pdf <span class="k">in</span> /usr/local/cuda-10.2/doc/pdf <span class="k">for</span> detailed information on setting up CUDA.
 ***WARNING: Incomplete installation! This installation did not install the CUDA Driver. A driver of version at least <span class="m">440</span>.00 is required <span class="k">for</span> CUDA <span class="m">10</span>.2 functionality to work.
 To install the driver using this installer, run the following command, replacing &lt;CudaInstaller&gt; with the name of this run file:
     sudo &lt;CudaInstaller&gt;.run --silent --driver***
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Prepare the CUDA environment by adding the following 3 lines to your <code>.bashrc</code> file</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">export</span> <span class="nv">CUDA_HOME</span><span class="o">=</span>/usr/local/cuda    
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="nb">export</span> <span class="nv">CUDA_HOME</span><span class="o">=</span>/usr/local/cuda    
 <span class="nb">export</span> <span class="nv">LD_LIBRARY_PATH</span><span class="o">=</span>/usr/local/cuda/lib64:<span class="nv">$LD_LIBRARY_PATH</span>
 <span class="nb">export</span> <span class="nv">PATH</span><span class="o">=</span>/usr/local/cuda/bin:<span class="nv">$PATH</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>And source it</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">source</span> ~/.bashrc
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ <span class="nb">source</span> ~/.bashrc
+</code></pre></div>
 </td></tr></table>
-
 </li>
 </ul>
 <!---
@@ -310,38 +301,35 @@ $ sudo ldconfig
 <ul>
 <li>
 <p>Verify Cuda Compiler driver</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5
-6</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ nvcc --version
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span>
+<span class="normal">4</span>
+<span class="normal">5</span>
+<span class="normal">6</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ nvcc --version
 
 nvcc: NVIDIA <span class="o">(</span>R<span class="o">)</span> Cuda compiler driver
 Copyright <span class="o">(</span>c<span class="o">)</span> <span class="m">2005</span>-2019 NVIDIA Corporation
 Built on Wed_Oct_23_19:24:38_PDT_2019
 Cuda compilation tools, release <span class="m">10</span>.2, V10.2.89
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Install g++ (If you haven't)</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo apt-get install g++
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ sudo apt-get install g++
 $ sudo apt-get install build-essential
 $ sudo apt-get install make
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p><strong>(Optional)</strong> Install additional libraries to be able to build most of the samples:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ sudo apt-get install freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libgl1-mesa-glx libglu1-mesa libglu1-mesa-dev
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ sudo apt-get install freeglut3-dev build-essential libx11-dev libxmu-dev libxi-dev libgl1-mesa-glx libglu1-mesa libglu1-mesa-dev
+</code></pre></div>
 </td></tr></table>
-
 </li>
 </ul>
 <p></br>
@@ -350,10 +338,9 @@ $ sudo apt-get install make
 <ul>
 <li>
 <p>Go to <code>/common</code> folder in the samples path</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /usr/local/cuda/samples/common
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> /usr/local/cuda/samples/common
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Open <code>fingllib.mk</code> and, in the line 58 change <code>ubuntu</code> for <code>'ubuntu\|linuxmint'</code>  </p>
@@ -361,46 +348,43 @@ $ sudo apt-get install make
 </li>
 <li>
 <p>Search for all the instances of <code>fingllib.mk</code> outside of <code>/common</code> and replace them with a symbolic link to <code>usr/local/cuda/samples/common/fingllib.mk</code>.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /usr/local/cuda/samples/common
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> /usr/local/cuda/samples/common
 $ sudo find .. ! -path <span class="s2">&quot;*/common*&quot;</span> -name findgllib.mk -exec ln -sf /usr/local/cuda/samples/common/findgllib.mk <span class="o">{}</span> <span class="s1">&#39;;&#39;</span>
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Run the commnad <code>make</code> while in the samples path</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /usr/local/cuda/samples
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> /usr/local/cuda/samples
 $ sudo make
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 </ul>
 <p><strong>Running the sample binaries</strong></p>
 <ul>
 <li>
 <p>Go to the sample binaries folder</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ <span class="nb">cd</span> /usr/local/cuda/samples/bin/x86_64/linux/release
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ <span class="nb">cd</span> /usr/local/cuda/samples/bin/x86_64/linux/release
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Verify that your CUDA Capable device is found</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
- 2
- 3
- 4
- 5
- 6
- 7
- 8
- 9
-10
-11
-12</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ ./deviceQuery
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ ./deviceQuery
 
 ./deviceQuery Starting...
 
@@ -412,16 +396,14 @@ Device <span class="m">0</span>: <span class="s2">&quot;GeForce GTX 1060&quot;</
 CUDA Driver Version / Runtime Version          <span class="m">10</span>.2 / <span class="m">10</span>.2
 CUDA Capability Major/Minor version number:    <span class="m">6</span>.1
 ...
-</pre></div>
+</code></pre></div>
 </td></tr></table>
-
 </li>
 <li>
 <p>Sample <code>fluidsGL</code></p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span>$ ./fluidsGL
-</pre></div>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ ./fluidsGL
+</code></pre></div>
 </td></tr></table>
-
 <p><center>
 <a href="/images/fluidsGL.gif"><img src="/images/fluidsGL.gif" style="width: 500px;"/></a>
 </br><br>
@@ -439,11 +421,11 @@ CUDA Capability Major/Minor version number:    <span class="m">6</span>.1
 <p><a href="https://devtalk.nvidia.com/default/topic/936429/-solved-tensorflow-with-gpu-in-anaconda-env-ubuntu-16-04-cuda-7-5-cudnn-/">https://devtalk.nvidia.com/default/topic/936429/-solved-tensorflow-with-gpu-in-anaconda-env-ubuntu-16-04-cuda-7-5-cudnn-/</a></p>
 <p><a href="http://developer.download.nvidia.com/compute/cuda/6_5/rel/docs/CUDA_Getting_Started_Linux.pdf">http://developer.download.nvidia.com/compute/cuda/6_5/rel/docs/CUDA_Getting_Started_Linux.pdf</a></p>
 <p><a href="https://forums.linuxmint.com/viewtopic.php?t=226145">https://forums.linuxmint.com/viewtopic.php?t=226145</a></p>
-<p><a href="https://medium.com/@agathver/nvidia-gpu-optimus-prime-and-ubuntu-18-04-woes-f52e7f850f3d">https://medium.com/@agathver/nvidia-gpu-optimus-prime-and-ubuntu-18-04-woes-f52e7f850f3d</a>
+<p><a href="https://medium.com/@agathver/nvidia-gpu-optimus-prime-and-ubuntu-18-04-woes-f52e7f850f3d">https://medium.com/@agathver/nvidia-gpu-optimus-prime-and-ubuntu-18-04-woes-f52e7f850f3d</a></p>
 <!--
 Code for button
 <a class="btn btn-primary" href="#">Booton</a>
---></p>
+-->
 <!-- Series text at the end of article -->
 
         </div>

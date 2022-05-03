@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <title>CastorisCausa</title>
+    <meta charset="utf-8" />
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-86432394-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+<!-- End Google Analytics -->
+
+    <!-- mobile specific metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS -->
+      <link rel="stylesheet" href="https://www.castoriscausa.com/theme/tipuesearch/tipuesearch.css">
+
+    <link rel="stylesheet" href="https://www.castoriscausa.com/theme/css/default.css">
+    <link rel="stylesheet" href="https://www.castoriscausa.com/theme/css/layout.css">
+    <link rel="stylesheet" href="https://www.castoriscausa.com/theme/css/media-queries.css">
+
+    <link rel="stylesheet" href="https://www.castoriscausa.com/theme/css/pygments/native.css">
+
+      <link rel="stylesheet" href="https://www.castoriscausa.com/castoris.css">
+
+    <!-- Script -->
+    <script src="https://www.castoriscausa.com/theme/js/modernizr.js"></script>
+    <script src="https://www.castoriscausa.com/theme/js/jquery-3.4.1.min.js"></script>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="https://www.castoriscausa.com/theme/images/favicon.png">
+
+  </head>
+
+  <body>
+    <header id="top">
+<!-- Header
+================================================== -->
+  <div class="row">
+    <div class="header-content twelve columns">
+        <img id="header-logo" src= "https://www.castoriscausa.com/images/castoris_s.png">
+      <h1 id="logo-text"><a href="https://www.castoriscausa.com" title="">CastorisCausa</a></h1>
+      <p id="intro">Personal blog and hacks by <a href="../pages/about-me">Raymundo&nbspCassani</a></p>
+    </div>
+  </div>
+
+  <nav id="nav-wrap">
+    <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
+    <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>
+    <div class="row">
+      <ul id="nav" class="nav">
+
+        <!-- Links that are not pages -->
+            <li><a href="https://www.castoriscausa.com">Home</a></li>
+
+        <!-- Links for Pages, ordered by PAGES_SORT_ATTRIBUTE (def. title) -->
+            <li><a href="https://www.castoriscausa.com/pages/software">Software</a></li>
+            <li><a href="https://www.castoriscausa.com/pages/publications">Publications</a></li>
+            <li><a href="https://www.castoriscausa.com/pages/about-me">About</a></li>
+
+      </ul> <!-- end #nav -->
+    </div>
+  </nav> <!-- end #nav-wrap -->    </header>
+
+    <div id="content-wrap">
+<!-- Content - Article -->
+  <div class="row">
+    <div id="main" class="eight columns">
+      <article class="entry">
+  <header class="entry-header">
+
+  <h2 class="entry-title">
+    <a href="https://www.castoriscausa.com/posts/2022/05/03/install-adobe-acrobat-reader-dc-linux/">Install Adobe Acrobat Reader DC Linux</a>
+  </h2>
+
+  <div class="entry-meta">
+    <ul>
+      <!-- date -->
+      <li>
+        <i class="fa fa-calendar-alt"></i>
+        2022/05/03
+      </li>
+
+
+
+      <!-- category and tags -->
+        <p class="tags">
+
+
+            <i class="fa fa-tags"></i>
+            <span>Tagged in: </span>
+              <a href="https://www.castoriscausa.com/tags/arch/">Arch</a>,               <a href="https://www.castoriscausa.com/tags/hack/">hack</a>,               <a href="https://www.castoriscausa.com/tags/linux/">Linux</a>            <br>
+
+            <span>
+              <i class="fa fa-comments"></i>
+              <a href="https://www.castoriscausa.com/posts/2022/05/03/install-adobe-acrobat-reader-dc-linux/#disqus_thread">Comments</a>
+            </span>
+
+        </p>
+    </ul>
+  </div>
+</header>
+
+        <div class="entry-content-media">
+          <div class="post-thumb">
+          </div>
+        </div>
+
+        <div class="entry-content">
+
+<!-- Series text at the beginning of article -->
+          <p>After many tries, I finally found a good set of steps to install <a href="https://www.adobe.com/ca/acrobat/pdf-reader.html">Adobe Acrobat Reader DC</a> in my Linux computer.</p>
+<table>
+<thead>
+<tr>
+<th><strong>Status</strong> &nbsp;</th>
+<th><strong>Features</strong> &nbsp;</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>&nbsp; &nbsp; ✅</td>
+<td>Form filling</td>
+</tr>
+<tr>
+<td>&nbsp; &nbsp; ✅</td>
+<td>Comment tools</td>
+</tr>
+<tr>
+<td>&nbsp; &nbsp; ✅</td>
+<td>Sticky notes</td>
+</tr>
+<tr>
+<td>&nbsp; &nbsp; ✅</td>
+<td>Printing</td>
+</tr>
+<tr>
+<td>&nbsp; &nbsp; ❌</td>
+<td>Signature</td>
+</tr>
+<tr>
+<td><BR></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<h3 id="setup">Setup<a class="headerlink" href="#setup" title="Permanent link"> </a></h3>
+<ul>
+<li>Arch Linux (up to May 2022)*</li>
+<li>Wine-stable 7.0</li>
+</ul>
+<p>*The same configuration for <strong>Wine</strong>, <strong>winetricks</strong> and <strong>fonts</strong> should work in other Linux distributions.</p>
+<h3 id="1-install-wine-stable">1. Install wine-stable<a class="headerlink" href="#1-install-wine-stable" title="Permanent link"> </a></h3>
+<p>Install <a href="https://www.winehq.org/">Wine</a>, the <a href="https://aur.archlinux.org/packages/wine-stable">stable version</a> with either an <a href="https://wiki.archlinux.org/title/AUR_helpers">AUR helper</a> or directly as below. Installation time ~25 minutes.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span>
+<span class="normal">3</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git clone https://aur.archlinux.org/wine-stable.git
+$ <span class="nb">cd</span> wine-stable
+$ makepkg -si
+</code></pre></div>
+</td></tr></table>
+<p>Once <strong>Wine</strong> is installed, run:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ winecfg
+</code></pre></div>
+</td></tr></table>
+<p>set the <strong>Windows Version</strong> to <code>Windows 10</code>, leave all the other features with their default values.</p>
+<h3 id="2-install-winetricks">2. Install winetricks<a class="headerlink" href="#2-install-winetricks" title="Permanent link"> </a></h3>
+<p>Install <a href="https://wiki.winehq.org/Winetricks">winetricks</a> with all these "verbs". Installation time ~10 minutes.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
+<span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code># pacman -S winetricks
+$ winetricks atmlib riched20 wsh57 mspatcha allfonts msftedit
+</code></pre></div>
+</td></tr></table>
+<h3 id="3-installing-fonts">3. Installing fonts<a class="headerlink" href="#3-installing-fonts" title="Permanent link"> </a></h3>
+<p>Fonts seem to be one of the major troubles to make AARDC workable with Wine.</p>
+<ul>
+<li>
+<p>Add all the <code>.ttf</code> and <code>.otf</code> fonts to Wine:</p>
+<p><code>$ cd ${WINEPREFIX:-~/.wine}/drive_c/windows/Fonts &amp;&amp; for i in /usr/share/fonts/**/*.{ttf,otf}; do ln -s "$i" ; done</code></p>
+</li>
+<li>
+<p>Add Microsoft Core fonts, download <code>EUupdate.EXE</code> from <a href="https://sourceforge.net/projects/mscorefonts2/files/cabs/EUupdate.EXE/download">https://sourceforge.net/projects/mscorefonts2/files/cabs/EUupdate.EXE/download</a>, and place it in <code>/home/USER/.cache/winetricks/eufonts</code>.</p>
+</li>
+<li>
+<p>Get the Windows 7 fonts, especially the <strong>sego* fonts</strong> from <a href="https://www.w7df.com/7/download.html">https://www.w7df.com/7/download.html</a>. Copy the extracted files in <code>~/.fonts</code>, if it does not exist, create it. Update the font cache with:</p>
+</li>
+</ul>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code># fc-cache -vf
+</code></pre></div>
+</td></tr></table>
+<p>and reboot</p>
+<h3 id="4-installing-adobe-acrobat-reader-dc">4. Installing Adobe Acrobat Reader DC<a class="headerlink" href="#4-installing-adobe-acrobat-reader-dc" title="Permanent link"> </a></h3>
+<p>Download the installer for Windows 10 (I'm using the installer <code>AcroRdrDC1801120058_en_US.exe</code>)</p>
+<ul>
+<li><a href="http://get.adobe.com/uk/reader/otherversions/">http://get.adobe.com/uk/reader/otherversions/</a> or</li>
+<li><a href="ftp://ftp.adobe.com/pub/adobe/reader/win">ftp://ftp.adobe.com/pub/adobe/reader/win</a></li>
+</ul>
+<p>Proceed with the installation, but <strong>DO NOT OPEN THE READER IT YET!</strong></p>
+<p>Two keys in the <a href="https://wiki.winehq.org/Regedit">Wine registry</a> have to be modified to avoid automatic updates in AAR-DC, run <code>$ wine regedit</code> and change the value of these two keys:</p>
+<ol>
+<li>
+<p>In <code>HKEY_LOCAL_MACHINE\Software\Wow6432Node\Adobe\Adobe ARM\Legacy\Reader\{AC76BA86-7AD7-1033-7B44-AC0F074E4100}</code> change the value of <strong>Mode</strong> to <code>0</code>.  </p>
+</li>
+<li>
+<p>In <code>HKEY_LOCAL_MACHINE\Software\Wow6432Node\Adobe\Adobe ARM\1.0\ARM</code> change the value of <strong>iCheckReader</strong> to <code>0</code>.</p>
+</li>
+</ol>
+<p>Here, I have noticed that I need to <strong>reboot</strong> my computer, not sure why.</p>
+<p>Now, open the Reader with the link created in the desktop or in the terminal with:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ wine AcroRd32.exe
+</code></pre></div>
+</td></tr></table>
+<p>and select: <em>"Always open with Protected Mode Disabled"</em></p>
+<HR>
+<p>This should be enough to have a working <strong>Adobe Acrobat Reader DC in Linux</strong>.
+<center>
+<a href="/images/aardc.png"><img src="/images/aardc.png" style="width: 800px;"/></a><br>
+</center></p>
+<!-- Series text at the end of article -->
+
+        </div>
+      </article>
+
+<!-- Comments -->
+<!-- Disqus -->
+    <div id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'castoriscausa'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.url = 'https://www.castoriscausa.com/posts/2022/05/03/install-adobe-acrobat-reader-dc-linux/';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+<!-- End Disqus Code -->
+    </div> <!-- main End -->
+<!-- Sidebar -->
+<div id="sidebar" class="four columns">
+<div class="widget widget_search">
+  <form action="https://www.castoriscausa.com/search.html" onsubmit="return validateForm(this.elements['q'].value);">
+    <input type="text" name="q" id="tipue_search_input" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
+    <input type="submit" value="" class="submit-search">
+  </form>
+</div>
+
+<div class="widget widget_categories group">
+  <h3>Links</h3>
+  <ul>
+      <li><a href="https://www.castoriscausa.com">Home</a></li>
+      <li><a href="https://musaelab.ca/">MuSAE Lab</a></li>
+      <li><a href="https://www.neurospeed-bailletlab.org/">neuroSPEED Lab</a></li>
+  </ul>
+</div>
+
+<div class="widget widget_tags">
+  <h3>All Tags</h3>
+    <div class="tagcloud group">
+        <a href="https://www.castoriscausa.com/tags/ad/">AD</a>
+        <a href="https://www.castoriscausa.com/tags/arch/">Arch</a>
+        <a href="https://www.castoriscausa.com/tags/bash/">Bash</a>
+        <a href="https://www.castoriscausa.com/tags/batch/">Batch</a>
+        <a href="https://www.castoriscausa.com/tags/bluetooth/">Bluetooth</a>
+        <a href="https://www.castoriscausa.com/tags/book/">book</a>
+        <a href="https://www.castoriscausa.com/tags/cuda/">CUDA</a>
+        <a href="https://www.castoriscausa.com/tags/deeplearning/">DeepLearning</a>
+        <a href="https://www.castoriscausa.com/tags/diy/">DIY</a>
+        <a href="https://www.castoriscausa.com/tags/eeg/">EEG</a>
+        <a href="https://www.castoriscausa.com/tags/energy/">energy</a>
+        <a href="https://www.castoriscausa.com/tags/espanol/">Español</a>
+        <a href="https://www.castoriscausa.com/tags/game-boy/">Game Boy</a>
+        <a href="https://www.castoriscausa.com/tags/gis/">GIS</a>
+        <a href="https://www.castoriscausa.com/tags/git/">Git</a>
+        <a href="https://www.castoriscausa.com/tags/github/">GitHub</a>
+        <a href="https://www.castoriscausa.com/tags/gpu/">GPU</a>
+        <a href="https://www.castoriscausa.com/tags/hack/">hack</a>
+        <a href="https://www.castoriscausa.com/tags/jupyter/">Jupyter</a>
+        <a href="https://www.castoriscausa.com/tags/lifehack/">lifehack</a>
+        <a href="https://www.castoriscausa.com/tags/linux/">Linux</a>
+        <a href="https://www.castoriscausa.com/tags/maps/">maps</a>
+        <a href="https://www.castoriscausa.com/tags/matlab/">MATLAB</a>
+        <a href="https://www.castoriscausa.com/tags/methods/">methods</a>
+        <a href="https://www.castoriscausa.com/tags/montreal/">Montreal</a>
+        <a href="https://www.castoriscausa.com/tags/nvidia/">NVIDIA</a>
+        <a href="https://www.castoriscausa.com/tags/phd/">PhD</a>
+        <a href="https://www.castoriscausa.com/tags/photo/">photo</a>
+        <a href="https://www.castoriscausa.com/tags/power/">power</a>
+        <a href="https://www.castoriscausa.com/tags/python/">Python</a>
+        <a href="https://www.castoriscausa.com/tags/space/">space</a>
+        <a href="https://www.castoriscausa.com/tags/statistics/">statistics</a>
+        <a href="https://www.castoriscausa.com/tags/systemd/">systemd</a>
+        <a href="https://www.castoriscausa.com/tags/touchpad/">touchpad</a>
+        <a href="https://www.castoriscausa.com/tags/tutorial/">tutorial</a>
+        <a href="https://www.castoriscausa.com/tags/webdevelopment/">WebDevelopment</a>
+        <a href="https://www.castoriscausa.com/tags/windows/">Windows</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div> <!-- end sidebar -->  </div> <!-- end row -->
+    </div>
+
+    <footer>
+<!-- Footer
+================================================== -->
+  <div class="row">
+    <div class="twelve columns">
+      <ul class="social-links">
+        <li><a href="https://github.com/rcassani"><i class="fab fa-github fa-lg"></i></a></li>
+        <li><a href="https://twitter.com/r_cassani"><i class="fab fa-twitter fa-lg"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/rcassani/"><i class="fab fa-linkedin fa-lg"></i></a></li>
+        <li><a href="https://scholar.google.com/citations?hl=en&user=3A9_Ww8AAAAJ"><i class="fas fa-user-graduate fa-lg"></i></a></li>
+        <li><a href="#"><i class="fas fa-envelope fa-lg"></i></a></li>
+    </ul>
+  </div>
+
+
+  <div class="twelve columns">&copy; 2022 Raymundo Cassani
+    &middot; Powered by <a href="https://github.com/rcassani/pelican-kis" target="_blank">pelican-kis</a> and <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+
+                  <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+
+           </div>
+
+
+  </div> <!-- End row -->
+  <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-chevron-up"></i></a></div>    </footer>
+
+    <!-- Java Script -->
+    <script src="https://www.castoriscausa.com/theme/js/jquery-3.4.1.min.js"></script>
+    <script src="https://www.castoriscausa.com/theme/js/main.js"></script>
+        <script src="https://www.castoriscausa.com/castoris.js"></script>
+
+    <script type="text/javascript">
+        var disqus_shortname = 'castoriscausa';
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] ||
+             document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+
+  </body>
+</html>

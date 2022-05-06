@@ -88,6 +88,12 @@
         2020/12/28
       </li>
 
+      <!-- modified date -->
+        <span class="meta-sep">&nbsp;</span>
+        <li>
+          <i class="fa fa-pencil-alt"></i>
+          2022/05/05
+        </li>
 
 
       <!-- category and tags -->
@@ -117,18 +123,28 @@
 
 <!-- Series text at the beginning of article -->
           <h3 id="congratulations">Congratulations!<a class="headerlink" href="#congratulations" title="Permanent link"> </a></h3>
-<p>It's amazing that you're thinking into contributing to an open-source project.</p>
+<p>It's amazing that you're thinking into contributing to an open-source project.
+Contributions usually include:</p>
+<ul>
+<li>🪲 Solving bugs</li>
+<li>⭐ Development of new features</li>
+<li>🗎 Improve documentation</li>
+<li>etc.  </li>
+</ul>
 <p>Although the task seems intimidating, it can be broken into some simple steps. <strong>First of all</strong>, check if the project you want to contribute to has a <code>CONTRIBUTING</code> file. If it exists, this file presents the <a href="https://docs.github.com/en/free-pro-team@latest/github/building-a-strong-community/setting-guidelines-for-repository-contributors">guidelines for repository contributors</a> for the project.</p>
 <p>Let's assume the you (<code>YOUR-USERNAME</code>) want to contribute to a the project <code>COOL-PROJECT</code> which repository is in the <code>COOL-USERNAME</code> GitHub account. In general the process to contribute to an open-source project can be divided into 7 simple steps. These steps are expanded with great detail in this wonderful post: <a href="https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/">https://akrabat.com/the-beginners-guide-to-contributing-to-a-github-project/</a>.</p>
-<ol>
+<ul>
 <li>
-<p><a href="https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo">Fork the repository</a> from <code>https://github.com/COOL-USERNAME/COOL-PROJECT</code> to your GitHub account and clone it to your computer.</p>
+<p><strong>STEP 0</strong>: When contributing, please <strong>first discuss the change</strong> you wish to make to the owner of the repository. A way to start this dicussion can be a <a href="https://github.com/brainstorm-tools/brainstorm3/issues">GitHub issue</a>.</p>
+</li>
+<li>
+<p><strong>STEP 1</strong>: <a href="https://docs.github.com/en/free-pro-team@latest/github/getting-started-with-github/fork-a-repo">Fork the repository</a> from <code>https://github.com/COOL-USERNAME/COOL-PROJECT</code> to your GitHub account and clone it to your computer.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git clone https://github.com/YOUR-USERNAME/COOL-PROJECT.git
 </code></pre></div>
 </td></tr></table>
 </li>
 <li>
-<p>Create a <code>upstream</code> remote (to this repository) and sync your local copy.</p>
+<p><strong>STEP 2</strong>: Create a <code>upstream</code> remote (to this repository) and sync your local copy.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span>
 <span class="normal">2</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ git remote add upstream https://github.com/COOL-USERNAME/COOL-PROJECT
 $ git remote -v
@@ -142,29 +158,41 @@ $ git pull upstream master <span class="o">&amp;&amp;</span> git push origin mas
 </td></tr></table>
 </li>
 <li>
-<p>Create a branch in your <code>local</code> repository. This branch will contain your contribution.</p>
+<p><strong>STEP 3</strong>: Create a branch in your <code>local</code> repository. This branch will contain your contribution.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git checkout -b fixing-something
 </code></pre></div>
 </td></tr></table>
 </li>
 <li>
-<p>Perform your contribution, write[good commit messages, and commit. If your contributions solves an open issue, <a href="https://github.blog/2013-01-22-closing-issues-via-commit-messages/">close it with the proper commit message</a>. <strong>NOTE:</strong> Make ONLY ONE contribution per branch.</p>
+<p><strong>STEP 4</strong>: Perform your contribution, write[good commit messages, and commit. If your contributions solves an open issue, <a href="https://github.blog/2013-01-22-closing-issues-via-commit-messages/">close it with the proper commit message</a>. <strong>NOTE:</strong> Make ONLY ONE contribution per branch.</p>
 </li>
 <li>
-<p>Push your <code>local</code> branch to your fork in GitHub (<code>https://github.com/YOUR-USERNAME/COOL-PROJECT</code>).</p>
+<p><strong>STEP 5</strong>: Push your <code>local</code> branch to your fork in GitHub (<code>https://github.com/YOUR-USERNAME/COOL-PROJECT</code>).</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>git push -u origin fixing-something
 </code></pre></div>
 </td></tr></table>
 </li>
 <li>
-<p>On GitHub, <a href="https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork">create a new Pull Request</a> from your fork.</p>
+<p><strong>STEP 6</strong>: On GitHub, <a href="https://docs.github.com/en/free-pro-team@latest/github/collaborating-with-issues-and-pull-requests/creating-a-pull-request-from-a-fork">create a new Pull Request</a> from your fork.<br>
+  ⚠️ For greater collaboration, select the option <a href="https://docs.github.com/en/github/collaborating-with-pull-requests/working-with-forks/allowing-changes-to-a-pull-request-branch-created-from-a-fork">Allow edits by maintainers</a> before creating your PR. This will allow Brainstorm maintainers to add commits to your PR branch before merging it. You can always change this</p>
 </li>
 <li>
-<p>Provide feedback about the Pull Request, and if things are correct, your Pull Request will be merged  <code>upstream</code> repository.</p>
+<p><strong>STEP 7</strong>: Provide feedback about the Pull Request, and if things are correct, your Pull Request will be merged  <code>upstream</code> repository.</p>
 </li>
-</ol>
+</ul>
 <h3 id="example">Example<a class="headerlink" href="#example" title="Permanent link"> </a></h3>
-<p>An example of a <code>CONTRIBUTING</code> file listing these steps in an open-source project cab be found here: <a href="https://github.com/MuSAELab/amplitude-modulation-analysis-module">https://github.com/MuSAELab/amplitude-modulation-analysis-module</a></p>
+<p>An example of a <code>CONTRIBUTING</code> file listing these steps in an open-source project cab be found here: <a href="https://github.com/brainstorm-tools/brainstorm3">https://github.com/brainstorm-tools/brainstorm3</a></p>
+<h3 id="git-and-github-resources">Git and GitHub resources<a class="headerlink" href="#git-and-github-resources" title="Permanent link"> </a></h3>
+<p>AS you could read, contributing requiers to be familiar with <a href="https://git-scm.com/">Git</a> and <a href="https://github.com/">GitHub</a> concepts like: <strong><em>commit, branch, push, pull, remote, fork, repository</em></strong>, etc. There are plenty resources online to learn Git and GitHub, for example:</p>
+<ul>
+<li><a href="https://github.com/git-guides/">Git Guide</a></li>
+<li><a href="https://docs.github.com/en/get-started/quickstart">GitHub Quick start</a></li>
+<li><a href="https://www.youtube.com/githubguides">GitHub guide on YouTube</a></li>
+<li><a href="https://docs.github.com/en/get-started/quickstart/git-and-github-learning-resources">Git and GitHub learning resources</a></li>
+<li><a href="https://docs.github.com/en/github/collaborating-with-pull-requests">Collaborating with Pull Requests</a></li>
+<li><a href="https://docs.github.com/en/github">GitHub Documentation, guides and help topics</a></li>
+<li>And many more...</li>
+</ul>
 <!-- Series text at the end of article -->
 
         </div>

@@ -88,6 +88,12 @@
         2020/03/09
       </li>
 
+      <!-- modified date -->
+        <span class="meta-sep">&nbsp;</span>
+        <li>
+          <i class="fa fa-pencil-alt"></i>
+          2022/05/18
+        </li>
 
 
       <!-- category and tags -->
@@ -144,7 +150,7 @@
 <p>That device will be disabled from the wake-up list each time the computers goes to suspension</p>
 </li>
 <li>
-<p>Create a file <code>suspend-mouse-fix.service</code> in <code>/etc/systemd/system</code> with this content:</p>
+<p>Create a file <code>suspend-usb-fix.service</code> in <code>/etc/systemd/system</code> with this content:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -184,13 +190,13 @@
 </li>
 <li>
 <p>Change the permissions of the service file</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># chmod 664 /etc/systemd/system/suspend-mouse-fix.service</span>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># chmod 664 /etc/systemd/system/suspend-usb-fix.service</span>
 </code></pre></div>
 </td></tr></table>
 </li>
 <li>
 <p>Enable the service:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>systemctl <span class="nb">enable</span> suspend-mouse-fix.service
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>systemctl <span class="nb">enable</span> suspend-usb-fix.service
 </code></pre></div>
 </td></tr></table>
 </li>
@@ -198,7 +204,7 @@
 <p>If there any update in the service file, run <code>$ systemctl daemon-reload</code> after modifying it</p>
 </li>
 <li>
-<p>Lastly, the status and last calls of the service are obtained with <code>$ systemctl status suspend-mouse-fix.service</code>. And this information can be also found with <code>$ journalctl</code></p>
+<p>Lastly, the status and last calls of the service are obtained with <code>$ systemctl status suspend-usb-fix.service</code>. And this information can be also found with <code>$ journalctl</code></p>
 </li>
 </ol>
 <!-- Series text at the end of article -->

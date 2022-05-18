@@ -5,21 +5,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/</loc>
-<lastmod>2022-05-06T11:12:31-00:00</lastmod>
+<lastmod>2022-05-18T14:18:38-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/archives.html</loc>
-<lastmod>2022-05-06T11:12:31-00:00</lastmod>
+<lastmod>2022-05-18T14:18:38-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/categories.html</loc>
-<lastmod>2022-05-06T11:12:31-00:00</lastmod>
+<lastmod>2022-05-18T14:18:38-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -152,7 +152,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/posts/2020/03/09/hook-systemd-disable-wakeup-from-usb-device/</loc>
-<lastmod>2020-03-09T17:32:00-04:00</lastmod>
+<lastmod>2022-05-18T14:00:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -243,21 +243,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/category/posts/</loc>
-<lastmod>2022-05-05T20:00:00-05:18</lastmod>
+<lastmod>2022-05-18T14:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/tags/arch/</loc>
-<lastmod>2022-05-03T18:00:00-05:18</lastmod>
+<lastmod>2022-05-18T14:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/tags/linux/</loc>
-<lastmod>2022-05-03T18:00:00-05:18</lastmod>
+<lastmod>2022-05-18T14:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -397,7 +397,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/tags/systemd/</loc>
-<lastmod>2020-03-09T17:32:00-05:18</lastmod>
+<lastmod>2022-05-18T14:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -509,7 +509,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/author/raymundo-cassani.html</loc>
-<lastmod>2022-05-05T20:00:00-05:18</lastmod>
+<lastmod>2022-05-18T14:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

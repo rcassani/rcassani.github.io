@@ -70,22 +70,14 @@
   </nav> <!-- end #nav-wrap -->    </header>
 
     <div id="content-wrap">
-<!-- Content - Index
-================================================== -->
+<!-- Content - Article -->
   <div class="row">
     <div id="main" class="eight columns">
-
-  <h1 class="entry-title">
-    Posts tagged with: Batch
-  </h1>
-  <br>
-
-        <article class="entry">
-  <div class="row"> <!-- div row -->
-  <header class="entry-header eight columns">
+      <article class="entry">
+  <header class="entry-header">
 
   <h2 class="entry-title">
-    <a href="https://www.castoriscausa.com/posts/2017/07/25/universal-shortcuts/">Universal Shortcut</a>
+    <a href="https://www.castoriscausa.com/posts/2022/05/28/distance_to_costo_montreal/">How far is a Costco in Montreal?</a>
   </h2>
 
   <div class="entry-meta">
@@ -93,7 +85,7 @@
       <!-- date -->
       <li>
         <i class="fa fa-calendar-alt"></i>
-        2017/07/25
+        2022/05/28
       </li>
 
 
@@ -104,11 +96,11 @@
 
             <i class="fa fa-tags"></i>
             <span>Tagged in: </span>
-              <a href="https://www.castoriscausa.com/tags/bash/">Bash</a>,               <a href="https://www.castoriscausa.com/tags/batch/">Batch</a>,               <a href="https://www.castoriscausa.com/tags/linux/">Linux</a>,               <a href="https://www.castoriscausa.com/tags/windows/">Windows</a>            <br>
+              <a href="https://www.castoriscausa.com/tags/geopandas/">GeoPandas</a>,               <a href="https://www.castoriscausa.com/tags/gis/">GIS</a>,               <a href="https://www.castoriscausa.com/tags/maps/">maps</a>,               <a href="https://www.castoriscausa.com/tags/montreal/">Montreal</a>,               <a href="https://www.castoriscausa.com/tags/python/">Python</a>            <br>
 
             <span>
               <i class="fa fa-comments"></i>
-              <a href="https://www.castoriscausa.com/posts/2017/07/25/universal-shortcuts/#disqus_thread">Comments</a>
+              <a href="https://www.castoriscausa.com/posts/2022/05/28/distance_to_costo_montreal/#disqus_thread">Comments</a>
             </span>
 
         </p>
@@ -116,20 +108,89 @@
   </div>
 </header>
 
-  <div class="entry-thumb four columns">
-    <center>
-      <a href="https://www.castoriscausa.com/posts/2017/07/25/universal-shortcuts/">
-          <img src= "https://www.castoriscausa.com/images/shortcut.png">
-      </a>
-    </center>
-  </div>
-</div> <!-- div row -->
-          <div class="entry-content">
-            This project started from the "need" of having a compatible way to point to files indifferently if on Windows or Linux. While both operative systems can handle symbolic links, when the target file is an executable, certain scripts and programs present problems when executed through a symbolic link, as the …
+        <div class="entry-content-media">
+          <div class="post-thumb">
           </div>
+        </div>
 
-        </article> <!-- end entry -->
-    </div> <!-- end main -->
+        <div class="entry-content">
+
+<!-- Series text at the beginning of article -->
+          <p>Once clarified the <a href="https://www.castoriscausa.com/posts/2022/04/15/tale-of-too-montreal/">different meanings of Montreal</a>, I'm in a better position to solve a question inspired by a conversation with a friend, the question is:</p>
+<p><center>
+<strong>How far from a Costco is everyone in the Montreal?</strong>
+</center></p>
+<p>For city, I'll be using a map, that encompasses <a href="https://www.castoriscausa.com/posts/2022/04/15/tale-of-too-montreal/">all the interpretations of Montreal</a>.</p>
+<p><center>
+<a href="/images/montreals_map.png"><img src="/images/montreals_map.png" style="width: 60%;"/></a><br>
+<br>
+Map for the different "Montreal" meanings
+</center>  </p>
+<p>This post briefly describes the steps to answering the question, implemented as a script (code and data available <a href="https://github.com/rcassani/Python-GIS/tree/master/E04">here</a>), using <a href="https://geopandas.org">GeoPandas</a>. If you only want to see the result, jump directly to the map at the end.</p>
+<h2 id="costco-stores-in-my-area">Costco stores in my area<a class="headerlink" href="#costco-stores-in-my-area" title="Permanent link"> </a></h2>
+<p>The location of the stores in the Montreal is available in their <a href="https://www.costco.ca/WarehouseListByStateDisplayView">Quebec stores listing</a>. These addresses were then cross-checked with <a href="https://www.openstreetmap.org">OpenStreetMap</a> and Google maps. Oh surprise! the addresses did not always matched, thus, I had to verify the addressed (street number, street and postal code) with  <a href="https://www.canadapost-postescanada.ca/info/mc/personal/postalcode/fpc.jsf">Canada Post</a>. Interestingly the address in the Costco site were the correct. Don't worry, I've submitted the corrections in OpenStreetMap and Google maps.</p>
+<p>There are a total of <strong>14 stores</strong> in the area: Sud-Ouest, Marche central, Point-Claire, Anjou, Laval, Boucherville, Longueuil, Saint-Bruno, Brossard, Candiac, Vaudreuil-Dorion, Terrebonne, Boisbriand and Saint-Jerome.</p>
+<h2 id="overview-of-the-process">Overview of the process<a class="headerlink" href="#overview-of-the-process" title="Permanent link"> </a></h2>
+<p>With all the information at hand, making the map as straight forward:</p>
+<ol>
+<li>Geocoding, converting the store addresses to locations on Earth</li>
+<li>Defining the map boundaries</li>
+<li>Making a grid in the map</li>
+<li>Computing the distance between each store location and each point in the grid</li>
+<li>Finding the minimum of those distances</li>
+<li>Plotting</li>
+</ol>
+<p><center>
+<a href="/images/dist_costco_montreal.png"><img src="/images/dist_costco_montreal.png" style="width: 100%;"/></a><br>
+<br>
+</center>  </p>
+<p>This as a fun project, it can be easily modified to do the same analysis with other points for interest.</p>
+<h2 id="relation-with-population-density">Relation with population density?<a class="headerlink" href="#relation-with-population-density" title="Permanent link"> </a></h2>
+<p>As a quick exploration, this distance-to-Costco map above was plotted on the <a href="https://www12.statcan.gc.ca/census-recensement/2021/geo/maps-cartes/thematicmaps-cartesthematiques/pd-pl/map-eng.cfm?lang=E&amp;mapid=5&amp;dguid=2021S0503462">2021 population density map of the area</a>. The result is interesting, and led to make the prediction:</p>
+<p><strong>The next Costco store in the region will open in Saint-Jean-sur-Richelieu.</strong></p>
+<p><center>
+<a href="/images/dist_costco_montreal_pop.png"><img src="/images/dist_costco_montreal_pop.png" style="width: 100%;"/></a><br>
+<br>
+Red background shades indicates high population density.
+</center>  </p>
+<h2 id="limitations-and-future">Limitations and future<a class="headerlink" href="#limitations-and-future" title="Permanent link"> </a></h2>
+<p>Yes, so far it's a linear distance, that does not take into account streets (nor water canals!). An update would be to use a transit (or transportation) API to change distance to time, to show accessibility.</p>
+<!-- Series text at the end of article -->
+
+        </div>
+      </article>
+
+<!-- Comments -->
+<!-- Disqus -->
+    <div id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'castoriscausa'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.url = 'https://www.castoriscausa.com/posts/2022/05/28/distance_to_costo_montreal/';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+<!-- End Disqus Code -->
+    </div> <!-- main End -->
 <!-- Sidebar -->
 <div id="sidebar" class="four columns">
 <div class="widget widget_search">
@@ -219,7 +280,7 @@
   </div>
 
 
-  <div class="twelve columns">&copy; 2017 Raymundo Cassani
+  <div class="twelve columns">&copy; 2022 Raymundo Cassani
     &middot; Powered by <a href="https://github.com/rcassani/pelican-kis" target="_blank">pelican-kis</a> and <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
 
                   <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>

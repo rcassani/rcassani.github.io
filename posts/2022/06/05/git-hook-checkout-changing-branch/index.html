@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <title>CastorisCausa</title>
+    <meta charset="utf-8" />
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-86432394-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+<!-- End Google Analytics -->
+
+    <!-- mobile specific metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS -->
+      <link rel="stylesheet" href="https://www.castoriscausa.com/theme/tipuesearch/tipuesearch.css">
+
+    <link rel="stylesheet" href="https://www.castoriscausa.com/theme/css/default.css">
+    <link rel="stylesheet" href="https://www.castoriscausa.com/theme/css/layout.css">
+    <link rel="stylesheet" href="https://www.castoriscausa.com/theme/css/media-queries.css">
+
+    <link rel="stylesheet" href="https://www.castoriscausa.com/theme/css/pygments/native.css">
+
+      <link rel="stylesheet" href="https://www.castoriscausa.com/castoris.css">
+
+    <!-- Script -->
+    <script src="https://www.castoriscausa.com/theme/js/modernizr.js"></script>
+    <script src="https://www.castoriscausa.com/theme/js/jquery-3.4.1.min.js"></script>
+
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="https://www.castoriscausa.com/theme/images/favicon.png">
+
+  </head>
+
+  <body>
+    <header id="top">
+<!-- Header
+================================================== -->
+  <div class="row">
+    <div class="header-content twelve columns">
+        <img id="header-logo" src= "https://www.castoriscausa.com/images/castoris_s.png">
+      <h1 id="logo-text"><a href="https://www.castoriscausa.com" title="">CastorisCausa</a></h1>
+      <p id="intro">Personal blog and hacks by <a href="../pages/about-me">Raymundo&nbspCassani</a></p>
+    </div>
+  </div>
+
+  <nav id="nav-wrap">
+    <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
+    <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>
+    <div class="row">
+      <ul id="nav" class="nav">
+
+        <!-- Links that are not pages -->
+            <li><a href="https://www.castoriscausa.com">Home</a></li>
+
+        <!-- Links for Pages, ordered by PAGES_SORT_ATTRIBUTE (def. title) -->
+            <li><a href="https://www.castoriscausa.com/pages/software">Software</a></li>
+            <li><a href="https://www.castoriscausa.com/pages/publications">Publications</a></li>
+            <li><a href="https://www.castoriscausa.com/pages/about-me">About</a></li>
+
+      </ul> <!-- end #nav -->
+    </div>
+  </nav> <!-- end #nav-wrap -->    </header>
+
+    <div id="content-wrap">
+<!-- Content - Article -->
+  <div class="row">
+    <div id="main" class="eight columns">
+      <article class="entry">
+  <header class="entry-header">
+
+  <h2 class="entry-title">
+    <a href="https://www.castoriscausa.com/posts/2022/06/05/git-hook-checkout-changing-branch/">Git hook at changing branches</a>
+  </h2>
+
+  <div class="entry-meta">
+    <ul>
+      <!-- date -->
+      <li>
+        <i class="fa fa-calendar-alt"></i>
+        2022/06/05
+      </li>
+
+
+
+      <!-- category and tags -->
+        <p class="tags">
+
+
+            <i class="fa fa-tags"></i>
+            <span>Tagged in: </span>
+              <a href="https://www.castoriscausa.com/tags/bash/">Bash</a>,               <a href="https://www.castoriscausa.com/tags/git/">Git</a>,               <a href="https://www.castoriscausa.com/tags/linux/">Linux</a>            <br>
+
+            <span>
+              <i class="fa fa-comments"></i>
+              <a href="https://www.castoriscausa.com/posts/2022/06/05/git-hook-checkout-changing-branch/#disqus_thread">Comments</a>
+            </span>
+
+        </p>
+    </ul>
+  </div>
+</header>
+
+        <div class="entry-content-media">
+          <div class="post-thumb">
+          </div>
+        </div>
+
+        <div class="entry-content">
+
+<!-- Series text at the beginning of article -->
+          <p>Often when working on experimental Git branches, it is necessary to modify files outside of the Git repository when we change branches to properly test some of the new features. An example of this type of files would be configuration files.</p>
+<p>Through the use of <a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks">Git hooks</a> it is possible to execute a program when a Git action happens, for example when checkout occurs. However, the <a href="https://git-scm.com/docs/githooks.html#_post_checkout">post-checkout hook</a> is given the <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">SHA-1 ref</a> of the <strong>old</strong> (origin) and <strong>new</strong> (destination) branches, rather than their name. Thus if two branches share the same HEAD, it's not possible to distinguish the correct branch only from the ref. A <a href="https://stackoverflow.com/a/25590292/4859684">walk-around</a> is to use <code>git reflog</code> to get the names of the <strong>old</strong> and <strong>new</strong> branches.</p>
+<p>This Bash script (<a href="">available here</a>) is a post-checkout hook example to do "something" <strong>if</strong> the <strong>new</strong> branch name is in a give list, function <code>exists_in_list()</code>. Moreover, it checks if the <strong>old</strong> or <strong>new</strong> branch names have <code>ftr-</code> as prefix, and takes does something for the different combinations, function <code>starts_with()</code>.</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span>
+<span class="normal">83</span>
+<span class="normal">84</span>
+<span class="normal">85</span>
+<span class="normal">86</span>
+<span class="normal">87</span>
+<span class="normal">88</span>
+<span class="normal">89</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">bash</span><span class="w"></span>
+<span class="c1">#!/bin/bash</span><span class="w"></span>
+
+<span class="n">set</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w">  </span><span class="c1"># Stop execution of script if a command or pipeline has an error</span><span class="w"></span>
+<span class="n">printf</span><span class="w"> </span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Example post-checkout hook</span><span class="se">\n</span><span class="s1">&#39;</span><span class="w"></span>
+
+<span class="c1"># These are the parameters given to the hook</span><span class="w"></span>
+<span class="c1"># https://git-scm.com/docs/githooks.html#_post_checkout</span><span class="w"></span>
+<span class="n">oldHEAD</span><span class="o">=$</span><span class="mi">1</span><span class="w">       </span><span class="c1"># ref of the previous (old) HEAD</span><span class="w"></span>
+<span class="n">newHEAD</span><span class="o">=$</span><span class="mi">2</span><span class="w">       </span><span class="c1"># ref of the new HEAD </span><span class="w"></span>
+<span class="n">checkoutType</span><span class="o">=$</span><span class="mi">3</span><span class="w">  </span><span class="c1"># checkout type flag: 1 = changing branches, </span><span class="w"></span>
+<span class="w">                 </span><span class="c1">#                     0 = retrieving a file from the index</span><span class="w"></span>
+
+<span class="c1"># Since $1 and $2 are the 40-character SHA-1,</span><span class="w"></span>
+<span class="c1"># it is not possible to unambiguously determine old- and new branch names</span><span class="w"></span>
+<span class="c1"># [[ $checkoutType == 1 ]] &amp;&amp; checkoutType=&#39;branch&#39; ||  checkoutType=&#39;file&#39; ;</span><span class="w"></span>
+<span class="c1"># echo &#39;Checkout type: &#39;$checkoutType</span><span class="w"></span>
+<span class="c1"># echo &#39;     old HEAD: &#39;`git name-rev --name-only $oldHEAD`</span><span class="w"></span>
+<span class="c1"># echo &#39;     new HEAD: &#39;`git name-rev --name-only $newHEAD`</span><span class="w"></span>
+<span class="c1"># https://stackoverflow.com/q/25590267/4859684</span><span class="w"></span>
+
+<span class="c1"># Get branch names from git-reflog</span><span class="w"></span>
+<span class="n">oldBRANCH</span><span class="o">=</span><span class="err">`</span><span class="n">git</span><span class="w"> </span><span class="n">reflog</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">awk</span><span class="w"> </span><span class="s1">&#39;NR==1{ print $6; exit }&#39;</span><span class="err">`</span><span class="w"></span>
+<span class="n">newBRANCH</span><span class="o">=</span><span class="err">`</span><span class="n">git</span><span class="w"> </span><span class="n">reflog</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">awk</span><span class="w"> </span><span class="s1">&#39;NR==1{ print $8; exit }&#39;</span><span class="err">`</span><span class="w"></span>
+<span class="n">echo</span><span class="w"> </span><span class="s2">&quot;Old branch: $oldBRANCH&quot;</span><span class="w"></span>
+<span class="n">echo</span><span class="w"> </span><span class="s2">&quot;New branch: $newBRANCH&quot;</span><span class="w"></span>
+<span class="n">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"></span>
+
+<span class="n">exists_in_list</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="c1"># Function for determine if a word is in a space-separated list</span><span class="w"></span>
+<span class="c1"># https://www.baeldung.com/linux/check-variable-exists-in-list</span><span class="w"></span>
+<span class="w">    </span><span class="n">LIST</span><span class="o">=$</span><span class="mi">1</span><span class="w"></span>
+<span class="w">    </span><span class="n">WORD</span><span class="o">=$</span><span class="mi">2</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="s2">&quot;$LIST&quot;</span><span class="w"> </span><span class="o">=~</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">|^</span><span class="p">)</span><span class="o">$</span><span class="n">WORD</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">|$</span><span class="p">)</span><span class="w"> </span><span class="p">]];</span><span class="w"> </span><span class="n">then</span><span class="w"></span>
+<span class="w">        </span><span class="n">echo</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span><span class="w"></span>
+<span class="w">        </span><span class="n">echo</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="n">fi</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">starts_with</span><span class="p">(){</span><span class="w"></span>
+<span class="c1"># Function to check if a word start with a given prefix</span><span class="w"></span>
+<span class="w">    </span><span class="n">WORD</span><span class="o">=$</span><span class="mi">1</span><span class="w"></span>
+<span class="w">    </span><span class="n">PREF</span><span class="o">=$</span><span class="mi">2</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="o">$</span><span class="n">WORD</span><span class="w"> </span><span class="o">=~</span><span class="w"> </span><span class="o">^$</span><span class="n">PREF</span><span class="o">*</span><span class="w"> </span><span class="p">]];</span><span class="w"> </span><span class="n">then</span><span class="w"></span>
+<span class="w">        </span><span class="n">echo</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span><span class="w"></span>
+<span class="w">        </span><span class="n">echo</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="n">fi</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1"># ACTION IF NEW BRANCH IS IN A GIVEN LIST</span><span class="w"></span>
+<span class="c1"># Determine if NEW branch name belongs to a list of names</span><span class="w"></span>
+<span class="n">listBranches</span><span class="o">=</span><span class="s2">&quot;dev tmp test&quot;</span><span class="w"></span>
+<span class="n">isNewList</span><span class="o">=</span><span class="s2">&quot;$(exists_in_list &quot;</span><span class="o">$</span><span class="n">listBranches</span><span class="s2">&quot; &quot;</span><span class="o">$</span><span class="n">newBRANCH</span><span class="s2">&quot;)&quot;</span><span class="w"></span>
+<span class="c1"># NEW branch was in list</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="o">$</span><span class="n">isNewList</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]];</span><span class="w"> </span><span class="n">then</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="s2">&quot;New branch: $newBRANCH was in list</span><span class="se">\n</span><span class="s2">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="s1">&#39; Do something 0</span><span class="se">\n</span><span class="s1">&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">exit</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="n">fi</span><span class="w"></span>
+
+<span class="c1"># ACTION ACCORDING THE NAMES OF OLD TO NEW BRANCH</span><span class="w"></span>
+<span class="c1"># Determine if OLD and NEW branch names have a given prefix</span><span class="w"></span>
+<span class="n">isOldFtr</span><span class="o">=</span><span class="s2">&quot;$(starts_with &quot;</span><span class="o">$</span><span class="n">oldBRANCH</span><span class="s2">&quot; &quot;</span><span class="n">ftr</span><span class="o">-</span><span class="s2">&quot;)&quot;</span><span class="w"></span>
+<span class="n">isNewFtr</span><span class="o">=</span><span class="s2">&quot;$(starts_with &quot;</span><span class="o">$</span><span class="n">newBRANCH</span><span class="s2">&quot; &quot;</span><span class="n">ftr</span><span class="o">-</span><span class="s2">&quot;)&quot;</span><span class="w"></span>
+
+<span class="c1"># NoFeature branch to Feature branch</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="o">$</span><span class="n">isOldFtr</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="o">$</span><span class="n">isNewFtr</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]];</span><span class="w"> </span><span class="n">then</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="s2">&quot;Branch switch: $oldBRANCH -&gt; $newBRANCH</span><span class="se">\n</span><span class="s2">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="s1">&#39; Do something 1</span><span class="se">\n</span><span class="s1">&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">exit</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="n">fi</span><span class="w"></span>
+
+<span class="c1"># Feature branch to NoFeature branch</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="o">$</span><span class="n">isOldFtr</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="o">$</span><span class="n">isNewFtr</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">]];</span><span class="w"> </span><span class="n">then</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="s2">&quot;Branch switch: $oldBRANCH -&gt; $newBRANCH</span><span class="se">\n</span><span class="s2">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="s1">&#39; Do something 2</span><span class="se">\n</span><span class="s1">&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">exit</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="n">fi</span><span class="w"></span>
+
+<span class="c1"># No change in type of branch</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">([[</span><span class="w"> </span><span class="o">$</span><span class="n">isOldFtr</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="o">$</span><span class="n">isNewFtr</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">]])</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">([[</span><span class="w"> </span><span class="o">$</span><span class="n">isOldFtr</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="o">$</span><span class="n">isNewFtr</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]]);</span><span class="w"> </span><span class="n">then</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="s2">&quot;Branch switch: $oldBRANCH -&gt; $newBRANCH</span><span class="se">\n</span><span class="s2">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="s1">&#39; Do something 3</span><span class="se">\n</span><span class="s1">&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">exit</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="n">fi</span><span class="w"></span>
+
+<span class="n">exit</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<!-- Series text at the end of article -->
+
+        </div>
+      </article>
+
+<!-- Comments -->
+<!-- Disqus -->
+    <div id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'castoriscausa'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.url = 'https://www.castoriscausa.com/posts/2022/06/05/git-hook-checkout-changing-branch/';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+<!-- End Disqus Code -->
+    </div> <!-- main End -->
+<!-- Sidebar -->
+<div id="sidebar" class="four columns">
+<div class="widget widget_search">
+  <form action="https://www.castoriscausa.com/search.html" onsubmit="return validateForm(this.elements['q'].value);">
+    <input type="text" name="q" id="tipue_search_input" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
+    <input type="submit" value="" class="submit-search">
+  </form>
+</div>
+
+<div class="widget widget_categories group">
+  <h3>Links</h3>
+  <ul>
+      <li><a href="https://www.castoriscausa.com">Home</a></li>
+      <li><a href="https://musaelab.ca/">MuSAE Lab</a></li>
+      <li><a href="https://www.neurospeed-bailletlab.org/">neuroSPEED Lab</a></li>
+  </ul>
+</div>
+
+<div class="widget widget_tags">
+  <h3>All Tags</h3>
+    <div class="tagcloud group">
+        <a href="https://www.castoriscausa.com/tags/ad/">AD</a>
+        <a href="https://www.castoriscausa.com/tags/arch/">Arch</a>
+        <a href="https://www.castoriscausa.com/tags/bash/">Bash</a>
+        <a href="https://www.castoriscausa.com/tags/batch/">Batch</a>
+        <a href="https://www.castoriscausa.com/tags/bluetooth/">Bluetooth</a>
+        <a href="https://www.castoriscausa.com/tags/book/">book</a>
+        <a href="https://www.castoriscausa.com/tags/cuda/">CUDA</a>
+        <a href="https://www.castoriscausa.com/tags/deeplearning/">DeepLearning</a>
+        <a href="https://www.castoriscausa.com/tags/diy/">DIY</a>
+        <a href="https://www.castoriscausa.com/tags/eeg/">EEG</a>
+        <a href="https://www.castoriscausa.com/tags/energy/">energy</a>
+        <a href="https://www.castoriscausa.com/tags/espanol/">Español</a>
+        <a href="https://www.castoriscausa.com/tags/game-boy/">Game Boy</a>
+        <a href="https://www.castoriscausa.com/tags/geopandas/">GeoPandas</a>
+        <a href="https://www.castoriscausa.com/tags/gis/">GIS</a>
+        <a href="https://www.castoriscausa.com/tags/git/">Git</a>
+        <a href="https://www.castoriscausa.com/tags/github/">GitHub</a>
+        <a href="https://www.castoriscausa.com/tags/gpu/">GPU</a>
+        <a href="https://www.castoriscausa.com/tags/hack/">hack</a>
+        <a href="https://www.castoriscausa.com/tags/jupyter/">Jupyter</a>
+        <a href="https://www.castoriscausa.com/tags/lifehack/">lifehack</a>
+        <a href="https://www.castoriscausa.com/tags/linux/">Linux</a>
+        <a href="https://www.castoriscausa.com/tags/maps/">maps</a>
+        <a href="https://www.castoriscausa.com/tags/matlab/">MATLAB</a>
+        <a href="https://www.castoriscausa.com/tags/methods/">methods</a>
+        <a href="https://www.castoriscausa.com/tags/montreal/">Montreal</a>
+        <a href="https://www.castoriscausa.com/tags/nvidia/">NVIDIA</a>
+        <a href="https://www.castoriscausa.com/tags/phd/">PhD</a>
+        <a href="https://www.castoriscausa.com/tags/photo/">photo</a>
+        <a href="https://www.castoriscausa.com/tags/power/">power</a>
+        <a href="https://www.castoriscausa.com/tags/python/">Python</a>
+        <a href="https://www.castoriscausa.com/tags/space/">space</a>
+        <a href="https://www.castoriscausa.com/tags/statistics/">statistics</a>
+        <a href="https://www.castoriscausa.com/tags/systemd/">systemd</a>
+        <a href="https://www.castoriscausa.com/tags/touchpad/">touchpad</a>
+        <a href="https://www.castoriscausa.com/tags/tutorial/">tutorial</a>
+        <a href="https://www.castoriscausa.com/tags/webdevelopment/">WebDevelopment</a>
+        <a href="https://www.castoriscausa.com/tags/windows/">Windows</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div> <!-- end sidebar -->  </div> <!-- end row -->
+    </div>
+
+    <footer>
+<!-- Footer
+================================================== -->
+  <div class="row">
+    <div class="twelve columns">
+      <ul class="social-links">
+        <li><a href="https://github.com/rcassani"><i class="fab fa-github fa-lg"></i></a></li>
+        <li><a href="https://twitter.com/r_cassani"><i class="fab fa-twitter fa-lg"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/rcassani/"><i class="fab fa-linkedin fa-lg"></i></a></li>
+        <li><a href="https://scholar.google.com/citations?hl=en&user=3A9_Ww8AAAAJ"><i class="fas fa-user-graduate fa-lg"></i></a></li>
+        <li><a href="#"><i class="fas fa-envelope fa-lg"></i></a></li>
+    </ul>
+  </div>
+
+
+  <div class="twelve columns">&copy; 2022 Raymundo Cassani
+    &middot; Powered by <a href="https://github.com/rcassani/pelican-kis" target="_blank">pelican-kis</a> and <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+
+                  <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+
+           </div>
+
+
+  </div> <!-- End row -->
+  <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-chevron-up"></i></a></div>    </footer>
+
+    <!-- Java Script -->
+    <script src="https://www.castoriscausa.com/theme/js/jquery-3.4.1.min.js"></script>
+    <script src="https://www.castoriscausa.com/theme/js/main.js"></script>
+        <script src="https://www.castoriscausa.com/castoris.js"></script>
+
+    <script type="text/javascript">
+        var disqus_shortname = 'castoriscausa';
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] ||
+             document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+
+  </body>
+</html>

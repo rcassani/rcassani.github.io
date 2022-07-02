@@ -5,21 +5,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/</loc>
-<lastmod>2022-06-06T13:59:30-00:00</lastmod>
+<lastmod>2022-07-02T13:55:31-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/archives.html</loc>
-<lastmod>2022-06-06T13:59:30-00:00</lastmod>
+<lastmod>2022-07-02T13:55:31-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/categories.html</loc>
-<lastmod>2022-06-06T13:59:30-00:00</lastmod>
+<lastmod>2022-07-02T13:55:31-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -41,6 +41,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://www.castoriscausa.com/pages/software</loc>
 <lastmod>2016-10-22T00:00:00-04:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.castoriscausa.com/posts/2022/06/25/aorus15g-fan-control/</loc>
+<lastmod>2022-06-25T09:39:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -257,27 +264,34 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/category/posts/</loc>
-<lastmod>2022-06-05T10:30:00-05:18</lastmod>
+<lastmod>2022-06-25T09:39:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/tags/bash/</loc>
-<lastmod>2022-06-05T10:30:00-05:18</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://www.castoriscausa.com/tags/git/</loc>
-<lastmod>2022-06-05T10:30:00-05:18</lastmod>
+<lastmod>2022-06-25T09:39:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/tags/linux/</loc>
+<lastmod>2022-06-25T09:39:00-05:18</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.castoriscausa.com/tags/hack/</loc>
+<lastmod>2022-06-25T09:39:00-05:18</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.castoriscausa.com/tags/git/</loc>
 <lastmod>2022-06-05T10:30:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -321,13 +335,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://www.castoriscausa.com/tags/arch/</loc>
 <lastmod>2022-05-18T14:00:00-05:18</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://www.castoriscausa.com/tags/hack/</loc>
-<lastmod>2022-05-03T18:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -530,7 +537,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/author/raymundo-cassani.html</loc>
-<lastmod>2022-06-05T10:30:00-05:18</lastmod>
+<lastmod>2022-06-25T09:39:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

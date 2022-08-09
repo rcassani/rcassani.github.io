@@ -88,6 +88,12 @@
         2022/06/05
       </li>
 
+      <!-- modified date -->
+        <span class="meta-sep">&nbsp;</span>
+        <li>
+          <i class="fa fa-pencil-alt"></i>
+          2022/08/09
+        </li>
 
 
       <!-- category and tags -->
@@ -116,9 +122,17 @@
         <div class="entry-content">
 
 <!-- Series text at the beginning of article -->
-          <p>Often when working on experimental Git branches, it is necessary to modify files outside of the Git repository when we change branches to properly test some of the new features. An example of this type of files would be configuration files.</p>
+          <hr>
+<p><strong>Updated</strong>: The <a href="https://git-scm.com/docs/githooks.html#_post_checkout">post-checkout hook</a> is also invoked when doing <code>git rebase</code>. See more details below.</p>
+<hr>
+
+<p>Often when working on experimental Git branches, it is necessary to modify files outside of the Git repository when we change branches to properly test some of the new features. An example of this type of files would be configuration files.</p>
 <p>Through the use of <a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks">Git hooks</a> it is possible to execute a program when a Git action happens, for example when checkout occurs. However, the <a href="https://git-scm.com/docs/githooks.html#_post_checkout">post-checkout hook</a> is given the <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">SHA-1 ref</a> of the <strong>old</strong> (origin) and <strong>new</strong> (destination) branches, rather than their name. Thus if two branches share the same HEAD, it's not possible to distinguish the correct branch only from the ref. A <a href="https://stackoverflow.com/a/25590292/4859684">walk-around</a> is to use <code>git reflog</code> to get the names of the <strong>old</strong> and <strong>new</strong> branches.</p>
-<p>This Bash script (<a href="">available here</a>) is a post-checkout hook example to do "something" <strong>if</strong> the <strong>new</strong> branch name is in a give list, function <code>exists_in_list()</code>. Moreover, it checks if the <strong>old</strong> or <strong>new</strong> branch names have <code>ftr-</code> as prefix, and takes does something for the different combinations, function <code>starts_with()</code>.</p>
+<hr>
+<p><strong>Updated</strong>: Note that the <a href="https://git-scm.com/docs/githooks.html#_post_checkout">post-checkout hook</a> will be invoked when doing <code>git rebase</code>. For example, being in the <strong>new</strong> branch and rebasing it to <strong>old</strong>, this is to say <code>git rebase old</code>, will invoke the hook, the name of the <strong>old</strong> branch will be correctly identified by <code>git reflog</code>, but the <strong>new</strong> branch name will be empty. As such, it would be a good idea to address the rebase case in the hook code.</p>
+<hr>
+
+<p>This Bash script (<a href="https://gist.github.com/rcassani/5ff18bb1520a27f72d332385aa6220f2">available here</a>) is a post-checkout hook example to do "something" <strong>if</strong> the <strong>new</strong> branch name is in a give list, function <code>exists_in_list()</code>. Moreover, it checks if the <strong>old</strong> or <strong>new</strong> branch names have <code>ftr-</code> as prefix, and takes does something for the different combinations, function <code>starts_with()</code>.</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
 <span class="normal"> 2</span>
 <span class="normal"> 3</span>
@@ -207,7 +221,12 @@
 <span class="normal">86</span>
 <span class="normal">87</span>
 <span class="normal">88</span>
-<span class="normal">89</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">bash</span><span class="w"></span>
+<span class="normal">89</span>
+<span class="normal">90</span>
+<span class="normal">91</span>
+<span class="normal">92</span>
+<span class="normal">93</span>
+<span class="normal">94</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">bash</span><span class="w"></span>
 <span class="c1">#!/bin/bash</span><span class="w"></span>
 
 <span class="n">set</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w">  </span><span class="c1"># Stop execution of script if a command or pipeline has an error</span><span class="w"></span>
@@ -273,6 +292,11 @@
 <span class="c1"># Determine if OLD and NEW branch names have a given prefix</span><span class="w"></span>
 <span class="n">isOldFtr</span><span class="o">=</span><span class="s2">&quot;$(starts_with &quot;</span><span class="o">$</span><span class="n">oldBRANCH</span><span class="s2">&quot; &quot;</span><span class="n">ftr</span><span class="o">-</span><span class="s2">&quot;)&quot;</span><span class="w"></span>
 <span class="n">isNewFtr</span><span class="o">=</span><span class="s2">&quot;$(starts_with &quot;</span><span class="o">$</span><span class="n">newBRANCH</span><span class="s2">&quot; &quot;</span><span class="n">ftr</span><span class="o">-</span><span class="s2">&quot;)&quot;</span><span class="w"></span>
+
+<span class="c1"># If any of the branches is empty, it&#39;s rebase</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="o">-</span><span class="n">z</span><span class="w"> </span><span class="s2">&quot;$oldBRANCH&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="o">-</span><span class="n">z</span><span class="w"> </span><span class="s2">&quot;$newBRANCH&quot;</span><span class="w"> </span><span class="p">];</span><span class="w"> </span><span class="n">then</span><span class="w"></span>
+<span class="w">    </span><span class="n">exit</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="n">fi</span><span class="w"></span>
 
 <span class="c1"># NoFeature branch to Feature branch</span><span class="w"></span>
 <span class="k">if</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="o">$</span><span class="n">isOldFtr</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="o">$</span><span class="n">isNewFtr</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]];</span><span class="w"> </span><span class="n">then</span><span class="w"></span>

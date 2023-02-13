@@ -92,7 +92,7 @@
         <span class="meta-sep">&nbsp;</span>
         <li>
           <i class="fa fa-pencil-alt"></i>
-          2022/08/09
+          2023/02/12
         </li>
 
 
@@ -123,17 +123,223 @@
 
 <!-- Series text at the beginning of article -->
           <hr>
-<p><strong>Updated</strong>: The <a href="https://git-scm.com/docs/githooks.html#_post_checkout">post-checkout hook</a> is also invoked when doing <code>git rebase</code>. See more details below.</p>
+<p><strong>Updated</strong>: The <a href="https://git-scm.com/docs/githooks.html#_post_checkout">post-checkout hook</a> the hook code below is intended to run only when changing branches, but it is invoked also when <strong>retrieving files from the index</strong> and  <strong>rebasing</strong>. Thus these two cases need to be addressed in the code. See more details below.</p>
 <hr>
 
 <p>Often when working on experimental Git branches, it is necessary to modify files outside of the Git repository when we change branches to properly test some of the new features. An example of this type of files would be configuration files.</p>
 <p>Through the use of <a href="https://git-scm.com/book/en/v2/Customizing-Git-Git-Hooks">Git hooks</a> it is possible to execute a program when a Git action happens, for example when checkout occurs. However, the <a href="https://git-scm.com/docs/githooks.html#_post_checkout">post-checkout hook</a> is given the <a href="https://git-scm.com/book/en/v2/Git-Internals-Git-References">SHA-1 ref</a> of the <strong>old</strong> (origin) and <strong>new</strong> (destination) branches, rather than their name. Thus if two branches share the same HEAD, it's not possible to distinguish the correct branch only from the ref. A <a href="https://stackoverflow.com/a/25590292/4859684">walk-around</a> is to use <code>git reflog</code> to get the names of the <strong>old</strong> and <strong>new</strong> branches.</p>
 <hr>
-<p><strong>Updated</strong>: Note that the <a href="https://git-scm.com/docs/githooks.html#_post_checkout">post-checkout hook</a> will be invoked when doing <code>git rebase</code>. For example, being in the <strong>new</strong> branch and rebasing it to <strong>old</strong>, this is to say <code>git rebase old</code>, will invoke the hook, the name of the <strong>old</strong> branch will be correctly identified by <code>git reflog</code>, but the <strong>new</strong> branch name will be empty. As such, it would be a good idea to address the rebase case in the hook code.</p>
+<p><strong>Updated</strong>: Note that the <a href="https://git-scm.com/docs/githooks.html#_post_checkout">post-checkout hook</a> will be invoked when <strong>retrieving a file from the index</strong>, thus if <code>checkoutType == 0</code> the hooks returns before doing its action. The hook is also invoked by <code>git rebase</code>. For example, being in the <strong>new</strong> branch and rebasing it to <strong>old</strong>, this is to say <code>git rebase old</code>, will invoke the hook, the name of the <strong>old</strong> branch will be correctly identified by <code>git reflog</code>, but the <strong>new</strong> branch name will be empty. Thus if any of the branches is empty the hook exits without performing its action.</p>
 <hr>
 
 <p>This Bash script (<a href="https://gist.github.com/rcassani/5ff18bb1520a27f72d332385aa6220f2">available here</a>) is a post-checkout hook example to do "something" <strong>if</strong> the <strong>new</strong> branch name is in a give list, function <code>exists_in_list()</code>. Moreover, it checks if the <strong>old</strong> or <strong>new</strong> branch names have <code>ftr-</code> as prefix, and takes does something for the different combinations, function <code>starts_with()</code>.</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>bash
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">  1</span>
+<span class="normal">  2</span>
+<span class="normal">  3</span>
+<span class="normal">  4</span>
+<span class="normal">  5</span>
+<span class="normal">  6</span>
+<span class="normal">  7</span>
+<span class="normal">  8</span>
+<span class="normal">  9</span>
+<span class="normal"> 10</span>
+<span class="normal"> 11</span>
+<span class="normal"> 12</span>
+<span class="normal"> 13</span>
+<span class="normal"> 14</span>
+<span class="normal"> 15</span>
+<span class="normal"> 16</span>
+<span class="normal"> 17</span>
+<span class="normal"> 18</span>
+<span class="normal"> 19</span>
+<span class="normal"> 20</span>
+<span class="normal"> 21</span>
+<span class="normal"> 22</span>
+<span class="normal"> 23</span>
+<span class="normal"> 24</span>
+<span class="normal"> 25</span>
+<span class="normal"> 26</span>
+<span class="normal"> 27</span>
+<span class="normal"> 28</span>
+<span class="normal"> 29</span>
+<span class="normal"> 30</span>
+<span class="normal"> 31</span>
+<span class="normal"> 32</span>
+<span class="normal"> 33</span>
+<span class="normal"> 34</span>
+<span class="normal"> 35</span>
+<span class="normal"> 36</span>
+<span class="normal"> 37</span>
+<span class="normal"> 38</span>
+<span class="normal"> 39</span>
+<span class="normal"> 40</span>
+<span class="normal"> 41</span>
+<span class="normal"> 42</span>
+<span class="normal"> 43</span>
+<span class="normal"> 44</span>
+<span class="normal"> 45</span>
+<span class="normal"> 46</span>
+<span class="normal"> 47</span>
+<span class="normal"> 48</span>
+<span class="normal"> 49</span>
+<span class="normal"> 50</span>
+<span class="normal"> 51</span>
+<span class="normal"> 52</span>
+<span class="normal"> 53</span>
+<span class="normal"> 54</span>
+<span class="normal"> 55</span>
+<span class="normal"> 56</span>
+<span class="normal"> 57</span>
+<span class="normal"> 58</span>
+<span class="normal"> 59</span>
+<span class="normal"> 60</span>
+<span class="normal"> 61</span>
+<span class="normal"> 62</span>
+<span class="normal"> 63</span>
+<span class="normal"> 64</span>
+<span class="normal"> 65</span>
+<span class="normal"> 66</span>
+<span class="normal"> 67</span>
+<span class="normal"> 68</span>
+<span class="normal"> 69</span>
+<span class="normal"> 70</span>
+<span class="normal"> 71</span>
+<span class="normal"> 72</span>
+<span class="normal"> 73</span>
+<span class="normal"> 74</span>
+<span class="normal"> 75</span>
+<span class="normal"> 76</span>
+<span class="normal"> 77</span>
+<span class="normal"> 78</span>
+<span class="normal"> 79</span>
+<span class="normal"> 80</span>
+<span class="normal"> 81</span>
+<span class="normal"> 82</span>
+<span class="normal"> 83</span>
+<span class="normal"> 84</span>
+<span class="normal"> 85</span>
+<span class="normal"> 86</span>
+<span class="normal"> 87</span>
+<span class="normal"> 88</span>
+<span class="normal"> 89</span>
+<span class="normal"> 90</span>
+<span class="normal"> 91</span>
+<span class="normal"> 92</span>
+<span class="normal"> 93</span>
+<span class="normal"> 94</span>
+<span class="normal"> 95</span>
+<span class="normal"> 96</span>
+<span class="normal"> 97</span>
+<span class="normal"> 98</span>
+<span class="normal"> 99</span>
+<span class="normal">100</span>
+<span class="normal">101</span>
+<span class="normal">102</span>
+<span class="normal">103</span>
+<span class="normal">104</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="n">bash</span><span class="w"></span>
+<span class="c1">#!/bin/bash</span><span class="w"></span>
+
+<span class="n">set</span><span class="w"> </span><span class="o">-</span><span class="n">e</span><span class="w">  </span><span class="c1"># Stop execution of script if a command or pipeline has an error</span><span class="w"></span>
+<span class="n">printf</span><span class="w"> </span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Example post-checkout hook</span><span class="se">\n</span><span class="s1">&#39;</span><span class="w"></span>
+
+<span class="c1"># These are the parameters given to the hook</span><span class="w"></span>
+<span class="c1"># https://git-scm.com/docs/githooks.html#_post_checkout</span><span class="w"></span>
+<span class="n">oldHEAD</span><span class="o">=$</span><span class="mi">1</span><span class="w">       </span><span class="c1"># ref of the previous (old) HEAD</span><span class="w"></span>
+<span class="n">newHEAD</span><span class="o">=$</span><span class="mi">2</span><span class="w">       </span><span class="c1"># ref of the new HEAD </span><span class="w"></span>
+<span class="n">checkoutType</span><span class="o">=$</span><span class="mi">3</span><span class="w">  </span><span class="c1"># checkout type flag: 1 = changing branches, </span><span class="w"></span>
+<span class="w">                 </span><span class="c1">#                     0 = retrieving a file from the index</span><span class="w"></span>
+
+<span class="c1"># If checkoutType is 0, exit</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="o">$</span><span class="n">checkoutType</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">]];</span><span class="w"> </span><span class="n">then</span><span class="w"></span>
+<span class="w">    </span><span class="n">exit</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="n">fi</span><span class="w"></span>
+
+<span class="c1"># Since $1 and $2 are the 40-character SHA-1,</span><span class="w"></span>
+<span class="c1"># it is not possible to unambiguously determine old- and new branch names</span><span class="w"></span>
+<span class="c1"># [[ $checkoutType == 1 ]] &amp;&amp; checkoutType=&#39;branch&#39; ||  checkoutType=&#39;file&#39; ;</span><span class="w"></span>
+<span class="c1"># echo &#39;Checkout type: &#39;$checkoutType</span><span class="w"></span>
+<span class="c1"># echo &#39;     old HEAD: &#39;`git name-rev --name-only $oldHEAD`</span><span class="w"></span>
+<span class="c1"># echo &#39;     new HEAD: &#39;`git name-rev --name-only $newHEAD`</span><span class="w"></span>
+<span class="c1"># https://stackoverflow.com/q/25590267/4859684</span><span class="w"></span>
+
+<span class="c1"># Get branch names from git-reflog</span><span class="w"></span>
+<span class="n">oldBRANCH</span><span class="o">=</span><span class="err">`</span><span class="n">git</span><span class="w"> </span><span class="n">reflog</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">awk</span><span class="w"> </span><span class="s1">&#39;NR==1{ print $6; exit }&#39;</span><span class="err">`</span><span class="w"></span>
+<span class="n">newBRANCH</span><span class="o">=</span><span class="err">`</span><span class="n">git</span><span class="w"> </span><span class="n">reflog</span><span class="w"> </span><span class="o">|</span><span class="w"> </span><span class="n">awk</span><span class="w"> </span><span class="s1">&#39;NR==1{ print $8; exit }&#39;</span><span class="err">`</span><span class="w"></span>
+<span class="n">echo</span><span class="w"> </span><span class="s2">&quot;Old branch: $oldBRANCH&quot;</span><span class="w"></span>
+<span class="n">echo</span><span class="w"> </span><span class="s2">&quot;New branch: $newBRANCH&quot;</span><span class="w"></span>
+<span class="n">echo</span><span class="w"> </span><span class="s2">&quot;&quot;</span><span class="w"></span>
+
+<span class="c1"># If any of the branches is empty, it&#39;s rebase</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="o">-</span><span class="n">z</span><span class="w"> </span><span class="s2">&quot;$oldBRANCH&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="o">-</span><span class="n">z</span><span class="w"> </span><span class="s2">&quot;$newBRANCH&quot;</span><span class="w"> </span><span class="p">];</span><span class="w"> </span><span class="n">then</span><span class="w"></span>
+<span class="w">    </span><span class="n">exit</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="n">fi</span><span class="w"></span>
+
+<span class="n">exists_in_list</span><span class="p">()</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="c1"># Function for determine if a word is in a space-separated list</span><span class="w"></span>
+<span class="c1"># https://www.baeldung.com/linux/check-variable-exists-in-list</span><span class="w"></span>
+<span class="w">    </span><span class="n">LIST</span><span class="o">=$</span><span class="mi">1</span><span class="w"></span>
+<span class="w">    </span><span class="n">WORD</span><span class="o">=$</span><span class="mi">2</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="s2">&quot;$LIST&quot;</span><span class="w"> </span><span class="o">=~</span><span class="w"> </span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">|^</span><span class="p">)</span><span class="o">$</span><span class="n">WORD</span><span class="p">(</span><span class="s2">&quot; &quot;</span><span class="o">|$</span><span class="p">)</span><span class="w"> </span><span class="p">]];</span><span class="w"> </span><span class="n">then</span><span class="w"></span>
+<span class="w">        </span><span class="n">echo</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span><span class="w"></span>
+<span class="w">        </span><span class="n">echo</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="n">fi</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="n">starts_with</span><span class="p">(){</span><span class="w"></span>
+<span class="c1"># Function to check if a word start with a given prefix</span><span class="w"></span>
+<span class="w">    </span><span class="n">WORD</span><span class="o">=$</span><span class="mi">1</span><span class="w"></span>
+<span class="w">    </span><span class="n">PREF</span><span class="o">=$</span><span class="mi">2</span><span class="w"></span>
+<span class="w">    </span><span class="k">if</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="o">$</span><span class="n">WORD</span><span class="w"> </span><span class="o">=~</span><span class="w"> </span><span class="o">^$</span><span class="n">PREF</span><span class="o">*</span><span class="w"> </span><span class="p">]];</span><span class="w"> </span><span class="n">then</span><span class="w"></span>
+<span class="w">        </span><span class="n">echo</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="w">    </span><span class="k">else</span><span class="w"></span>
+<span class="w">        </span><span class="n">echo</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="w">    </span><span class="n">fi</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+
+<span class="c1"># ACTION IF NEW BRANCH IS IN A GIVEN LIST</span><span class="w"></span>
+<span class="c1"># Determine if NEW branch name belongs to a list of names</span><span class="w"></span>
+<span class="n">listBranches</span><span class="o">=</span><span class="s2">&quot;dev tmp test&quot;</span><span class="w"></span>
+<span class="n">isNewList</span><span class="o">=</span><span class="s2">&quot;$(exists_in_list &quot;</span><span class="o">$</span><span class="n">listBranches</span><span class="s2">&quot; &quot;</span><span class="o">$</span><span class="n">newBRANCH</span><span class="s2">&quot;)&quot;</span><span class="w"></span>
+<span class="c1"># NEW branch was in list</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="o">$</span><span class="n">isNewList</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]];</span><span class="w"> </span><span class="n">then</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="s2">&quot;New branch: $newBRANCH was in list</span><span class="se">\n</span><span class="s2">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="s1">&#39; Do something 0</span><span class="se">\n</span><span class="s1">&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">exit</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="n">fi</span><span class="w"></span>
+
+<span class="c1"># ACTION ACCORDING THE NAMES OF OLD TO NEW BRANCH</span><span class="w"></span>
+<span class="c1"># Determine if OLD and NEW branch names have a given prefix</span><span class="w"></span>
+<span class="n">isOldFtr</span><span class="o">=</span><span class="s2">&quot;$(starts_with &quot;</span><span class="o">$</span><span class="n">oldBRANCH</span><span class="s2">&quot; &quot;</span><span class="n">ftr</span><span class="o">-</span><span class="s2">&quot;)&quot;</span><span class="w"></span>
+<span class="n">isNewFtr</span><span class="o">=</span><span class="s2">&quot;$(starts_with &quot;</span><span class="o">$</span><span class="n">newBRANCH</span><span class="s2">&quot; &quot;</span><span class="n">ftr</span><span class="o">-</span><span class="s2">&quot;)&quot;</span><span class="w"></span>
+
+<span class="c1"># If any of the branches is empty, it&#39;s rebase</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="o">-</span><span class="n">z</span><span class="w"> </span><span class="s2">&quot;$oldBRANCH&quot;</span><span class="w"> </span><span class="p">]</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">[</span><span class="w"> </span><span class="o">-</span><span class="n">z</span><span class="w"> </span><span class="s2">&quot;$newBRANCH&quot;</span><span class="w"> </span><span class="p">];</span><span class="w"> </span><span class="n">then</span><span class="w"></span>
+<span class="w">    </span><span class="n">exit</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="n">fi</span><span class="w"></span>
+
+<span class="c1"># NoFeature branch to Feature branch</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="o">$</span><span class="n">isOldFtr</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="o">$</span><span class="n">isNewFtr</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]];</span><span class="w"> </span><span class="n">then</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="s2">&quot;Branch switch: $oldBRANCH -&gt; $newBRANCH</span><span class="se">\n</span><span class="s2">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="s1">&#39; Do something 1</span><span class="se">\n</span><span class="s1">&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">exit</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="n">fi</span><span class="w"></span>
+
+<span class="c1"># Feature branch to NoFeature branch</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="o">$</span><span class="n">isOldFtr</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="o">$</span><span class="n">isNewFtr</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">]];</span><span class="w"> </span><span class="n">then</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="s2">&quot;Branch switch: $oldBRANCH -&gt; $newBRANCH</span><span class="se">\n</span><span class="s2">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="s1">&#39; Do something 2</span><span class="se">\n</span><span class="s1">&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">exit</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="n">fi</span><span class="w"></span>
+
+<span class="c1"># No change in type of branch</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="p">([[</span><span class="w"> </span><span class="o">$</span><span class="n">isOldFtr</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="o">$</span><span class="n">isNewFtr</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">0</span><span class="w"> </span><span class="p">]])</span><span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="p">([[</span><span class="w"> </span><span class="o">$</span><span class="n">isOldFtr</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]]</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="p">[[</span><span class="w"> </span><span class="o">$</span><span class="n">isNewFtr</span><span class="w"> </span><span class="o">-</span><span class="n">eq</span><span class="w"> </span><span class="mi">1</span><span class="w"> </span><span class="p">]]);</span><span class="w"> </span><span class="n">then</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="s2">&quot;Branch switch: $oldBRANCH -&gt; $newBRANCH</span><span class="se">\n</span><span class="s2">&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="n">printf</span><span class="w"> </span><span class="s1">&#39; Do something 3</span><span class="se">\n</span><span class="s1">&#39;</span><span class="w"></span>
+<span class="w">    </span><span class="n">exit</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
+<span class="n">fi</span><span class="w"></span>
+
+<span class="n">exit</span><span class="w"> </span><span class="mi">0</span><span class="w"></span>
 </code></pre></div>
 </td></tr></table>
 <!-- Series text at the end of article -->

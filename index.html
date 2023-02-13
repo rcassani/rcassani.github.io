@@ -194,7 +194,7 @@
         <span class="meta-sep">&nbsp;</span>
         <li>
           <i class="fa fa-pencil-alt"></i>
-          2022/08/09
+          2023/02/12
         </li>
 
 
@@ -225,7 +225,7 @@
   </div>
 </div> <!-- div row -->
           <div class="entry-content">
-            Updated: The post-checkout hook is also invoked when doing git rebase. See more details below. Often when working on experimental Git branches, it is necessary to modify files outside of the Git repository when we change branches to properly test some of the new features. An example of this type …
+            Updated: The post-checkout hook the hook code below is intended to run only when changing branches, but it is invoked also when retrieving files from the index and rebasing. Thus these two cases need to be addressed in the code. See more details below. Often when working on experimental Git …
           </div>
 
         </article> <!-- end entry -->

@@ -78,7 +78,7 @@
   <header class="entry-header eight columns">
 
   <h2 class="entry-title">
-    <a href="https://www.castoriscausa.com/posts/2016/12/06/touchpad-disable/">Keeping Synaptics Touchpad disabled</a>
+    <a href="https://www.castoriscausa.com/posts/2023/04/27/one_year_biking/">One year biking in Montreal</a>
   </h2>
 
   <div class="entry-meta">
@@ -86,7 +86,7 @@
       <!-- date -->
       <li>
         <i class="fa fa-calendar-alt"></i>
-        2016/12/06
+        2023/04/27
       </li>
 
 
@@ -97,11 +97,11 @@
 
             <i class="fa fa-tags"></i>
             <span>Tagged in: </span>
-              <a href="https://www.castoriscausa.com/tags/touchpad/">touchpad</a>,               <a href="https://www.castoriscausa.com/tags/windows/">Windows</a>            <br>
+              <a href="https://www.castoriscausa.com/tags/bike/">bike</a>,               <a href="https://www.castoriscausa.com/tags/lifehack/">lifehack</a>,               <a href="https://www.castoriscausa.com/tags/montreal/">Montreal</a>            <br>
 
             <span>
               <i class="fa fa-comments"></i>
-              <a href="https://www.castoriscausa.com/posts/2016/12/06/touchpad-disable/#disqus_thread">Comments</a>
+              <a href="https://www.castoriscausa.com/posts/2023/04/27/one_year_biking/#disqus_thread">Comments</a>
             </span>
 
         </p>
@@ -111,8 +111,8 @@
 
   <div class="entry-thumb four columns">
     <center>
-      <a href="https://www.castoriscausa.com/posts/2016/12/06/touchpad-disable/">
-          <img src= "https://www.castoriscausa.com/images/touchpad_keyboard_ge62vr.jpg">
+      <a href="https://www.castoriscausa.com/posts/2023/04/27/one_year_biking/">
+          <img src= "https://www.castoriscausa.com/images/bike_dad.png">
       </a>
     </center>
   </div>
@@ -121,25 +121,56 @@
         <div class="entry-content">
 
 <!-- Series text at the beginning of article -->
-          <p>Touchpads in laptops are not for everyone, one of the first things to do when a I get a new computer is to plug a mouse and disable the touchpad (TP).</p>
-<p>Few weeks ago, I noticed a strange behavior, in my <a href="[https://us.msi.com/Laptop/GE62VR-Apache-Pro-6th-Gen-GTX-1060.html#hero-overview">laptop</a>, every time I started a session in Windows, the touchpad was <strong>enabled</strong>, that is to say it did not keep its previous status. The touchpad is a <strong>Synaptics SMBus TouchPad</strong>. As this behavior was <strong>annoying</strong>, something needed to be done.</p>
-<p>After some research I came across this wonderful solution where the <a href="http://www.intowindows.com/how-to-turn-off-touchpad-when-mouse-is-connected-in-windows-78-1/">touchpad is automatically disabled when a mouse is  detected</a>. Unfortunately, the <strong>Steelseris Keyboard</strong> in my laptop is detected as <strong>keyboard-mouse combo</strong>, then, the auto-disable, would permanently disable the touchpad, without option to enable it and who knows it could be useful (someday).</p>
+          <p>So have it has been a year that I'm using bike as mean of transportation in Montreal!</p>
+<p>This is a report / review of such an adventure, hopping these lines can be useful for anyone who is considering urban biking.</p>
+<p>Biking in the city has allowed me to explore better my arrondisment and others around. It gives a more complete vision of the people who live around, the local business, parks, pets, streets names, other cyclist, etc; this really enhances the community feeling, helps with local geography and, and as expected it brings all the <a href="https://www.canada.ca/en/public-health/services/being-active/physical-activity-your-health.html">benefits that are associated with an active life</a>.</p>
+<h2 id="how-did-i-start">How did I start?<a class="headerlink" href="#how-did-i-start" title="Permanent link"> </a></h2>
+<p>It was spring 2022, we just moved to (<a href="https://en.m.wikipedia.org/wiki/Rosemont%E2%80%93La_Petite-Patrie">Rosemont–La Petite-Patrie</a>). This put me in an strange commute situation: while public transportation is good and frequent around home, commute to work takes quite long time, not because it was a long distance, but because there is not a direct route, so it meant too many transfers. Looking for options, I realized that <a href="https://www.bixi.com/">BIXI</a> stations were available near home and work, and <a href="https://montreal.ca/en/articles/ebn-montreals-express-bike-network-4666">Montreal biking infrastructure</a> is pretty awesome, then I decided to give it a try.</p>
 <p><center>
-<a href="/images/touchpad_keyboard_ge62vr.jpg"><img alt="Alt" src="/images/touchpad_keyboard_ge62vr.jpg"></a><br>
-Touchpad and Keyboard in GE62VR
-</center>  </p>
-<p>Later, after diving in <a href="https://en.wikipedia.org/wiki/Windows_Registry">Windows Register</a>, with Regedit, I noticed a value, in two keys, that controls the touchpad's behavior at the beginning of the Windows session:</p>
-<p><code>DisableDeviceUntilSessionEnd</code>
-in  <br>
-<code>HKEY_CURRENT_USER\SOFTWARE\Synaptics\SynTP\TouchPadPS2TM3163</code><br>
-<code>HKEY_CURRENT_USER\SOFTWARE\Synaptics\SynTP\TouchPadSMB2cTM3163</code></p>
-<p>Basically, when they are <code>0</code> the touchpad remembers its state at the moment of the last logout, and when <code>1</code>, the touchpad will be enabled every login.</p>
-<p></br>
-<center></p>
-<h4 id="changing-the-values-from-1-to-0-was-the-solution-to-keep-the-touchpad-disable"><strong>Changing the values from <code>1</code> to  <code>0</code></strong> was the solution, to keep the touchpad disable.<a class="headerlink" href="#changing-the-values-from-1-to-0-was-the-solution-to-keep-the-touchpad-disable" title="Permanent link"> </a></h4>
-<p></center>
-</br></p>
-<p>In case you're want to the same re-enabling behaviour in the touchpad, edit the above-mentioned values in the Registry. You can learn the basics on editing the Windows Registry here: <a href="http://www.techsupportalert.com/content/learn-how-use-windows-registry-editor-regedit-one-easy-lesson.htm">Learn How to Use the Windows Registry Editor (Regedit) in One Easy Lesson</a>.</p>
+    <a href="https://secure.bixi.com/map/"><img src="/images/bixi_map_2023.png" style="width: 500px;"/></a><br>
+Dots (any color) are BIXI stations, blue lines are bike paths.<br> Click for full map.
+</center></p>
+<h2 id="spring-summer-and-fall">Spring, summer and fall<a class="headerlink" href="#spring-summer-and-fall" title="Permanent link"> </a></h2>
+<p>Lucky me, most of bike route is flat and not too long, around 5 km one way. However, due to a not-that-good physical condition, the first few weeks were not exactly a ride in the park. It took me around one month of 3 or 4 rides of per week to get used to it. In retrospective, <em>starting in spring has the weather as advantage as it provided natural cooling</em>. Even before the adaptation period, biking became an important part of my routine that seemed to be missing. Moreover, biking served also as a "buffer" between home and work, to have a clear mind at arriving work and, a cool down period when going home. As summer advanced, I was biking all around regardless the weather, not only for commute but to going out with friends, errands, exercise rides, etc. Also tried the <a href="https://www.bixi.com/en/ebike">electric bikes</a> and although they are <em>effortlessly fast</em>, I stuck with normal bikes. Fall came and passed quickly, and with it the BIXI session was almost over. As expected, in those almost 8 months of biking, I obtained a in better physical condition, lost few kilograms and kept some money in the wallet (sorry STM).</p>
+<h2 id="winter">Winter<a class="headerlink" href="#winter" title="Permanent link"> </a></h2>
+<p>Stop biking after the end of the BIXI session seemed imminent, but there is winter biking! After reading and watching reviews (<a href="https://www.velo.qc.ca/en/toolkit/cycling/winter-cycling/">here</a>, <a href="https://www.mec.ca/en/explore/get-ready-for-winter-riding">here</a>, <a href="https://www.youtube.com/watch?v=Uhx-26GfCBU">here</a>, <a href="https://shifter.info/tag/winter-cycling/">here</a> and few more ), I decided to give it a try, after all in Quebec winter is part of life. Although I'd never done winter bike, I've a bit of experience in outdoors activity in winter and that helped to determine the adequate clothing plan, <a href="https://youtu.be/-Ogv5_xT6S4">it's all about layers</a>. Finally, the most important, I got a bike and <a href="https://saaq.gouv.qc.ca/en/road-safety/modes-transportation/bicycle/winter">gear for winter</a>, which meant a bike for commute with winter tires with spokes (<a href="https://www.schwalbetires.com/Winter-11100906">like these</a>) and lights (night falls quite early). Many people I know were surprised (and a bit worried) of me doing winter bike. In my experience, it sounds harder and more dangerous than what it is, at least in my case as, I've access to commonly used (and cleaned) bike paths, also I was able to work from home in very rough days. However, I tried to be on the road as much as possible.</p>
+<p><center>
+    <img src="/images/winter_bike.png" style="width: 500px;"/>
+</center></p>
+<h2 id="spring-again">Spring again<a class="headerlink" href="#spring-again" title="Permanent link"> </a></h2>
+<p>To BIXI or not BIXI? This is a small list of pros and cons:</p>
+<h4 id="pros"><strong>Pros</strong><a class="headerlink" href="#pros" title="Permanent link"> </a></h4>
+<ul>
+<li>Accessible (around $100 CAD per season)</li>
+<li>Not have to be worried about bike thieves</li>
+<li>Maintenance free</li>
+<li>One-way trips: go by bike, return by other mean</li>
+<li>All equipped, lights, fenders, basket, bell</li>
+</ul>
+<h4 id="cons"><strong>Cons</strong><a class="headerlink" href="#cons" title="Permanent link"> </a></h4>
+<ul>
+<li>Bike availability: it's hard to find bike on a nice Saturday</li>
+<li>Station availability: stations get full quickly around busy spots</li>
+<li>Different bike every time</li>
+<li>Sturdy bike: heavy and slow</li>
+</ul>
+<p>After weights these points, <strong>I'll be using my own bike all year long</strong> as suits better my needs needs.</p>
+<h2 id="conclusions">Conclusions<a class="headerlink" href="#conclusions" title="Permanent link"> </a></h2>
+<ul>
+<li>
+<p>Is BIXI worth it?
+  <strong>Absolutely!</strong> It's amazing to discover urban biking. I recommend it to any person I can :)</p>
+</li>
+<li>
+<p>Winter biking is not as hard with the <strong>proper gear</strong> and <strong>infrastructure</strong> around.</p>
+</li>
+<li>
+<p>People tend to drive slower and with more precaution during winter, which helps commute by bike</p>
+</li>
+<li>
+<p>After this year, I'm very happy with bike and all the positive things that have come with it, I hope I can continue using bike as mean of transportation for the years to come 🚲</p>
+</li>
+</ul>
 <!-- Series text at the end of article -->
 
         </div>
@@ -158,7 +189,7 @@ in  <br>
             var disqus_config = function () {
                 this.language = "en";
 
-                        this.page.url = 'https://www.castoriscausa.com/posts/2016/12/06/touchpad-disable/';
+                        this.page.url = 'https://www.castoriscausa.com/posts/2023/04/27/one_year_biking/';
             };
 
             /* * * DON'T EDIT BELOW THIS LINE * * */

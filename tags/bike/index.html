@@ -70,15 +70,22 @@
   </nav> <!-- end #nav-wrap -->    </header>
 
     <div id="content-wrap">
-<!-- Content - Article -->
+<!-- Content - Index
+================================================== -->
   <div class="row">
     <div id="main" class="eight columns">
-      <article class="entry">
+
+  <h1 class="entry-title">
+    Posts tagged with: bike
+  </h1>
+  <br>
+
+        <article class="entry">
   <div class="row"> <!-- div row -->
   <header class="entry-header eight columns">
 
   <h2 class="entry-title">
-    <a href="https://www.castoriscausa.com/posts/2016/12/06/touchpad-disable/">Keeping Synaptics Touchpad disabled</a>
+    <a href="https://www.castoriscausa.com/posts/2023/04/27/one_year_biking/">One year biking in Montreal</a>
   </h2>
 
   <div class="entry-meta">
@@ -86,7 +93,7 @@
       <!-- date -->
       <li>
         <i class="fa fa-calendar-alt"></i>
-        2016/12/06
+        2023/04/27
       </li>
 
 
@@ -97,11 +104,11 @@
 
             <i class="fa fa-tags"></i>
             <span>Tagged in: </span>
-              <a href="https://www.castoriscausa.com/tags/touchpad/">touchpad</a>,               <a href="https://www.castoriscausa.com/tags/windows/">Windows</a>            <br>
+              <a href="https://www.castoriscausa.com/tags/bike/">bike</a>,               <a href="https://www.castoriscausa.com/tags/lifehack/">lifehack</a>,               <a href="https://www.castoriscausa.com/tags/montreal/">Montreal</a>            <br>
 
             <span>
               <i class="fa fa-comments"></i>
-              <a href="https://www.castoriscausa.com/posts/2016/12/06/touchpad-disable/#disqus_thread">Comments</a>
+              <a href="https://www.castoriscausa.com/posts/2023/04/27/one_year_biking/#disqus_thread">Comments</a>
             </span>
 
         </p>
@@ -111,71 +118,18 @@
 
   <div class="entry-thumb four columns">
     <center>
-      <a href="https://www.castoriscausa.com/posts/2016/12/06/touchpad-disable/">
-          <img src= "https://www.castoriscausa.com/images/touchpad_keyboard_ge62vr.jpg">
+      <a href="https://www.castoriscausa.com/posts/2023/04/27/one_year_biking/">
+          <img src= "https://www.castoriscausa.com/images/bike_dad.png">
       </a>
     </center>
   </div>
 </div> <!-- div row -->
+          <div class="entry-content">
+            So have it has been a year that I'm using bike as mean of transportation in Montreal! This is a report / review of such an adventure, hopping these lines can be useful for anyone who is considering urban biking. Biking in the city has allowed me to explore better my …
+          </div>
 
-        <div class="entry-content">
-
-<!-- Series text at the beginning of article -->
-          <p>Touchpads in laptops are not for everyone, one of the first things to do when a I get a new computer is to plug a mouse and disable the touchpad (TP).</p>
-<p>Few weeks ago, I noticed a strange behavior, in my <a href="[https://us.msi.com/Laptop/GE62VR-Apache-Pro-6th-Gen-GTX-1060.html#hero-overview">laptop</a>, every time I started a session in Windows, the touchpad was <strong>enabled</strong>, that is to say it did not keep its previous status. The touchpad is a <strong>Synaptics SMBus TouchPad</strong>. As this behavior was <strong>annoying</strong>, something needed to be done.</p>
-<p>After some research I came across this wonderful solution where the <a href="http://www.intowindows.com/how-to-turn-off-touchpad-when-mouse-is-connected-in-windows-78-1/">touchpad is automatically disabled when a mouse is  detected</a>. Unfortunately, the <strong>Steelseris Keyboard</strong> in my laptop is detected as <strong>keyboard-mouse combo</strong>, then, the auto-disable, would permanently disable the touchpad, without option to enable it and who knows it could be useful (someday).</p>
-<p><center>
-<a href="/images/touchpad_keyboard_ge62vr.jpg"><img alt="Alt" src="/images/touchpad_keyboard_ge62vr.jpg"></a><br>
-Touchpad and Keyboard in GE62VR
-</center>  </p>
-<p>Later, after diving in <a href="https://en.wikipedia.org/wiki/Windows_Registry">Windows Register</a>, with Regedit, I noticed a value, in two keys, that controls the touchpad's behavior at the beginning of the Windows session:</p>
-<p><code>DisableDeviceUntilSessionEnd</code>
-in  <br>
-<code>HKEY_CURRENT_USER\SOFTWARE\Synaptics\SynTP\TouchPadPS2TM3163</code><br>
-<code>HKEY_CURRENT_USER\SOFTWARE\Synaptics\SynTP\TouchPadSMB2cTM3163</code></p>
-<p>Basically, when they are <code>0</code> the touchpad remembers its state at the moment of the last logout, and when <code>1</code>, the touchpad will be enabled every login.</p>
-<p></br>
-<center></p>
-<h4 id="changing-the-values-from-1-to-0-was-the-solution-to-keep-the-touchpad-disable"><strong>Changing the values from <code>1</code> to  <code>0</code></strong> was the solution, to keep the touchpad disable.<a class="headerlink" href="#changing-the-values-from-1-to-0-was-the-solution-to-keep-the-touchpad-disable" title="Permanent link"> </a></h4>
-<p></center>
-</br></p>
-<p>In case you're want to the same re-enabling behaviour in the touchpad, edit the above-mentioned values in the Registry. You can learn the basics on editing the Windows Registry here: <a href="http://www.techsupportalert.com/content/learn-how-use-windows-registry-editor-regedit-one-easy-lesson.htm">Learn How to Use the Windows Registry Editor (Regedit) in One Easy Lesson</a>.</p>
-<!-- Series text at the end of article -->
-
-        </div>
-      </article>
-
-<!-- Comments -->
-<!-- Disqus -->
-    <div id="comments">
-        <h2>Comments</h2>
-
-        <div id="disqus_thread"></div>
-        <script type="text/javascript">
-            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-            var disqus_shortname = 'castoriscausa'; // required: replace example with your forum shortname
-
-            var disqus_config = function () {
-                this.language = "en";
-
-                        this.page.url = 'https://www.castoriscausa.com/posts/2016/12/06/touchpad-disable/';
-            };
-
-            /* * * DON'T EDIT BELOW THIS LINE * * */
-            (function () {
-                var dsq = document.createElement('script');
-                dsq.type = 'text/javascript';
-                dsq.async = true;
-                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-            })();
-        </script>
-        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
-            Disqus.</a></noscript>
-        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
-      </div>
-<!-- End Disqus Code -->
-    </div> <!-- main End -->
+        </article> <!-- end entry -->
+    </div> <!-- end main -->
 <!-- Sidebar -->
 <div id="sidebar" class="four columns">
 <div class="widget widget_search">

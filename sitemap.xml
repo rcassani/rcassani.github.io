@@ -5,21 +5,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/</loc>
-<lastmod>2023-04-28T14:42:07-00:00</lastmod>
+<lastmod>2023-05-02T01:04:45-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/archives.html</loc>
-<lastmod>2023-04-28T14:42:07-00:00</lastmod>
+<lastmod>2023-05-02T01:04:45-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/categories.html</loc>
-<lastmod>2023-04-28T14:42:07-00:00</lastmod>
+<lastmod>2023-05-02T01:04:45-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -41,6 +41,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://www.castoriscausa.com/pages/software</loc>
 <lastmod>2016-10-22T00:00:00-04:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.castoriscausa.com/posts/2023/05/01/recipe_tarallini/</loc>
+<lastmod>2023-05-01T19:31:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -285,7 +292,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/category/posts/</loc>
-<lastmod>2023-04-27T18:58:00-05:18</lastmod>
+<lastmod>2023-05-01T19:31:00-05:18</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.castoriscausa.com/tags/recipe/</loc>
+<lastmod>2023-05-01T19:31:00-05:18</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.castoriscausa.com/tags/lifehack/</loc>
+<lastmod>2023-05-01T19:31:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -299,13 +320,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/tags/bike/</loc>
-<lastmod>2023-04-27T18:58:00-05:18</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://www.castoriscausa.com/tags/lifehack/</loc>
 <lastmod>2023-04-27T18:58:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -586,7 +600,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/author/raymundo-cassani.html</loc>
-<lastmod>2023-04-27T18:58:00-05:18</lastmod>
+<lastmod>2023-05-01T19:31:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

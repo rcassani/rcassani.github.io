@@ -127,7 +127,7 @@
           <p>This post shows a simple game created using <a href="https://pyscript.net/">PyScript</a> in this static website created with <a href="https://docs.getpelican.com/en/latest/">Pelican</a> and <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> files.</p>
 <h2 id="the-game">The game<a class="headerlink" href="#the-game" title="Permanent link"> </a></h2>
 <p></p>
-<div style="border: 2px solid black;width: 50%;padding: 10px;">
+<div style="border: 2px solid black;padding: 10px;">
   <py-script src="/scripts/guess_game.py" id="py-internal-0"></py-script>
   <strong><p id="game-message-txt"></p></strong>
   <input id="new-guess-txt" class="py-input" type="text">
@@ -146,7 +146,7 @@
 <li>
 <p><strong>Markdown post</strong>: This is used by Pelican to create the post entry in the website, the code is here:
     <a href="https://github.com/rcassani/castoriscausa/blob/master/content/posts/pyscript_toy_example.md">https://github.com/rcassani/castoriscausa/blob/master/content/posts/pyscript_toy_example.md</a></p>
-<p>It's very important to modify the Pelican them to add the link to PyScript in <code>&lt;head&gt;</code>:</p>
+<p>It's very important to modify the Pelican theme to add the link to PyScript in <code>&lt;head&gt;</code>:</p>
 <table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">defer</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://pyscript.net/latest/pyscript.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
 </td></tr></table>
@@ -164,7 +164,7 @@
 <span class="normal"> 8</span>
 <span class="normal"> 9</span>
 <span class="normal">10</span>
-<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;border: 2px solid black;width: 50%;padding: 10px;&quot;</span><span class="p">&gt;</span>
+<span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;border: 2px solid black;padding: 10px;&quot;</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">py-script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/scripts/guess_game.py&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;py-internal-0&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">py-script</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;game-message-txt&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;new-guess-txt&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;py-input&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>

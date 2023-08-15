@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en">
+  <head>
+    <title>CastorisCausa</title>
+    <meta charset="utf-8" />
+
+  <!-- Google Analytics -->
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+    ga('create', 'UA-86432394-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+<!-- End Google Analytics -->
+
+    <!-- mobile specific metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+    <!-- CSS -->
+      <link rel="stylesheet" href="https://www.castoriscausa.com/theme/tipuesearch/tipuesearch.css">
+
+    <link rel="stylesheet" href="https://www.castoriscausa.com/theme/css/default.css">
+    <link rel="stylesheet" href="https://www.castoriscausa.com/theme/css/layout.css">
+    <link rel="stylesheet" href="https://www.castoriscausa.com/theme/css/media-queries.css">
+
+    <link rel="stylesheet" href="https://www.castoriscausa.com/theme/css/pygments/native.css">
+
+      <link rel="stylesheet" href="https://www.castoriscausa.com/castoris.css">
+
+    <!-- Script -->
+    <script src="https://www.castoriscausa.com/theme/js/modernizr.js"></script>
+    <script src="https://www.castoriscausa.com/theme/js/jquery-3.4.1.min.js"></script>
+
+    
+
+    <!-- Favicons -->
+      <link rel="shortcut icon" href="https://www.castoriscausa.com/./images/favicon.png" >
+
+  </head>
+
+  <body>
+    <header id="top">
+<!-- Header
+================================================== -->
+  <div class="row">
+    <div class="header-content twelve columns">
+        <img id="header-logo" src= "https://www.castoriscausa.com/images/castoris_s.png">
+      <h1 id="logo-text"><a href="https://www.castoriscausa.com" title="">CastorisCausa</a></h1>
+      <p id="intro">Personal blog and hacks by <a href="../pages/about-me">Raymundo&nbspCassani</a></p>
+    </div>
+  </div>
+
+  <nav id="nav-wrap">
+    <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show Menu</a>
+    <a class="mobile-btn" href="#" title="Hide navigation">Hide Menu</a>
+    <div class="row">
+      <ul id="nav" class="nav">
+
+        <!-- Links that are not pages -->
+            <li><a href="https://www.castoriscausa.com">Home</a></li>
+
+        <!-- Links for Pages, ordered by PAGES_SORT_ATTRIBUTE (def. title) -->
+            <li><a href="https://www.castoriscausa.com/pages/software">Software</a></li>
+            <li><a href="https://www.castoriscausa.com/pages/publications">Publications</a></li>
+            <li><a href="https://www.castoriscausa.com/pages/about-me">About</a></li>
+
+      </ul> <!-- end #nav -->
+    </div>
+  </nav> <!-- end #nav-wrap -->    </header>
+
+    <div id="content-wrap">
+<!-- Content - Article -->
+  <div class="row">
+    <div id="main" class="eight columns">
+      <article class="entry">
+  <div class="row"> <!-- div row -->
+  <header class="entry-header eight columns">
+
+  <h2 class="entry-title">
+    <a href="https://www.castoriscausa.com/posts/2023/08/14/github_actions_matlab/">Github actions and Matlab, multiple OS</a>
+  </h2>
+
+  <div class="entry-meta">
+    <ul>
+      <!-- date -->
+      <li>
+        <i class="fa fa-calendar-alt"></i>
+        2023/08/14
+      </li>
+
+
+
+      <!-- category and tags -->
+        <p class="tags">
+
+
+            <i class="fa fa-tags"></i>
+            <span>Tagged in: </span>
+              <a href="https://www.castoriscausa.com/tags/github/">GitHub</a>,               <a href="https://www.castoriscausa.com/tags/linux/">Linux</a>,               <a href="https://www.castoriscausa.com/tags/macos/">macOS</a>,               <a href="https://www.castoriscausa.com/tags/matlab/">Matlab</a>,               <a href="https://www.castoriscausa.com/tags/windows/">Windows</a>            <br>
+
+            <span>
+              <i class="fa fa-comments"></i>
+              <a href="https://www.castoriscausa.com/posts/2023/08/14/github_actions_matlab/#disqus_thread">Comments</a>
+            </span>
+
+        </p>
+    </ul>
+  </div>
+</header>
+
+  <div class="entry-thumb four columns">
+    <center>
+      <a href="https://www.castoriscausa.com/posts/2023/08/14/github_actions_matlab/">
+          <img src= "https://www.castoriscausa.com/images/github_actions_matlab.png">
+      </a>
+    </center>
+  </div>
+</div> <!-- div row -->
+
+        <div class="entry-content">
+
+<!-- Series text at the beginning of article -->
+          <p><a href="https://docs.github.com/actions">GitHub actions</a> are an amazing tool to automate different stages on in the software development workflow, and they can be used in Matlab projects!</p>
+<p>By using <a href="https://github.com/matlab-actions">Matlab GitHub actions</a>, it is possible to set up Matlab, and run Matlab code on <a href="https://docs.github.com/en/actions/using-github-hosted-runners">GitHub-hosted runners</a> with different OS (<strong>Linux</strong>, <strong>macOS</strong> and <strong>Windows</strong>). This allows painless testing of your code on different Matlab versions on different OS.</p>
+<h3 id="toy-example">Toy example<a class="headerlink" href="#toy-example" title="Permanent link"> </a></h3>
+<p>A working toy example of using Matlab with GitHub actions can be found <a href="https://github.com/rcassani/github_actions_matlab">here</a>. The repo consists of two main parts: a yaml file and a Matlab script:</p>
+<h4 id="1-yaml-file">1. yaml file<a class="headerlink" href="#1-yaml-file" title="Permanent link"> </a></h4>
+<p>The yaml file <code>./github/workflows/github-actions.yaml</code> defines:</p>
+<ul>
+<li>When the GitHub action will run</li>
+<li>The OS versions: Linux (Ubuntu 20.04), macOS (12 Monterey) and Windows (Server 2019) for the runners</li>
+<li>The Matlab version (R2021b) that will be used</li>
+<li>The Matlab script (<code>wonder_script.m</code>) in the repo to be executed</li>
+<li>Other task (display results)</li>
+</ul>
+<p><strong>Code:</strong></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span>
+<span class="normal">66</span>
+<span class="normal">67</span>
+<span class="normal">68</span>
+<span class="normal">69</span>
+<span class="normal">70</span>
+<span class="normal">71</span>
+<span class="normal">72</span>
+<span class="normal">73</span>
+<span class="normal">74</span>
+<span class="normal">75</span>
+<span class="normal">76</span>
+<span class="normal">77</span>
+<span class="normal">78</span>
+<span class="normal">79</span>
+<span class="normal">80</span>
+<span class="normal">81</span>
+<span class="normal">82</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="c1"># Workflow to run a Matlab script on GitHub-Hosted Linux, Windows and macOS runners</span><span class="w"></span>
+<span class="c1"># See: https://docs.github.com/en/actions/using-github-hosted-runners/about-github-hosted-runners</span><span class="w"></span>
+
+<span class="c1"># Workflow name</span><span class="w"></span>
+<span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run Matlab script on GitHub-hosted runners</span><span class="w"></span>
+<span class="c1"># Name for each run</span><span class="w"></span>
+<span class="nt">run-name</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;${{</span><span class="nv"> </span><span class="s">github.event.head_commit.message</span><span class="nv"> </span><span class="s">}}&quot;</span><span class="w"></span>
+
+<span class="c1"># Parameters</span><span class="w"></span>
+<span class="nt">env</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="nt">MATLAB_VER</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">R2021b</span><span class="w"> </span><span class="c1"># Oldest &quot;b&quot; release available for Windows</span><span class="w"></span>
+
+<span class="c1"># When the workflow will run</span><span class="w"></span>
+<span class="nt">on</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Run on Push to &#39;master&#39; or &#39;main&#39; branch</span><span class="w"></span>
+<span class="w">  </span><span class="nt">push</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">branches</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">master</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">main</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Run manually from GitHub Actions tab</span><span class="w"></span>
+<span class="w">  </span><span class="nt">workflow_dispatch</span><span class="p">:</span><span class="w"></span>
+
+<span class="nt">jobs</span><span class="p">:</span><span class="w"></span>
+<span class="w">  </span><span class="c1"># Ubuntu job</span><span class="w"></span>
+<span class="w">  </span><span class="nt">Run-Ubuntu</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run on Linux (Ubuntu 20.04)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-20.04</span><span class="w"></span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check out repo</span><span class="w"></span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Matlab</span><span class="w"></span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matlab-actions/setup-matlab@v1</span><span class="w"></span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">release</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ env.MATLAB_VER }}</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run script</span><span class="w"></span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matlab-actions/run-command@v1</span><span class="w"></span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wonder_script</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Print PWD</span><span class="w"></span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pwd</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Print results</span><span class="w"></span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cat ./data/results.txt</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># Windows job</span><span class="w"></span>
+<span class="w">  </span><span class="nt">Run-Windows</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run on Windows (Server 2019)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">windows-2019</span><span class="w"></span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check out repo</span><span class="w"></span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Matlab</span><span class="w"></span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matlab-actions/setup-matlab@v1</span><span class="w"></span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">release</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ env.MATLAB_VER }}</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run script</span><span class="w"></span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matlab-actions/run-command@v1</span><span class="w"></span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wonder_script</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Print PWD</span><span class="w"></span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pwd</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Print results</span><span class="w"></span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">type .\data\results.txt</span><span class="w"></span>
+
+<span class="w">  </span><span class="c1"># macOS job</span><span class="w"></span>
+<span class="w">  </span><span class="nt">Run-MacOS</span><span class="p">:</span><span class="w"></span>
+<span class="w">    </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run on macOS (12 Monterey)</span><span class="w"></span>
+<span class="w">    </span><span class="nt">runs-on</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">macos-12</span><span class="w"></span>
+<span class="w">    </span><span class="nt">steps</span><span class="p">:</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Check out repo</span><span class="w"></span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">actions/checkout@v3</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Set up Matlab</span><span class="w"></span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matlab-actions/setup-matlab@v1</span><span class="w"></span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">release</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">${{ env.MATLAB_VER }}</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Run script</span><span class="w"></span>
+<span class="w">        </span><span class="nt">uses</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">matlab-actions/run-command@v1</span><span class="w"></span>
+<span class="w">        </span><span class="nt">with</span><span class="p">:</span><span class="w"></span>
+<span class="w">          </span><span class="nt">command</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">wonder_script</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Print PWD</span><span class="w"></span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">pwd</span><span class="w"></span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="nt">name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Print results</span><span class="w"></span>
+<span class="w">        </span><span class="nt">run</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">cat ./data/results.txt</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<h4 id="2-matlab-script">2. Matlab script<a class="headerlink" href="#2-matlab-script" title="Permanent link"> </a></h4>
+<p>The <code>wonder_script.m</code> Matlab script gets information of the computer where the code is running and writes such information on a text file
+<strong>Code:</strong></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal"> 1</span>
+<span class="normal"> 2</span>
+<span class="normal"> 3</span>
+<span class="normal"> 4</span>
+<span class="normal"> 5</span>
+<span class="normal"> 6</span>
+<span class="normal"> 7</span>
+<span class="normal"> 8</span>
+<span class="normal"> 9</span>
+<span class="normal">10</span>
+<span class="normal">11</span>
+<span class="normal">12</span>
+<span class="normal">13</span>
+<span class="normal">14</span>
+<span class="normal">15</span>
+<span class="normal">16</span>
+<span class="normal">17</span>
+<span class="normal">18</span>
+<span class="normal">19</span>
+<span class="normal">20</span>
+<span class="normal">21</span>
+<span class="normal">22</span>
+<span class="normal">23</span>
+<span class="normal">24</span>
+<span class="normal">25</span>
+<span class="normal">26</span>
+<span class="normal">27</span>
+<span class="normal">28</span>
+<span class="normal">29</span>
+<span class="normal">30</span>
+<span class="normal">31</span>
+<span class="normal">32</span>
+<span class="normal">33</span>
+<span class="normal">34</span>
+<span class="normal">35</span>
+<span class="normal">36</span>
+<span class="normal">37</span>
+<span class="normal">38</span>
+<span class="normal">39</span>
+<span class="normal">40</span>
+<span class="normal">41</span>
+<span class="normal">42</span>
+<span class="normal">43</span>
+<span class="normal">44</span>
+<span class="normal">45</span>
+<span class="normal">46</span>
+<span class="normal">47</span>
+<span class="normal">48</span>
+<span class="normal">49</span>
+<span class="normal">50</span>
+<span class="normal">51</span>
+<span class="normal">52</span>
+<span class="normal">53</span>
+<span class="normal">54</span>
+<span class="normal">55</span>
+<span class="normal">56</span>
+<span class="normal">57</span>
+<span class="normal">58</span>
+<span class="normal">59</span>
+<span class="normal">60</span>
+<span class="normal">61</span>
+<span class="normal">62</span>
+<span class="normal">63</span>
+<span class="normal">64</span>
+<span class="normal">65</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="k">function</span><span class="w"> </span><span class="nf">wonder_script</span><span class="p">()</span><span class="w"></span>
+<span class="c">% Finds the test.txt file in the dataDir directory</span><span class="w"></span>
+<span class="c">% Read the content of the test.txt file and </span><span class="w"></span>
+<span class="c">% concatenate it with extra information, e.g, hostname, OS, Matlab version, etc.</span><span class="w"></span>
+<span class="c">% Saves new content as results.txt in dataDir</span><span class="w"></span>
+
+<span class="c">% Read test.txt</span><span class="w"></span>
+<span class="n">testFilename</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;test.txt&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="n">dataDir</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;data&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="n">testFilename</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fullfile</span><span class="p">(</span><span class="n">dataDir</span><span class="p">,</span><span class="w"> </span><span class="n">testFilename</span><span class="p">);</span><span class="w"></span>
+<span class="n">content</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fileread</span><span class="p">(</span><span class="n">testFilename</span><span class="p">);</span><span class="w"></span>
+
+<span class="c">% Date</span><span class="w"></span>
+<span class="n">dateStr</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#39;DateTime: &#39;</span><span class="w"> </span><span class="nb">char</span><span class="p">(</span><span class="nb">datetime</span><span class="p">,</span><span class="w"> </span><span class="s">&quot;yyyy-MM-dd HH:mm:ss&quot;</span><span class="p">)];</span><span class="w"></span>
+
+<span class="c">% OS information</span><span class="w"></span>
+<span class="k">if</span><span class="w"> </span><span class="nb">strncmp</span><span class="p">(</span><span class="nb">computer</span><span class="p">,</span><span class="s">&#39;PC&#39;</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="p">[</span><span class="o">~</span><span class="p">,</span><span class="w"> </span><span class="n">system_info</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">system</span><span class="p">(</span><span class="s">&#39;systeminfo&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">osName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">regexp</span><span class="p">(</span><span class="n">system_info</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;(?&lt;=OS Name:)(.*?)(?=\n)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;match&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">osName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">strtrim</span><span class="p">(</span><span class="n">osName</span><span class="p">{</span><span class="mi">1</span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="n">osVer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">regexp</span><span class="p">(</span><span class="n">system_info</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;(?&lt;=OS Version:)(.*?)(?=\n)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;match&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">osVer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">strtrim</span><span class="p">(</span><span class="n">osVer</span><span class="p">{</span><span class="mi">1</span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="n">osInfo</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">osName</span><span class="p">,</span><span class="w"> </span><span class="s">&#39; (&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">osVer</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;)&#39;</span><span class="p">];</span><span class="w"></span>
+
+<span class="k">elseif</span><span class="w"> </span><span class="nb">strncmp</span><span class="p">(</span><span class="nb">computer</span><span class="p">,</span><span class="s">&#39;MAC&#39;</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="c">% OS info</span><span class="w"></span>
+<span class="w">    </span><span class="p">[</span><span class="o">~</span><span class="p">,</span><span class="w"> </span><span class="n">sw_vers</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">system</span><span class="p">(</span><span class="s">&#39;sw_vers&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">osName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">regexp</span><span class="p">(</span><span class="n">sw_vers</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;(?&lt;=ProductName:)(.*?)(?=\n)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;match&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">osName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">strtrim</span><span class="p">(</span><span class="n">osName</span><span class="p">{</span><span class="mi">1</span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="n">osVer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">regexp</span><span class="p">(</span><span class="n">sw_vers</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;(?&lt;=ProductVersion:)(.*?)(?=\n)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;match&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">osVer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">strtrim</span><span class="p">(</span><span class="n">osVer</span><span class="p">{</span><span class="mi">1</span><span class="p">});</span><span class="w"></span>
+<span class="w">    </span><span class="p">[</span><span class="o">~</span><span class="p">,</span><span class="w"> </span><span class="n">osHw</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">system</span><span class="p">(</span><span class="s">&#39;uname -m&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">osHw</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">strtrim</span><span class="p">(</span><span class="n">osHw</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">osInfo</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">osName</span><span class="p">,</span><span class="w"> </span><span class="s">&#39; &#39;</span><span class="w"> </span><span class="n">osVer</span><span class="p">,</span><span class="w"> </span><span class="s">&#39; (&#39;</span><span class="p">,</span><span class="w"> </span><span class="n">osHw</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;)&#39;</span><span class="p">];</span><span class="w"></span>
+
+<span class="k">elseif</span><span class="w"> </span><span class="nb">strncmp</span><span class="p">(</span><span class="nb">computer</span><span class="p">,</span><span class="s">&#39;GLNX&#39;</span><span class="p">,</span><span class="mi">4</span><span class="p">)</span><span class="w"></span>
+<span class="w">    </span><span class="c">% OS info</span><span class="w"></span>
+<span class="w">    </span><span class="n">os_release</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fileread</span><span class="p">(</span><span class="s">&#39;/etc/os-release&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">osName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">regexp</span><span class="p">(</span><span class="n">os_release</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;(?&lt;=PRETTY_NAME=&quot;)(.*?)(?=&quot;)&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;match&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">osName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="n">osName</span><span class="p">{</span><span class="mi">1</span><span class="p">};</span><span class="w"></span>
+<span class="w">    </span><span class="p">[</span><span class="o">~</span><span class="p">,</span><span class="w"> </span><span class="n">kernelVer</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">system</span><span class="p">(</span><span class="s">&#39;uname -r&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">kernelVer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">strtrim</span><span class="p">(</span><span class="n">kernelVer</span><span class="p">);</span><span class="w"></span>
+<span class="w">    </span><span class="n">osInfo</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">osName</span><span class="p">,</span><span class="w"> </span><span class="s">&#39; (&#39;</span><span class="w"> </span><span class="n">kernelVer</span><span class="p">,</span><span class="w"> </span><span class="s">&#39;)&#39;</span><span class="p">];</span><span class="w"></span>
+
+<span class="k">else</span><span class="w"></span>
+<span class="w">    </span><span class="n">osInfo</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;Strange host&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="k">end</span><span class="w"></span>
+<span class="n">osInfo</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#39;OS: &#39;</span><span class="w"> </span><span class="n">osInfo</span><span class="p">];</span><span class="w"></span>
+
+<span class="c">% Hostname</span><span class="w"></span>
+<span class="p">[</span><span class="o">~</span><span class="p">,</span><span class="w"> </span><span class="n">hostName</span><span class="p">]</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">system</span><span class="p">(</span><span class="s">&#39;hostname&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="n">hostName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#39;hostname: &#39;</span><span class="w">  </span><span class="nb">strtrim</span><span class="p">(</span><span class="n">hostName</span><span class="p">)];</span><span class="w"></span>
+
+<span class="c">% Get Matlab version</span><span class="w"></span>
+<span class="n">matlabVer</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="s">&#39;Matlab:&#39;</span><span class="p">,</span><span class="w"> </span><span class="s">&#39; &#39;</span><span class="p">,</span><span class="w"> </span><span class="nb">version</span><span class="p">(</span><span class="s">&#39;-release&#39;</span><span class="p">)];</span><span class="w"></span>
+
+<span class="c">% New content</span><span class="w"></span>
+<span class="n">contentNew</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="p">[</span><span class="n">content</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">dateStr</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">osInfo</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">hostName</span><span class="p">,</span><span class="w"> </span><span class="mi">10</span><span class="p">,</span><span class="w"> </span><span class="n">matlabVer</span><span class="p">];</span><span class="w"></span>
+
+<span class="c">% Save results</span><span class="w"></span>
+<span class="n">resultFileName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="s">&#39;results.txt&#39;</span><span class="p">;</span><span class="w"></span>
+<span class="n">resultFileName</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fullfile</span><span class="p">(</span><span class="n">dataDir</span><span class="p">,</span><span class="w"> </span><span class="n">resultFileName</span><span class="p">);</span><span class="w"></span>
+<span class="n">fileID</span><span class="w"> </span><span class="p">=</span><span class="w"> </span><span class="nb">fopen</span><span class="p">(</span><span class="n">resultFileName</span><span class="p">,</span><span class="s">&#39;w&#39;</span><span class="p">);</span><span class="w"></span>
+<span class="nb">fprintf</span><span class="p">(</span><span class="n">fileID</span><span class="p">,</span><span class="w"> </span><span class="n">contentNew</span><span class="p">);</span><span class="w"></span>
+<span class="nb">fclose</span><span class="p">(</span><span class="n">fileID</span><span class="p">);</span><span class="w"></span>
+</code></pre></div>
+</td></tr></table>
+<!-- Series text at the end of article -->
+
+        </div>
+      </article>
+
+<!-- Comments -->
+<!-- Disqus -->
+    <div id="comments">
+        <h2>Comments</h2>
+
+        <div id="disqus_thread"></div>
+        <script type="text/javascript">
+            /* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+            var disqus_shortname = 'castoriscausa'; // required: replace example with your forum shortname
+
+            var disqus_config = function () {
+                this.language = "en";
+
+                        this.page.url = 'https://www.castoriscausa.com/posts/2023/08/14/github_actions_matlab/';
+            };
+
+            /* * * DON'T EDIT BELOW THIS LINE * * */
+            (function () {
+                var dsq = document.createElement('script');
+                dsq.type = 'text/javascript';
+                dsq.async = true;
+                dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+            })();
+        </script>
+        <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by
+            Disqus.</a></noscript>
+        <a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+      </div>
+<!-- End Disqus Code -->
+    </div> <!-- main End -->
+<!-- Sidebar -->
+<div id="sidebar" class="four columns">
+<div class="widget widget_search">
+  <form action="https://www.castoriscausa.com/search.html" onsubmit="return validateForm(this.elements['q'].value);">
+    <input type="text" name="q" id="tipue_search_input" value="Search here..." onblur="if(this.value == '') { this.value = 'Search here...'; }" onfocus="if (this.value == 'Search here...') { this.value = ''; }" class="text-search">
+    <input type="submit" value="" class="submit-search">
+  </form>
+</div>
+
+<div class="widget widget_links group">
+  <h3>Links</h3>
+  <ul>
+      <li>
+        <div>
+          <div class="widget_links_text">
+            <a href="https://www.neurospeed-bailletlab.org/"> • neuroSPEED Lab</a>
+          </div>
+          <div class="widget_links_image">
+                <a href="https://www.neurospeed-bailletlab.org/"><img src="/images/neurospeed_lab.png"></a>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div>
+          <div class="widget_links_text">
+            <a href="https://musaelab.ca/"> • MuSAE Lab</a>
+          </div>
+          <div class="widget_links_image">
+                <a href="https://musaelab.ca/"><img src="/images/musae_lab.png"></a>
+          </div>
+        </div>
+      </li>
+  </ul>
+</div>
+
+<div class="widget widget_tags">
+  <h3>All Tags</h3>
+    <div class="tagcloud group">
+        <a href="https://www.castoriscausa.com/tags/ad/">AD</a>
+        <a href="https://www.castoriscausa.com/tags/arch/">Arch</a>
+        <a href="https://www.castoriscausa.com/tags/bash/">Bash</a>
+        <a href="https://www.castoriscausa.com/tags/batch/">Batch</a>
+        <a href="https://www.castoriscausa.com/tags/bike/">bike</a>
+        <a href="https://www.castoriscausa.com/tags/bluetooth/">Bluetooth</a>
+        <a href="https://www.castoriscausa.com/tags/book/">book</a>
+        <a href="https://www.castoriscausa.com/tags/cuda/">CUDA</a>
+        <a href="https://www.castoriscausa.com/tags/deeplearning/">DeepLearning</a>
+        <a href="https://www.castoriscausa.com/tags/diy/">DIY</a>
+        <a href="https://www.castoriscausa.com/tags/eeg/">EEG</a>
+        <a href="https://www.castoriscausa.com/tags/electronics/">electronics</a>
+        <a href="https://www.castoriscausa.com/tags/energy/">energy</a>
+        <a href="https://www.castoriscausa.com/tags/espanol/">Español</a>
+        <a href="https://www.castoriscausa.com/tags/french/">French</a>
+        <a href="https://www.castoriscausa.com/tags/game-boy/">Game Boy</a>
+        <a href="https://www.castoriscausa.com/tags/geopandas/">GeoPandas</a>
+        <a href="https://www.castoriscausa.com/tags/gis/">GIS</a>
+        <a href="https://www.castoriscausa.com/tags/git/">Git</a>
+        <a href="https://www.castoriscausa.com/tags/github/">GitHub</a>
+        <a href="https://www.castoriscausa.com/tags/gpu/">GPU</a>
+        <a href="https://www.castoriscausa.com/tags/hack/">hack</a>
+        <a href="https://www.castoriscausa.com/tags/jupyter/">Jupyter</a>
+        <a href="https://www.castoriscausa.com/tags/lifehack/">lifehack</a>
+        <a href="https://www.castoriscausa.com/tags/linux/">Linux</a>
+        <a href="https://www.castoriscausa.com/tags/macos/">macOS</a>
+        <a href="https://www.castoriscausa.com/tags/maps/">maps</a>
+        <a href="https://www.castoriscausa.com/tags/matlab/">Matlab</a>
+        <a href="https://www.castoriscausa.com/tags/methods/">methods</a>
+        <a href="https://www.castoriscausa.com/tags/montreal/">Montreal</a>
+        <a href="https://www.castoriscausa.com/tags/nvidia/">NVIDIA</a>
+        <a href="https://www.castoriscausa.com/tags/phd/">PhD</a>
+        <a href="https://www.castoriscausa.com/tags/photo/">photo</a>
+        <a href="https://www.castoriscausa.com/tags/power/">power</a>
+        <a href="https://www.castoriscausa.com/tags/python/">Python</a>
+        <a href="https://www.castoriscausa.com/tags/recipe/">recipe</a>
+        <a href="https://www.castoriscausa.com/tags/space/">space</a>
+        <a href="https://www.castoriscausa.com/tags/statistics/">statistics</a>
+        <a href="https://www.castoriscausa.com/tags/systemd/">systemd</a>
+        <a href="https://www.castoriscausa.com/tags/touchpad/">touchpad</a>
+        <a href="https://www.castoriscausa.com/tags/tutorial/">tutorial</a>
+        <a href="https://www.castoriscausa.com/tags/webdevelopment/">WebDevelopment</a>
+        <a href="https://www.castoriscausa.com/tags/windows/">Windows</a>
+        <a href="https://www.castoriscausa.com/tags/writing/">Writing</a>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+</div> <!-- end sidebar -->  </div> <!-- end row -->
+    </div>
+
+    <footer>
+<!-- Footer
+================================================== -->
+  <div class="row">
+    <div class="twelve columns">
+      <ul class="social-links">
+        <li><a href="https://github.com/rcassani"><i class="fab fa-github fa-lg"></i></a></li>
+        <li><a href="https://twitter.com/r_cassani"><i class="fab fa-twitter fa-lg"></i></a></li>
+        <li><a href="https://www.linkedin.com/in/rcassani/"><i class="fab fa-linkedin fa-lg"></i></a></li>
+        <li><a href="https://scholar.google.com/citations?hl=en&user=3A9_Ww8AAAAJ"><i class="fas fa-user-graduate fa-lg"></i></a></li>
+        <li><a href="#"><i class="fas fa-envelope fa-lg"></i></a></li>
+    </ul>
+  </div>
+
+
+  <div class="twelve columns">&copy; 2023 Raymundo Cassani
+    &middot; Powered by <a href="https://github.com/rcassani/pelican-kis" target="_blank">pelican-kis</a> and <a href="http://docs.getpelican.com/" target="_blank">Pelican</a>,
+
+                  <p><small>  <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="Creative Commons License" style="border-width:0" src="//i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a>
+    Content
+  licensed under a <a rel="license" href="https://creativecommons.org/licenses/by-nc-sa/4.0/">Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License</a>, except where indicated otherwise.
+</small></p>
+
+           </div>
+
+
+  </div> <!-- End row -->
+  <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#top"><i class="fa fa-chevron-up"></i></a></div>    </footer>
+
+    <!-- Java Script -->
+    <script src="https://www.castoriscausa.com/theme/js/jquery-3.4.1.min.js"></script>
+    <script src="https://www.castoriscausa.com/theme/js/main.js"></script>
+        <script src="https://www.castoriscausa.com/castoris.js"></script>
+
+    <script type="text/javascript">
+        var disqus_shortname = 'castoriscausa';
+        (function () {
+            var s = document.createElement('script'); s.async = true;
+            s.type = 'text/javascript';
+            s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+            (document.getElementsByTagName('HEAD')[0] ||
+             document.getElementsByTagName('BODY')[0]).appendChild(s);
+        }());
+    </script>
+
+  </body>
+</html>

@@ -5,21 +5,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/</loc>
-<lastmod>2023-10-08T21:59:47-00:00</lastmod>
+<lastmod>2023-10-22T21:41:13-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/archives.html</loc>
-<lastmod>2023-10-08T21:59:47-00:00</lastmod>
+<lastmod>2023-10-22T21:41:13-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/categories.html</loc>
-<lastmod>2023-10-08T21:59:47-00:00</lastmod>
+<lastmod>2023-10-22T21:41:13-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -47,7 +47,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/posts/2023/10/07/supercycle_strava/</loc>
-<lastmod>2023-10-07T19:00:00-04:00</lastmod>
+<lastmod>2023-10-22T17:00:00-04:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -313,35 +313,35 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/category/posts/</loc>
-<lastmod>2023-10-07T19:00:00-05:18</lastmod>
+<lastmod>2023-10-22T17:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/tags/bike/</loc>
-<lastmod>2023-10-07T19:00:00-05:18</lastmod>
+<lastmod>2023-10-22T17:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/tags/sqlite/</loc>
-<lastmod>2023-10-07T19:00:00-05:18</lastmod>
+<lastmod>2023-10-22T17:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/tags/python/</loc>
-<lastmod>2023-10-07T19:00:00-05:18</lastmod>
+<lastmod>2023-10-22T17:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/tags/rest/</loc>
-<lastmod>2023-10-07T19:00:00-05:18</lastmod>
+<lastmod>2023-10-22T17:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -642,7 +642,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/author/raymundo-cassani.html</loc>
-<lastmod>2023-10-07T19:00:00-05:18</lastmod>
+<lastmod>2023-10-22T17:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

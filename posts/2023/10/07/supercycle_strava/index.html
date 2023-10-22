@@ -91,6 +91,12 @@
         2023/10/07
       </li>
 
+      <!-- modified date -->
+        <span class="meta-sep">&nbsp;</span>
+        <li>
+          <i class="fa fa-pencil-alt"></i>
+          2023/10/22
+        </li>
 
 
       <!-- category and tags -->
@@ -123,7 +129,8 @@
         <div class="entry-content">
 
 <!-- Series text at the beginning of article -->
-          <p>Recently I moved to the <a href="https://www.strava.com">Strava app</a> to register the my biking activity. However, I had plenty of data recorded with the <a href="http://www.osborntech.com/">SuperCycle app</a>. So, I code my way to migrate the data. First, each ride recorded with SuperCycle was stored as <a href="https://en.wikipedia.org/wiki/GPS_Exchange_Format">GPX, or GPS Exchange Format files</a>, after converting all the rides, the GPX files were uploaded to Strava using their API. The codes for this project can be found in:</p>
+          <p><strong>Updated</strong>: Now exporting rides from the <a href="https://www.zeopoxa.com/cycling.html">Zeopoxa cycling</a> app to GPX files is also supported.</p>
+<p>Recently I moved to the <a href="https://www.strava.com">Strava app</a> to register the my biking activity. However, I had plenty of data recorded with the <a href="http://www.osborntech.com/">SuperCycle app</a>. So, I code my way to migrate the data. First, each ride recorded with SuperCycle was stored as <a href="https://en.wikipedia.org/wiki/GPS_Exchange_Format">GPX, or GPS Exchange Format files</a>, after converting all the rides, the GPX files were uploaded to Strava using their API. The codes for this project can be found in:</p>
 <p><a href="https://github.com/rcassani/supercycle_strava">https://github.com/rcassani/supercycle_strava</a></p>
 <h2 id="supercycle-data-to-gpx">SuperCycle data to GPX<a class="headerlink" href="#supercycle-data-to-gpx" title="Permanent link"> </a></h2>
 <p>SuperCycle data is stored in a <a href="https://www.sqlite.org/index.html">SQLite</a> database. A copy of the database can be generated with the <strong>Create backup</strong> option in the the app. Among all the data in the database, we are interested in three tables:</p>
@@ -133,6 +140,13 @@
 <li><strong>ride_detail</strong>:  Localization resolved at one-second for each ride</li>
 </ul>
 <p>Reading the database tables and writing the GPX files is done with <a href="https://github.com/rcassani/supercycle_strava/blob/main/supercyle2gpx.py"><code>supercyle2gpx.py</code></a></p>
+<h2 id="zeopoxa-data-to-gpx">Zeopoxa data to GPX<a class="headerlink" href="#zeopoxa-data-to-gpx" title="Permanent link"> </a></h2>
+<p>Zeopoxa data is also stored in a SQLite database, but its schema table is different. A copy of the database can be generated with the <strong>Backup</strong> option in the the app. Among all the data in the database, we are interested in only tables:</p>
+<ul>
+<li><strong>main_table</strong> : Information for rides with localization resolved at one-second</li>
+<li><strong>bicycle_table</strong> : Information for bikes</li>
+</ul>
+<p>Reading the database tables and writing the GPX files is done with <a href="https://github.com/rcassani/supercycle_strava/blob/main/zeopoxa2gpx.py"><code>zeopoxa2gpx.py</code></a></p>
 <h2 id="upload-gpx-files-to-strava">Upload GPX files to Strava<a class="headerlink" href="#upload-gpx-files-to-strava" title="Permanent link"> </a></h2>
 <p>Strava allows to manually upload GPX files using <a href="https://www.strava.com/upload/select">this page</a>.</p>
 <p>But it is not practical if several files need to be uploaded, as it is the case here. As such, the upload of files can be done through their <a href="https://developers.strava.com/docs/reference/">API</a>.</p>

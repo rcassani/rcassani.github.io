@@ -143,7 +143,7 @@
 <h2 id="zeopoxa-data-to-gpx">Zeopoxa data to GPX<a class="headerlink" href="#zeopoxa-data-to-gpx" title="Permanent link"> </a></h2>
 <p>Zeopoxa data is also stored in a SQLite database, but its schema table is different. A copy of the database can be generated with the <strong>Backup</strong> option in the the app. Among all the data in the database, we are interested in only tables:</p>
 <ul>
-<li><strong>main_table</strong> : Information for rides with localization resolved at one-second</li>
+<li><strong>main_table</strong> : Information for rides with localization resolved every six seconds</li>
 <li><strong>bicycle_table</strong> : Information for bikes</li>
 </ul>
 <p>Reading the database tables and writing the GPX files is done with <a href="https://github.com/rcassani/supercycle_strava/blob/main/zeopoxa2gpx.py"><code>zeopoxa2gpx.py</code></a></p>

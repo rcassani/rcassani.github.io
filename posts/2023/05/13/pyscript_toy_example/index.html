@@ -35,7 +35,7 @@
     <script src="https://www.castoriscausa.com/theme/js/jquery-3.7.1.min.js"></script>
 
     <!-- PyScript -->
-    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <script type="module" src="https://pyscript.net/releases/2023.11.2/core.js"></script>
 
     <!-- Favicons -->
       <link rel="shortcut icon" href="https://www.castoriscausa.com/./images/favicon.png" >
@@ -128,13 +128,13 @@
 <h2 id="the-game">The game<a class="headerlink" href="#the-game" title="Permanent link"> </a></h2>
 <p></p>
 <div style="border: 2px solid black;padding: 10px;">
-  <py-script src="/scripts/guess_game.py" id="py-internal-0"></py-script>
+  <script type="py" src="/scripts/guess_game.py" id="py-internal-0"></script>
   <strong><p id="game-message-txt"></p></strong>
   <input id="new-guess-txt" class="py-input" type="text">
-  <button id="new-guess-btn" class="py-button" type="submit" py-click="new_guess()">
+  <button id="new-guess-btn" class="py-button" type="submit" py-click="new_guess">
   Submit guess
   </button>
-  <button id="reset-game-btn" class="py-button" type="submit" py-click="new_game()">
+  <button id="reset-game-btn" class="py-button" type="submit" py-click="new_game">
   Reset
   </button>
 </div>
@@ -224,51 +224,53 @@
 <span class="normal">42</span>
 <span class="normal">43</span>
 <span class="normal">44</span>
-<span class="normal">45</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+<span class="normal">45</span>
+<span class="normal">46</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">from</span> <span class="nn">pyscript</span> <span class="kn">import</span> <span class="n">document</span>
 
-<span class="n">game_message_txt</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="s2">&quot;game-message-txt&quot;</span><span class="p">)</span>
-<span class="n">new_guess_txt</span> <span class="o">=</span> <span class="n">Element</span><span class="p">(</span><span class="s2">&quot;new-guess-txt&quot;</span><span class="p">)</span>
+<span class="n">game_message_txt</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span><span class="s2">&quot;#game-message-txt&quot;</span><span class="p">)</span>
+<span class="n">new_guess_txt</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span><span class="s2">&quot;#new-guess-txt&quot;</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">new_game</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">new_game</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
     <span class="s1">&#39;Print instructions and set secret number&#39;</span>
     <span class="k">global</span> <span class="n">x_target</span>
-    <span class="n">game_message_txt</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Guess the secret number between 0 and 42&#39;</span><span class="p">)</span>
+    <span class="n">game_message_txt</span><span class="o">.</span><span class="n">innerText</span> <span class="o">=</span> <span class="s1">&#39;Guess the secret number between 0 and 42&#39;</span>
     <span class="n">x_target</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">42</span><span class="p">)</span>
 
-<span class="n">new_game</span><span class="p">()</span>
+<span class="n">new_game</span><span class="p">(</span><span class="kc">None</span><span class="p">)</span>
 
-<span class="k">def</span> <span class="nf">new_guess</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kws</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">new_guess</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
     <span class="c1"># ignore empty input</span>
-    <span class="k">if</span> <span class="ow">not</span> <span class="n">new_guess_txt</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
+    <span class="k">if</span> <span class="ow">not</span> <span class="n">new_guess_txt</span><span class="o">.</span><span class="n">value</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">None</span>
-    <span class="n">x_str</span> <span class="o">=</span> <span class="n">new_guess_txt</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">value</span>
+    <span class="n">x_str</span> <span class="o">=</span> <span class="n">new_guess_txt</span><span class="o">.</span><span class="n">value</span>
     <span class="c1"># must be a number</span>
     <span class="k">if</span> <span class="ow">not</span> <span class="n">x_str</span><span class="o">.</span><span class="n">isnumeric</span><span class="p">():</span>
-        <span class="n">game_message_txt</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Come on, it needs to be a number&#39;</span><span class="p">)</span>
+        <span class="n">game_message_txt</span><span class="o">.</span><span class="n">innerText</span> <span class="o">=</span> <span class="s1">&#39;Come on, it needs to be a number&#39;</span>
         <span class="k">return</span> <span class="kc">None</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="k">try</span><span class="p">:</span>
             <span class="c1"># check it&#39;s an integer</span>
             <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="n">x_str</span><span class="p">)</span>
         <span class="k">except</span> <span class="ne">ValueError</span> <span class="k">as</span> <span class="n">ve</span><span class="p">:</span>
-            <span class="n">game_message_txt</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;It needs to be an integer&#39;</span><span class="p">)</span>
+            <span class="n">game_message_txt</span><span class="o">.</span><span class="n">innerText</span> <span class="o">=</span> <span class="s1">&#39;It needs to be an integer&#39;</span>
     <span class="c1"># check it&#39;s in range</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="ow">or</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">42</span><span class="p">:</span>
-        <span class="n">game_message_txt</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;It needs to be in the range 0 to 42&#39;</span><span class="p">)</span>
+        <span class="n">game_message_txt</span><span class="o">.</span><span class="n">innerText</span> <span class="o">=</span> <span class="s1">&#39;It needs to be in the range 0 to 42&#39;</span>
         <span class="k">return</span> <span class="kc">None</span>
     <span class="c1"># game logic</span>
     <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="n">x_target</span><span class="p">:</span>
-        <span class="n">game_message_txt</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Go lower than </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">game_message_txt</span><span class="o">.</span><span class="n">innerText</span> <span class="o">=</span> <span class="s1">&#39;Go lower than </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="n">x_target</span><span class="p">:</span>
-        <span class="n">game_message_txt</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Go higher than </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">game_message_txt</span><span class="o">.</span><span class="n">innerText</span> <span class="o">=</span> <span class="s1">&#39;Go higher than </span><span class="si">{0}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">x</span><span class="p">)</span>
     <span class="k">elif</span> <span class="n">x</span> <span class="o">==</span> <span class="n">x_target</span><span class="p">:</span>
-        <span class="n">game_message_txt</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;Success!!!&#39;</span><span class="p">)</span>
+        <span class="n">game_message_txt</span><span class="o">.</span><span class="n">innerText</span> <span class="o">=</span> <span class="s1">&#39;Success!!!&#39;</span>
 
 <span class="k">def</span> <span class="nf">new_guess_event</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;Enter&quot;</span><span class="p">:</span>
         <span class="n">new_guess</span><span class="p">()</span>
 
-<span class="n">new_guess_txt</span><span class="o">.</span><span class="n">element</span><span class="o">.</span><span class="n">onkeypress</span> <span class="o">=</span> <span class="n">new_guess_event</span>
+<span class="n">new_guess_txt</span><span class="o">.</span><span class="n">onkeypress</span> <span class="o">=</span> <span class="n">new_guess_event</span>
 </code></pre></div>
 </td></tr></table>
 </li>

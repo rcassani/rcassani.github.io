@@ -92,6 +92,12 @@
         2023/05/13
       </li>
 
+      <!-- modified date -->
+        <span class="meta-sep">&nbsp;</span>
+        <li>
+          <i class="fa fa-pencil-alt"></i>
+          2025/04/16
+        </li>
 
 
       <!-- category and tags -->
@@ -124,13 +130,16 @@
         <div class="entry-content">
 
 <!-- Series text at the beginning of article -->
-          <p>This post shows a simple game created using <a href="https://pyscript.net/">PyScript</a> in this static website created with <a href="https://docs.getpelican.com/en/latest/">Pelican</a> and <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> files.</p>
+          <p><strong>Updated</strong>:
+* HTML has been updated to use a specific version of PyScript (2023.11.2)
+* Python code has been updated for that versions of PyScript</p>
+<p>This post shows a simple game created using <a href="https://pyscript.net/">PyScript</a> in this static website created with <a href="https://docs.getpelican.com/en/latest/">Pelican</a> and <a href="https://en.wikipedia.org/wiki/Markdown">Markdown</a> files.</p>
 <h2 id="the-game">The game<a class="headerlink" href="#the-game" title="Permanent link"> </a></h2>
 <p></p>
 <div style="border: 2px solid black;padding: 10px;">
   <script type="py" src="/scripts/guess_game.py" id="py-internal-0"></script>
   <strong><p id="game-message-txt"></p></strong>
-  <input id="new-guess-txt" class="py-input" type="text">
+  <input py-keydown="new_guess_event" id="new-guess-txt" class="py-input" type="text">
   <button id="new-guess-btn" class="py-button" type="submit" py-click="new_guess">
   Submit guess
   </button>
@@ -165,13 +174,13 @@
 <span class="normal"> 9</span>
 <span class="normal">10</span>
 <span class="normal">11</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">div</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;border: 2px solid black;padding: 10px;&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">py-script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/scripts/guess_game.py&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;py-internal-0&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">py-script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;py&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;/scripts/guess_game.py&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;py-internal-0&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
     <span class="p">&lt;</span><span class="nt">strong</span><span class="p">&gt;&lt;</span><span class="nt">p</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;game-message-txt&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">p</span><span class="p">&gt;&lt;/</span><span class="nt">strong</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;new-guess-txt&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;py-input&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;new-guess-btn&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;py-button&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">py-click</span><span class="o">=</span><span class="s">&quot;new_guess()&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">input</span> <span class="na">py-keydown</span><span class="o">=</span><span class="s">&quot;new_guess_event&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;new-guess-txt&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;py-input&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;new-guess-btn&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;py-button&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">py-click</span><span class="o">=</span><span class="s">&quot;new_guess&quot;</span><span class="p">&gt;</span>
     Submit guess
     <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
-    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;reset-game-btn&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;py-button&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">py-click</span><span class="o">=</span><span class="s">&quot;new_game()&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">button</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;reset-game-btn&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;py-button&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;submit&quot;</span> <span class="na">py-click</span><span class="o">=</span><span class="s">&quot;new_game&quot;</span><span class="p">&gt;</span>
     Reset
     <span class="p">&lt;/</span><span class="nt">button</span><span class="p">&gt;</span>
 <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
@@ -223,9 +232,7 @@
 <span class="normal">41</span>
 <span class="normal">42</span>
 <span class="normal">43</span>
-<span class="normal">44</span>
-<span class="normal">45</span>
-<span class="normal">46</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
+<span class="normal">44</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code><span class="kn">import</span> <span class="nn">random</span>
 <span class="kn">from</span> <span class="nn">pyscript</span> <span class="kn">import</span> <span class="n">document</span>
 
 <span class="n">game_message_txt</span> <span class="o">=</span> <span class="n">document</span><span class="o">.</span><span class="n">querySelector</span><span class="p">(</span><span class="s2">&quot;#game-message-txt&quot;</span><span class="p">)</span>
@@ -268,9 +275,7 @@
 
 <span class="k">def</span> <span class="nf">new_guess_event</span><span class="p">(</span><span class="n">e</span><span class="p">):</span>
     <span class="k">if</span> <span class="n">e</span><span class="o">.</span><span class="n">key</span> <span class="o">==</span> <span class="s2">&quot;Enter&quot;</span><span class="p">:</span>
-        <span class="n">new_guess</span><span class="p">()</span>
-
-<span class="n">new_guess_txt</span><span class="o">.</span><span class="n">onkeypress</span> <span class="o">=</span> <span class="n">new_guess_event</span>
+        <span class="n">new_guess</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
 </code></pre></div>
 </td></tr></table>
 </li>

@@ -80,7 +80,7 @@
   <header class="entry-header eight columns">
 
   <h2 class="entry-title">
-    <a href="https://www.castoriscausa.com/posts/2016/12/06/touchpad-disable/">Keeping Synaptics Touchpad disabled</a>
+    <a href="https://www.castoriscausa.com/posts/2025/08/12/distrobox-matlab22b-ubuntu22/">Distrobox: Ubuntu container with Matlab</a>
   </h2>
 
   <div class="entry-meta">
@@ -88,7 +88,7 @@
       <!-- date -->
       <li>
         <i class="fa fa-calendar-alt"></i>
-        2016/12/06
+        2025/08/12
       </li>
 
 
@@ -99,11 +99,11 @@
 
             <i class="fa fa-tags"></i>
             <span>Tagged in: </span>
-              <a href="https://www.castoriscausa.com/tags/touchpad/">touchpad</a>,               <a href="https://www.castoriscausa.com/tags/windows/">Windows</a>            <br>
+              <a href="https://www.castoriscausa.com/tags/arch/">Arch</a>,               <a href="https://www.castoriscausa.com/tags/gpu/">GPU</a>,               <a href="https://www.castoriscausa.com/tags/linux/">Linux</a>,               <a href="https://www.castoriscausa.com/tags/matlab/">Matlab</a>,               <a href="https://www.castoriscausa.com/tags/nvidia/">NVIDIA</a>,               <a href="https://www.castoriscausa.com/tags/tutorial/">tutorial</a>            <br>
 
             <span>
               <i class="fa fa-comments"></i>
-              <a href="https://www.castoriscausa.com/posts/2016/12/06/touchpad-disable/#disqus_thread">Comments</a>
+              <a href="https://www.castoriscausa.com/posts/2025/08/12/distrobox-matlab22b-ubuntu22/#disqus_thread">Comments</a>
             </span>
 
         </p>
@@ -113,8 +113,8 @@
 
   <div class="entry-thumb four columns">
     <center>
-      <a href="https://www.castoriscausa.com/posts/2016/12/06/touchpad-disable/">
-          <img src= "https://www.castoriscausa.com/images/touchpad_keyboard_ge62vr.jpg">
+      <a href="https://www.castoriscausa.com/posts/2025/08/12/distrobox-matlab22b-ubuntu22/">
+          <img src= "https://www.castoriscausa.com/images/distrobox_ubuntu_matlab.png">
       </a>
     </center>
   </div>
@@ -123,25 +123,73 @@
         <div class="entry-content">
 
 <!-- Series text at the beginning of article -->
-          <p>Touchpads in laptops are not for everyone, one of the first things to do when a I get a new computer is to plug a mouse and disable the touchpad (TP).</p>
-<p>Few weeks ago, I noticed a strange behavior, in my <a href="[https://us.msi.com/Laptop/GE62VR-Apache-Pro-6th-Gen-GTX-1060.html#hero-overview">laptop</a>, every time I started a session in Windows, the touchpad was <strong>enabled</strong>, that is to say it did not keep its previous status. The touchpad is a <strong>Synaptics SMBus TouchPad</strong>. As this behavior was <strong>annoying</strong>, something needed to be done.</p>
-<p>After some research I came across this wonderful solution where the <a href="http://www.intowindows.com/how-to-turn-off-touchpad-when-mouse-is-connected-in-windows-78-1/">touchpad is automatically disabled when a mouse is  detected</a>. Unfortunately, the <strong>Steelseris Keyboard</strong> in my laptop is detected as <strong>keyboard-mouse combo</strong>, then, the auto-disable, would permanently disable the touchpad, without option to enable it and who knows it could be useful (someday).</p>
-<p><center>
-<a href="/images/touchpad_keyboard_ge62vr.jpg"><img alt="Alt" src="/images/touchpad_keyboard_ge62vr.jpg"></a><br>
-Touchpad and Keyboard in GE62VR
-</center>  </p>
-<p>Later, after diving in <a href="https://en.wikipedia.org/wiki/Windows_Registry">Windows Register</a>, with Regedit, I noticed a value, in two keys, that controls the touchpad's behavior at the beginning of the Windows session:</p>
-<p><code>DisableDeviceUntilSessionEnd</code>
-in  <br>
-<code>HKEY_CURRENT_USER\SOFTWARE\Synaptics\SynTP\TouchPadPS2TM3163</code><br>
-<code>HKEY_CURRENT_USER\SOFTWARE\Synaptics\SynTP\TouchPadSMB2cTM3163</code></p>
-<p>Basically, when they are <code>0</code> the touchpad remembers its state at the moment of the last logout, and when <code>1</code>, the touchpad will be enabled every login.</p>
-<p></br>
-<center></p>
-<h4 id="changing-the-values-from-1-to-0-was-the-solution-to-keep-the-touchpad-disable"><strong>Changing the values from <code>1</code> to  <code>0</code></strong> was the solution, to keep the touchpad disable.<a class="headerlink" href="#changing-the-values-from-1-to-0-was-the-solution-to-keep-the-touchpad-disable" title="Permanent link"> </a></h4>
-<p></center>
-</br></p>
-<p>In case you're want to the same re-enabling behaviour in the touchpad, edit the above-mentioned values in the Registry. You can learn the basics on editing the Windows Registry here: <a href="http://www.techsupportalert.com/content/learn-how-use-windows-registry-editor-regedit-one-easy-lesson.htm">Learn How to Use the Windows Registry Editor (Regedit) in One Easy Lesson</a>.</p>
+          <p><a href="https://knowyourmeme.com/memes/btw-i-use-arch">I use Arch (BTW)</a>, so my OS has up-to-date software and packages. Unfortunately, this also means that Matlab (which is not officially supported in <a href="https://archlinux.org/">Arch Linux</a>) can be a real headache to install and run, especially older versions as they relied in "older" libraries.</p>
+<p>In the last years, I tried debugging and fiddling endlessly with libraries and dependencies to get Matlab to work. Many times with help of the <a href="https://bbs.archlinux.org/">ArchForums</a>, this activity quickly became a huge time sink as often I needed different fixes for different Matlab versions. To be honest, I even considered switching permanently to <a href="https://ubuntu.com/">Ubuntu</a> just to avoid these headaches. </p>
+<p>However, that migration will not be needed 😌, as recently <a href="https://distrobox.it/">Distrobox</a> crossed my path and it completely changed the game.</p>
+<p>In a nutshell, Distrobox creates a containerized environment based on an Ubuntu release that Matlab officially supports. Then, Matlab runs inside that container as if it were the native Ubuntu, but I still have seamless access to my home directory (and other files) because the container shares those with the host. On top of that, NVIDIA GPU support works out of the box with minimal fuss, so Matlab GPU-accelerated features run smoothly without complicated setup.</p>
+<h2 id="distrobox-ubuntu-2204-with-matlab-2022b">Distrobox: Ubuntu 22.04 with Matlab 2022b<a class="headerlink" href="#distrobox-ubuntu-2204-with-matlab-2022b" title="Permanent link"> </a></h2>
+<p><BR></p>
+<h3 id="a-in-the-host">A. In the host<a class="headerlink" href="#a-in-the-host" title="Permanent link"> </a></h3>
+<ol>
+<li>
+<p>Install <a href="https://wiki.archlinux.org/title/Distrobox">distrobox</a> and <a href="https://wiki.archlinux.org/title/Podman">podman</a> (preferred, though Docker could be used):</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ sudo pacman -S distrobox podman
+</code></pre></div>
+</td></tr></table>
+</li>
+<li>
+<p>Create the Ubuntu container with NVIDIA support (if needed):</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ distrobox create --image ubuntu:22.04 --name ubuntu-2204-nvidia --nvidia
+</code></pre></div>
+</td></tr></table>
+</li>
+<li>
+<p>Enter the container:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ distrbox enter ubuntu-2204-nvidia
+</code></pre></div>
+</td></tr></table>
+</li>
+</ol>
+<h3 id="b-in-the-container">B. In the container<a class="headerlink" href="#b-in-the-container" title="Permanent link"> </a></h3>
+<ol>
+<li>
+<p>Install additional Ubuntu packages that Matlab 2022b needs:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ sudo apt-get install libnss3 libatk-bridge2.0-0 libasound2 libxt6 libxft2
+</code></pre></div>
+</td></tr></table>
+</li>
+<li>
+<p>Download the Matlab installer, unzip it and run the <code>install</code> script.<br>
+    Use the default installation path: <code>/usr/local/MATLAB/R2022b</code></p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ sudo ./install
+</code></pre></div>
+</td></tr></table>
+</li>
+<li>
+<p>Create a symbolic link (so the binary has a different name from <code>matlab</code>):</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ sudo ln -s /usr/local/MATLAB/R2022b/bin/matlab /usr/local/bin/matlab22b
+</code></pre></div>
+</td></tr></table>
+</li>
+<li>
+<p>Once Matlab is installed in the Ubuntu container, it be exported to the host for easy execution:</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ distrobox-export --bin /usr/local/bin/matlab22b --export-path ~/.local/bin
+</code></pre></div>
+</td></tr></table>
+</li>
+</ol>
+<h3 id="c-on-the-host-again">C. On the host again<a class="headerlink" href="#c-on-the-host-again" title="Permanent link"> </a></h3>
+<ol>
+<li>
+<p>Just run</p>
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ matlab22b
+</code></pre></div>
+</td></tr></table>
+<p>the Ubuntu container will be started and <code>matlab22b</code> will be executed on it.</p>
+</li>
+</ol>
+<h2 id="conclusion">Conclusion<a class="headerlink" href="#conclusion" title="Permanent link"> </a></h2>
+<p>Distrobox for running Matlab versions on Arch is a simple and clean solution that avoids dependency issues and host system changes.</p>
 <!-- Series text at the end of article -->
 
         </div>
@@ -160,7 +208,7 @@ in  <br>
             var disqus_config = function () {
                 this.language = "en";
 
-                        this.page.url = 'https://www.castoriscausa.com/posts/2016/12/06/touchpad-disable/';
+                        this.page.url = 'https://www.castoriscausa.com/posts/2025/08/12/distrobox-matlab22b-ubuntu22/';
             };
 
             /* * * DON'T EDIT BELOW THIS LINE * * */

@@ -154,9 +154,11 @@
 <ol>
 <li>
 <p>Install additional Ubuntu packages that Matlab 2022b needs:</p>
-<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ sudo apt-get install libnss3 libatk-bridge2.0-0 libasound2 libxt6 libxft2
+<table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre><span class="normal">1</span></pre></div></td><td class="code"><div class="highlight"><pre><span></span><code>$ sudo apt-get install libnss3 libatk-bridge2.0-0 libasound2 libxt6 libxft2 libsndfile1
 </code></pre></div>
 </td></tr></table>
+<p>the list of required Ubuntu packages may grow depending on the Matlab features that are required.<br>
+I'll keep updating this list as I encounter missing packages.</p>
 </li>
 <li>
 <p>Download the Matlab installer, unzip it and run the <code>install</code> script.<br>

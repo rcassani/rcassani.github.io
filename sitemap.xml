@@ -5,21 +5,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/</loc>
-<lastmod>2025-08-18T13:12:14-00:00</lastmod>
+<lastmod>2026-02-13T03:16:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/archives.html</loc>
-<lastmod>2025-08-18T13:12:14-00:00</lastmod>
+<lastmod>2026-02-13T03:16:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
 
 <url>
 <loc>https://www.castoriscausa.com/categories.html</loc>
-<lastmod>2025-08-18T13:12:14-00:00</lastmod>
+<lastmod>2026-02-13T03:16:35-00:00</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -41,6 +41,13 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 <url>
 <loc>https://www.castoriscausa.com/pages/software</loc>
 <lastmod>2016-10-22T00:00:00-04:00</lastmod>
+<changefreq>monthly</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.castoriscausa.com/posts/2026/02/12/just-ai-rant/</loc>
+<lastmod>2026-02-12T21:16:00-05:00</lastmod>
 <changefreq>monthly</changefreq>
 <priority>0.5</priority>
 </url>
@@ -320,7 +327,21 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/category/posts/</loc>
-<lastmod>2025-08-12T13:15:00-05:18</lastmod>
+<lastmod>2026-02-12T21:16:00-05:18</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.castoriscausa.com/tags/ai/</loc>
+<lastmod>2026-02-12T21:16:00-05:18</lastmod>
+<changefreq>daily</changefreq>
+<priority>0.5</priority>
+</url>
+
+<url>
+<loc>https://www.castoriscausa.com/tags/writing/</loc>
+<lastmod>2026-02-12T21:16:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>
@@ -417,7 +438,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 </url>
 
 <url>
-<loc>https://www.castoriscausa.com/tags/webdevelopment/</loc>
+<loc>https://www.castoriscausa.com/tags/webdev/</loc>
 <lastmod>2025-04-16T23:00:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -446,13 +467,6 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/tags/french/</loc>
-<lastmod>2023-02-25T17:06:00-05:18</lastmod>
-<changefreq>daily</changefreq>
-<priority>0.5</priority>
-</url>
-
-<url>
-<loc>https://www.castoriscausa.com/tags/writing/</loc>
 <lastmod>2023-02-25T17:06:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
@@ -649,7 +663,7 @@ xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
 <url>
 <loc>https://www.castoriscausa.com/author/raymundo-cassani.html</loc>
-<lastmod>2025-08-12T13:15:00-05:18</lastmod>
+<lastmod>2026-02-12T21:16:00-05:18</lastmod>
 <changefreq>daily</changefreq>
 <priority>0.5</priority>
 </url>

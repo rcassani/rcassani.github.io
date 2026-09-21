@@ -12,7 +12,7 @@ wget "www.castoriscausa.com/files/r8125-9.018.00.tar.bz2"
 tar -xjf r8125-9.018.00.tar.bz2
 cd r8125-9.018.00
 chmod +x autorun.sh
-./autorun.sh`
+./autorun.sh
 
 # Correct the installation by Realtek drivers
 cd /lib/modules/$(uname -r)/kernel/drivers/net/ethernet/realtek/

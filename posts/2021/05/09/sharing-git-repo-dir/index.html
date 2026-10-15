@@ -102,9 +102,11 @@
             <span>Tagged in: </span>
               <a href="https://www.castoriscausa.com/tags/git/">Git</a>,               <a href="https://www.castoriscausa.com/tags/github/">GitHub</a>,               <a href="https://www.castoriscausa.com/tags/linux/">Linux</a>,               <a href="https://www.castoriscausa.com/tags/windows/">Windows</a>            <br>
 
+            <!-- orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread -->
             <span>
               <i class="fa fa-comments"></i>
-              <a href="https://www.castoriscausa.com/posts/2021/05/09/sharing-git-repo-dir/#disqus_thread">Comments</a>
+              <a href="https://www.castoriscausa.com/posts/2021/05/09/sharing-git-repo-dir/#disqus_thread"
+                 data-disqus-url="https://www.castoriscausa.com/posts/2021/05/09/sharing-git-repo-dir/">Comments</a>
             </span>
 
         </p>
@@ -167,6 +169,7 @@
             var disqus_config = function () {
                 this.language = "en";
 
+                    // orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread
                         this.page.url = 'https://www.castoriscausa.com/posts/2021/05/09/sharing-git-repo-dir/';
             };
 

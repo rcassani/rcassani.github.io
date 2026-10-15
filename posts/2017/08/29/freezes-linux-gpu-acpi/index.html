@@ -102,9 +102,11 @@
             <span>Tagged in: </span>
               <a href="https://www.castoriscausa.com/tags/gpu/">GPU</a>,               <a href="https://www.castoriscausa.com/tags/linux/">Linux</a>,               <a href="https://www.castoriscausa.com/tags/nvidia/">NVIDIA</a>            <br>
 
+            <!-- orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread -->
             <span>
               <i class="fa fa-comments"></i>
-              <a href="https://www.castoriscausa.com/posts/2017/08/29/freezes-linux-gpu-acpi/#disqus_thread">Comments</a>
+              <a href="https://www.castoriscausa.com/posts/2017/08/29/freezes-linux-gpu-acpi/#disqus_thread"
+                 data-disqus-url="https://www.castoriscausa.com/posts/2017/08/29/freezes-linux-gpu-acpi/">Comments</a>
             </span>
 
         </p>
@@ -163,6 +165,7 @@ After than change you should be able to logout correctly after changing from the
             var disqus_config = function () {
                 this.language = "en";
 
+                    // orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread
                         this.page.url = 'https://www.castoriscausa.com/posts/2017/08/29/freezes-linux-gpu-acpi/';
             };
 

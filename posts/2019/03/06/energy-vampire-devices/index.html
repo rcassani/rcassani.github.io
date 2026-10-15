@@ -102,9 +102,11 @@
             <span>Tagged in: </span>
               <a href="https://www.castoriscausa.com/tags/energy/">energy</a>,               <a href="https://www.castoriscausa.com/tags/power/">power</a>            <br>
 
+            <!-- orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread -->
             <span>
               <i class="fa fa-comments"></i>
-              <a href="https://www.castoriscausa.com/posts/2019/03/06/energy-vampire-devices/#disqus_thread">Comments</a>
+              <a href="https://www.castoriscausa.com/posts/2019/03/06/energy-vampire-devices/#disqus_thread"
+                 data-disqus-url="https://www.castoriscausa.com/posts/2019/03/06/energy-vampire-devices/">Comments</a>
             </span>
 
         </p>
@@ -155,6 +157,7 @@ Image from: <a href="https://www.energyhelpline.com/fri/news-blogs/the-biggest-e
             var disqus_config = function () {
                 this.language = "en";
 
+                    // orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread
                         this.page.url = 'https://www.castoriscausa.com/posts/2019/03/06/energy-vampire-devices/';
             };
 

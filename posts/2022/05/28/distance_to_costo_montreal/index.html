@@ -108,9 +108,11 @@
             <span>Tagged in: </span>
               <a href="https://www.castoriscausa.com/tags/geopandas/">GeoPandas</a>,               <a href="https://www.castoriscausa.com/tags/gis/">GIS</a>,               <a href="https://www.castoriscausa.com/tags/maps/">maps</a>,               <a href="https://www.castoriscausa.com/tags/montreal/">Montreal</a>,               <a href="https://www.castoriscausa.com/tags/python/">Python</a>            <br>
 
+            <!-- orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread -->
             <span>
               <i class="fa fa-comments"></i>
-              <a href="https://www.castoriscausa.com/posts/2022/05/28/distance_to_costo_montreal/#disqus_thread">Comments</a>
+              <a href="https://www.castoriscausa.com/posts/2022/05/28/distance_to_costo_montreal/#disqus_thread"
+                 data-disqus-url="https://www.castoriscausa.com/posts/2022/05/28/distance_to_costo_montreal/">Comments</a>
             </span>
 
         </p>
@@ -139,7 +141,7 @@
 <p><center>
 <strong>How far from a Costco is everyone in the Montreal?</strong>
 </center></p>
-<p>For city, I'll be using a map, that encompasses <a href="https://www.castoriscausa.com/posts/2022/04/15/tale-of-too-montreal/">all the interpretations of Montreal</a>.</p>
+<p>For city, I'll be using a map, that encompasses <a href="https://www.castoriscausa.com/posts/2022/04/15/tale-of-too-montreal/">all the interpretations of Montreal</a>,.</p>
 <p><center>
 <a href="/images/montreals_map.png"><img src="/images/montreals_map.png" style="width: 60%;"/></a><br>
 <br>
@@ -197,6 +199,7 @@ Red background shades indicates high population density.
             var disqus_config = function () {
                 this.language = "en";
 
+                    // orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread
                         this.page.url = 'https://www.castoriscausa.com/posts/2022/05/28/distance_to_costo_montreal/';
             };
 

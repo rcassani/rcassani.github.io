@@ -108,9 +108,11 @@
             <span>Tagged in: </span>
               <a href="https://www.castoriscausa.com/tags/bike/">bike</a>,               <a href="https://www.castoriscausa.com/tags/python/">Python</a>,               <a href="https://www.castoriscausa.com/tags/rest/">REST</a>,               <a href="https://www.castoriscausa.com/tags/sqlite/">SQLite</a>            <br>
 
+            <!-- orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread -->
             <span>
               <i class="fa fa-comments"></i>
-              <a href="https://www.castoriscausa.com/posts/2023/10/07/supercycle_strava/#disqus_thread">Comments</a>
+              <a href="https://www.castoriscausa.com/posts/2023/10/07/supercycle_strava/#disqus_thread"
+                 data-disqus-url="https://www.castoriscausa.com/posts/2023/10/07/supercycle_strava/">Comments</a>
             </span>
 
         </p>
@@ -185,6 +187,7 @@ More over, <a href="https://support.strava.com/hc/en-us/articles/216918437-Expor
             var disqus_config = function () {
                 this.language = "en";
 
+                    // orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread
                         this.page.url = 'https://www.castoriscausa.com/posts/2023/10/07/supercycle_strava/';
             };
 

@@ -102,9 +102,11 @@
             <span>Tagged in: </span>
               <a href="https://www.castoriscausa.com/tags/bluetooth/">Bluetooth</a>,               <a href="https://www.castoriscausa.com/tags/linux/">Linux</a>,               <a href="https://www.castoriscausa.com/tags/tutorial/">tutorial</a>,               <a href="https://www.castoriscausa.com/tags/windows/">Windows</a>            <br>
 
+            <!-- orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread -->
             <span>
               <i class="fa fa-comments"></i>
-              <a href="https://www.castoriscausa.com/posts/2021/02/28/bluetooth-dual-boot/#disqus_thread">Comments</a>
+              <a href="https://www.castoriscausa.com/posts/2021/02/28/bluetooth-dual-boot/#disqus_thread"
+                 data-disqus-url="https://www.castoriscausa.com/posts/2021/02/28/bluetooth-dual-boot/">Comments</a>
             </span>
 
         </p>
@@ -217,6 +219,7 @@ Copy the <code>Key</code> field in <code>[LinkKey]</code> section of the <code>i
             var disqus_config = function () {
                 this.language = "en";
 
+                    // orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread
                         this.page.url = 'https://www.castoriscausa.com/posts/2021/02/28/bluetooth-dual-boot/';
             };
 

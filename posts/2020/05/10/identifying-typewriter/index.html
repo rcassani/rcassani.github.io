@@ -102,9 +102,11 @@
             <span>Tagged in: </span>
               <a href="https://www.castoriscausa.com/tags/diy/">DIY</a>            <br>
 
+            <!-- orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread -->
             <span>
               <i class="fa fa-comments"></i>
-              <a href="https://www.castoriscausa.com/posts/2020/05/10/identifying-typewriter/#disqus_thread">Comments</a>
+              <a href="https://www.castoriscausa.com/posts/2020/05/10/identifying-typewriter/#disqus_thread"
+                 data-disqus-url="https://www.castoriscausa.com/posts/2020/05/10/identifying-typewriter/">Comments</a>
             </span>
 
         </p>
@@ -188,6 +190,7 @@ Principal Operative Parts of the Underwood Standard Typewriter.
             var disqus_config = function () {
                 this.language = "en";
 
+                    // orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread
                         this.page.url = 'https://www.castoriscausa.com/posts/2020/05/10/identifying-typewriter/';
             };
 

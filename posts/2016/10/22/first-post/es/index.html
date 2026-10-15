@@ -104,9 +104,11 @@
 
 
 
+            <!-- orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread -->
             <span>
               <i class="fa fa-comments"></i>
-              <a href="https://www.castoriscausa.com/posts/2016/10/22/first-post/es/#disqus_thread">Comments</a>
+              <a href="https://www.castoriscausa.com/posts/2016/10/22/first-post/es/#disqus_thread"
+                 data-disqus-url="https://www.castoriscausa.com/posts/2016/10/22/first-post/">Comments</a>
             </span>
 
         </p>
@@ -117,7 +119,7 @@
   <div class="entry-thumb four columns">
     <center>
       <a href="https://www.castoriscausa.com/posts/2016/10/22/first-post/es/">
-          <img src= "https://www.castoriscausa.com/theme/images/m-farmerboy.jpg">
+          <img src= "https://www.castoriscausa.com/images/default.png">
       </a>
     </center>
   </div>
@@ -165,7 +167,8 @@
             var disqus_config = function () {
                 this.language = "en";
 
-                        this.page.url = 'https://www.castoriscausa.com/posts/2016/10/22/first-post/es/';
+                    // orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread
+                        this.page.url = 'https://www.castoriscausa.com/posts/2016/10/22/first-post/';
             };
 
             /* * * DON'T EDIT BELOW THIS LINE * * */

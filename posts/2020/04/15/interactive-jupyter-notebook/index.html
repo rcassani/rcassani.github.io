@@ -102,9 +102,11 @@
             <span>Tagged in: </span>
               <a href="https://www.castoriscausa.com/tags/jupyter/">Jupyter</a>,               <a href="https://www.castoriscausa.com/tags/webdev/">webdev</a>            <br>
 
+            <!-- orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread -->
             <span>
               <i class="fa fa-comments"></i>
-              <a href="https://www.castoriscausa.com/posts/2020/04/15/interactive-jupyter-notebook/#disqus_thread">Comments</a>
+              <a href="https://www.castoriscausa.com/posts/2020/04/15/interactive-jupyter-notebook/#disqus_thread"
+                 data-disqus-url="https://www.castoriscausa.com/posts/2020/04/15/interactive-jupyter-notebook/">Comments</a>
             </span>
 
         </p>
@@ -187,6 +189,7 @@ $ pipreqs .
             var disqus_config = function () {
                 this.language = "en";
 
+                    // orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread
                         this.page.url = 'https://www.castoriscausa.com/posts/2020/04/15/interactive-jupyter-notebook/';
             };
 

@@ -102,9 +102,11 @@
             <span>Tagged in: </span>
               <a href="https://www.castoriscausa.com/tags/diy/">DIY</a>,               <a href="https://www.castoriscausa.com/tags/lifehack/">lifehack</a>            <br>
 
+            <!-- orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread -->
             <span>
               <i class="fa fa-comments"></i>
-              <a href="https://www.castoriscausa.com/posts/2020/01/28/password-management-with-Dropbox-and-KeePassXC/#disqus_thread">Comments</a>
+              <a href="https://www.castoriscausa.com/posts/2020/01/28/password-management-with-Dropbox-and-KeePassXC/#disqus_thread"
+                 data-disqus-url="https://www.castoriscausa.com/posts/2020/01/28/password-management-with-Dropbox-and-KeePassXC/">Comments</a>
             </span>
 
         </p>
@@ -174,6 +176,7 @@
             var disqus_config = function () {
                 this.language = "en";
 
+                    // orig: article or DEFAULT_LANG article (if article is a translation), so translations share its Disqus thread
                         this.page.url = 'https://www.castoriscausa.com/posts/2020/01/28/password-management-with-Dropbox-and-KeePassXC/';
             };
 
